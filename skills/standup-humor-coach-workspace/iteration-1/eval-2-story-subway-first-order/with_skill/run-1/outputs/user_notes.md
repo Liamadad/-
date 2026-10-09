@@ -1,0 +1,4 @@
+- Read references/storytelling.md (SKILL.md points to it for 段子工坊) and references/ai-humor-engine.md (to check whether the demo lines were funny enough). No other references read.
+- storytelling.md §10 is a full "yes all the way" rewrite (haircut) and SKILL.md's sample premise is literally about a Subway sandwich. I reused neither the lines nor the "yes" callback ending; I kept only the structure (act-out of the question chain, inner monologue, ending set first).
+- Unsure whether to write the full 60-second party version now or after the user fills in details. I chose 2 before/after fixes plus 4 questions (the Mode 2 maximum) because the version that counts depends on real details I am not allowed to invent. The 【】 inner monologue is flagged as my guess.
+- "错题，要吃透" is the single wordplay allowed per batch (literalism, with attitude). I assumed the friends follow basic English lines like "Toasted?". I did not ask, to keep the questions at 4.
