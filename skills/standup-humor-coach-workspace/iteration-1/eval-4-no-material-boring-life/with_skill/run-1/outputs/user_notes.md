@@ -1,0 +1,4 @@
+- References read: `references/drills.md` (mode 3 says the question bank is there) and `references/ai-humor-engine.md` (SKILL.md says to read it when unsure a demo is funny enough, and I was). No other references opened.
+- Chose 素材挖掘 (mode 3). Skipped 笑点校准 even though this is a first turn: the 学员档案 already holds a taste profile, and this turn doesn't ask the user to write yet.
+- Unsure: the demo ("最稳的身份是 Costco 会员 / 不用抽签") fits the profile's reinterpretation taste, but without web access I couldn't check whether a similar line already circulates on 小红书. H-1B is now a wage-weighted draw, but people still call it 抽签.
+- Two of the four questions are adapted rather than copied from the bank: the fridge question became a Costco question, and the library question is new. That way each item in the user's routine gets one question. I added a one-time legend for ／ because a first-time user won't know the notation.
