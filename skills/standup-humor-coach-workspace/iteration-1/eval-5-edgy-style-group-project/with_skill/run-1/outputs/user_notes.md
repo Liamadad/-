@@ -1,0 +1,5 @@
+- References read: `references/styles.md` (SKILL.md says to read it when the user wants a specific style; I used the Bill Burr card, the "像 X 一样写" flow and the edgy-humor safety rules) and `references/ai-humor-engine.md` (SKILL.md says to read it when unsure a demo is funny enough; I used the protocol, the anti-pattern list and the unfun test).
+- The demo's last line, "他那天要是也没来——上去讲的就是我", is a guess about how the user felt. The reply labels it as a guess and makes writing the true version the user's exercise, so it is never presented as fact.
+- I wrote only the Burr version, not the three styles side by side from styles.md §6, because the user had already chosen the style. I'm not sure the eval expects a contrast version.
+- I'm unsure whether "秒回的那是实习生" is fresh enough. Office jokes that "bosses don't reply" are fairly common. The "他回了！……回给了教授！" beat seemed fresher.
+- I left out a group-chat version to keep the reply to one technique, even though the profile says he likes replies inside a conversation best.
