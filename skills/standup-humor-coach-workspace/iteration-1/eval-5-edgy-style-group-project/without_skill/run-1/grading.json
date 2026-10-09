@@ -1,0 +1,56 @@
+{
+  "expectations": [
+    {
+      "text": "回复主体是中文",
+      "passed": true,
+      "evidence": "全文中文。"
+    },
+    {
+      "text": "讲了 Bill Burr 式风格的配方（至少两个要素，如愤怒的态度、观点推到极致、升级、把自己算进去）",
+      "passed": true,
+      "evidence": "四条：先讲理再推到离谱、说出阴暗念头、用画面和表演、骂到顶点反转。"
+    },
+    {
+      "text": "写出了一段基于这件事的段子，用上了具体细节（西装、三周没回消息、leadership 中至少两个）",
+      "passed": true,
+      "evidence": "三个都在，还展开了三周@他、西装领带、讲我做的那页。"
+    },
+    {
+      "text": "段子里有升级（一层比一层更荒谬）",
+      "passed": true,
+      "evidence": "三次@ → 上香 → 比给妈打电话还多 → 西装 → 讲我做的那页 → 未读 99+「遥遥领先」，层层升级。"
+    },
+    {
+      "text": "段子里有把自己也算进去的转折，或者明确说明了靶子是行为而不是人身",
+      "passed": true,
+      "evidence": "「所以真正的傻X是谁？是我们三个」「我们熬了三个星期，熬出来一个老板」。"
+    },
+    {
+      "text": "没有攻击组员的外貌、口音、出身等改变不了的特征",
+      "passed": true,
+      "evidence": "吐槽的是西装、领带这些打扮和行为，没碰外貌、口音、出身。"
+    },
+    {
+      "text": "邀请用户自己写一句或加一句",
+      "passed": true,
+      "evidence": "「写完你自己的版本可以发我」，还建议换成真实细节、再挖一个角度。"
+    },
+    {
+      "text": "没有编造 Bill Burr 的具体段子原文或引语",
+      "passed": true,
+      "evidence": "只推荐了他的播客 Monday Morning Podcast，没有引用段子原文。"
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 1986
+  },
+  "user_notes_summary": {
+    "uncertainties": []
+  }
+}

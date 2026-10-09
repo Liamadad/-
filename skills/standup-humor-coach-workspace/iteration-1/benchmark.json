@@ -1,0 +1,736 @@
+{
+  "metadata": {
+    "skill_name": "standup-humor-coach",
+    "skill_path": "skills/standup-humor-coach",
+    "executor_model": "session default",
+    "analyzer_model": "session default",
+    "timestamp": "2026-10-09T19:28:26Z",
+    "evals_run": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 891.8,
+        "tokens": 182886,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文，只有招式的英文名放在括号里。"
+        },
+        {
+          "text": "至少点出 2 个具体的笑点机会，并引用群聊原文里的细节（'五个闹钟''黑五/跑鞋''还是你懂我'中至少两个）",
+          "passed": true,
+          "evidence": "机会一抓「设了五个」，机会二抓「还是你懂我」，机会三还点了小雨那句「去年黑五买跑鞋」是回扣。"
+        },
+        {
+          "text": "至少一个笑点机会给出 2 条以上升级回复，且每条标注了招式名",
+          "passed": true,
+          "evidence": "机会一给了三条，分别标「稳 · 具体化」「中 · 如果这是真的」「辣 · 假装指控」。"
+        },
+        {
+          "text": "给出了至少 1 个可复用的句式骨架或公式",
+          "passed": true,
+          "evidence": "「存进弹药库」两条：有人拿数字证明自己 →「那你是 A，还是 B？」；有人拉你站队 → 先回「懂」，另起一条反水。"
+        },
+        {
+          "text": "最后给了一个新情境或练习，请用户自己写一句",
+          "passed": true,
+          "evidence": "结尾给了新情境「阿杰：今天没跑成，第五个闹钟没响」，限时 30 秒回一句。"
+        },
+        {
+          "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+          "passed": true,
+          "evidence": "示范回复后面没有哈哈、😂、笑死，也没有网络烂梗。"
+        },
+        {
+          "text": "示范回复都很短，像真人群聊消息（每条不超过 2 行）",
+          "passed": true,
+          "evidence": "每条示范都是一行，最长的是「五个？那你是6点起床，还是6点开始起床？」"
+        }
+      ],
+      "notes": [
+        "机会三（明早回扣）只给了一条，没凑 2–3 条：执行者说第二条都是凑数的，按引擎规则宁可少给。"
+      ]
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 866.0,
+        "tokens": 173835,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "诊断了原版为什么平淡（至少一个具体原因，如缺'想要什么'、转述没演出来、笑点不在最后）",
+          "passed": true,
+          "evidence": "「你自己剧透了」：一说「听不懂就一直说 yes」，结局就被猜到了；笑点「但我还是吃完了」被当总结用掉了。"
+        },
+        {
+          "text": "改写版把店员的连珠炮提问用直接引语演了出来，而不是只说'店员问了很多问题'",
+          "passed": true,
+          "evidence": "「What kind of bread?」「Toasted?」「Cheese?」「Veggies?」「Sauce?」都用直接引语演了出来。"
+        },
+        {
+          "text": "改写版包含内心独白（'我心想'或【】等）",
+          "passed": true,
+          "evidence": "【没听懂。老规矩：不会就蒙。】【这题蒙对了。】"
+        },
+        {
+          "text": "改写版有收尾句，并回扣了前面出现过的元素",
+          "passed": true,
+          "evidence": "收尾「老师说过：错题，要吃透」，回扣前面的「不会就蒙」。"
+        },
+        {
+          "text": "标出了停顿或表演提示",
+          "passed": true,
+          "evidence": "用了 ／ 停顿，以及［学店员，一口气］［越来越快］［笃定］等表演提示。"
+        },
+        {
+          "text": "邀请用户参与（补一个笑点、试讲、或回来反馈哪里笑了）",
+          "passed": true,
+          "evidence": "问了 4 个补细节的问题，并说「答完我给你拼一个 60 秒的聚会版」。"
+        },
+        {
+          "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+          "passed": true,
+          "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+        }
+      ],
+      "notes": [
+        "只改了两段（演出来、笑点挪到结尾），没给完整的 60 秒版：要等用户补真实细节，引擎不让编。",
+        "【】里的内心独白是执行者猜的，回复里已注明。"
+      ]
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 533.9,
+        "tokens": 125884,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "设定了对方角色，并用上资料里的具体信息（建筑、徒步、做饭/烟雾报警器中至少两个）",
+          "passed": true,
+          "evidence": "角色小周：建筑系、刚熬完模型 deadline、爱自嘲、喜欢徒步、做饭水平以资料为准；开场白也用了 studio、做模型、胶水。"
+        },
+        {
+          "text": "说明了暂停或复盘的方式",
+          "passed": true,
+          "evidence": "「随时打“复盘”，我出戏，逐句回放给你看」。"
+        },
+        {
+          "text": "设定了这次练习的目标",
+          "passed": true,
+          "evidence": "「你的目标：接住小周抛的 3 个点。不用好笑，接住就算；两个人一起笑一次，算奖励」。"
+        },
+        {
+          "text": "以角色身份发出了开场白，开场白简短（不超过 3 句）",
+          "passed": true,
+          "evidence": "三句：「嗨，我是小周！」「抱歉有点狼狈，刚从 studio 出来，昨晚做模型做到四点。」「这个是胶水，洗不掉了。」"
+        },
+        {
+          "text": "'烟雾报警器'被当作可以接的梗（出现在开场白、提示或技巧里）",
+          "passed": true,
+          "evidence": "唯一的技巧示范就拿它做例子：「全靠？？那它响一声算几分熟？」"
+        },
+        {
+          "text": "没有教 PUA 套路（打压、推拉、冷读）",
+          "passed": true,
+          "evidence": "只教「接住」：重复关键词 + 一点情绪 + 追问细节。没有打压、推拉、冷读。"
+        }
+      ],
+      "notes": [
+        "跳过了笑点校准：SKILL.md 里已经有 10 轮的笑点档案，用户要的是陪练。"
+      ]
+    },
+    {
+      "eval_id": 4,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 766.5,
+        "tokens": 171113,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "回应了'天生没有幽默细胞'，说明幽默可以练",
+          "passed": true,
+          "evidence": "开头「不是。幽默更像手艺，练得出来」，还指出用户原话里的「最多」已经是在自嘲。"
+        },
+        {
+          "text": "用用户提到的具体日常（上课、图书馆、做饭、Costco 中至少两个）当场示范了梗",
+          "passed": false,
+          "evidence": "只示范了一条梗（「我在美国最稳的身份，／是 Costco 会员。／不用抽签。」）。上课、图书馆、做饭只出现在提问里，没有示范。"
+        },
+        {
+          "text": "提出了 3-5 个具体的挖素材问题",
+          "passed": true,
+          "evidence": "4 个问题：教授的口头禅、图书馆里天天见却没说过话的人、最像事故现场的菜、Costco 买了到现在还没吃完的东西。"
+        },
+        {
+          "text": "布置了每天记录素材的作业",
+          "passed": true,
+          "evidence": "「今晚开始做个『生活作业』：睡前花 5 分钟，记一个今天怪、烦或尴尬的瞬间」。"
+        },
+        {
+          "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+          "passed": true,
+          "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+        }
+      ],
+      "notes": [
+        "只示范了一条梗。「不用抽签」要求听的人知道 H-1B 抽签，对留学生是自己人的梗。"
+      ]
+    },
+    {
+      "eval_id": 5,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 842.8,
+        "tokens": 171219,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "讲了 Bill Burr 式风格的配方（至少两个要素，如愤怒的态度、观点推到极致、升级、把自己算进去）",
+          "passed": true,
+          "evidence": "「凶只是音量」；真正的招是替坏的那边辩护（devil's advocate），用一套歪理越吵越凶，最后一刀捅回自己。"
+        },
+        {
+          "text": "写出了一段基于这件事的段子，用上了具体细节（西装、三周没回消息、leadership 中至少两个）",
+          "passed": true,
+          "evidence": "三周一条消息没回、穿西装来、「leadership 很强」都在段子里。"
+        },
+        {
+          "text": "段子里有升级（一层比一层更荒谬）",
+          "passed": true,
+          "evidence": "「我站他！」→「他回了！攒了三周……回给了教授！」→「领导回你消息吗？！秒回的那是实习生！」一层比一层歪，但只推了两层。"
+        },
+        {
+          "text": "段子里有把自己也算进去的转折，或者明确说明了靶子是行为而不是人身",
+          "passed": true,
+          "evidence": "收尾「他那天要是也没来——上去讲的就是我」，把自己也算了进去。"
+        },
+        {
+          "text": "没有攻击组员的外貌、口音、出身等改变不了的特征",
+          "passed": true,
+          "evidence": "只拿行为开刀（不回消息、presentation 抢话），没碰外貌、口音、出身。"
+        },
+        {
+          "text": "邀请用户自己写一句或加一句",
+          "passed": true,
+          "evidence": "「你来填：……你们知道我为什么替他说话吗？／［小声］______」。"
+        },
+        {
+          "text": "没有编造 Bill Burr 的具体段子原文或引语",
+          "passed": true,
+          "evidence": "只讲手法，没有引用或编造 Burr 的段子原文。"
+        }
+      ],
+      "notes": [
+        "最后一句「上去讲的就是我」是替用户猜的，回复里让用户换成真事。",
+        "执行者自己担心「秒回的那是实习生」不够新。"
+      ]
+    },
+    {
+      "eval_id": 6,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.7143,
+        "passed": 5,
+        "failed": 2,
+        "total": 7,
+        "time_seconds": 919.1,
+        "tokens": 166971,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "给出了 2-3 组 A/B 二选一（这一条消息里不超过 3 组）",
+          "passed": true,
+          "evidence": "3 组，每组 A/B 两条。"
+        },
+        {
+          "text": "每组的两条用的是同一个素材",
+          "passed": false,
+          "evidence": "①② 两条用的是同一件事。③ 问题都是「周末干嘛了」，但 A 讲学姐请吃饭推销保险，B 讲在家两天没说话，是两件不同的事：这组同时变了长度和内容，测不出长度偏好。"
+        },
+        {
+          "text": "选之前没有给 A/B 标招式名，也没有说明哪条用了什么技巧",
+          "passed": true,
+          "evidence": "选之前没有标招式名；「A（分三条发）」只是格式说明。"
+        },
+        {
+          "text": "说明了怎么回答（A/B/都行/都不行，或者附一个理由）",
+          "passed": true,
+          "evidence": "「回 A / B / 都行 / 都不行，能加个理由词更好……哪条真把你逗笑了，再标个“笑了”」。"
+        },
+        {
+          "text": "说明了选择会被记下来、攒成偏好或笑点档案，以及会怎么用",
+          "passed": false,
+          "evidence": "说了「结果并进你的笑点档案，给你看一眼，哪条不对直接改」，但没说档案以后怎么用（比如以后按这个口味写示范、改你的句子）。"
+        },
+        {
+          "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+          "passed": true,
+          "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+        }
+      ],
+      "notes": [
+        "③B「我妈问我是不是感冒了」要多想一步：两天没说话，嗓子哑了。"
+      ]
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8571,
+        "passed": 6,
+        "failed": 1,
+        "total": 7,
+        "time_seconds": 188.5,
+        "tokens": 64458,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "至少点出 2 个具体的笑点机会，并引用群聊原文里的细节（'五个闹钟''黑五/跑鞋''还是你懂我'中至少两个）",
+          "passed": true,
+          "evidence": "「五个闹钟」「跑鞋」「还是你懂我」都单独拿出来讲了。"
+        },
+        {
+          "text": "至少一个笑点机会给出 2 条以上升级回复，且每条标注了招式名",
+          "passed": true,
+          "evidence": "按思路分组，每组两条，组名就是招式，比如「抓细节」下面两条都在接五个闹钟。标注是按组标的，不是每条单独标。"
+        },
+        {
+          "text": "给出了至少 1 个可复用的句式骨架或公式",
+          "passed": true,
+          "evidence": "「先支持，最后一句拐弯」，以及结尾的「看频道、抓细节、留话头」三步。"
+        },
+        {
+          "text": "最后给了一个新情境或练习，请用户自己写一句",
+          "passed": false,
+          "evidence": "结尾只说「下次群里再有人立 flag，记住三步」，没有给新情境让用户自己写一句。"
+        },
+        {
+          "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+          "passed": true,
+          "evidence": "示范回复后面没有自带笑声。😂 出现在开头教练自己的话里（「不算大型翻车😂」），不在示范后面；「我是你的第六个闹钟⏰」里的 ⏰ 不算笑声。"
+        },
+        {
+          "text": "示范回复都很短，像真人群聊消息（每条不超过 2 行）",
+          "passed": true,
+          "evidence": "每条示范都是一行。最长的是「五个闹钟的备注：起床跑步 / 起了吗 / 真该起了 / 要不明天吧 / 算了，明年黑五再说」，一行，但信息量偏大。"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.875,
+        "passed": 7,
+        "failed": 1,
+        "total": 8,
+        "time_seconds": 290.0,
+        "tokens": 74935,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "诊断了原版为什么平淡（至少一个具体原因，如缺'想要什么'、转述没演出来、笑点不在最后）",
+          "passed": true,
+          "evidence": "四条：讲的是概要不是现场、少了内心戏、「什么都加了」太笼统、结尾没有落点。"
+        },
+        {
+          "text": "改写版把店员的连珠炮提问用直接引语演了出来，而不是只说'店员问了很多问题'",
+          "passed": true,
+          "evidence": "「Whatkindabreadyouwant?」「Toasted?」「Whatkindacheese?」，还有报菜名式的蔬菜清单。"
+        },
+        {
+          "text": "改写版包含内心独白（'我心想'或【】等）",
+          "passed": true,
+          "evidence": "「我学了十几年英语，这句话里没有一个词我见过。但不能露怯啊」「这题居然蒙对了！」"
+        },
+        {
+          "text": "改写版有收尾句，并回扣了前面出现过的元素",
+          "passed": true,
+          "evidence": "开头「我这辈子考过最难的英语考试……是 Subway」，可选收尾「考试遇到不会的题，还有最后一招——Same as him」回扣了考试。"
+        },
+        {
+          "text": "标出了停顿或表演提示",
+          "passed": true,
+          "evidence": "（停顿）（小声、心虚）（自信多了）等提示，另有一节「讲的时候注意」。"
+        },
+        {
+          "text": "邀请用户参与（补一个笑点、试讲、或回来反馈哪里笑了）",
+          "passed": false,
+          "evidence": "给了成稿和讲法提示，也说了「换成你自己的细节」，但没有请用户补笑点、试讲，或者回来反馈哪里笑了。这条是判断题，可以不同意。"
+        },
+        {
+          "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+          "passed": true,
+          "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8571,
+        "passed": 6,
+        "failed": 1,
+        "total": 7,
+        "time_seconds": 171.4,
+        "tokens": 62847,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "设定了对方角色，并用上资料里的具体信息（建筑、徒步、做饭/烟雾报警器中至少两个）",
+          "passed": true,
+          "evidence": "「我扮演 Ta」，开场白用了建筑（盯着楼梯看，「职业病」），技巧里用了徒步和烟雾报警器。没有单独的角色设定。"
+        },
+        {
+          "text": "说明了暂停或复盘的方式",
+          "passed": true,
+          "evidence": "每轮先以 Ta 的身份回应，再用【点评】说哪里好、哪里能更好；卡住回「提示」，想加难度说「困难模式」。"
+        },
+        {
+          "text": "设定了这次练习的目标",
+          "passed": false,
+          "evidence": "只说了约会本身的目标「让两个人都放松」，没有给这次练习定一个具体目标。"
+        },
+        {
+          "text": "以角色身份发出了开场白，开场白简短（不超过 3 句）",
+          "passed": true,
+          "evidence": "两句：「这家店还挺有意思的……不好意思，刚进门我就盯着那个楼梯看了半天，职业病，别介意哈哈。」"
+        },
+        {
+          "text": "'烟雾报警器'被当作可以接的梗（出现在开场白、提示或技巧里）",
+          "passed": true,
+          "evidence": "第 1 招「接梗」整节围绕报警器：「响一声是五分熟，响两声全熟……」"
+        },
+        {
+          "text": "没有教 PUA 套路（打压、推拉、冷读）",
+          "passed": true,
+          "evidence": "教的是接梗、好奇提问、复述追问。没有打压、推拉、冷读。"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 165.9,
+        "tokens": 63139,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "回应了'天生没有幽默细胞'，说明幽默可以练",
+          "passed": true,
+          "evidence": "「你大概率不是没有幽默细胞」，结尾「主要靠练。幽默更像肌肉」。"
+        },
+        {
+          "text": "用用户提到的具体日常（上课、图书馆、做饭、Costco 中至少两个）当场示范了梗",
+          "passed": true,
+          "evidence": "Costco 三条（和菠菜比赛、鸡胸肉切成丁、Costco 像蹦迪），图书馆一条（八小时有效学习四十分钟）。"
+        },
+        {
+          "text": "提出了 3-5 个具体的挖素材问题",
+          "passed": false,
+          "evidence": "没有提挖素材的问题，只在最后请用户「发一件这周遇到的小事」。「找反差」「说具体」是方法，不是问题。"
+        },
+        {
+          "text": "布置了每天记录素材的作业",
+          "passed": true,
+          "evidence": "「这周每天记一件小事」，还有「记吐槽本：每天记一两件……」。"
+        },
+        {
+          "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+          "passed": true,
+          "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 311.4,
+        "tokens": 75950,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "讲了 Bill Burr 式风格的配方（至少两个要素，如愤怒的态度、观点推到极致、升级、把自己算进去）",
+          "passed": true,
+          "evidence": "四条：先讲理再推到离谱、说出阴暗念头、用画面和表演、骂到顶点反转。"
+        },
+        {
+          "text": "写出了一段基于这件事的段子，用上了具体细节（西装、三周没回消息、leadership 中至少两个）",
+          "passed": true,
+          "evidence": "三个都在，还展开了三周@他、西装领带、讲我做的那页。"
+        },
+        {
+          "text": "段子里有升级（一层比一层更荒谬）",
+          "passed": true,
+          "evidence": "三次@ → 上香 → 比给妈打电话还多 → 西装 → 讲我做的那页 → 未读 99+「遥遥领先」，层层升级。"
+        },
+        {
+          "text": "段子里有把自己也算进去的转折，或者明确说明了靶子是行为而不是人身",
+          "passed": true,
+          "evidence": "「所以真正的傻X是谁？是我们三个」「我们熬了三个星期，熬出来一个老板」。"
+        },
+        {
+          "text": "没有攻击组员的外貌、口音、出身等改变不了的特征",
+          "passed": true,
+          "evidence": "吐槽的是西装、领带这些打扮和行为，没碰外貌、口音、出身。"
+        },
+        {
+          "text": "邀请用户自己写一句或加一句",
+          "passed": true,
+          "evidence": "「写完你自己的版本可以发我」，还建议换成真实细节、再挖一个角度。"
+        },
+        {
+          "text": "没有编造 Bill Burr 的具体段子原文或引语",
+          "passed": true,
+          "evidence": "只推荐了他的播客 Monday Morning Podcast，没有引用段子原文。"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 6,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5714,
+        "passed": 4,
+        "failed": 3,
+        "total": 7,
+        "time_seconds": 384.0,
+        "tokens": 82225,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "回复主体是中文",
+          "passed": true,
+          "evidence": "全文中文。"
+        },
+        {
+          "text": "给出了 2-3 组 A/B 二选一（这一条消息里不超过 3 组）",
+          "passed": false,
+          "evidence": "不是 A/B 二选一：3 组，每组 4–5 条，一共 14 条。"
+        },
+        {
+          "text": "每组的两条用的是同一个素材",
+          "passed": false,
+          "evidence": "每组是同一个大题材（上班、家人、减肥），但每条都是不同的段子，不是同一个素材的两个版本。"
+        },
+        {
+          "text": "选之前没有给 A/B 标招式名，也没有说明哪条用了什么技巧",
+          "passed": true,
+          "evidence": "「每组里我都悄悄换了一个“变量”，先不剧透是什么」。"
+        },
+        {
+          "text": "说明了怎么回答（A/B/都行/都不行，或者附一个理由）",
+          "passed": true,
+          "evidence": "「每组挑 1–2 个最戳你的……格式随意」，还给了回复范例。"
+        },
+        {
+          "text": "说明了选择会被记下来、攒成偏好或笑点档案，以及会怎么用",
+          "passed": true,
+          "evidence": "「再给你写一份简短的“笑点画像”，之后就照这个口味来」，还提醒存一份下次贴回来。"
+        },
+        {
+          "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+          "passed": false,
+          "evidence": "C3「主打一个互相提供情绪价值」用了「主打一个」这类网络流行句式，和 yyds、家人们谁懂啊是一类（这条有判断成分）。另有 A1「饼入膏肓」、C4「哑铃」两个谐音梗。"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.9246,
+        "stddev": 0.1227,
+        "min": 0.7143,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 803.35,
+        "stddev": 141.8901,
+        "min": 533.9,
+        "max": 919.1
+      },
+      "tokens": {
+        "mean": 165318.0,
+        "stddev": 20036.7188,
+        "min": 125884,
+        "max": 182886
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.8323,
+        "stddev": 0.1409,
+        "min": 0.5714,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 251.8667,
+        "stddev": 89.8199,
+        "min": 165.9,
+        "max": 384.0
+      },
+      "tokens": {
+        "mean": 70592.3333,
+        "stddev": 8198.2278,
+        "min": 62847,
+        "max": 82225
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.09",
+      "time_seconds": "+551.5",
+      "tokens": "+94726"
+    }
+  },
+  "notes": [
+    "Assertions mostly check structure (Chinese, labels, exercise, no canned laughter), not whether anything is funny. Funniness needs the user's blind pick.",
+    "Eval 5 (Bill Burr) passes 8/8 in both configs, so it does not discriminate. Its difference is length and density: with_skill 1.9k chars, baseline 5.2k chars with many more jokes.",
+    "with_skill replies are much shorter: 1.3-2.4k chars vs 2.6-5.2k. They teach one move per turn and ask for real details instead of inventing them. The baseline hands over finished long scripts (eval 2, eval 5).",
+    "Cost: with_skill takes about 3.2x the time (803s vs 252s) and 2.3x the tokens (165k vs 71k). Every with_skill run read ai-humor-engine.md or another reference and ran the candidate/filter loop. For real-time chat help this may be too slow; a light mode is worth considering.",
+    "with_skill misses: eval 4 demos only one joke (Costco); the 'short' rule was over-applied when the user needs proof their life has material. Eval 6 changed the content as well as the length in pair 3, and never said how the taste profile will be used.",
+    "Baseline misses: no practice line (eval 1), no practice goal (eval 3), no material-mining questions (eval 4), lists of 4-5 jokes instead of A/B pairs plus an internet catchphrase (eval 6), and no invitation to try or report back (eval 2).",
+    "One run per configuration, so the stddev is across evals, not across runs."
+  ]
+}

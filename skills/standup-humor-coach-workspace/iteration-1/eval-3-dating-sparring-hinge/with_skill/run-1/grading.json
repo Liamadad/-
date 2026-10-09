@@ -1,0 +1,53 @@
+{
+  "expectations": [
+    {
+      "text": "回复主体是中文",
+      "passed": true,
+      "evidence": "全文中文。"
+    },
+    {
+      "text": "设定了对方角色，并用上资料里的具体信息（建筑、徒步、做饭/烟雾报警器中至少两个）",
+      "passed": true,
+      "evidence": "角色小周：建筑系、刚熬完模型 deadline、爱自嘲、喜欢徒步、做饭水平以资料为准；开场白也用了 studio、做模型、胶水。"
+    },
+    {
+      "text": "说明了暂停或复盘的方式",
+      "passed": true,
+      "evidence": "「随时打“复盘”，我出戏，逐句回放给你看」。"
+    },
+    {
+      "text": "设定了这次练习的目标",
+      "passed": true,
+      "evidence": "「你的目标：接住小周抛的 3 个点。不用好笑，接住就算；两个人一起笑一次，算奖励」。"
+    },
+    {
+      "text": "以角色身份发出了开场白，开场白简短（不超过 3 句）",
+      "passed": true,
+      "evidence": "三句：「嗨，我是小周！」「抱歉有点狼狈，刚从 studio 出来，昨晚做模型做到四点。」「这个是胶水，洗不掉了。」"
+    },
+    {
+      "text": "'烟雾报警器'被当作可以接的梗（出现在开场白、提示或技巧里）",
+      "passed": true,
+      "evidence": "唯一的技巧示范就拿它做例子：「全靠？？那它响一声算几分熟？」"
+    },
+    {
+      "text": "没有教 PUA 套路（打压、推拉、冷读）",
+      "passed": true,
+      "evidence": "只教「接住」：重复关键词 + 一点情绪 + 追问细节。没有打压、推拉、冷读。"
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 679
+  },
+  "user_notes_summary": {
+    "uncertainties": [
+      "跳过了笑点校准：SKILL.md 里已经有 10 轮的笑点档案，用户要的是陪练。"
+    ]
+  }
+}

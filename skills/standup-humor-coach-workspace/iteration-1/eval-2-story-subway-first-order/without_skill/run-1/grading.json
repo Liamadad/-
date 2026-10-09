@@ -1,0 +1,56 @@
+{
+  "expectations": [
+    {
+      "text": "回复主体是中文",
+      "passed": true,
+      "evidence": "全文中文。"
+    },
+    {
+      "text": "诊断了原版为什么平淡（至少一个具体原因，如缺'想要什么'、转述没演出来、笑点不在最后）",
+      "passed": true,
+      "evidence": "四条：讲的是概要不是现场、少了内心戏、「什么都加了」太笼统、结尾没有落点。"
+    },
+    {
+      "text": "改写版把店员的连珠炮提问用直接引语演了出来，而不是只说'店员问了很多问题'",
+      "passed": true,
+      "evidence": "「Whatkindabreadyouwant?」「Toasted?」「Whatkindacheese?」，还有报菜名式的蔬菜清单。"
+    },
+    {
+      "text": "改写版包含内心独白（'我心想'或【】等）",
+      "passed": true,
+      "evidence": "「我学了十几年英语，这句话里没有一个词我见过。但不能露怯啊」「这题居然蒙对了！」"
+    },
+    {
+      "text": "改写版有收尾句，并回扣了前面出现过的元素",
+      "passed": true,
+      "evidence": "开头「我这辈子考过最难的英语考试……是 Subway」，可选收尾「考试遇到不会的题，还有最后一招——Same as him」回扣了考试。"
+    },
+    {
+      "text": "标出了停顿或表演提示",
+      "passed": true,
+      "evidence": "（停顿）（小声、心虚）（自信多了）等提示，另有一节「讲的时候注意」。"
+    },
+    {
+      "text": "邀请用户参与（补一个笑点、试讲、或回来反馈哪里笑了）",
+      "passed": false,
+      "evidence": "给了成稿和讲法提示，也说了「换成你自己的细节」，但没有请用户补笑点、试讲，或者回来反馈哪里笑了。这条是判断题，可以不同意。"
+    },
+    {
+      "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+      "passed": true,
+      "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "failed": 1,
+    "total": 8,
+    "pass_rate": 0.875
+  },
+  "execution_metrics": {
+    "output_chars": 1929
+  },
+  "user_notes_summary": {
+    "uncertainties": []
+  }
+}

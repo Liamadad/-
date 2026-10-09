@@ -1,0 +1,46 @@
+{
+  "expectations": [
+    {
+      "text": "回复主体是中文",
+      "passed": true,
+      "evidence": "全文中文。"
+    },
+    {
+      "text": "回应了'天生没有幽默细胞'，说明幽默可以练",
+      "passed": true,
+      "evidence": "「你大概率不是没有幽默细胞」，结尾「主要靠练。幽默更像肌肉」。"
+    },
+    {
+      "text": "用用户提到的具体日常（上课、图书馆、做饭、Costco 中至少两个）当场示范了梗",
+      "passed": true,
+      "evidence": "Costco 三条（和菠菜比赛、鸡胸肉切成丁、Costco 像蹦迪），图书馆一条（八小时有效学习四十分钟）。"
+    },
+    {
+      "text": "提出了 3-5 个具体的挖素材问题",
+      "passed": false,
+      "evidence": "没有提挖素材的问题，只在最后请用户「发一件这周遇到的小事」。「找反差」「说具体」是方法，不是问题。"
+    },
+    {
+      "text": "布置了每天记录素材的作业",
+      "passed": true,
+      "evidence": "「这周每天记一件小事」，还有「记吐槽本：每天记一两件……」。"
+    },
+    {
+      "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+      "passed": true,
+      "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333
+  },
+  "execution_metrics": {
+    "output_chars": 1428
+  },
+  "user_notes_summary": {
+    "uncertainties": []
+  }
+}
