@@ -1,0 +1,368 @@
+<title>幽默教练盲测</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap">
+<style>
+/* Layout: one scenario per screen. The user's own message sits on top as a chat bubble,
+   the two replies sit below as cards (tabs on a phone, side by side on a wide screen),
+   and each card ends with a laugh meter, like a judge's scorecard. */
+:root{
+  --bg:#F5F3F7; --surface:#FFFFFF; --ink:#241B2F; --muted:#665C73; --line:#E1DBE8;
+  --plum:#5A2D6E; --plum-soft:#EFE6F4; --spot:#F2B544; --spot-ink:#241B2F;
+  --bubble:#5A2D6E; --bubble-ink:#FFFFFF; --ok:#2E7D4F; --warn:#9A5200;
+  --font-display:"ZCOOL KuaiLe","Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --font-body:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#18121E; --surface:#221A2A; --ink:#EEE7F3; --muted:#A99DB6; --line:#3A2F45;
+    --plum:#CDA6E0; --plum-soft:#2E2238; --spot:#F2B544; --spot-ink:#18121E;
+    --bubble:#432A55; --bubble-ink:#F6EEFA; --ok:#6CC592; --warn:#F0A85A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#18121E; --surface:#221A2A; --ink:#EEE7F3; --muted:#A99DB6; --line:#3A2F45;
+  --plum:#CDA6E0; --plum-soft:#2E2238; --spot:#F2B544; --spot-ink:#18121E;
+  --bubble:#432A55; --bubble-ink:#F6EEFA; --ok:#6CC592; --warn:#F0A85A;
+  color-scheme:dark;
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.75}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:20px 56px;display:flex;flex-direction:column;gap:20px}
+h1,h2{font-family:var(--font-display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:.02em}
+h1{font-size:30px;line-height:1.2;color:var(--plum)}
+h2{font-size:23px;line-height:1.3}
+.intro{margin:0;color:var(--muted);max-width:42em}
+.top{display:flex;flex-direction:column;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:14px;min-width:44px;min-height:36px;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;font-variant-numeric:tabular-nums}
+.chip.done{background:var(--plum-soft);color:var(--plum);border-color:transparent}
+.chip[aria-current="step"]{border-color:var(--plum);color:var(--plum);font-weight:700}
+.status{font-size:13px;color:var(--muted);margin:0}
+.status.ok{color:var(--ok)} .status.warn{color:var(--warn)}
+.scene{display:flex;flex-direction:column;gap:16px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.08em;margin:0 0 4px;font-variant-numeric:tabular-nums}
+.ask{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.ask-label{font-size:12px;color:var(--muted);letter-spacing:.08em}
+.bubble{max-width:min(100%,640px);background:var(--bubble);color:var(--bubble-ink);border-radius:18px 18px 4px 18px;padding:12px 16px;white-space:pre-wrap;overflow-wrap:anywhere}
+.tabs{display:none;gap:8px}
+.tab{flex:1;font:inherit;min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{border-color:var(--plum);box-shadow:inset 0 0 0 1px var(--plum);font-weight:700}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.card{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column}
+.card-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:14px 18px 0}
+.card-name{font-family:var(--font-display);font-size:22px;color:var(--plum)}
+.card-badge{font-size:13px;color:var(--muted)}
+.md{padding:4px 18px 8px;overflow-wrap:anywhere}
+.md p{margin:.6em 0}
+.md h1,.md h2,.md h3,.md h4{font-family:var(--font-body);font-weight:700;font-size:16px;margin:1.2em 0 .4em;letter-spacing:0}
+.md blockquote{margin:.6em 0;padding:2px 0 2px 14px;border-left:3px solid var(--line);color:var(--ink)}
+.md ul,.md ol{padding-left:1.4em;margin:.5em 0}
+.md li{margin:.25em 0}
+.md hr{border:0;border-top:1px dashed var(--line);margin:1.2em 0}
+.md strong{font-weight:700}
+.meter{border-top:1px solid var(--line);padding:12px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.q{font-size:14px;color:var(--muted);margin:0}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font:inherit;font-size:14px;min-height:40px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.opt[aria-pressed="true"]{background:var(--spot);border-color:var(--spot);color:var(--spot-ink);font-weight:700}
+.swap{display:none;align-self:flex-start;font:inherit;font-size:14px;background:none;border:0;color:var(--plum);padding:4px 0;cursor:pointer}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+textarea{font:inherit;font-size:15px;width:100%;box-sizing:border-box;min-height:84px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
+.nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.btn{font:inherit;min-height:44px;padding:8px 18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--plum);border-color:var(--plum);color:var(--surface);font-weight:700}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+:is(.chip,.tab,.opt,.btn,.swap,textarea):focus-visible{outline:2px solid var(--plum);outline-offset:2px}
+.results{display:flex;flex-direction:column;gap:16px}
+.rows{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.row{display:flex;flex-direction:column;gap:2px;padding:10px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row-title{font-weight:700}
+.row-detail{color:var(--muted);font-size:14px}
+.tally{display:flex;flex-wrap:wrap;gap:12px}
+.stat{flex:1 1 220px;min-width:0;border-radius:12px;background:var(--plum-soft);padding:12px 14px}
+.stat b{display:block;font-family:var(--font-display);font-weight:400;font-size:26px;color:var(--plum);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+@media (max-width:959px){
+  .pair{grid-template-columns:1fr}
+  .tabs{display:flex}
+  .swap{display:inline-block}
+  .pair[data-active="A"] .card[data-side="B"],.pair[data-active="B"] .card[data-side="A"]{display:none}
+}
+@media (prefers-reduced-motion:no-preference){.opt,.chip,.tab{transition:background-color .15s,border-color .15s}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>幽默教练盲测</h1>
+    <p class="intro">每个场景是你发的同一条消息，配两版回复：一版装了幽默教练 skill，一版没装，顺序打乱了。给每版选一个笑声等级，再选你更想用哪版来练。6 个场景都打完，最后一页揭晓。</p>
+    <nav class="chips" id="chips" aria-label="场景"></nav>
+    <p class="status" id="status" role="status">正在连接存储…</p>
+  </header>
+  <main id="main"></main>
+</div>
+
+<script>
+const DATA = [{"id": "s1", "title": "群聊复盘：五个闹钟", "prompt": "帮我复盘一下这段群聊，我感觉我又把天聊死了😭 想知道怎么回才能更好笑\n\n【大学室友群】\n阿杰：兄弟们我宣布，从明天开始我要早睡早起，每天6点起床跑步\n小雨：？？？你上次说这话还是去年黑五买跑鞋的时候\n阿杰：这次是认真的！闹钟都设好了，设了五个\n我：加油，早睡早起身体好\n阿杰：谢谢，还是你懂我\n小雨：……\n（然后群里就没人说话了）", "A": "<p>还没死透，明早还能救。先看看它是怎么凉的。<\/p>\n<p>群里在玩一个游戏：小雨损，阿杰嘴硬。你那句「加油，早睡早起身体好」是站在场外喊加油，话没错，但没给人留下能接的东西。<\/p>\n<p>不过它没白发。阿杰拿它当挡箭牌，回了句「还是你懂我」，你那句正经话就成了半个笑话：前半个。后半个你没发，天就凉在这儿。<\/p>\n<p>你一共有三次机会，第三次还没过期。<\/p>\n<p><strong>机会一：「设了五个」<\/strong><\/p>\n<p>阿杰想拿五个闹钟证明自己认真，其实是自己递了把柄：真能起，一个就够。你接的是最大的话题（早睡早起），该抓的是最怪的那个数。<\/p>\n<ul>\n<li><strong>稳<\/strong> · 具体化（specificity）：「加油，我相信你。最多第三个。」<\/li>\n<li><strong>中<\/strong> · 如果这是真的（if this is true）：「五个？那你是6点起床，还是6点开始起床？」<\/li>\n<li><strong>辣<\/strong> · 假装指控（false accusation）：「这叫预谋赖床。」<\/li>\n<\/ul>\n<p>第一条只改了你的后半句：把谁都能说的「早睡早起身体好」，换成只有这段对话里才有的数。<\/p>\n<p><strong>机会二：「还是你懂我」<\/strong><\/p>\n<p>阿杰把你拉进了他的阵营。被拉进阵营，正是反水的好时机：你前面那句正经话，会自动变成铺垫。<\/p>\n<ul>\n<li><strong>稳<\/strong> · 自嘲（self-deprecation），接在小雨的「……」后面：「小雨，我错了」<\/li>\n<li><strong>中<\/strong> · 误导反转（misdirection），分两条发：<\/li>\n<\/ul>\n<blockquote>\n<p>我：懂<\/p>\n<p>我：我只是比小雨能忍<\/p>\n<\/blockquote>\n<p><strong>机会三（还没过期）：明早 6 点<\/strong><\/p>\n<p>群聊凉了别硬接，存着，等梗自己回来。阿杰那边明早 6 点多，在群里发：<\/p>\n<ul>\n<li><strong>中<\/strong> · 回扣（callback）：「@阿杰 第几个了？」<\/li>\n<\/ul>\n<p>不用解释，全群都懂。反应慢的人最该练回扣：不考速度，考记性。小雨那句「去年黑五买跑鞋」就是回扣：没编笑话，只是记得那双鞋。<\/p>\n<p><strong>存进弹药库<\/strong><\/p>\n<ol>\n<li>有人拿一个数字证明自己 →「那你是 A，还是 B？」A 是他说的，B 是那个数字暴露的真相。<\/li>\n<li>有人拉你站队（「还是你懂我」「你评评理」）→ 先回「懂」，另起一条，反水。<\/li>\n<\/ol>\n<p><strong>轮到你<\/strong><\/p>\n<p>假设明早 7:40，阿杰在群里说：<\/p>\n<blockquote>\n<p>阿杰：今天没跑成，第五个闹钟没响<\/p>\n<\/blockquote>\n<p>先圈出最怪的那个词，再回一句发我。限时 30 秒，不求完美。<\/p>", "B": "<p>先安慰一句：不算大型翻车😂 但话头确实是在你那句断的，原因也很好找——<strong>你接错频道了<\/strong>。<\/p>\n<h3>问题出在哪<\/h3>\n<p><strong>1. 大家在玩，你在认真<\/strong><\/p>\n<p>小雨那句“你上次说这话还是去年黑五买跑鞋的时候”，等于开了一局“吐槽阿杰”。阿杰回“闹钟设了五个”，其实是自己又递了个梗过来——真起得来的人，哪需要设五个闹钟？<\/p>\n<p>球都传到你面前了，你接住，然后揣进了兜里。<\/p>\n<p><strong>2. “加油，早睡早起身体好”是句万能句<\/strong><\/p>\n<p>这句话发给谁、什么时候发都成立，跟跑鞋、黑五、五个闹钟都没关系。万能句没有话头，别人除了回“谢谢”没东西可接——阿杰也确实只回了“谢谢”。<\/p>\n<p><strong>3. 小雨被晾在那了<\/strong><\/p>\n<p>小雨在等人一起吐槽，结果阿杰拿你当了挡箭牌：“还是你懂我”。小雨孤立无援，只剩一个“……”。<\/p>\n<p>（说句公道话，“还是你懂我”+“……”这一下其实挺好笑的，只是笑完没人往下接。）<\/p>\n<h3>当时可以怎么回<\/h3>\n<p><strong>抓细节：“五个闹钟”是全场最大的送分题<\/strong><\/p>\n<ul>\n<li>“所以明天的晨练是：按掉五个闹钟”<\/li>\n<li>“我猜一下五个闹钟的备注：起床跑步 / 起了吗 / 真该起了 / 要不明天吧 / 算了，明年黑五再说”<\/li>\n<\/ul>\n<p><strong>顺着小雨的梗往下接<\/strong><\/p>\n<ul>\n<li>“那双跑鞋吊牌还没剪吧”<\/li>\n<li>“跑鞋：一年了，我终于要见到早上六点的太阳了吗”<\/li>\n<\/ul>\n<p><strong>先支持，最后一句拐弯<\/strong>（最接近你原本的风格，最好上手）<\/p>\n<ul>\n<li>“加油！我相信你，就像去年黑五我也相信你一样”<\/li>\n<li>“支持！已截图，明年今天发给你”<\/li>\n<\/ul>\n<p><strong>把它变成群活动<\/strong>（最能把天聊活）<\/p>\n<ul>\n<li>“来打个赌：明早六点半前在群里发跑步截图，发不出来就给群里发红包”<\/li>\n<\/ul>\n<p>这句一出，小雨百分百会跟一句“我押他起不来”，群就热起来了。<\/p>\n<h3>你其实还有第二次机会<\/h3>\n<p>阿杰说“谢谢，还是你懂我”的时候，他以为你是队友——这正好是反转的完美铺垫：<\/p>\n<blockquote>\n<p>“就是因为懂你，我刚跟小雨赌了顿火锅，押你撑不过三天”<\/p>\n<\/blockquote>\n<p>“假队友当场倒戈”这种反转，在熟人群里基本稳定好笑。而且小雨有了同伙，阿杰得出来自证，话题自然就续上了。<\/p>\n<h3>现在还能救<\/h3>\n<p>明早六点半左右（他五个闹钟都响完之后），在群里发一句：<\/p>\n<blockquote>\n<p>“@阿杰 我是你的第六个闹钟⏰”<\/p>\n<\/blockquote>\n<p>或者直接甩一张中老年早安表情包（荷花配“早上好”那种）。这样昨天那句“早睡早起身体好”就从冷场发言变成了伏笔——你只是在走长辈人设而已。<\/p>\n<p>当然，如果阿杰真起来跑了，那就真诚地夸他。真诚不是错，只是得挑时候用。<\/p>\n<p>下次群里再有人立 flag，记住三步：<strong>看频道、抓细节、留话头<\/strong>。<\/p>", "skill": "A"}, {"id": "s2", "title": "讲故事：第一次去 Subway", "prompt": "我想把这件事讲得好笑一点，下周朋友聚会想讲。\n\n事情是这样的：我刚来美国的时候第一次去 Subway 点三明治，店员一直问问题，面包要哪种、要不要烤、芝士要哪个、蔬菜加哪些、酱要什么，语速超快，我基本听不懂，就一直说 yes。最后拿到一个什么都加了的巨型三明治，味道特别奇怪，但我还是吃完了。\n\n上次我跟朋友讲这个，大家就礼貌性地笑了一下😅", "A": "<p>这个故事本身挺好的，在美国的人差不多都被 Subway 点餐“考”过，大家很容易有共鸣。上次只换来礼貌性的笑，多半是讲法的问题，不是故事不好笑。<\/p>\n<h3>问题出在哪<\/h3>\n<ol>\n<li><strong>你讲的是“概要”，不是“现场”。<\/strong> “店员一直问、我一直说 yes”是一句总结，好笑的地方全被压缩掉了。真正好笑的是那一来一回：他问 “What kind of bread?”，你答 “Yes.”。这一段得演出来，光转述不行。<\/li>\n<li><strong>少了你的内心戏。<\/strong> “我听不懂”只是交代事实，“我学了十几年英语，他这句话里没有一个词我见过”才是笑话。大家笑的往往不是发生了什么，而是你当时脑子里在想什么。<\/li>\n<li><strong>“什么都加了”太笼统。<\/strong> 越具体越好笑：墨西哥辣椒、黑橄榄、酸黄瓜，再加五种酱挤在一起。<\/li>\n<li><strong>结尾没有落点。<\/strong> “但我还是吃完了”其实是最好的包袱位，只是缺一个出人意料的“为什么”。<\/li>\n<\/ol>\n<h3>改写版（可以直接拿去讲）<\/h3>\n<blockquote>\n<p>括号里是表演提示。店员的台词一口气说完，越快越好。<\/p>\n<\/blockquote>\n<p>我这辈子考过最难的英语考试，不是托福，也不是 GRE——是 Subway。<\/p>\n<p>刚来美国那周，我第一次去 Subway。进门前我在心里练了一路：“Hi, can I have a sandwich?” 发音特别标准。<\/p>\n<p>我一说完，店员看着我，那个眼神就是：……对，我们这儿就是卖这个的。<\/p>\n<p>然后，考试正式开始。<\/p>\n<p>“Whatkindabreadyouwant?”<\/p>\n<p>我学了十几年英语，这句话里没有一个词我见过。但不能露怯啊，我就（小声、心虚）：“Yes.”<\/p>\n<p>他愣了两秒，然后自己给我拿了一根面包。（停顿）这是他第一次替我做决定，但不是最后一次。<\/p>\n<p>“Toasted?”<\/p>\n<p>“Yes.”<\/p>\n<p>——这题居然蒙对了！我当时特别骄傲，觉得自己听力进步了。<\/p>\n<p>“Whatkindacheese?”<\/p>\n<p>（自信多了）“Yes.”<\/p>\n<p>他想了想，给我放了两种。<\/p>\n<p>到了蔬菜，他开始给我表演英文版《报菜名》：“lettuce-tomato-cucumber-onion-pickles-olives-jalapeños……”<\/p>\n<p>“Yes.”<\/p>\n<p>他停下来，特别认真地看着我，只问了一个词：“……Everything?”<\/p>\n<p>这是我进门以来唯一听懂的一个词。我激动坏了：“YES!!!”<\/p>\n<p>（停顿）后来我才明白，那是他在给我最后一次机会。<\/p>\n<p>最后是酱。我已经杀红眼了，他手刚伸向瓶子，我就：“Yes! Yes! Yes!”<\/p>\n<p>他一瓶一瓶挤上去，挤完那个三明治上红一道、黄一道、白一道，跟地铁线路图似的——不愧是 Subway。<\/p>\n<p>他包了三次才包上，然后用两只手递给我，眼神里带着一种……敬佩。<\/p>\n<p>后面排队的大哥往后退了一步。<\/p>\n<p>别人去 Subway 是点个三明治，我是把整个 Subway 点了一遍。<\/p>\n<p>第一口，甜的。第二口，辣的。第三口，酸的。第四口，咬到一颗黑橄榄——我开始思考我为什么要来美国。<\/p>\n<p>但是，我吃完了。<\/p>\n<p>（停顿）<\/p>\n<p>不是因为好吃。是因为结账的时候，我脑子里自动乘了个七——快一百块人民币。<\/p>\n<p>我是含着眼泪吃完的。一半是心疼钱，一半是被墨西哥辣椒辣的。<\/p>\n<p><strong>加分收尾（可选）：<\/strong><\/p>\n<p>第二次去，我吸取教训了：不管他问什么，我都说 No。<\/p>\n<p>我拿到了一根面包。光的。<\/p>\n<p>后来我终于想起来，考试遇到不会的题，还有最后一招——<\/p>\n<p>（指着前面排队的人）“Same as him.”<\/p>\n<h3>讲的时候注意<\/h3>\n<ul>\n<li><strong>快慢反差最关键。<\/strong> 店员的台词越快越好，像开了两倍速；你的 “Yes” 从心虚的小声，一路变成 “YES!!!”。这个反差比任何一句台词都重要。<\/li>\n<li><strong>让大家替你说 “Yes”。<\/strong> 讲到第三、四个问题时，大家已经摸清套路了。店员问完你停一下、看着他们，经常会有人替你喊出来，这时候笑声最大。<\/li>\n<li><strong>包袱前停顿，说完别解释。<\/strong> “乘了个七”前面停一下；“Same as him” 说完就收，不用补一句“就是抄嘛”。也别自己先笑，越一本正经越好笑。<\/li>\n<li><strong>别预告“我给你们讲个超好笑的事”。<\/strong> 预告会把期待拉太高。等有人聊到点餐、英语、刚来美国的时候顺势讲，效果最好。<\/li>\n<li><strong>换成你自己的细节。<\/strong> 没考过 GRE 就换成雅思或四六级，价格换成你当时实际付的。“Can I have a sandwich”、报菜名、第二次去那段都是我加的。聚会讲故事适度夸张没问题，但只留你自己讲着不心虚的部分。<\/li>\n<\/ul>\n<p>完整版大概两分钟。如果现场只适合插几句，就只讲骨架：“最难的考试”、“Everything?”、“乘了个七”、“Same as him”，一分钟以内也有四个笑点。<\/p>", "B": "<p>朋友不是不给面子，是你自己剧透了。<\/p>\n<p>你一说\"听不懂，就一直说 yes\"，大家已经猜到结局是\"什么都加了\"。猜得到的结尾，只值一个礼貌笑。<\/p>\n<p>真正没人猜得到的，是你最后随口带过的半句：\"但我还是吃完了。\"笑点在这儿，被你当总结用掉了。<\/p>\n<p><strong>前提<\/strong>（这件事好笑在哪）：在 Subway，你没听懂的每一个问题，最后都会变成三明治里的一层。<\/p>\n<p>先改两处。<\/p>\n<p><strong>1. 别转述，演出来<\/strong><\/p>\n<p>改前：<\/p>\n<blockquote>\n<p>店员一直问问题……语速超快，我基本听不懂，就一直说 yes。<\/p>\n<\/blockquote>\n<p>改后：<\/p>\n<blockquote>\n<p>［学店员，一口气］\"What kind of bread?\"<br />\n【没听懂。老规矩：不会就蒙。】<br />\n我［笃定］：\"Yes.\"<br />\n\"Toasted?\"<br />\n\"Yes.\"【这题蒙对了。】<br />\n［越来越快］\"Cheese?\" \"Yes.\" \"Veggies?\" \"Yes.\" \"Sauce?\" \"Yes.\"<br />\n／到现在，那还是我在美国唯一一次对答如流。<\/p>\n<\/blockquote>\n<p>\"听不懂\"不用说，演出来大家看得见。招式：表演（act-out）+ 内心独白（inner monologue）。【】里是我猜的，换成你当时真实的念头。<\/p>\n<p><strong>2. 笑点挪到\"吃完了\"<\/strong><\/p>\n<p>改前：<\/p>\n<blockquote>\n<p>最后拿到一个什么都加了的巨型三明治，味道特别奇怪，但我还是吃完了。<\/p>\n<\/blockquote>\n<p>改后：<\/p>\n<blockquote>\n<p>店员把三明治递过来。所有能加的，都加了。<br />\n味道特别奇怪。但我吃完了，一口没剩。<br />\n／老师说过：错题，要吃透。<\/p>\n<\/blockquote>\n<p>\"全加了\"一句带过。招式：先定结尾，再倒推铺垫（begin with the ending），前面那句\"不会就蒙\"就是给\"吃透\"埋的。讲到\"吃透\"说完就停，别自己先笑。<\/p>\n<p><strong>还缺几个真细节<\/strong>，这些我不替你编。挑记得的答，一句话就行：<\/p>\n<ol>\n<li>你为什么没让店员再说一遍？后面排着人，还是怕露馅？<\/li>\n<li>你对 \"What kind of bread?\" 说 Yes 的时候，店员什么反应？<\/li>\n<li>那个三明治最离谱的一个画面：多大、多少钱，还是最怪的那一口？<\/li>\n<li>吃的时候，你知道是自己点坏了吗？还是以为美国三明治就这味？<\/li>\n<\/ol>\n<p>答完我给你拼一个 60 秒的聚会版，停顿和表演都标好。<\/p>", "skill": "B"}, {"id": "s3", "title": "约会陪练：Hinge 第一次见面", "prompt": "下周六第一次跟 Hinge 上认识的人见面，Ta 是学建筑的，资料里写喜欢徒步和做饭，还说自己\"做饭全靠烟雾报警器提醒火候\"。我一紧张就不会说话，更别说幽默了。你能陪我练练吗？", "A": "<p>当然可以，我们来练！见面前多练几轮，到时候心里会有底很多。<\/p>\n<p>先帮你减个压：第一次见面不需要你多幽默，目标只是让两个人都放松。而且你运气不错——Ta 资料里那句“做饭全靠烟雾报警器提醒火候”，说明 Ta 爱自嘲，等于已经把梗递到你手上了。<strong>你不用自己造笑点，接住 Ta 的就够了。<\/strong><\/p>\n<h3>紧张时记住这三招<\/h3>\n<p><strong>1. 接梗：顺着 Ta 的话往前多走一步<\/strong>（是陪 Ta 一起玩，不是真吐槽 Ta 的厨艺）<br />\n- “所以报警器响一声是五分熟，响两声全熟，响三声……就该点外卖了？”<br />\n- “那你家报警器算正式员工了吧，有给它发工资吗？”<br />\n- 也可以拿自己的糗事回一个自嘲，比如“我比你还惨，我家报警器从来没响过——因为我根本不开火”（前提是真的）。<\/p>\n<p>聊开之后，过一阵再呼应一次往往更好笑。比如 Ta 后来提到周末想做饭，你就说：“那记得提前跟报警器打声招呼。”<\/p>\n<p><strong>2. 好奇比好笑重要：问具体的问题<\/strong><br />\n- 建筑：“学建筑的人逛街，是不是会忍不住给每栋楼打分？”<br />\n- 徒步：“最近走的哪条线？有没有走到一半想原地放弃的时候？”<br />\n- 把两个点串起来，笑点自己就出来了：“做模型能精确到毫米，做饭却全靠报警器？”“那去徒步野炊怎么办，山上可没有报警器啊。”<\/p>\n<p><strong>3. 大脑空白时：复述 + 追问<\/strong><br />\n抓住 Ta 话里的一个词反问回去就行。Ta 说“上周去爬了 XX 山”，你就接“XX 山？累不累？风景值不值？”。真卡住了，笑着说一句“我有点紧张哈哈”也完全没问题——真诚本身就加分，而且 Ta 多半也紧张。<\/p>\n<h3>开始实战<\/h3>\n<p>规则很简单：<br />\n- 我扮演 Ta，你就像当天真在说话那样回我。不用照搬上面的例句，用你自己平时的说话方式就好。<br />\n- 每轮我先以 Ta 的身份回应，再用【点评】简单说说哪里好、哪里可以更好。<br />\n- 卡住了就回“提示”；觉得太简单就说“困难模式”（Ta 话很少，需要你来带节奏）。<\/p>\n<p><strong>场景：<\/strong> 周六下午，一家咖啡店。你们刚打完招呼、点好喝的，坐了下来。<\/p>\n<blockquote>\n<p><strong>Ta：<\/strong> “这家店还挺有意思的……不好意思，刚进门我就盯着那个楼梯看了半天，职业病，别介意哈哈。”<\/p>\n<\/blockquote>\n<p>轮到你了，你会怎么接？<\/p>\n<p>（另外，方便的话告诉我：你们实际约的是喝咖啡、吃饭还是别的？你自己平时喜欢做什么？我好把场景调得更真实，也帮你找找你们俩的共同话题。）<\/p>", "B": "<p>来，练。先帮你卸掉一半压力：你周六是去约会，不是去开专场。<\/p>\n<p>第一次见面，目标是<strong>一起笑<\/strong>，不是你一个人把 Ta 逗笑。Ta 抛个点，你接住，再把话头还回去，就赢了一大半。而且 Ta 已经先递了一个梗：自己拿做饭开涮的人，就是在等人接这句。Ta 先开的玩笑，你跟着玩最安全，别比 Ta 更损就行。<\/p>\n<p>紧张的时候，脑子第一个罢工的就是\"想\"。所以今天只练一个不用想的动作，<strong>接住<\/strong>（yes, and 的最低配）：<\/p>\n<p><strong>重复关键词（语调上扬）+ 一点情绪 + 追问一个具体细节<\/strong><\/p>\n<blockquote>\n<p>Ta：「我做饭真的全靠烟雾报警器。」<\/p>\n<p>你：「全靠？？那它响一声算几分熟？」<\/p>\n<\/blockquote>\n<p>不求好笑。球接住了，Ta 自己会往下编。抓哪个词？挑最怪的那个，别挑最大的话题。脑子一片空白的时候，只做第一步也算数：一句「全靠？？」就是一拍，还白送你两秒。<\/p>\n<p><strong>开练<\/strong><\/p>\n<ul>\n<li>我演 Ta，先叫小周：建筑系，刚熬完一个模型 deadline，爱自嘲，喜欢徒步，做饭水平以资料为准。<\/li>\n<li>场景：周六下午，咖啡店，刚见面。<\/li>\n<li>你的目标：接住小周抛的 3 个点。不用好笑，接住就算；两个人一起笑一次，算奖励。<\/li>\n<li>我不假笑：接得好我才笑，接不住我就像真人一样，客气地往下聊。<\/li>\n<li>第一轮不计时。你打的字，就当是你张嘴说的话。随时打\"复盘\"，我出戏，逐句回放给你看。<\/li>\n<\/ul>\n<p>你们要是约在别处，或者见面说英文，告诉我，下一轮按真的来。<\/p>\n<hr />\n<p><strong>小周<\/strong>：［拉开椅子坐下］嗨，我是小周！抱歉有点狼狈，刚从 studio 出来，昨晚做模型做到四点。［摊开手］这个是胶水，洗不掉了。<\/p>", "skill": "B"}, {"id": "s4", "title": "没素材：生活太无聊", "prompt": "我觉得我的生活太无聊了，每天就是上课、泡图书馆、回宿舍做饭，周末最多去趟 Costco，根本没什么好笑的事可以讲。为什么别人总有那么多段子？我是不是天生没有幽默细胞？", "A": "<p>先说结论：你大概率不是没有幽默细胞，只是还没开始“收集素材”。<\/p>\n<p>而且你这句“周末最多去趟 Costco”，其实已经有点好笑了。把 Costco 当成一周的娱乐巅峰，这本身就是一个现成的段子开头。<\/p>\n<h3>别人的段子是从哪来的？<\/h3>\n<p>会讲段子的人，生活通常没比你精彩多少。区别在于：<\/p>\n<ol>\n<li><strong>他们注意到了。<\/strong> 同样是排队结账，你在刷手机，他在想“为什么我每次选的那一队都最慢”。<\/li>\n<li><strong>他们讲过很多遍。<\/strong> 你听到的那个“随口一说”的故事，很可能已经讲给五个人听过，每次改一点，越讲越顺。你看到的是成品，没看到草稿。<\/li>\n<li><strong>他们不怕冷场。<\/strong> 好笑的人也经常讲砸，只是不太当回事，下次接着讲。<\/li>\n<\/ol>\n<p>很多脱口秀演员的素材就是租房、上班、相亲、跟爸妈打电话。美剧《宋飞正传》常被称为“一部关于‘什么都没有’的剧”，讲的全是在停车场找车、在餐厅等位这种鸡毛蒜皮，却成了最经典的情景喜剧之一。平淡不是障碍，反而是好素材：正因为大家都经历过，才最容易共鸣。<\/p>\n<h3>拿你的生活试试<\/h3>\n<p>你的日常里就藏着一个现成的矛盾：<strong>Costco 是给一家五口设计的，而你一个人住宿舍。<\/strong> 光这一个点就能挖出好几个段子：<\/p>\n<blockquote>\n<p>每次去 Costco，我都会买一大盒菠菜，然后跟它比赛：看是我先吃完它，还是它先烂掉。目前比分 5 比 0，菠菜遥遥领先。下周我还会再买。<\/p>\n<p>自从在 Costco 买了一大包鸡胸肉，我的菜单就变成了：周一煎鸡胸，周二炒鸡胸，周三煮鸡胸。周四，我决定给生活来点变化：切成丁。<\/p>\n<p>别人周末去蹦迪，我去 Costco。其实差不多：人挤人、排长队，进门前都跟自己说“今天要克制”，出门时钱包都空了。区别只是，他们第二天醒来头疼，我第二天醒来发现床底下塞着 30 卷卫生纸。<\/p>\n<\/blockquote>\n<p>图书馆也一样：<\/p>\n<blockquote>\n<p>我在图书馆坐了八个小时，有效学习时间大概四十分钟。剩下的时间在调笔记的字体颜色、想晚饭吃什么，以及偷偷观察对面那个人到底在不在学习。我很确定他也在观察我。<\/p>\n<\/blockquote>\n<p>这些都不是什么离奇经历，只是把你每天都在经历、但没说出口的小心思讲出来，再稍微夸张一点。<\/p>\n<h3>几个马上能用的方法<\/h3>\n<ul>\n<li><strong>记“吐槽本”<\/strong>：每天记一两件让你烦的、尴尬的、想不通的、跟预期不一样的小事。先别管好不好笑，记下来再说。好笑的东西往往藏在“有点烦”里。<\/li>\n<li><strong>找反差<\/strong>：“我以为……结果……”、“按理说应该……但我……”。比如：以为去图书馆是为了学习，结果只是换个地方玩手机。<\/li>\n<li><strong>说具体<\/strong>：“买了很多东西”不好笑，“买了一桶能吃到毕业的花生酱”就好笑多了。数字和细节越具体，画面感越强。<\/li>\n<li><strong>说真心话<\/strong>：最好笑的往往是你脑子里那些“有点丢人、不好意思说”的念头。别人大多也这么想过，只是没人说出来。<\/li>\n<li><strong>往前推一步<\/strong>：把小事稍微夸张到荒谬。比如“鸡胸肉买多了”可以推成“我现在的人生规划，是按鸡胸肉的保质期来排的”。<\/li>\n<\/ul>\n<h3>一个小练习<\/h3>\n<p>这周每天记一件小事，周末挑一件最顺手的，用“我以为……结果……”讲给一个朋友听。冷场也没关系，记住哪里冷了，改一改下次再讲。所有段子手都在做这件事，他们只是做得比你久。<\/p>\n<p>接梗快、反应快可能确实有点天赋成分，但“把自己的日子讲得好笑”这件事，主要靠练。幽默更像肌肉，一开始谁都没多少，练着练着就有了。<\/p>\n<p>要不你现在就发一件这周遇到的小事给我？哪怕你觉得一点都不好笑，我们一起把它改成一个段子试试。<\/p>", "B": "<p>不是。幽默更像手艺，练得出来。而且你已经有底子了：「周末<strong>最多<\/strong>去趟 Costco」，这个\"最多\"就是在自嘲，你只是没当回事。<\/p>\n<p>别人段子多，不是生活比你精彩，是更爱挑刺：脱口秀的素材几乎全来自烦、尴尬、看不惯、搞不懂。你看到的，还只是人家写十条、扔九条剩下的那一条。<\/p>\n<p>拿你刚说的，现场挑一个（／是停一拍）：<\/p>\n<blockquote>\n<p>我在美国最稳的身份，／是 Costco 会员。／不用抽签。<\/p>\n<\/blockquote>\n<p>这招叫<strong>重新解读<\/strong>（reinterpretation）：听的人以为\"身份\"说的是签证，结果是会员卡。Costco 本身不好笑，好笑的是把它接上一件真让你焦虑的事。<\/p>\n<p>所以你的生活不是没梗，是还没被挑过刺。下面四个，挑有感觉的答，原话和数字最值钱：<\/p>\n<ol>\n<li><strong>上课<\/strong>：哪个教授有口头禅？他一说，你们会怎样？<\/li>\n<li><strong>图书馆<\/strong>：有没有一个你天天见、从没说过话的人？你心里管他叫什么？<\/li>\n<li><strong>做饭<\/strong>：你会做几道菜？哪一道最像事故现场？<\/li>\n<li><strong>Costco<\/strong>：扛回来的东西里，哪一样到现在还没吃完？买了多久了？<\/li>\n<\/ol>\n<p>你答完，我们一条条挖。<\/p>\n<p>另外，今晚开始做个「生活作业」（Homework for Life）：睡前花 5 分钟，记一个今天怪、烦或尴尬的瞬间，一句话就够。<\/p>", "skill": "B"}, {"id": "s5", "title": "学 Bill Burr：小组作业", "prompt": "我很喜欢 Bill Burr 那种又凶又好笑的风格，想学。拿我最近的事练练：我们小组作业有个组员，三周里一条消息都没回过，最后 presentation 那天他穿着西装来了，讲得比谁都多，教授还夸他\"leadership 很强\"。", "A": "<p>好素材。最好笑的那句，教授已经替你写好了：\"leadership 很强\"。<\/p>\n<p>学 Burr 先拆一个误会：凶只是音量。他真正的招是<strong>替坏的那边辩护<\/strong>（devil's advocate）：大家都骂的，他偏要站过去，用一套还挺有道理的歪理越吵越凶，最后一刀捅回自己。<\/p>\n<p>直接骂这个组员，听的人只会安慰你。替他辩护，靶子就挪开了：先挪到\"leadership\"这个词上，最后挪到你自己身上。<\/p>\n<p><strong>Burr 版<\/strong>（聚会、上台讲，一分钟以内。／是停一拍，［ ］是表演提示）<\/p>\n<blockquote>\n<p>我们小组作业有个组员，三周，群里一条消息没回。<br />\npresentation 那天，他来了。／穿着西装。<br />\n讲得比谁都多。<br />\n教授还夸他：leadership 很强。<\/p>\n<p>你们觉得不公平？／我站他！<br />\n［学委屈的组员］\"可他三周一条消息都没回啊……\"<br />\n［越说越快］他回了！攒了三周，presentation 那天一口气全回了！回给了教授！<br />\n教授夸他 leadership 很强，夸得对！［吼］领导回你消息吗？！秒回的那是实习生！<\/p>\n<p>……你们知道我为什么替他说话吗？<br />\n／<br />\n［突然小声］他那天要是也没来——<br />\n上去讲的就是我。<\/p>\n<\/blockquote>\n<p>骨架：我站他 → 一套歪理（不回消息 = 领导）→ 把对面演出来（act-out），越吼越响 → 突然小声，捅自己。<\/p>\n<p><strong>轮到你。<\/strong> 最后那句是我替你猜的。前面的歪理随便歪，最后这一刀必须是真事：Burr 凶完还招人喜欢，靠的就是它。你来填：<\/p>\n<blockquote>\n<p>……你们知道我为什么替他说话吗？／［小声］______。<\/p>\n<\/blockquote>\n<p>往自己身上找\"嫌疑\"：你也干过类似的事？你沾了他的光？还是有件事他敢、你不敢？写一句发我，我们一起磨。<\/p>\n<p>（这段留给熟人局和台上：不带他名字，在场有认识他的人就先别讲。）<\/p>", "B": "<p>这事特别适合练 Bill Burr，因为它底下有个让人生气、又没法反驳的真相：<strong>这个世界确实奖励这种人。<\/strong> Burr 最拿手的，就是骂到最狠的时候，突然承认对方赢了。先给你一版，后面拆开讲。<\/p>\n<h3>《Leadership》<\/h3>\n<blockquote>\n<p>我们小组作业有个哥们儿，三个星期，一条消息都没回过。<\/p>\n<p>一条都没有！<\/p>\n<p>我在群里@他。第一周：“兄弟，你负责哪部分？”第二周：“兄弟，在吗？”第三周：“兄弟，你还活着吗？”<\/p>\n<p>到后来我@他已经不是为了作业了，是一种仪式。早上起床，刷牙，@他。跟给祖宗上香一样，也不指望他回，就图个心安。<\/p>\n<p>我这三周@他的次数，比我这辈子给我妈打的电话都多。<\/p>\n<p>到第三周我是真担心了，他是不是出什么事了？说实话……我心里还有点期待。<\/p>\n<p>（停一下，看观众）干嘛？干嘛这么看我？他要真出事了，我们组起码能拿个同情分啊！别装，你们组里有这种人，你们也这么想过！<\/p>\n<p>结果 presentation 那天，他来了。<\/p>\n<p>他没出事。<\/p>\n<p>他穿着西装来的。<\/p>\n<p>（停）西装！他妈的西装！三个星期你没空回一条消息，你有空熨衬衫？！他那领带打得，比我们 PPT 排版都整齐！<\/p>\n<p>我们三个熬了三个通宵，穿的什么？卫衣、拖鞋，头发油得能直接炒菜。他往中间一站，西装笔挺，跟下来视察的领导似的。我们仨站他旁边，像他从楼下叫来修投影仪的。<\/p>\n<p>然后他开始讲，讲得比谁都多。讲什么？讲我做的那页！他第一次看见那页 PPT 是什么时候？就是那一秒！现场首映！<\/p>\n<p>而且他讲得比我好。为什么？因为他不知道第七页那个数据，是我凌晨四点从百度知道上扒的。我知道，所以我讲的时候心虚，眼睛都不敢看教授。他不知道！他毫无负担！<\/p>\n<p>（挺胸，模仿他）“数据显示，百分之六十三的消费者——”<\/p>\n<p>跟宣读圣旨一样！那是我扒的！我自己都不信！<\/p>\n<p>讲到一半，他还回头看了我一眼，点了点头。那个眼神，像在给我打绩效。<\/p>\n<p>最后教授点评，看着他说：“你的 leadership 很强。”<\/p>\n<p>Leadership？！他 lead 什么了？他唯一领先的就是未读消息：99+，全组第一，遥遥领先！<\/p>\n<p>我当时气得，回宿舍躺床上，气到凌晨三点。然后突然想通了。<\/p>\n<p>（突然平静）教授说得对。<\/p>\n<p>这就是 leadership。<\/p>\n<p>上过班的都知道，你们领导是不是就这样？平时找不着人，消息不回。一到开会，西装一穿，“我简单说两句”，说了四十分钟，讲的全是你做的东西。讲完还看你一眼，点点头。<\/p>\n<p>他不是在偷懒，他是在实习！我们三个在学这门课，他在学这个社会！<\/p>\n<p>所以真正的傻X是谁？是我们三个。<\/p>\n<p>教授最后也跟我们三个说了一句：“你们也辛苦了。”<\/p>\n<p>辛苦了。你品品这两句话。“辛苦了”是对员工说的，“leadership 很强”是对老板说的。<\/p>\n<p>我们熬了三个星期，熬出来一个老板。<\/p>\n<\/blockquote>\n<h3>拆开看，Burr 的“凶”其实是这几样东西<\/h3>\n<ol>\n<li><strong>先讲理，再推到离谱。<\/strong> 三次@的升级、上香、给妈打电话，每一步都是真实情绪，只是放大了。观众先同意你，才肯跟你一起疯。<\/li>\n<li><strong>说出阴暗念头，还理直气壮。<\/strong> “我心里还有点期待”这句，观众“嘶”一声是好事，你顺势怼回去。Burr 很多笑声都来自观众那一下“他居然说出来了”。<\/li>\n<li><strong>用画面和表演，不用形容词。<\/strong> 别说“他很装”，说他领带比 PPT 排版还整齐；别说“他很自信”，把他念数据的样子演出来。<\/li>\n<li><strong>骂到顶点，反转。<\/strong> “教授说得对”是整段的灵魂：承认对方赢了，把火力从一个人扩大到整个社会，最后落到自己头上。少了这一步，它就只是抱怨，观众会同情你，但不会笑。<\/li>\n<\/ol>\n<h3>表演上最要紧的两点<\/h3>\n<ul>\n<li><strong>音量要有坡度。<\/strong> 从头往上推，“遥遥领先”是最高点；“教授说得对”突然降下来，像自言自语。Burr 最好笑的经常不是吼的那句，而是吼完之后冷静下来的那句。<\/li>\n<li><strong>凶是冲着事，不是冲着观众。<\/strong> 他吼起来是“我不敢相信这事是真的”的崩溃，像跟哥们儿吐槽，不是在训人。怼观众那句也要带着笑。<\/li>\n<\/ul>\n<h3>接下来你可以这么练<\/h3>\n<ol>\n<li><strong>换成真实细节。<\/strong> 组里几个人、熬了几个通宵、第七页的数据、教授跟你们说了啥，这些是我编的，换成真的。真实细节几乎总比编的好笑。<\/li>\n<li><strong>自己再挖一个角度。<\/strong> 比如那套西装：新买的？吊牌剪了没？要是他讲完就拿去退了，那他连西装都是白嫖的，人设直接闭环。<\/li>\n<li><strong>听他的 Monday Morning Podcast。<\/strong> 特别节目是成品，播客里能听到他怎么把一件生活破事临场骂出一套逻辑，跟你这种素材最像。<\/li>\n<\/ol>\n<p>写完你自己的版本可以发我，我帮你看哪儿还能更狠。<\/p>", "skill": "A"}, {"id": "s6", "title": "笑点校准：出题让我挑", "prompt": "我想让你更懂我的笑点。你出几组让我挑吧，我挑完你就知道我喜欢什么样的了。", "A": "<p>行，这轮你当评委。<\/p>\n<p>3 组对话，每组两条回复只差一个地方。凭第一反应挑，回 <strong>A / B / 都行 / 都不行<\/strong>，能加个理由词更好：更意外、更像我、更狠、更短、有画面、更暖。哪条真把你逗笑了，再标个“笑了”。<\/p>\n<p><strong>①<\/strong> 群里同学问：“实习找得怎么样了？”<\/p>\n<p>A：有进展。以前是简历被拒，现在是本人被拒了。<\/p>\n<p>B：现在连我没投过的公司，都主动来拒我了。<\/p>\n<p><strong>②<\/strong> 课程群里，一个只在 due 前一晚冒泡的同学：“有人写完 HW3 了吗？想参考一下～”<\/p>\n<p>A：你在这个群的聊天记录，就是这门课的 syllabus。<\/p>\n<p>B：能参考。第三题我写了两页，结论是：It depends.<\/p>\n<p><strong>③<\/strong> 朋友问：“周末干嘛了？”<\/p>\n<p>A（分三条发）：<\/p>\n<blockquote>\n<p>有个毕业的学姐约我吃饭了。<\/p>\n<p>聊了两个小时，她特别关心我：多大了，有没有对象，爸妈身体好不好。<\/p>\n<p>最后她从包里掏出一份保险计划书。<\/p>\n<\/blockquote>\n<p>B：在家待了两天。周日我妈打视频过来，我一开口，她问我是不是感冒了。<\/p>\n<p>挑完我揭晓每组差在哪，接着发下一批 3 组。6 组做完，结果并进你的笑点档案，给你看一眼，哪条不对直接改。<\/p>\n<p>有的话，顺手丢我一件你这周的倒霉事，一句话就行，下一批拿它出题。<\/p>", "B": "<p>好主意！我出三组，每组 4–5 条。每组里我都悄悄换了一个“变量”，先不剧透是什么，免得影响你判断。凭第一反应挑就行，笑出声的、嘴角动了一下的都算。<\/p>\n<h3>A 组 · 上班<\/h3>\n<p><strong>A1<\/strong> 老板给我画了三年的饼，我现在已经饼入膏肓了。<\/p>\n<p><strong>A2<\/strong> 上班三年，我最大的成长是能把“收到”打出好几种语气：“收到”是正常回复；“收到！”是领导在群里；“好的收到～”是我在假装开心；“收到。”——带句号的那个——说明我已经在刷招聘软件了。<\/p>\n<p><strong>A3<\/strong> 我们公司推行狼性文化，落实得特别彻底：开会不发言了，改成互相闻；领导一进门，全组翻身露肚皮；上周团建去了动物园——不是参观，是探亲。<\/p>\n<p><strong>A4<\/strong> 我的工作效率其实非常高：每天下午五点五十到六点这十分钟，能干完一整天的活。<\/p>\n<p><strong>A5<\/strong> 我休了七天年假。回来第一天，同事拍拍我：“最近挺忙吧？好几天没听你说话了。”——他以为我一直坐在那儿。<\/p>\n<h3>B 组 · 家人<\/h3>\n<p><strong>B1<\/strong> 我爸打电话永远只有一个话题：吃了吗。我说吃了，他问吃的啥；我说外卖，他说外卖不干净；我说那我自己做，他说你做的能吃吗。我还没想好怎么接，他已经说：“行，没事就挂了啊。”——我们家的“我想你了”，大概就长这样。<\/p>\n<p><strong>B2<\/strong> 我妈说她从来不催婚，只是“随口一提”。今年春节，她从除夕随口提到元宵，平均每小时一次，比整点报时还准。<\/p>\n<p><strong>B3<\/strong> 我爸总说他年轻时是全村最帅的。直到我看到他年轻时的照片，才明白这句话的重点在“全村”——那个村的适龄男青年一共三个，另外两个是他亲弟弟。<\/p>\n<p><strong>B4<\/strong> 我姥姥说过，看不到我结婚，她死不瞑目。所以我一直没结。她今年九十七，每天下楼跳广场舞。我妈骂我不孝，可我觉得，全家最孝顺的就是我。<\/p>\n<h3>C 组 · 减肥<\/h3>\n<p><strong>C1<\/strong> 我办了张健身年卡，一年去了三次，平均一次一千二——那是我这辈子洗过最贵的澡。<\/p>\n<p><strong>C2<\/strong> 我下了个减肥 App，每顿饭都老实记录。第一天它说：“今日摄入达标，继续保持！”第三天：“略有超标，明天加油哦～”第五天：“您今日摄入的热量，约等于一名成年男性三天所需。”第七天，它什么都没说，只弹出一个窗口：“是否需要联系您的紧急联系人？”<\/p>\n<p><strong>C3<\/strong> 我找了个健身搭子，结果俩人都是 i 人。现在我们每晚八点准时互发一句“练了吗”，再各自回一句“练了”，然后各自接着躺。主打一个互相提供情绪价值，体脂纹丝不动。<\/p>\n<p><strong>C4<\/strong> 健身房里最安静的器械是什么？——哑铃。<\/p>\n<p><strong>C5<\/strong> 朋友问我：“你最近是不是瘦了？”“嗯，在试一种新的减肥方法。”“什么方法？”“月底。”<\/p>\n<hr />\n<p><strong>怎么回：<\/strong> 每组挑 1–2 个最戳你的。觉得尬、或者让你不太舒服的也标一下，“不好笑”的信息跟“好笑”一样有用，一整组都不好笑也可以直说。格式随意，比如：“A2、B1、C4 好笑，A3 没 get 到，B4 有点过。”<\/p>\n<p><strong>加分题（可跳过）：<\/strong> 你平时爱看哪些喜剧人、节目或博主？有没有一听就皱眉的题材？<\/p>\n<p>挑完我会揭晓每条分别代表哪种笑法，再给你写一份简短的“笑点画像”，之后就照这个口味来。（换了新对话我不一定记得住，画像你可以存一份，到时候贴给我就行。）<\/p>", "skill": "A"}];
+const LAUGH = [["😐","还不是笑话"],["😊","会心一笑"],["😄","能笑出声"],["🤣","爆笑"]];
+const PRACTICE = [["A","A 版"],["B","B 版"],["same","差不多"],["neither","都不想"]];
+const LS_KEY = "humor-blind-review-v1";
+const RESULTS = DATA.length;
+
+const state = {picks:{}, current:0, active:"A", revealed:false};
+try{
+  const saved = JSON.parse(localStorage.getItem(LS_KEY) || "null");
+  if(saved && typeof saved === "object"){
+    if(saved.picks) state.picks = saved.picks;
+    if(Number.isInteger(saved.current) && saved.current >= 0 && saved.current <= RESULTS) state.current = saved.current;
+    if(saved.active === "A" || saved.active === "B") state.active = saved.active;
+    state.revealed = !!saved.revealed;
+  }
+}catch(e){}
+function saveLocal(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){} }
+
+function pick(id){ return state.picks[id] || (state.picks[id] = {laughA:null, laughB:null, practice:null, note:"", updatedAt:""}); }
+function isDone(id){ const p = state.picks[id]; return !!p && p.laughA != null && p.laughB != null && !!p.practice; }
+function doneCount(){ return DATA.filter(s => isDone(s.id)).length; }
+
+/* ---------- storage ---------- */
+let db = null, mode = "connecting", lastError = "";
+const writing = {}, dirty = {}, timers = {};
+const statusEl = document.getElementById("status");
+function showStatus(){
+  statusEl.className = "status";
+  if(mode === "connecting"){ statusEl.textContent = "正在连接存储…"; return; }
+  if(mode === "saving"){ statusEl.textContent = "保存中…"; return; }
+  if(mode === "on"){ statusEl.classList.add("ok"); statusEl.textContent = "已保存，我能直接看到你的选择。"; return; }
+  statusEl.classList.add("warn");
+  statusEl.textContent = (mode === "error" ? "没存上（" + lastError + "）。" : "这次没连上存储。")
+    + "选择先存在这台设备上，打完点最后一页的「复制结果」发我。";
+}
+function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+async function writeDoc(path, body){
+  try{ await db.doc(path).set(body); }
+  catch(e){
+    if(e && e.code === "unavailable"){ await sleep(700 + Math.random()*700); await db.doc(path).set(body); }
+    else throw e;
+  }
+}
+async function push(id){
+  if(!db) return;
+  if(writing[id]){ dirty[id] = true; return; }
+  writing[id] = true; mode = "saving"; showStatus();
+  try{
+    const body = id === "meta" ? {revealed: state.revealed, at: new Date().toISOString()} : {...pick(id)};
+    await writeDoc(id === "meta" ? "meta/state" : "picks/" + id, body);
+    mode = "on";
+  }catch(e){
+    mode = "error"; lastError = (e && (e.message || e.code)) || "未知错误";
+    if(e && ["invalid_argument","not_granted","revoked","capability_disabled","capability_removed","quota_exceeded"].includes(e.code)) db = null;
+  }
+  writing[id] = false;
+  if(dirty[id] && db){ dirty[id] = false; push(id); return; }
+  showStatus();
+}
+function pushSoon(id, ms){ clearTimeout(timers[id]); timers[id] = setTimeout(() => push(id), ms); }
+async function initDb(){
+  try{
+    if(!window.claude || typeof window.claude.use !== "function"){ mode = "off"; showStatus(); return; }
+    const handle = await window.claude.use("db");
+    if(!handle){ mode = "off"; showStatus(); return; }
+    db = handle;
+    const snap = await db.collection("picks").get();
+    const remoteAt = {};
+    snap.docs.forEach(d => {
+      if(!d.exists || !DATA.some(s => s.id === d.id)) return;
+      const r = d.data() || {};
+      remoteAt[d.id] = r.updatedAt || "";
+      const local = state.picks[d.id];
+      if(!local || (r.updatedAt || "") > (local.updatedAt || "")){
+        state.picks[d.id] = {laughA: r.laughA ?? null, laughB: r.laughB ?? null, practice: r.practice ?? null, note: r.note || "", updatedAt: r.updatedAt || ""};
+      }
+    });
+    mode = "on"; showStatus(); saveLocal(); render();
+    for(const id of Object.keys(state.picks)){
+      if(DATA.some(s => s.id === id) && (state.picks[id].updatedAt || "") > (remoteAt[id] || "")) await push(id);
+    }
+  }catch(e){
+    mode = "error"; lastError = (e && (e.message || e.code)) || "未知错误"; db = null; showStatus();
+  }
+}
+
+/* ---------- rendering ---------- */
+const main = document.getElementById("main");
+const chipsEl = document.getElementById("chips");
+function el(tag, attrs, ...kids){
+  const n = document.createElement(tag);
+  for(const [k, v] of Object.entries(attrs || {})){
+    if(v == null) continue;
+    if(k === "class") n.className = v;
+    else if(k === "text") n.textContent = v;
+    else if(k === "html") n.innerHTML = v;
+    else if(k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v);
+  }
+  for(const kid of kids) if(kid != null) n.append(kid);
+  return n;
+}
+function laughText(v){ return v == null ? "没打分" : LAUGH[v][0] + " " + LAUGH[v][1]; }
+
+function renderChips(){
+  chipsEl.replaceChildren();
+  DATA.forEach((s, i) => {
+    const b = el("button", {class: "chip" + (isDone(s.id) ? " done" : ""), type: "button", text: (isDone(s.id) ? "✓ " : "") + (i + 1), "aria-label": "场景 " + (i + 1) + "：" + s.title + (isDone(s.id) ? "（已打完）" : ""), onclick: () => go(i)});
+    if(state.current === i) b.setAttribute("aria-current", "step");
+    chipsEl.append(b);
+  });
+  const r = el("button", {class: "chip" + (doneCount() === RESULTS ? " done" : ""), type: "button", text: "结果", onclick: () => go(RESULTS)});
+  if(state.current === RESULTS) r.setAttribute("aria-current", "step");
+  chipsEl.append(r);
+}
+
+function setPick(id, field, value){
+  const p = pick(id);
+  p[field] = p[field] === value ? null : value;
+  p.updatedAt = new Date().toISOString();
+  saveLocal(); refreshControls(); pushSoon(id, 250);
+}
+
+function refreshControls(){
+  const s = DATA[state.current];
+  if(s){
+    const p = pick(s.id);
+    main.querySelectorAll("[data-field]").forEach(b => {
+      b.setAttribute("aria-pressed", String(p[b.dataset.field] === (b.dataset.field === "practice" ? b.dataset.value : Number(b.dataset.value))));
+    });
+    main.querySelectorAll("[data-badge]").forEach(n => { n.textContent = laughText(p["laugh" + n.dataset.badge]); });
+    main.querySelectorAll(".tab").forEach(t => {
+      const v = p["laugh" + t.dataset.side];
+      t.textContent = t.dataset.side + " 版" + (v == null ? "" : " · " + LAUGH[v][0]);
+    });
+  }
+  renderChips();
+}
+
+function card(s, side){
+  const meterOpts = el("div", {class: "opts", role: "group", "aria-label": side + " 版的笑声"});
+  LAUGH.forEach(([emoji, label], v) => {
+    meterOpts.append(el("button", {class: "opt", type: "button", "data-field": "laugh" + side, "data-value": String(v), "aria-pressed": "false", text: emoji + " " + label, onclick: () => setPick(s.id, "laugh" + side, v)}));
+  });
+  const other = side === "A" ? "B" : "A";
+  return el("article", {class: "card", "data-side": side},
+    el("div", {class: "card-head"}, el("span", {class: "card-name", text: side + " 版"}), el("span", {class: "card-badge", "data-badge": side})),
+    el("div", {class: "md", html: s[side]}),
+    el("div", {class: "meter"},
+      el("p", {class: "q", text: "这版让你："}),
+      meterOpts,
+      el("button", {class: "swap", type: "button", text: side === "A" ? "看 B 版 →" : "← 看 A 版", onclick: () => setActive(other, true)})
+    )
+  );
+}
+
+function setActive(side, scroll){
+  state.active = side; saveLocal();
+  const pair = main.querySelector(".pair");
+  if(pair) pair.dataset.active = side;
+  main.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", String(t.dataset.side === side)));
+  if(scroll){ const tabs = main.querySelector(".tabs"); if(tabs) tabs.scrollIntoView({block: "start"}); }
+}
+
+function renderScene(i){
+  const s = DATA[i];
+  const p = pick(s.id);
+  const tabs = el("div", {class: "tabs", role: "tablist", "aria-label": "切换回复"});
+  ["A", "B"].forEach(side => tabs.append(el("button", {class: "tab", type: "button", role: "tab", "data-side": side, "aria-selected": String(state.active === side), text: side + " 版", onclick: () => setActive(side, false)})));
+  const practice = el("div", {class: "opts", role: "group", "aria-label": "更想用哪版来练"});
+  PRACTICE.forEach(([value, label]) => practice.append(el("button", {class: "opt", type: "button", "data-field": "practice", "data-value": value, "aria-pressed": "false", text: label, onclick: () => setPick(s.id, "practice", value)})));
+  const note = el("textarea", {id: "note-" + s.id, placeholder: "哪句好笑、哪里不行、哪里看不懂，随手写（可选）", "aria-label": "备注"});
+  note.value = p.note || "";
+  note.addEventListener("input", () => { const q = pick(s.id); q.note = note.value; q.updatedAt = new Date().toISOString(); saveLocal(); pushSoon(s.id, 900); });
+  const pair = el("div", {class: "pair", "data-active": state.active}, card(s, "A"), card(s, "B"));
+  main.replaceChildren(el("section", {class: "scene", "aria-labelledby": "scene-title"},
+    el("div", {}, el("p", {class: "eyebrow", text: "场景 " + (i + 1) + " / " + RESULTS}), el("h2", {id: "scene-title", text: s.title})),
+    el("div", {class: "ask"}, el("span", {class: "ask-label", text: "你发的消息"}), el("div", {class: "bubble", text: s.prompt})),
+    tabs, pair,
+    el("div", {class: "panel"}, el("p", {class: "q", text: "两版都看完，更想用哪版来练？"}), practice, note),
+    el("div", {class: "nav"},
+      el("button", {class: "btn", type: "button", text: "← 上一个", disabled: i === 0 ? "" : null, onclick: () => go(i - 1)}),
+      el("button", {class: "btn primary", type: "button", text: i === RESULTS - 1 ? "去结果页 →" : "下一个 →", onclick: () => go(i + 1)})
+    )
+  ));
+  refreshControls();
+}
+
+function summaryText(){
+  const lines = ["幽默教练盲测"];
+  DATA.forEach((s, i) => {
+    const p = pick(s.id);
+    const pr = PRACTICE.find(x => x[0] === p.practice);
+    lines.push((i + 1) + " " + s.title + "：A " + laughText(p.laughA) + "｜B " + laughText(p.laughB) + "｜练：" + (pr ? pr[1] : "没选") + (p.note ? "｜备注：" + p.note.replace(/\s+/g, " ") : ""));
+  });
+  return lines.join("\n");
+}
+
+function renderResults(){
+  const n = doneCount();
+  const box = el("section", {class: "results", "aria-labelledby": "res-title"},
+    el("div", {}, el("p", {class: "eyebrow", text: "打完 " + n + " / " + RESULTS}), el("h2", {id: "res-title", text: "结果"})));
+  if(n < RESULTS){
+    const todo = el("div", {class: "opts"});
+    DATA.forEach((s, i) => { if(!isDone(s.id)) todo.append(el("button", {class: "opt", type: "button", text: (i + 1) + " " + s.title, onclick: () => go(i)})); });
+    box.append(el("div", {class: "panel"}, el("p", {class: "q", text: "还差 " + (RESULTS - n) + " 个场景：每版一个笑声等级，再选一个更想用来练的。"}), todo));
+  }
+  const reveal = el("button", {class: "btn primary", type: "button", text: state.revealed ? "已揭晓" : "揭晓哪版装了 skill", onclick: () => { state.revealed = true; saveLocal(); pushSoon("meta", 0); render(); }});
+  if(n < RESULTS || state.revealed) reveal.disabled = true;
+  box.append(reveal);
+  if(state.revealed){
+    let skillSum = 0, baseSum = 0, skillN = 0, baseN = 0;
+    const prefs = {skill: 0, base: 0, same: 0, neither: 0};
+    const rows = el("ul", {class: "rows"});
+    DATA.forEach((s, i) => {
+      const p = pick(s.id);
+      const baseSide = s.skill === "A" ? "B" : "A";
+      const ls = p["laugh" + s.skill], lb = p["laugh" + baseSide];
+      if(ls != null){ skillSum += ls; skillN++; }
+      if(lb != null){ baseSum += lb; baseN++; }
+      let pref = "没选";
+      if(p.practice === s.skill){ prefs.skill++; pref = "装了 skill 的"; }
+      else if(p.practice === baseSide){ prefs.base++; pref = "没装的"; }
+      else if(p.practice === "same"){ prefs.same++; pref = "差不多"; }
+      else if(p.practice === "neither"){ prefs.neither++; pref = "都不想"; }
+      rows.append(el("li", {class: "row"},
+        el("span", {class: "row-title", text: (i + 1) + " " + s.title}),
+        el("span", {class: "row-detail", text: "装了 skill 的是 " + s.skill + " 版（" + laughText(ls) + "）｜没装的是 " + baseSide + " 版（" + laughText(lb) + "）｜更想用来练：" + pref})));
+    });
+    const avg = (sum, cnt) => cnt ? (sum / cnt).toFixed(1) : "–";
+    box.append(el("div", {class: "tally"},
+      el("div", {class: "stat"}, el("span", {class: "muted", text: "笑声平均（😐=0，🤣=3）"}), el("b", {text: "装了 " + avg(skillSum, skillN) + " ｜ 没装 " + avg(baseSum, baseN)})),
+      el("div", {class: "stat"}, el("span", {class: "muted", text: "更想用来练"}), el("b", {text: "装了 " + prefs.skill + " ｜ 没装 " + prefs.base}), el("span", {class: "muted", text: "差不多 " + prefs.same + "，都不想 " + prefs.neither}))
+    ), el("div", {class: "panel"}, rows));
+  }
+  const out = el("textarea", {id: "summary", readonly: "", "aria-label": "结果文字"});
+  out.value = summaryText();
+  const copy = el("button", {class: "btn", type: "button", text: "复制结果", onclick: async () => {
+    try{ await navigator.clipboard.writeText(out.value); copy.textContent = "已复制"; }
+    catch(e){ out.focus(); out.select(); copy.textContent = "已选中，长按或 Ctrl+C 复制"; }
+  }});
+  box.append(el("div", {class: "panel"},
+    el("p", {class: "q", text: mode === "on" ? "选择已经存好，我能直接看到。想自己留一份，可以复制：" : "存储没连上时，把这段复制发我："}),
+    out, copy));
+  main.replaceChildren(box);
+  renderChips();
+}
+
+function render(){
+  if(state.current >= RESULTS) renderResults(); else renderScene(state.current);
+}
+function go(i){
+  state.current = Math.max(0, Math.min(RESULTS, i));
+  state.active = "A";
+  saveLocal(); render();
+  window.scrollTo({top: 0});
+}
+
+render();
+showStatus();
+initDb();
+</script>

@@ -1,0 +1,29 @@
+{
+  "seed": 1009,
+  "scenarios": {
+    "s1": {
+      "eval": "eval-1-chat-replay-dorm-group",
+      "with_skill": "A"
+    },
+    "s2": {
+      "eval": "eval-2-story-subway-first-order",
+      "with_skill": "B"
+    },
+    "s3": {
+      "eval": "eval-3-dating-sparring-hinge",
+      "with_skill": "B"
+    },
+    "s4": {
+      "eval": "eval-4-no-material-boring-life",
+      "with_skill": "B"
+    },
+    "s5": {
+      "eval": "eval-5-edgy-style-group-project",
+      "with_skill": "A"
+    },
+    "s6": {
+      "eval": "eval-6-taste-calibration-cold-start",
+      "with_skill": "A"
+    }
+  }
+}
