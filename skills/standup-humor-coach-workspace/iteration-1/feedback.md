@@ -11,5 +11,5 @@ The user rated nothing. They pasted the page's summary:
 | 5 学 Bill Burr：小组作业 | – | – | – | 啊 |
 | 6 笑点校准：出题让我挑 | – | – | – | 啊 |
 
-Takeaway: both configs were too long (1.3k–5.2k chars). The page itself (12 long replies) was too much to review.
+Takeaway: both configs were too long (about 450–1,730 visible characters each). The page itself (12 long replies) was too much to review.
 Change for iteration 2: a hard length rule at the top of SKILL.md (default ≤150 字, no headings or sections, one move / one question / one exercise per reply), length assertions in evals.json, and a much smaller review in chat.
