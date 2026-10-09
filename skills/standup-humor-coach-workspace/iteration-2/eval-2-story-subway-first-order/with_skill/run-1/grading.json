@@ -1,0 +1,58 @@
+{
+  "expectations": [
+    {
+      "text": "回复主体是中文",
+      "passed": true,
+      "evidence": "全文中文，店员台词是英文。"
+    },
+    {
+      "text": "全文不超过 400 字，没有标题、没有分节",
+      "passed": true,
+      "evidence": "218 字（中文字和标点各算 1，一个英文词算 1），没有标题"
+    },
+    {
+      "text": "诊断只用了一两句话",
+      "passed": true,
+      "evidence": "一句：「礼貌笑，是因为『一直说 yes』一出口，大家就猜到那个三明治了。」"
+    },
+    {
+      "text": "直接给了一个能讲的短版，短版里把店员的连珠炮提问用直接引语演了出来",
+      "passed": true,
+      "evidence": "30 秒版：「Whatkindofbread? ……Yes.」「Toasted? Yes! Cheese? Yes! Veggies? Yes! Sauce? Yes!」"
+    },
+    {
+      "text": "短版里有内心独白（'我心想'或【】等）",
+      "passed": true,
+      "evidence": "【成了，他没发现】"
+    },
+    {
+      "text": "短版有收尾句，并回扣了前面出现过的元素",
+      "passed": true,
+      "evidence": "「我全吃完了。／因为垃圾桶就在他旁边。」回扣开头的目标「别让店员发现我听不懂」。"
+    },
+    {
+      "text": "标出了停顿或表演提示",
+      "passed": true,
+      "evidence": "／ 停顿，［学机关枪语速］［越答越自信］［皱眉，停两秒］。"
+    },
+    {
+      "text": "最多问了 1 个问题",
+      "passed": true,
+      "evidence": "只问了一个：「你当时为什么硬吃完？」"
+    },
+    {
+      "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+      "passed": true,
+      "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+    }
+  ],
+  "summary": {
+    "passed": 9,
+    "failed": 0,
+    "total": 9,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 218
+  }
+}

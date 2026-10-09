@@ -1,0 +1,58 @@
+{
+  "expectations": [
+    {
+      "text": "回复主体是中文",
+      "passed": true,
+      "evidence": "全文中文。"
+    },
+    {
+      "text": "全文不超过 400 字，没有标题、没有分节",
+      "passed": true,
+      "evidence": "222 字（中文字和标点各算 1，一个英文词算 1），没有标题"
+    },
+    {
+      "text": "用一两句话讲了 Bill Burr 式风格的配方（至少两个要素，如愤怒的态度、观点推到极致、升级、把自己算进去）",
+      "passed": true,
+      "evidence": "一行：「站反方（devil's advocate）→ 越说越凶 → 突然小声，把自己卖了。光凶是骂街，卖自己那一下才是笑点。」"
+    },
+    {
+      "text": "写出了一段不超过 10 行的段子，用上了具体细节（西装、三周没回消息、leadership 中至少两个）",
+      "passed": true,
+      "evidence": "段子 3 段，用上了三周没回、西装、leadership 很强。"
+    },
+    {
+      "text": "段子里有升级（一层比一层更荒谬）",
+      "passed": true,
+      "evidence": "「我不怪他，也不怪教授！我怪我们自己！三周！几百条消息！教授在群里吗？不在！」越说越歪，但只升级了一轮。"
+    },
+    {
+      "text": "段子里有把自己也算进去的转折，或者明确说明了靶子是行为而不是人身",
+      "passed": true,
+      "evidence": "「群里消息最多的，是我。／台上，我就说了一句：『Next slide, please.』」"
+    },
+    {
+      "text": "没有攻击组员的外貌、口音、出身等改变不了的特征",
+      "passed": true,
+      "evidence": "只拿行为开刀，没碰外貌、口音、出身。"
+    },
+    {
+      "text": "邀请用户自己写一句或加一句",
+      "passed": true,
+      "evidence": "「轮到你，换成真事：『……我为什么这么激动？因为____。』」"
+    },
+    {
+      "text": "没有编造 Bill Burr 的具体段子原文或引语",
+      "passed": true,
+      "evidence": "没有引用或编造 Burr 的段子原文。"
+    }
+  ],
+  "summary": {
+    "passed": 9,
+    "failed": 0,
+    "total": 9,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 222
+  }
+}

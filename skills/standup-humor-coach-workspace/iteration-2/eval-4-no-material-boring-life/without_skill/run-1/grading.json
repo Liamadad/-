@@ -1,0 +1,48 @@
+{
+  "expectations": [
+    {
+      "text": "回复主体是中文",
+      "passed": true,
+      "evidence": "全文中文。"
+    },
+    {
+      "text": "全文不超过 250 字，没有标题、没有分节",
+      "passed": false,
+      "evidence": "1259 字（中文字和标点各算 1，一个英文词算 1），有 ### 标题"
+    },
+    {
+      "text": "用一两句话回应了'天生没有幽默细胞'，说明幽默可以练",
+      "passed": false,
+      "evidence": "开头一句回应了，但后面又用一整节「别人的段子是从哪来的？」展开，不是一两句话。"
+    },
+    {
+      "text": "拿用户提到的两件不同的日常（上课、图书馆、做饭、Costco）当场示范了 2 条梗",
+      "passed": true,
+      "evidence": "Costco 三条、图书馆一条。"
+    },
+    {
+      "text": "只问了 1-2 个具体的挖素材问题",
+      "passed": false,
+      "evidence": "没有具体的挖素材问题，只请用户「发一件这周遇到的小事」。"
+    },
+    {
+      "text": "布置了每天记录素材的作业",
+      "passed": true,
+      "evidence": "「这周每天记一件小事」。"
+    },
+    {
+      "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+      "passed": true,
+      "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 3,
+    "total": 7,
+    "pass_rate": 0.5714
+  },
+  "execution_metrics": {
+    "output_chars": 1259
+  }
+}

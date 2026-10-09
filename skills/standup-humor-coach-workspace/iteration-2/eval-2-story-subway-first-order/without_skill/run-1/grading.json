@@ -1,0 +1,58 @@
+{
+  "expectations": [
+    {
+      "text": "回复主体是中文",
+      "passed": true,
+      "evidence": "全文中文。"
+    },
+    {
+      "text": "全文不超过 400 字，没有标题、没有分节",
+      "passed": false,
+      "evidence": "1476 字（中文字和标点各算 1，一个英文词算 1），有 ### 标题"
+    },
+    {
+      "text": "诊断只用了一两句话",
+      "passed": false,
+      "evidence": "诊断分四条，每条一段解释。"
+    },
+    {
+      "text": "直接给了一个能讲的短版，短版里把店员的连珠炮提问用直接引语演了出来",
+      "passed": false,
+      "evidence": "给的是两分钟的完整版，没有短版；只在最后提了一句「一分钟以内只讲骨架」。"
+    },
+    {
+      "text": "短版里有内心独白（'我心想'或【】等）",
+      "passed": true,
+      "evidence": "按它给的改写版判：「我学了十几年英语，这句话里没有一个词我见过」。"
+    },
+    {
+      "text": "短版有收尾句，并回扣了前面出现过的元素",
+      "passed": true,
+      "evidence": "按它给的改写版判：可选收尾「Same as him」回扣开头的「最难的英语考试」。"
+    },
+    {
+      "text": "标出了停顿或表演提示",
+      "passed": true,
+      "evidence": "（停顿）（小声、心虚）等提示。"
+    },
+    {
+      "text": "最多问了 1 个问题",
+      "passed": true,
+      "evidence": "没有提问。"
+    },
+    {
+      "text": "示范的笑话/回复后面没有自带笑声（哈哈哈、😂、笑死）或网络烂梗（yyds、绝绝子、家人们谁懂啊）",
+      "passed": true,
+      "evidence": "示范后面没有自带笑声，也没有网络烂梗。"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 3,
+    "total": 9,
+    "pass_rate": 0.6667
+  },
+  "execution_metrics": {
+    "output_chars": 1476
+  }
+}
