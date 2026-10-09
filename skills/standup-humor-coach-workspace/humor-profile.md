@@ -102,3 +102,11 @@
 - "陈述句"是这个用户最大的雷：说中了大家的经历，不等于好笑。笑点必须让前面的话换一个意思。
 - 同一个反转，铺垫够不够决定它响不响（⑥A vs ⑥B）。
 - 留白和说破之间，用户选了说破，因为那句说破本身是新的反转（④）。
+
+## Real chat: plane wifi (2026-10-09)
+
+Her message: "原来飞机可以用wifi我刚链接不上还以为没有"
+- 稳「塔台收到，信号良好，请继续汇报。」→ "完全不好笑" (contrived role-play premise)
+- 中「所以连上 wifi 的第一件事，是来找我？」→ "像调戏" (self-referential flirt with someone he doesn't know well)
+- Replacement offered: 「按你这个标准，我宿舍一直没有 wifi。」(reinterpretation of her own logic, aimed at a shared annoyance) — outcome pending.
+Lesson: in early-stage chats, don't steer the joke toward "she's into you"; joke about a shared annoyance or yourself.
