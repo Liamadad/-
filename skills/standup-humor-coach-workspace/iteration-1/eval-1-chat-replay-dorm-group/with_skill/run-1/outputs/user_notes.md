@@ -1,0 +1,4 @@
+- References read: `references/conversation.md` (Mode 1 step 4 points to its trigger→move table; its §1 says to read it for chat replays and "又把天聊死了") and `references/ai-humor-engine.md` (SKILL.md says to read it when unsure a demo is funny enough; I used §3/§6/§7 to screen candidates). No other references were opened.
+- Unsure whether the roommates currently live together, so I left out every "five alarms wake the whole dorm" angle. I also didn't know whether Ajie shares the user's time zone (the profile says the user is in the US), so the callback timing says "阿杰那边明早 6 点多".
+- Opportunity 3 (tomorrow's callback) gets only one reply, not 2–3. The second options I tried were filler, and the engine says 宁可少给.
+- There's no 训练卡片 yet because the session continues with the exercise. Least confident line: 辣「这叫预谋赖床」. I picked it over「五个是对的。你很了解你自己。」 to avoid three "fake-support → flip" lines in one reply.
