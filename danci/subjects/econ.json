@@ -1,0 +1,2802 @@
+[
+  {
+    "w": "basic economic problem",
+    "pos": "phr.",
+    "zh": "基本经济问题",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "scarcity",
+    "pos": "n.",
+    "zh": "稀缺性",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "finite",
+    "pos": "adj.",
+    "zh": "有限的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "infinite",
+    "pos": "adj.",
+    "zh": "无限的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "wants",
+    "pos": "n.",
+    "zh": "欲望",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "resource",
+    "pos": "n.",
+    "zh": "资源",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "allocate",
+    "pos": "v.",
+    "zh": "配置，分配（资源）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "allocation",
+    "pos": "n.",
+    "zh": "配置，分配",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "economic goods",
+    "pos": "phr.",
+    "zh": "经济物品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "free goods",
+    "pos": "phr.",
+    "zh": "自由物品，免费品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "goods",
+    "pos": "n.",
+    "zh": "商品，货物（有形产品）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "services",
+    "pos": "n.",
+    "zh": "服务（无形产品）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "consumer",
+    "pos": "n.",
+    "zh": "消费者",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "producer",
+    "pos": "n.",
+    "zh": "生产者",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "economy",
+    "pos": "n.",
+    "zh": "经济体，经济",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.1 The nature of the basic economic problem"
+  },
+  {
+    "w": "factors of production",
+    "pos": "phr.",
+    "zh": "生产要素",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "factor",
+    "pos": "n.",
+    "zh": "（生产）要素；因素",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "land",
+    "pos": "n.",
+    "zh": "土地（自然资源）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "labour",
+    "pos": "n.",
+    "zh": "劳动，劳动力",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "capital",
+    "pos": "n.",
+    "zh": "资本",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "enterprise",
+    "pos": "n.",
+    "zh": "企业家才能；企业",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "entrepreneur",
+    "pos": "n.",
+    "zh": "企业家",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "rent",
+    "pos": "n.",
+    "zh": "租金（土地的报酬）",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "wage",
+    "pos": "n.",
+    "zh": "工资",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "interest",
+    "pos": "n.",
+    "zh": "利息",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "profit",
+    "pos": "n.",
+    "zh": "利润",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "natural resources",
+    "pos": "phr.",
+    "zh": "自然资源",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "human capital",
+    "pos": "phr.",
+    "zh": "人力资本",
+    "cls": "S",
+    "tier": 3,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "labour force",
+    "pos": "phr.",
+    "zh": "劳动力（总量）",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.2 Factors of production"
+  },
+  {
+    "w": "opportunity cost",
+    "pos": "phr.",
+    "zh": "机会成本",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.3 Opportunity cost"
+  },
+  {
+    "w": "next best alternative",
+    "pos": "phr.",
+    "zh": "次优选择",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.3 Opportunity cost"
+  },
+  {
+    "w": "forgo",
+    "pos": "v.",
+    "zh": "放弃（某选择）",
+    "cls": "S",
+    "tier": 3,
+    "topic": "1.3 Opportunity cost"
+  },
+  {
+    "w": "trade-off",
+    "pos": "n.",
+    "zh": "权衡取舍",
+    "cls": "S",
+    "tier": 3,
+    "topic": "1.3 Opportunity cost"
+  },
+  {
+    "w": "production possibility curve",
+    "pos": "phr.",
+    "zh": "生产可能性曲线",
+    "cls": "S",
+    "tier": 1,
+    "topic": "1.4 Production possibility curve (PPC) diagrams"
+  },
+  {
+    "w": "PPC",
+    "pos": "n.",
+    "zh": "生产可能性曲线",
+    "cls": "R",
+    "tier": 1,
+    "topic": "1.4 Production possibility curve (PPC) diagrams"
+  },
+  {
+    "w": "shift",
+    "pos": "n.",
+    "zh": "（曲线的）移动",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.4 Production possibility curve (PPC) diagrams"
+  },
+  {
+    "w": "efficiency",
+    "pos": "n.",
+    "zh": "效率",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.4 Production possibility curve (PPC) diagrams"
+  },
+  {
+    "w": "capital goods",
+    "pos": "phr.",
+    "zh": "资本品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.4 Production possibility curve (PPC) diagrams"
+  },
+  {
+    "w": "consumer goods",
+    "pos": "phr.",
+    "zh": "消费品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "1.4 Production possibility curve (PPC) diagrams"
+  },
+  {
+    "w": "productive capacity",
+    "pos": "phr.",
+    "zh": "生产能力",
+    "cls": "S",
+    "tier": 3,
+    "topic": "1.4 Production possibility curve (PPC) diagrams"
+  },
+  {
+    "w": "market",
+    "pos": "n.",
+    "zh": "市场",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.1 The role of markets in allocating resources"
+  },
+  {
+    "w": "product market",
+    "pos": "phr.",
+    "zh": "产品市场",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.1 The role of markets in allocating resources"
+  },
+  {
+    "w": "factor market",
+    "pos": "phr.",
+    "zh": "要素市场",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.1 The role of markets in allocating resources"
+  },
+  {
+    "w": "demand",
+    "pos": "n.",
+    "zh": "需求",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "effective demand",
+    "pos": "phr.",
+    "zh": "有效需求",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "demand curve",
+    "pos": "phr.",
+    "zh": "需求曲线",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "quantity demanded",
+    "pos": "phr.",
+    "zh": "需求量",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "extension",
+    "pos": "n.",
+    "zh": "扩张（沿曲线增加）",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "contraction",
+    "pos": "n.",
+    "zh": "收缩（沿曲线减少）",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "determinant",
+    "pos": "n.",
+    "zh": "决定因素",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "income",
+    "pos": "n.",
+    "zh": "收入",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "substitute",
+    "pos": "n.",
+    "zh": "替代品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "complement",
+    "pos": "n.",
+    "zh": "互补品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "supply",
+    "pos": "n.",
+    "zh": "供给",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.3 Supply"
+  },
+  {
+    "w": "supply curve",
+    "pos": "phr.",
+    "zh": "供给曲线",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.3 Supply"
+  },
+  {
+    "w": "quantity supplied",
+    "pos": "phr.",
+    "zh": "供给量",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.3 Supply"
+  },
+  {
+    "w": "costs of production",
+    "pos": "phr.",
+    "zh": "生产成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.3 Supply"
+  },
+  {
+    "w": "price mechanism",
+    "pos": "phr.",
+    "zh": "价格机制",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.4 Price determination"
+  },
+  {
+    "w": "incentive",
+    "pos": "n.",
+    "zh": "激励，刺激",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.4 Price determination"
+  },
+  {
+    "w": "equilibrium",
+    "pos": "n.",
+    "zh": "均衡",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.4 Price determination"
+  },
+  {
+    "w": "equilibrium price",
+    "pos": "phr.",
+    "zh": "均衡价格",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.4 Price determination"
+  },
+  {
+    "w": "disequilibrium",
+    "pos": "n.",
+    "zh": "非均衡，失衡",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.4 Price determination"
+  },
+  {
+    "w": "shortage",
+    "pos": "n.",
+    "zh": "短缺",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.4 Price determination"
+  },
+  {
+    "w": "surplus",
+    "pos": "n.",
+    "zh": "过剩；盈余",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.4 Price determination"
+  },
+  {
+    "w": "excess demand",
+    "pos": "phr.",
+    "zh": "超额需求",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.4 Price determination"
+  },
+  {
+    "w": "excess supply",
+    "pos": "phr.",
+    "zh": "超额供给",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.4 Price determination"
+  },
+  {
+    "w": "price elasticity of demand",
+    "pos": "phr.",
+    "zh": "需求价格弹性",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "PED",
+    "pos": "n.",
+    "zh": "需求价格弹性",
+    "cls": "R",
+    "tier": 1,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "elasticity",
+    "pos": "n.",
+    "zh": "弹性",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "elastic",
+    "pos": "adj.",
+    "zh": "富有弹性的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "inelastic",
+    "pos": "adj.",
+    "zh": "缺乏弹性的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "perfectly elastic",
+    "pos": "phr.",
+    "zh": "完全弹性的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "perfectly inelastic",
+    "pos": "phr.",
+    "zh": "完全无弹性的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "unitary elastic",
+    "pos": "phr.",
+    "zh": "单位弹性的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "responsiveness",
+    "pos": "n.",
+    "zh": "反应程度，敏感度",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "percentage change",
+    "pos": "phr.",
+    "zh": "百分比变化",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "expenditure",
+    "pos": "n.",
+    "zh": "支出",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "necessity",
+    "pos": "n.",
+    "zh": "必需品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "luxury",
+    "pos": "n.",
+    "zh": "奢侈品",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "addictive",
+    "pos": "adj.",
+    "zh": "成瘾的",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.6 Price elasticity of demand (PED)"
+  },
+  {
+    "w": "price elasticity of supply",
+    "pos": "phr.",
+    "zh": "供给价格弹性",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.7 Price elasticity of supply (PES)"
+  },
+  {
+    "w": "PES",
+    "pos": "n.",
+    "zh": "供给价格弹性",
+    "cls": "R",
+    "tier": 2,
+    "topic": "2.7 Price elasticity of supply (PES)"
+  },
+  {
+    "w": "spare capacity",
+    "pos": "phr.",
+    "zh": "闲置产能",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.7 Price elasticity of supply (PES)"
+  },
+  {
+    "w": "stock",
+    "pos": "n.",
+    "zh": "存货，库存",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.7 Price elasticity of supply (PES)"
+  },
+  {
+    "w": "perishable",
+    "pos": "adj.",
+    "zh": "易腐坏的",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.7 Price elasticity of supply (PES)"
+  },
+  {
+    "w": "market economy",
+    "pos": "phr.",
+    "zh": "市场经济",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.8 Market economic system"
+  },
+  {
+    "w": "planned economy",
+    "pos": "phr.",
+    "zh": "计划经济",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.8 Market economic system"
+  },
+  {
+    "w": "profit motive",
+    "pos": "phr.",
+    "zh": "利润动机",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.8 Market economic system"
+  },
+  {
+    "w": "market failure",
+    "pos": "phr.",
+    "zh": "市场失灵",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "public good",
+    "pos": "phr.",
+    "zh": "公共物品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "merit good",
+    "pos": "phr.",
+    "zh": "优效品（有益品）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "demerit good",
+    "pos": "phr.",
+    "zh": "劣效品（有害品）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "non-excludable",
+    "pos": "adj.",
+    "zh": "非排他性的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "non-rival",
+    "pos": "adj.",
+    "zh": "非竞争性的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "free rider",
+    "pos": "phr.",
+    "zh": "搭便车者",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "externality",
+    "pos": "n.",
+    "zh": "外部性",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "private benefit",
+    "pos": "phr.",
+    "zh": "私人收益",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "external benefit",
+    "pos": "phr.",
+    "zh": "外部收益",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "social benefit",
+    "pos": "phr.",
+    "zh": "社会收益",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "private cost",
+    "pos": "phr.",
+    "zh": "私人成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "external cost",
+    "pos": "phr.",
+    "zh": "外部成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "social cost",
+    "pos": "phr.",
+    "zh": "社会成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "third party",
+    "pos": "phr.",
+    "zh": "第三方",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "monopoly",
+    "pos": "n.",
+    "zh": "垄断；垄断企业",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "misallocation",
+    "pos": "n.",
+    "zh": "资源配置不当",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "over-consumption",
+    "pos": "n.",
+    "zh": "过度消费",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "under-consumption",
+    "pos": "n.",
+    "zh": "消费不足",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.9 Market failure"
+  },
+  {
+    "w": "mixed economy",
+    "pos": "phr.",
+    "zh": "混合经济",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "government intervention",
+    "pos": "phr.",
+    "zh": "政府干预",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "intervene",
+    "pos": "v.",
+    "zh": "干预",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "maximum price",
+    "pos": "phr.",
+    "zh": "最高限价",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "minimum price",
+    "pos": "phr.",
+    "zh": "最低限价",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "black market",
+    "pos": "phr.",
+    "zh": "黑市",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "indirect tax",
+    "pos": "phr.",
+    "zh": "间接税",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "subsidy",
+    "pos": "n.",
+    "zh": "补贴",
+    "cls": "S",
+    "tier": 1,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "subsidise",
+    "pos": "v.",
+    "zh": "给予补贴",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "regulation",
+    "pos": "n.",
+    "zh": "管制，监管",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "privatisation",
+    "pos": "n.",
+    "zh": "私有化",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "nationalisation",
+    "pos": "n.",
+    "zh": "国有化",
+    "cls": "S",
+    "tier": 3,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "direct provision",
+    "pos": "phr.",
+    "zh": "（政府）直接提供",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "quota",
+    "pos": "n.",
+    "zh": "配额",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.10 Mixed economic system"
+  },
+  {
+    "w": "microeconomic",
+    "pos": "adj.",
+    "zh": "微观经济的",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3 Microeconomic decision-makers"
+  },
+  {
+    "w": "barter",
+    "pos": "n.",
+    "zh": "物物交换",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "medium of exchange",
+    "pos": "phr.",
+    "zh": "交换媒介",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "store of value",
+    "pos": "phr.",
+    "zh": "价值储藏",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "unit of account",
+    "pos": "phr.",
+    "zh": "计价单位",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "durability",
+    "pos": "n.",
+    "zh": "耐用性",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "portability",
+    "pos": "n.",
+    "zh": "便携性",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "divisibility",
+    "pos": "n.",
+    "zh": "可分割性",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "acceptability",
+    "pos": "n.",
+    "zh": "可接受性",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "currency",
+    "pos": "n.",
+    "zh": "货币，通货",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "central bank",
+    "pos": "phr.",
+    "zh": "中央银行",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "commercial bank",
+    "pos": "phr.",
+    "zh": "商业银行",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.1 Money and banking"
+  },
+  {
+    "w": "household",
+    "pos": "n.",
+    "zh": "家庭，住户",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.2 Households"
+  },
+  {
+    "w": "consumption",
+    "pos": "n.",
+    "zh": "消费",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.2 Households"
+  },
+  {
+    "w": "consume",
+    "pos": "v.",
+    "zh": "消费",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.2 Households"
+  },
+  {
+    "w": "saving",
+    "pos": "n.",
+    "zh": "储蓄",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.2 Households"
+  },
+  {
+    "w": "borrowing",
+    "pos": "n.",
+    "zh": "借款，借贷",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.2 Households"
+  },
+  {
+    "w": "disposable income",
+    "pos": "phr.",
+    "zh": "可支配收入",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.2 Households"
+  },
+  {
+    "w": "consumer confidence",
+    "pos": "phr.",
+    "zh": "消费者信心",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.2 Households"
+  },
+  {
+    "w": "wealth",
+    "pos": "n.",
+    "zh": "财富",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.2 Households"
+  },
+  {
+    "w": "occupation",
+    "pos": "n.",
+    "zh": "职业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "non-wage factors",
+    "pos": "phr.",
+    "zh": "非工资因素",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "fringe benefits",
+    "pos": "phr.",
+    "zh": "附加福利",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "demand for labour",
+    "pos": "phr.",
+    "zh": "劳动力需求",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "supply of labour",
+    "pos": "phr.",
+    "zh": "劳动力供给",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "labour market",
+    "pos": "phr.",
+    "zh": "劳动力市场",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "trade union",
+    "pos": "phr.",
+    "zh": "工会",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "collective bargaining",
+    "pos": "phr.",
+    "zh": "集体谈判",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "bargaining power",
+    "pos": "phr.",
+    "zh": "谈判能力",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "national minimum wage",
+    "pos": "phr.",
+    "zh": "全国最低工资",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "NMW",
+    "pos": "n.",
+    "zh": "全国最低工资",
+    "cls": "R",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "discrimination",
+    "pos": "n.",
+    "zh": "歧视",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "primary sector",
+    "pos": "phr.",
+    "zh": "第一产业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "secondary sector",
+    "pos": "phr.",
+    "zh": "第二产业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "tertiary sector",
+    "pos": "phr.",
+    "zh": "第三产业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "occupational mobility",
+    "pos": "phr.",
+    "zh": "职业流动性",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "geographical mobility",
+    "pos": "phr.",
+    "zh": "地域流动性",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "division of labour",
+    "pos": "phr.",
+    "zh": "劳动分工",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "specialise",
+    "pos": "v.",
+    "zh": "专门从事，专业化",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.3 Workers"
+  },
+  {
+    "w": "firm",
+    "pos": "n.",
+    "zh": "企业，公司",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "industry",
+    "pos": "n.",
+    "zh": "行业，产业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "sector",
+    "pos": "n.",
+    "zh": "部门，产业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "private sector",
+    "pos": "phr.",
+    "zh": "私营部门",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "public sector",
+    "pos": "phr.",
+    "zh": "公共部门",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "merger",
+    "pos": "n.",
+    "zh": "合并，兼并",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "horizontal merger",
+    "pos": "phr.",
+    "zh": "横向合并",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "vertical merger",
+    "pos": "phr.",
+    "zh": "纵向合并",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "conglomerate merger",
+    "pos": "phr.",
+    "zh": "混合合并",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "economies of scale",
+    "pos": "phr.",
+    "zh": "规模经济",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "diseconomies of scale",
+    "pos": "phr.",
+    "zh": "规模不经济",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "internal economies",
+    "pos": "phr.",
+    "zh": "内部规模经济",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "external economies",
+    "pos": "phr.",
+    "zh": "外部规模经济",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "bulk buying",
+    "pos": "phr.",
+    "zh": "批量采购",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.4 Firms"
+  },
+  {
+    "w": "derived demand",
+    "pos": "phr.",
+    "zh": "派生需求",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.5 Firms and production"
+  },
+  {
+    "w": "labour-intensive",
+    "pos": "adj.",
+    "zh": "劳动密集型的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.5 Firms and production"
+  },
+  {
+    "w": "capital-intensive",
+    "pos": "adj.",
+    "zh": "资本密集型的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.5 Firms and production"
+  },
+  {
+    "w": "production",
+    "pos": "n.",
+    "zh": "生产",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.5 Firms and production"
+  },
+  {
+    "w": "productivity",
+    "pos": "n.",
+    "zh": "生产率",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.5 Firms and production"
+  },
+  {
+    "w": "output",
+    "pos": "n.",
+    "zh": "产出，产量",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.5 Firms and production"
+  },
+  {
+    "w": "investment",
+    "pos": "n.",
+    "zh": "投资",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.5 Firms and production"
+  },
+  {
+    "w": "invest",
+    "pos": "v.",
+    "zh": "投资",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.5 Firms and production"
+  },
+  {
+    "w": "automation",
+    "pos": "n.",
+    "zh": "自动化",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.5 Firms and production"
+  },
+  {
+    "w": "total cost",
+    "pos": "phr.",
+    "zh": "总成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "average total cost",
+    "pos": "phr.",
+    "zh": "平均总成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "fixed cost",
+    "pos": "phr.",
+    "zh": "固定成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "variable cost",
+    "pos": "phr.",
+    "zh": "可变成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "average fixed cost",
+    "pos": "phr.",
+    "zh": "平均固定成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "average variable cost",
+    "pos": "phr.",
+    "zh": "平均可变成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "ATC",
+    "pos": "n.",
+    "zh": "平均总成本",
+    "cls": "R",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "revenue",
+    "pos": "n.",
+    "zh": "收益，收入",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "total revenue",
+    "pos": "phr.",
+    "zh": "总收益",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "average revenue",
+    "pos": "phr.",
+    "zh": "平均收益",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "profit maximisation",
+    "pos": "phr.",
+    "zh": "利润最大化",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "social welfare",
+    "pos": "phr.",
+    "zh": "社会福利",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "market share",
+    "pos": "phr.",
+    "zh": "市场份额",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "loss",
+    "pos": "n.",
+    "zh": "亏损",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.6 Firms' costs, revenue and objectives"
+  },
+  {
+    "w": "competition",
+    "pos": "n.",
+    "zh": "竞争",
+    "cls": "S",
+    "tier": 1,
+    "topic": "3.7 Types of markets"
+  },
+  {
+    "w": "competitive market",
+    "pos": "phr.",
+    "zh": "竞争性市场",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.7 Types of markets"
+  },
+  {
+    "w": "barriers to entry",
+    "pos": "phr.",
+    "zh": "进入壁垒",
+    "cls": "S",
+    "tier": 2,
+    "topic": "3.7 Types of markets"
+  },
+  {
+    "w": "price maker",
+    "pos": "phr.",
+    "zh": "价格制定者",
+    "cls": "S",
+    "tier": 3,
+    "topic": "3.7 Types of markets"
+  },
+  {
+    "w": "oligopoly",
+    "pos": "n.",
+    "zh": "寡头垄断",
+    "cls": "R",
+    "tier": 3,
+    "topic": "3.7 Types of markets"
+  },
+  {
+    "w": "macroeconomic",
+    "pos": "adj.",
+    "zh": "宏观经济的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.1 Government macroeconomic intervention"
+  },
+  {
+    "w": "macroeconomic aims",
+    "pos": "phr.",
+    "zh": "宏观经济目标",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.1 Government macroeconomic intervention"
+  },
+  {
+    "w": "price stability",
+    "pos": "phr.",
+    "zh": "物价稳定",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.1 Government macroeconomic intervention"
+  },
+  {
+    "w": "redistribution",
+    "pos": "n.",
+    "zh": "再分配",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.1 Government macroeconomic intervention"
+  },
+  {
+    "w": "sustainability",
+    "pos": "n.",
+    "zh": "可持续性",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.1 Government macroeconomic intervention"
+  },
+  {
+    "w": "fiscal policy",
+    "pos": "phr.",
+    "zh": "财政政策",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "government budget",
+    "pos": "phr.",
+    "zh": "政府预算",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "budget deficit",
+    "pos": "phr.",
+    "zh": "预算赤字",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "deficit",
+    "pos": "n.",
+    "zh": "赤字；逆差",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "national debt",
+    "pos": "phr.",
+    "zh": "国债，政府债务",
+    "cls": "S",
+    "tier": 3,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "government spending",
+    "pos": "phr.",
+    "zh": "政府支出",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "taxation",
+    "pos": "n.",
+    "zh": "税收，征税",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "tax revenue",
+    "pos": "phr.",
+    "zh": "税收收入",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "direct tax",
+    "pos": "phr.",
+    "zh": "直接税",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "progressive tax",
+    "pos": "phr.",
+    "zh": "累进税",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "regressive tax",
+    "pos": "phr.",
+    "zh": "累退税",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "proportional tax",
+    "pos": "phr.",
+    "zh": "比例税",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "excise duty",
+    "pos": "phr.",
+    "zh": "消费税（货物税）",
+    "cls": "R",
+    "tier": 3,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "expansionary",
+    "pos": "adj.",
+    "zh": "扩张性的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "contractionary",
+    "pos": "adj.",
+    "zh": "紧缩性的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "total demand",
+    "pos": "phr.",
+    "zh": "总需求",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "aggregate demand",
+    "pos": "phr.",
+    "zh": "总需求",
+    "cls": "R",
+    "tier": 3,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "disincentive",
+    "pos": "n.",
+    "zh": "负激励，抑制因素",
+    "cls": "S",
+    "tier": 3,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "time lag",
+    "pos": "phr.",
+    "zh": "时滞",
+    "cls": "S",
+    "tier": 3,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "multiplier effect",
+    "pos": "phr.",
+    "zh": "乘数效应",
+    "cls": "R",
+    "tier": 3,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "impose",
+    "pos": "v.",
+    "zh": "征收，施加",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.2 Fiscal policy"
+  },
+  {
+    "w": "monetary policy",
+    "pos": "phr.",
+    "zh": "货币政策",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.3 Monetary policy"
+  },
+  {
+    "w": "money supply",
+    "pos": "phr.",
+    "zh": "货币供应量",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.3 Monetary policy"
+  },
+  {
+    "w": "interest rate",
+    "pos": "phr.",
+    "zh": "利率",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.3 Monetary policy"
+  },
+  {
+    "w": "cost of borrowing",
+    "pos": "phr.",
+    "zh": "借贷成本",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.3 Monetary policy"
+  },
+  {
+    "w": "supply-side policy",
+    "pos": "phr.",
+    "zh": "供给侧政策",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.4 Supply-side policy"
+  },
+  {
+    "w": "deregulation",
+    "pos": "n.",
+    "zh": "放松管制",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.4 Supply-side policy"
+  },
+  {
+    "w": "infrastructure",
+    "pos": "n.",
+    "zh": "基础设施",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.4 Supply-side policy"
+  },
+  {
+    "w": "stimulate",
+    "pos": "v.",
+    "zh": "刺激（经济）",
+    "cls": "S",
+    "tier": 3,
+    "topic": "4.4 Supply-side policy"
+  },
+  {
+    "w": "economic growth",
+    "pos": "phr.",
+    "zh": "经济增长",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.5 Economic growth"
+  },
+  {
+    "w": "gross domestic product",
+    "pos": "phr.",
+    "zh": "国内生产总值",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.5 Economic growth"
+  },
+  {
+    "w": "GDP",
+    "pos": "n.",
+    "zh": "国内生产总值",
+    "cls": "R",
+    "tier": 1,
+    "topic": "4.5 Economic growth"
+  },
+  {
+    "w": "real GDP",
+    "pos": "phr.",
+    "zh": "实际国内生产总值",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.5 Economic growth"
+  },
+  {
+    "w": "nominal GDP",
+    "pos": "phr.",
+    "zh": "名义国内生产总值",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.5 Economic growth"
+  },
+  {
+    "w": "recession",
+    "pos": "n.",
+    "zh": "经济衰退",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.5 Economic growth"
+  },
+  {
+    "w": "boom",
+    "pos": "n.",
+    "zh": "繁荣（期）",
+    "cls": "S",
+    "tier": 3,
+    "topic": "4.5 Economic growth"
+  },
+  {
+    "w": "business cycle",
+    "pos": "phr.",
+    "zh": "经济周期",
+    "cls": "S",
+    "tier": 3,
+    "topic": "4.5 Economic growth"
+  },
+  {
+    "w": "non-renewable",
+    "pos": "adj.",
+    "zh": "不可再生的",
+    "cls": "S",
+    "tier": 3,
+    "topic": "4.5 Economic growth"
+  },
+  {
+    "w": "employment",
+    "pos": "n.",
+    "zh": "就业",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "unemployment",
+    "pos": "n.",
+    "zh": "失业",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "full employment",
+    "pos": "phr.",
+    "zh": "充分就业",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "unemployment rate",
+    "pos": "phr.",
+    "zh": "失业率",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "labour force survey",
+    "pos": "phr.",
+    "zh": "劳动力调查",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "frictional unemployment",
+    "pos": "phr.",
+    "zh": "摩擦性失业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "structural unemployment",
+    "pos": "phr.",
+    "zh": "结构性失业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "cyclical unemployment",
+    "pos": "phr.",
+    "zh": "周期性失业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "seasonal unemployment",
+    "pos": "phr.",
+    "zh": "季节性失业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "unemployment benefit",
+    "pos": "phr.",
+    "zh": "失业救济金",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.6 Employment and unemployment"
+  },
+  {
+    "w": "inflation",
+    "pos": "n.",
+    "zh": "通货膨胀",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "deflation",
+    "pos": "n.",
+    "zh": "通货紧缩",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "hyperinflation",
+    "pos": "n.",
+    "zh": "恶性通货膨胀",
+    "cls": "R",
+    "tier": 3,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "consumer prices index",
+    "pos": "phr.",
+    "zh": "消费者价格指数",
+    "cls": "S",
+    "tier": 1,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "CPI",
+    "pos": "n.",
+    "zh": "消费者价格指数",
+    "cls": "R",
+    "tier": 1,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "base year",
+    "pos": "phr.",
+    "zh": "基年",
+    "cls": "S",
+    "tier": 3,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "weighting",
+    "pos": "n.",
+    "zh": "权重",
+    "cls": "S",
+    "tier": 3,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "basket of goods",
+    "pos": "phr.",
+    "zh": "一篮子商品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "general price level",
+    "pos": "phr.",
+    "zh": "一般价格水平",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "demand-pull inflation",
+    "pos": "phr.",
+    "zh": "需求拉动型通胀",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "cost-push inflation",
+    "pos": "phr.",
+    "zh": "成本推动型通胀",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "purchasing power",
+    "pos": "phr.",
+    "zh": "购买力",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "real income",
+    "pos": "phr.",
+    "zh": "实际收入",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "saver",
+    "pos": "n.",
+    "zh": "储蓄者",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "lender",
+    "pos": "n.",
+    "zh": "贷款人，债权人",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "borrower",
+    "pos": "n.",
+    "zh": "借款人，债务人",
+    "cls": "S",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "living standards",
+    "pos": "phr.",
+    "zh": "生活水平",
+    "cls": "S",
+    "tier": 1,
+    "topic": "5.1 Living standards"
+  },
+  {
+    "w": "GDP per head",
+    "pos": "phr.",
+    "zh": "人均国内生产总值",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.1 Living standards"
+  },
+  {
+    "w": "per capita",
+    "pos": "phr.",
+    "zh": "人均",
+    "cls": "R",
+    "tier": 2,
+    "topic": "5.1 Living standards"
+  },
+  {
+    "w": "human development index",
+    "pos": "phr.",
+    "zh": "人类发展指数",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.1 Living standards"
+  },
+  {
+    "w": "HDI",
+    "pos": "n.",
+    "zh": "人类发展指数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "5.1 Living standards"
+  },
+  {
+    "w": "life expectancy",
+    "pos": "phr.",
+    "zh": "预期寿命",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.1 Living standards"
+  },
+  {
+    "w": "indicator",
+    "pos": "n.",
+    "zh": "指标",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.1 Living standards"
+  },
+  {
+    "w": "income distribution",
+    "pos": "phr.",
+    "zh": "收入分配",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.1 Living standards"
+  },
+  {
+    "w": "inequality",
+    "pos": "n.",
+    "zh": "不平等",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.1 Living standards"
+  },
+  {
+    "w": "poverty",
+    "pos": "n.",
+    "zh": "贫困",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.2 Poverty"
+  },
+  {
+    "w": "absolute poverty",
+    "pos": "phr.",
+    "zh": "绝对贫困",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.2 Poverty"
+  },
+  {
+    "w": "relative poverty",
+    "pos": "phr.",
+    "zh": "相对贫困",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.2 Poverty"
+  },
+  {
+    "w": "poverty line",
+    "pos": "phr.",
+    "zh": "贫困线",
+    "cls": "R",
+    "tier": 3,
+    "topic": "5.2 Poverty"
+  },
+  {
+    "w": "alleviate",
+    "pos": "v.",
+    "zh": "缓解，减轻",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.2 Poverty"
+  },
+  {
+    "w": "redistribute",
+    "pos": "v.",
+    "zh": "再分配",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.2 Poverty"
+  },
+  {
+    "w": "state benefits",
+    "pos": "phr.",
+    "zh": "政府福利津贴",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.2 Poverty"
+  },
+  {
+    "w": "birth rate",
+    "pos": "phr.",
+    "zh": "出生率",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "death rate",
+    "pos": "phr.",
+    "zh": "死亡率",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "net migration",
+    "pos": "phr.",
+    "zh": "净移民",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "immigration",
+    "pos": "n.",
+    "zh": "移入（移民）",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "emigration",
+    "pos": "n.",
+    "zh": "移出（移民）",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "optimum population",
+    "pos": "phr.",
+    "zh": "适度人口",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "ageing population",
+    "pos": "phr.",
+    "zh": "人口老龄化",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "dependency ratio",
+    "pos": "phr.",
+    "zh": "抚养比",
+    "cls": "S",
+    "tier": 3,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "overpopulation",
+    "pos": "n.",
+    "zh": "人口过剩",
+    "cls": "S",
+    "tier": 3,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "brain drain",
+    "pos": "phr.",
+    "zh": "人才流失",
+    "cls": "S",
+    "tier": 3,
+    "topic": "5.3 Population"
+  },
+  {
+    "w": "economic development",
+    "pos": "phr.",
+    "zh": "经济发展",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.4 Differences in economic development between countries"
+  },
+  {
+    "w": "developed country",
+    "pos": "phr.",
+    "zh": "发达国家",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.4 Differences in economic development between countries"
+  },
+  {
+    "w": "developing country",
+    "pos": "phr.",
+    "zh": "发展中国家",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.4 Differences in economic development between countries"
+  },
+  {
+    "w": "emerging economy",
+    "pos": "phr.",
+    "zh": "新兴经济体",
+    "cls": "R",
+    "tier": 3,
+    "topic": "5.4 Differences in economic development between countries"
+  },
+  {
+    "w": "foreign aid",
+    "pos": "phr.",
+    "zh": "外国援助",
+    "cls": "S",
+    "tier": 3,
+    "topic": "5.4 Differences in economic development between countries"
+  },
+  {
+    "w": "primary product",
+    "pos": "phr.",
+    "zh": "初级产品",
+    "cls": "S",
+    "tier": 2,
+    "topic": "5.4 Differences in economic development between countries"
+  },
+  {
+    "w": "commodity",
+    "pos": "n.",
+    "zh": "大宗商品，初级商品",
+    "cls": "R",
+    "tier": 2,
+    "topic": "5.4 Differences in economic development between countries"
+  },
+  {
+    "w": "specialisation",
+    "pos": "n.",
+    "zh": "专业化，专门化",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.1 Specialisation and free trade"
+  },
+  {
+    "w": "free trade",
+    "pos": "phr.",
+    "zh": "自由贸易",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.1 Specialisation and free trade"
+  },
+  {
+    "w": "international trade",
+    "pos": "phr.",
+    "zh": "国际贸易",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.1 Specialisation and free trade"
+  },
+  {
+    "w": "export",
+    "pos": "n.",
+    "zh": "出口（品）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.1 Specialisation and free trade"
+  },
+  {
+    "w": "import",
+    "pos": "n.",
+    "zh": "进口（品）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.1 Specialisation and free trade"
+  },
+  {
+    "w": "comparative advantage",
+    "pos": "phr.",
+    "zh": "比较优势",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.1 Specialisation and free trade"
+  },
+  {
+    "w": "absolute advantage",
+    "pos": "phr.",
+    "zh": "绝对优势",
+    "cls": "S",
+    "tier": 3,
+    "topic": "6.1 Specialisation and free trade"
+  },
+  {
+    "w": "globalisation",
+    "pos": "n.",
+    "zh": "全球化",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "multinational company",
+    "pos": "phr.",
+    "zh": "跨国公司",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "MNC",
+    "pos": "n.",
+    "zh": "跨国公司",
+    "cls": "R",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "host country",
+    "pos": "phr.",
+    "zh": "东道国",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "home country",
+    "pos": "phr.",
+    "zh": "母国",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "foreign direct investment",
+    "pos": "phr.",
+    "zh": "外国直接投资",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "FDI",
+    "pos": "n.",
+    "zh": "外国直接投资",
+    "cls": "R",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "trade restriction",
+    "pos": "phr.",
+    "zh": "贸易限制",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "protectionism",
+    "pos": "n.",
+    "zh": "贸易保护主义",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "tariff",
+    "pos": "n.",
+    "zh": "关税",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "import quota",
+    "pos": "phr.",
+    "zh": "进口配额",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "embargo",
+    "pos": "n.",
+    "zh": "禁运",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "infant industry",
+    "pos": "phr.",
+    "zh": "幼稚产业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "declining industry",
+    "pos": "phr.",
+    "zh": "衰退产业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "strategic industry",
+    "pos": "phr.",
+    "zh": "战略性产业",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "dumping",
+    "pos": "n.",
+    "zh": "倾销",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "retaliation",
+    "pos": "n.",
+    "zh": "（贸易）报复",
+    "cls": "S",
+    "tier": 3,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "domestic",
+    "pos": "adj.",
+    "zh": "国内的，本国的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.2 Globalisation and trade restrictions"
+  },
+  {
+    "w": "exchange rate",
+    "pos": "phr.",
+    "zh": "汇率",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "foreign exchange market",
+    "pos": "phr.",
+    "zh": "外汇市场",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "floating exchange rate",
+    "pos": "phr.",
+    "zh": "浮动汇率",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "appreciation",
+    "pos": "n.",
+    "zh": "（货币）升值",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "depreciation",
+    "pos": "n.",
+    "zh": "（货币）贬值",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "appreciate",
+    "pos": "v.",
+    "zh": "（货币）升值",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "depreciate",
+    "pos": "v.",
+    "zh": "（货币）贬值",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "speculation",
+    "pos": "n.",
+    "zh": "投机",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "remittances",
+    "pos": "n.",
+    "zh": "侨汇，汇款",
+    "cls": "R",
+    "tier": 3,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "fluctuate",
+    "pos": "v.",
+    "zh": "波动",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "international competitiveness",
+    "pos": "phr.",
+    "zh": "国际竞争力",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.3 Foreign exchange rates"
+  },
+  {
+    "w": "balance of payments",
+    "pos": "phr.",
+    "zh": "国际收支",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.4 Current account of the balance of payments"
+  },
+  {
+    "w": "current account",
+    "pos": "phr.",
+    "zh": "经常账户",
+    "cls": "S",
+    "tier": 1,
+    "topic": "6.4 Current account of the balance of payments"
+  },
+  {
+    "w": "trade in goods",
+    "pos": "phr.",
+    "zh": "货物贸易",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.4 Current account of the balance of payments"
+  },
+  {
+    "w": "trade in services",
+    "pos": "phr.",
+    "zh": "服务贸易",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.4 Current account of the balance of payments"
+  },
+  {
+    "w": "primary income",
+    "pos": "phr.",
+    "zh": "初次收入",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.4 Current account of the balance of payments"
+  },
+  {
+    "w": "secondary income",
+    "pos": "phr.",
+    "zh": "二次收入",
+    "cls": "S",
+    "tier": 2,
+    "topic": "6.4 Current account of the balance of payments"
+  },
+  {
+    "w": "balance of trade",
+    "pos": "phr.",
+    "zh": "贸易差额",
+    "cls": "S",
+    "tier": 3,
+    "topic": "6.4 Current account of the balance of payments"
+  },
+  {
+    "w": "schedule",
+    "pos": "n.",
+    "zh": "（需求/供给）表",
+    "cls": "S",
+    "tier": 2,
+    "topic": "2.2 Demand"
+  },
+  {
+    "w": "percentage point",
+    "pos": "phr.",
+    "zh": "百分点",
+    "cls": "R",
+    "tier": 2,
+    "topic": "4.7 Inflation"
+  },
+  {
+    "w": "trade deficit",
+    "pos": "phr.",
+    "zh": "贸易逆差",
+    "cls": "R",
+    "tier": 2,
+    "topic": "6.4 Current account of the balance of payments"
+  }
+]
