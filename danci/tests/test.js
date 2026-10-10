@@ -7,11 +7,13 @@ const api = new Function(logic + '; return {W, info, dayWords, learned, dateOfSt
 const { W, info, dayWords, learned, dateOfStudyDay, weekWords, PLAN, WEEKS } = api;
 const assert = (c, m) => { if (!c) { console.error('FAIL', m); process.exitCode = 1; } };
 let s = 0, r = 0, dayOfRec = {};
+const inRec = new Set(W.R.map(e => e[0]));
+assert(new Set(W.S.map(e => e[0])).size === W.S.length && inRec.size === W.R.length, 'no duplicate words');
 for (let d = 1; d <= WEEKS * 5; d++) {
   const w = dayWords(d); if (!w) continue;
   assert(w.s[0] === s && w.r[0] === r, 'contiguous ' + d);
   for (let i = w.r[0]; i < w.r[1]; i++) dayOfRec[W.R[i][0]] = d;
-  for (let i = w.s[0]; i < w.s[1]; i++) { const wd = W.S[i][0]; if (i >= 570) assert(dayOfRec[wd] !== undefined && dayOfRec[wd] < d, 'spell after rec ' + wd + ' day ' + d); }
+  for (let i = w.s[0]; i < w.s[1]; i++) { const wd = W.S[i][0]; if (inRec.has(wd)) assert(dayOfRec[wd] !== undefined && dayOfRec[wd] < d, 'spell after rec ' + wd + ' day ' + d); }
   s = w.s[1]; r = w.r[1];
 }
 console.log('totals', s, r, 'of', W.S.length, W.R.length);
