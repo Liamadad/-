@@ -1,0 +1,408 @@
+<title>每日单词本</title>
+<style>
+/* Layout: one narrow column like a notebook page; sticky date bar on top, three tabs, word rows below. */
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --fg: #17202b;
+  --muted: #5a6573;
+  --line: #e1e6ec;
+  --spell: #c42b2b;
+  --spell-soft: #fbeaea;
+  --rec: #1d5ea6;
+  --rec-soft: #e6eff9;
+  --mask: #dbe2ea;
+  --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "Segoe UI", sans-serif;
+  --serif: Georgia, "Times New Roman", "Noto Serif", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f141a; --surface: #161d25; --fg: #e7ecf2; --muted: #97a2b0; --line: #34414e;
+    --spell: #ff7b7b; --spell-soft: #3a1f22; --rec: #82b4f0; --rec-soft: #18293c; --mask: #2a3440;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f141a; --surface: #161d25; --fg: #e7ecf2; --muted: #97a2b0; --line: #34414e;
+  --spell: #ff7b7b; --spell-soft: #3a1f22; --rec: #82b4f0; --rec-soft: #18293c; --mask: #2a3440;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.5; margin: 0; }
+.wrap { max-width: 640px; margin: 0 auto; padding-inline: 16px; padding-block: 0 48px; }
+button { font: inherit; color: inherit; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button:active { opacity: 0.6; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+button:focus-visible { outline: 2px solid var(--rec); outline-offset: 2px; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px 8px; border-bottom: 1px solid var(--line); }
+.nav { display: flex; align-items: center; gap: 8px; }
+.nav .arrow { flex: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; padding: 0; }
+.nav .arrow svg { width: 20px; height: 20px; }
+.when { flex: 1; min-width: 0; text-align: center; }
+.when .date { font-size: 20px; font-weight: 700; letter-spacing: 0.02em; }
+.when .sub { font-size: 13px; color: var(--muted); }
+.today-btn { display: block; margin: 0 auto; min-height: 44px; border: 0; background: none; color: var(--rec); font-size: 15px; padding: 0 16px; }
+
+.tabs { display: flex; gap: 8px; margin-top: 16px; }
+.tab { flex: 1; min-width: 0; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 8px 4px; text-align: center; }
+.tab .n { display: block; font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tab .l { display: block; font-size: 13px; color: var(--muted); }
+.tab[aria-selected="true"] { border-color: currentColor; }
+.tab.t-review[aria-selected="true"] { color: var(--fg); background: var(--surface); box-shadow: inset 0 0 0 1px var(--fg); }
+.tab.t-spell[aria-selected="true"] { color: var(--spell); background: var(--spell-soft); }
+.tab.t-rec[aria-selected="true"] { color: var(--rec); background: var(--rec-soft); }
+.tab[aria-selected="true"] .l { color: inherit; }
+
+.tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-top: 16px; }
+.mask, .shuf { display: flex; flex-wrap: wrap; gap: 8px; font-size: 15px; }
+.mask span { color: var(--muted); align-self: center; margin-right: 2px; }
+.mask button { min-height: 44px; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 0 20px; }
+.mask button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.shuf button { min-height: 44px; border: 1px solid var(--rec); color: var(--rec); background: var(--surface); border-radius: 999px; padding: 0 16px; }
+.shuf button.on { background: var(--rec-soft); }
+
+.note { margin-top: 16px; font-size: 14px; color: var(--muted); }
+.panel h2 { font-size: 15px; margin: 20px 0 4px; }
+.panel h2 small { font-weight: 400; color: var(--muted); }
+
+details.group { border-bottom: 1px solid var(--line); }
+details.group > summary:focus-visible { outline: 2px solid var(--rec); outline-offset: 2px; }
+details.group > summary { list-style: none; display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; cursor: pointer; font-weight: 600; }
+details.group > summary::-webkit-details-marker { display: none; }
+details.group > summary::after { content: "展开"; font-weight: 400; font-size: 13px; color: var(--rec); flex: none; }
+details.group[open] > summary::after { content: "收起"; }
+details.group > summary .c { font-weight: 400; color: var(--muted); font-size: 14px; }
+details.group > summary > .c { margin-left: auto; }
+
+ul.words { list-style: none; margin: 0; padding: 0; }
+.w { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 4px 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+ul.words .w:first-child { border-top: 0; }
+.w .lhs { display: flex; gap: 10px; align-items: flex-start; min-width: 0; }
+.w .lhs > div { min-width: 0; }
+.say { flex: none; width: 44px; height: 44px; margin-top: -4px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--rec); display: grid; place-items: center; padding: 0; }
+.w.s .say { color: var(--spell); }
+.say.on { background: var(--rec-soft); border-color: currentColor; }
+.say svg { width: 20px; height: 20px; display: block; }
+.w .en { font-family: var(--serif); font-size: 20px; line-height: 1.25; overflow-wrap: anywhere; }
+.w .tag { display: inline-block; font-size: 12px; line-height: 1; padding: 3px 5px; border-radius: 4px; background: var(--spell-soft); color: var(--spell); margin-bottom: 4px; }
+.w .ph { display: block; font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+.w .zh { font-size: 14px; line-height: 1.45; align-self: center; overflow-wrap: anywhere; }
+.w.s .en { color: var(--spell); }
+@media (max-width: 360px) { .w { grid-template-columns: minmax(0, 1fr); } }
+
+/* 遮住: 默写 rows hide the English, 认识 rows hide the Chinese */
+body.cover .w.s:not(.show) .en,
+body.cover .w.s:not(.show) .ph,
+body.cover .w:not(.s):not(.show) .zh { color: transparent; background: var(--mask); border-radius: 6px; user-select: none; }
+body.cover .w { cursor: pointer; }
+
+.box { margin-top: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.box h3 { margin: 0 0 8px; font-size: 16px; }
+.box p { margin: 6px 0; font-size: 14px; }
+.box .rule { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; font-size: 14px; margin: 10px 0; }
+.box .rule b { font-variant-numeric: tabular-nums; }
+.big { font-size: 18px; font-weight: 700; margin: 0 0 6px; }
+.go { margin-top: 12px; border: 1px solid var(--rec); color: var(--rec); background: var(--rec-soft); border-radius: 12px; padding: 10px 16px; font-size: 15px; }
+
+.how { margin-top: 32px; font-size: 14px; color: var(--muted); }
+.how summary { cursor: pointer; color: var(--fg); font-weight: 600; padding: 12px 0; }
+.how ol { padding-left: 20px; margin: 6px 0; }
+@media (prefers-reduced-motion: no-preference) { button { transition: background-color .15s, color .15s, opacity .1s; } }
+</style>
+
+<div class="wrap">
+  <h1 class="sr-only">每日单词本</h1>
+  <header class="bar">
+    <div class="nav">
+      <button class="arrow" id="prev" type="button" aria-label="前一天"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="when"><div class="date" id="date"></div><div class="sub" id="sub"></div></div>
+      <button class="arrow" id="next" type="button" aria-label="后一天"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <button class="today-btn" id="today" type="button" hidden>回到今天</button>
+  </header>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <main id="main"></main>
+  <details class="how" id="how">
+    <summary>怎么用</summary>
+    <ol>
+      <li><b>弟弟：</b>先「复习」，再学今天的「默写」和「认识」新词。点喇叭听发音，默写词在本子上写一遍。</li>
+      <li><b>自测：</b>点「打乱顺序」，再点「遮住」：默写词盖住英文，认识词盖住中文。想好答案后点一下那一行，就能看到被遮住的部分。</li>
+      <li><b>妈妈检查：</b>每天查当天全部新词，周六周测。先点「打乱顺序」和「遮住」，再从上往下考：默写词点喇叭放发音，认识词指着英文问意思，点一下那一行看答案。</li>
+      <li><b>漏学了：</b>用左右箭头翻回那天补上，最晚周日补完。</li>
+      <li><b>发音：</b>需要联网。个别手机点了没声音，换用手机自带的浏览器打开。</li>
+    </ol>
+  </details>
+</div>
+
+<script>
+const W = /*__DATA__*/null;
+const START = Date.UTC(2026, 9, 12);          // 2026-10-12, Monday
+const DAY = 86400000;
+const OFFSETS = [1, 2, 4, 7, 15, 30];          // review after N study days
+const WEEKDAYS = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
+// weeks are counted from the start Monday; s / r = new 默写 / 认识 words per study day
+const PLAN = [
+  { to: 12, s: 10, r: 20, name: '第一阶段 · 打基础' },
+  { to: 44, s: 10, r: 20, name: '第二阶段 · 扩词汇' },
+  { to: 50, s: 5, r: 10, name: '第三阶段 · 巩固' },
+  { to: 55, s: 0, r: 0, name: '冲刺 · 只复习' },
+  { to: 64, s: 5, r: 10, name: '考后 · 继续积累' },
+];
+const WEEKS = PLAN[PLAN.length - 1].to;
+const SPRINT = 4;                                // index+1 of the review-only phase
+const phaseOfWeek = w => PLAN.findIndex(p => w <= p.to) + 1;
+
+const utc = d => Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
+const fromUTC = t => { const x = new Date(t); return new Date(x.getUTCFullYear(), x.getUTCMonth(), x.getUTCDate(), 12); };
+const fmt = d => `${d.getMonth() + 1}月${d.getDate()}日`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+// OFF[d] = how many 默写 / 认识 words come before study day d (1-based); OFF[d+1] is the end of day d
+const OFF = [{ s: 0, r: 0 }, { s: 0, r: 0 }];
+for (let d = 1; d <= WEEKS * 5; d++) {
+  const p = PLAN[phaseOfWeek(Math.ceil(d / 5)) - 1];
+  const prev = OFF[d];
+  OFF[d + 1] = { s: Math.min(prev.s + p.s, W.S.length), r: Math.min(prev.r + p.r, W.R.length) };
+}
+
+function info(date) {
+  const diff = Math.round((utc(date) - START) / DAY);
+  if (diff < 0) return { kind: 'before', diff };
+  const week = Math.floor(diff / 7) + 1, dow = diff % 7;
+  if (week > WEEKS) return { kind: 'after' };
+  const phase = phaseOfWeek(week);
+  if (dow <= 4) return { kind: 'study', week, dow, phase, d: (week - 1) * 5 + dow + 1 };
+  return { kind: dow === 5 ? 'sat' : 'sun', week, dow, phase };
+}
+// new words of study day d, as index ranges into W.S (默写) and W.R (认识); null when the day has none
+function dayWords(d) {
+  if (d < 1 || d > WEEKS * 5) return null;
+  const a = OFF[d], b = OFF[d + 1];
+  if (b.s === a.s && b.r === a.r) return null;
+  return { s: [a.s, b.s], r: [a.r, b.r] };
+}
+function learned(d) {                            // words learned by the end of study day d
+  if (d <= 0) return { s: 0, r: 0 };
+  return OFF[Math.min(d, WEEKS * 5) + 1];
+}
+function dateOfStudyDay(d) {
+  const week = Math.ceil(d / 5), dow = (d - 1) % 5;
+  return fromUTC(START + ((week - 1) * 7 + dow) * DAY);
+}
+const range = ([a, b], list) => list.slice(a, b);
+function weekWords(week) {
+  const s = [], r = [];
+  for (let d = (week - 1) * 5 + 1; d <= week * 5; d++) {
+    const w = dayWords(d); if (!w) continue;
+    s.push(...range(w.s, W.S)); r.push(...range(w.r, W.R));
+  }
+  return { s, r };
+}
+const isLastSatOfMonth = date => new Date(date.getTime() + 7 * DAY).getMonth() !== date.getMonth();
+
+const SPEAKER = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+// one word row; it = { e: [word, phonetic, meaning], spell, tag }
+function row(it) {
+  const e = it.e;
+  const ph = e[1] ? `<span class="ph">/${esc(e[1])}/</span>` : '';
+  return `<li class="w${it.spell ? ' s' : ''}"><div class="lhs"><button class="say" type="button" data-say="${esc(e[0])}" aria-label="播放 ${esc(e[0])} 的发音">${SPEAKER}</button><div>${it.tag ? '<span class="tag">写</span><br>' : ''}<span class="en">${esc(e[0])}</span>${ph}</div></div><span class="zh">${esc(e[2])}</span></li>`;
+}
+const items = (arr, spell, tag) => arr.map(e => ({ e, spell, tag }));
+const list = its => `<ul class="words">${its.map(row).join('')}</ul>`;
+
+// ---- pronunciation: Youdao dictionary audio (works in mainland China and HK), device voice as fallback
+let player = null;
+function voice() {
+  const vs = (window.speechSynthesis && speechSynthesis.getVoices()) || [];
+  return vs.find(v => /^en[-_]GB/i.test(v.lang)) || vs.find(v => /^en[-_]US/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
+}
+function deviceSpeak(word) {
+  if (!window.speechSynthesis) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(word);
+    const v = voice(); if (v) u.voice = v;
+    u.lang = v ? v.lang : 'en-GB'; u.rate = 0.9;
+    speechSynthesis.speak(u);
+  } catch (err) { /* no voice available */ }
+}
+function speak(word) {
+  if (player) { try { player.pause(); } catch (err) {} player = null; }
+  let fell = false;
+  const fallback = () => { if (!fell) { fell = true; deviceSpeak(word); } };
+  try {
+    const a = new Audio('https://dict.youdao.com/dictvoice?type=1&audio=' + encodeURIComponent(word));
+    player = a;
+    a.addEventListener('error', fallback, { once: true });
+    const p = a.play();
+    if (p && typeof p.catch === 'function') p.catch(err => { if (!err || err.name !== 'AbortError') fallback(); });
+  } catch (err) { fallback(); }
+}
+if (window.speechSynthesis && speechSynthesis.addEventListener) speechSynthesis.addEventListener('voiceschanged', () => {});
+
+// ---- shuffling: a seeded order so the list keeps its order while 遮住 is toggled
+function rng(seed) {
+  return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+}
+function shuffled(arr, seed) {
+  const a = arr.slice(), r = rng(seed);
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+const newSeed = () => (Math.random() * 4294967296) >>> 0;
+
+let cur = new Date(); cur.setHours(12, 0, 0, 0);
+let tab = null;
+let cover = false;
+let shuf = null;                                   // { key, seed } while the current list is shuffled
+const viewKey = () => utc(cur) + ':' + tab;
+const isShuf = () => !!shuf && shuf.key === viewKey();
+
+function ruleBox(title, rules) {
+  return `<section class="box"><h3>${title}</h3><div class="rule">${rules.map(([a, b]) => `<b>${a}</b><span>${b}</span>`).join('')}</div></section>`;
+}
+
+// views: id -> { label, n, note, groups?: [{ title, count, its }], its?: [...], random?: seed => its }
+function buildViews(it) {
+  const views = {}; let box = '';
+  if (it.kind === 'study') {
+    const groups = [];
+    for (const k of OFFSETS) {
+      const src = it.d - k; if (src < 1) continue;
+      const w = dayWords(src); if (!w) continue;
+      const its = [...items(range(w.s, W.S), true, true), ...items(range(w.r, W.R), false, false)];
+      groups.push({ title: `${fmt(dateOfStudyDay(src))}学的 <span class="c">· ${k === 1 ? '上次学的' : k + ' 个学习日前'}</span>`, count: its.length, its });
+    }
+    const n = groups.reduce((a, g) => a + g.count, 0);
+    if (n) views.review = { label: '复习', n, groups, note: '先复习，再学新词。每组是之前某一天学的词，<span style="color:var(--spell)">红色「写」</span>的是默写词。点「遮住」以后，默写词盖住英文，认识词盖住中文；点「打乱顺序」可以把所有复习词混在一起自测。' };
+    const nw = dayWords(it.d);
+    if (nw) {
+      const s = range(nw.s, W.S), r = range(nw.r, W.R);
+      views.spell = { label: '默写', n: s.length, its: items(s, true, false), note: '今天的新词，要会写。先看懂、听发音，再点「遮住」盖住英文，听发音、看中文，在本子上默写一遍。' };
+      views.rec = { label: '认识', n: r.length, its: items(r, false, false), note: '今天的新词，看到英文能说出中文意思就行，不用会写。点「遮住」盖住中文自测。' };
+      box = ruleBox('妈妈每日检查', [
+        ['认识', `${r.length} 个全部查，对 ${Math.ceil(r.length * 0.9)} 个过关。妈妈指英文，弟弟说中文。`],
+        ['默写', `${s.length} 个全部查，对 ${Math.ceil(s.length * 0.8)} 个过关。妈妈点喇叭放发音，弟弟在纸上写。`],
+        ['顺序', '先点「打乱顺序」，再从上往下考。'],
+        ['没过', '当晚重看错的词，只重考错的那几个，不罚。'],
+        ['复习', '复习的词弟弟自己打乱、遮住自测，妈妈不用查。'],
+      ]);
+    } else {
+      box = ruleBox('冲刺期', [['新词', '这几周不学新词。'], ['每天', '把复习做完，再过一遍本子上的错词。妈妈不用每天查。'], ['周六', '从一年学过的所有词里做总复习检查。']]);
+    }
+    return { views, box };
+  }
+  // weekend
+  const sat = it.kind === 'sat';
+  const sprint = it.phase === SPRINT;
+  const satDate = sat ? cur : new Date(cur.getTime() - DAY);
+  const monthly = !sprint && isLastSatOfMonth(satDate);
+  const ww = weekWords(it.week);
+  const upTo = learned(it.week * 5);
+  const allS = W.S.slice(0, upTo.s), allR = W.R.slice(0, upTo.r);
+  const rules = [];
+  if (sprint) {
+    views.tr = { label: '总复习·认识', n: Math.min(50, allR.length), random: seed => items(shuffled(allR, seed).slice(0, 50), false, false), note: '从学过的所有认识词里随机选的 50 个。点「再打乱」换一组。' };
+    views.ts = { label: '总复习·默写', n: Math.min(10, allS.length), random: seed => items(shuffled(allS, seed).slice(0, 10), true, false), note: '从学过的所有默写词里随机选的 10 个。点「再打乱」换一组。' };
+    rules.push(['默写', '考「总复习·默写」这 10 个，对 8 个过关。'], ['认识', '考「总复习·认识」这 50 个，对 38 个过关。']);
+  } else {
+    views.spell = { label: '本周默写', n: ww.s.length, its: items(ww.s, true, false), note: '这周学过的全部默写词。' };
+    views.rec = { label: '本周认识', n: ww.r.length, its: items(ww.r, false, false), note: '这周学过的全部认识词。' };
+    rules.push(['默写', '在「本周默写」点打乱，考前 10 个，对 8 个过关。']);
+    if (monthly) {
+      views.month = { label: '月考', n: Math.min(50, allR.length), random: seed => items(shuffled(allR, seed).slice(0, 50), false, false), note: '本月最后一个周六：从学过的所有认识词里随机选的 50 个。点「再打乱」换一组。' };
+      rules.push(['认识', '考「月考」这 50 个，对 38 个过关。']);
+    } else {
+      rules.push(['认识', '在「本周认识」点打乱，考前 30 个，对 26 个过关。']);
+    }
+  }
+  if (sat) {
+    rules.push(['怎么考', '认识：妈妈指英文，弟弟说中文。默写：妈妈点喇叭放发音，弟弟在纸上写。'], ['没过', '周日补考一次；补考还没过，下周一到周五不玩游戏，周末照常。']);
+    box = ruleBox(sprint || monthly ? '今天是总复习检查' : '妈妈周测', rules);
+  } else {
+    rules.push(['补考', '周六没过关才需要。标准和周六一样，重新打乱再考。']);
+    box = ruleBox('周日：复习和补考', rules);
+  }
+  return { views, box };
+}
+
+function render() {
+  const it = info(cur);
+  const todayDiff = Math.round((utc(cur) - utc(new Date())) / DAY);
+  document.getElementById('date').textContent = `${fmt(cur)} ${WEEKDAYS[(cur.getDay() + 6) % 7]}`;
+  document.getElementById('today').hidden = todayDiff === 0;
+  const sub = document.getElementById('sub');
+  const tabsEl = document.getElementById('tabs');
+  const main = document.getElementById('main');
+
+  if (it.kind === 'before') {
+    sub.textContent = '计划还没开始';
+    tabsEl.innerHTML = '';
+    main.innerHTML = `<section class="box"><p class="big">计划从 10月12日（周一）开始</p>
+      <p>每周一到周五学新词，周六妈妈周测，周日复习。</p>
+      <button class="go" type="button" id="goStart">先看看第一天</button></section>`;
+    document.getElementById('goStart').onclick = () => { cur = fromUTC(START); tab = null; render(); };
+    return;
+  }
+  if (it.kind === 'after') {
+    sub.textContent = '计划已经完成';
+    tabsEl.innerHTML = '';
+    main.innerHTML = `<section class="box"><p class="big">单词计划完成了</p><p>从 2026 年 10 月到 2027 年底，辛苦了。</p></section>`;
+    return;
+  }
+  sub.textContent = it.kind === 'study' ? `第 ${it.week} 周 · 第 ${it.d} 天 · ${PLAN[it.phase - 1].name}`
+    : `第 ${it.week} 周 · ${it.kind === 'sat' ? '妈妈周测' : '复习和补考'}`;
+
+  const { views, box } = buildViews(it);
+  const ids = Object.keys(views);
+  if (!views[tab]) tab = ids[0] || null;
+  const v = views[tab];
+  if (v && v.random && !isShuf()) shuf = { key: viewKey(), seed: newSeed() };
+  const on = isShuf();
+
+  tabsEl.innerHTML = ids.map(id => `<button class="tab t-${id === 'spell' || id === 'ts' ? 'spell' : id === 'review' ? 'review' : 'rec'}" role="tab" type="button" data-tab="${id}" aria-selected="${id === tab}"><span class="n">${views[id].n}</span><span class="l">${views[id].label}</span></button>`).join('');
+
+  let body = '';
+  if (v) {
+    if (v.random) body = list(v.random(shuf.seed));
+    else if (on) body = list(shuffled(v.its || v.groups.flatMap(g => g.its), shuf.seed));
+    else if (v.groups) body = v.groups.map((g, i) => `<details class="group"${i === 0 ? ' open' : ''}><summary><span>${g.title}</span><span class="c">${g.count} 个</span></summary>${list(g.its)}</details>`).join('');
+    else body = list(v.its);
+  }
+  const tools = v ? `<div class="tools">
+      <div class="mask">
+        <button type="button" id="cover" aria-pressed="${cover}">${cover ? '取消遮住' : '遮住'}</button>
+      </div>
+      <div class="shuf">
+        <button type="button" id="shuffle" class="${on ? 'on' : ''}">${on ? '再打乱' : '打乱顺序'}</button>
+        ${on && !v.random ? '<button type="button" id="unshuffle">原顺序</button>' : ''}
+      </div></div>` : '';
+  main.innerHTML = tools + (v ? `<div class="panel"><p class="note">${v.note}</p>${body}</div>` : '') + box;
+
+  tabsEl.querySelectorAll('.tab').forEach(b => b.onclick = () => { tab = b.dataset.tab; render(); window.scrollTo(0, 0); });
+  const cv = document.getElementById('cover');
+  if (cv) cv.onclick = () => { cover = !cover; document.body.classList.toggle('cover', cover); render(); };
+  const sh = document.getElementById('shuffle');
+  if (sh) sh.onclick = () => { shuf = { key: viewKey(), seed: newSeed() }; render(); };
+  const un = document.getElementById('unshuffle');
+  if (un) un.onclick = () => { shuf = null; render(); };
+}
+
+document.getElementById('main').addEventListener('click', e => {
+  const say = e.target.closest('.say');
+  if (say) {
+    speak(say.dataset.say);
+    say.classList.add('on'); setTimeout(() => say.classList.remove('on'), 900);
+    return;
+  }
+  if (!cover) return;
+  const w = e.target.closest('.w'); if (w) w.classList.toggle('show');
+});
+document.getElementById('prev').onclick = () => { cur = new Date(cur.getTime() - DAY); cur.setHours(12, 0, 0, 0); render(); };
+document.getElementById('next').onclick = () => { cur = new Date(cur.getTime() + DAY); cur.setHours(12, 0, 0, 0); render(); };
+document.getElementById('today').onclick = () => { cur = new Date(); cur.setHours(12, 0, 0, 0); tab = null; render(); };
+render();
+</script>
