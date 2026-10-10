@@ -3,7 +3,7 @@
   "w": "microeconomics",
   "pos": "n.",
   "zh": "微观经济学",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p197",
   "page": 1
@@ -93,7 +93,7 @@
   "w": "entrepreneur",
   "pos": "n.",
   "zh": "企业家",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p199",
   "page": 3
@@ -138,7 +138,7 @@
   "w": "economic goods",
   "pos": "phr.",
   "zh": "经济物品",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p199",
   "page": 3
@@ -147,7 +147,7 @@
   "w": "public good",
   "pos": "phr.",
   "zh": "公共物品",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p200",
   "page": 4
@@ -156,7 +156,7 @@
   "w": "free goods",
   "pos": "phr.",
   "zh": "自由物品，免费品",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p200",
   "page": 4
@@ -237,7 +237,7 @@
   "w": "division of labour",
   "pos": "phr.",
   "zh": "劳动分工",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p201",
   "page": 5
@@ -264,7 +264,7 @@
   "w": "planned economy",
   "pos": "phr.",
   "zh": "计划经济",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p202",
   "page": 6
@@ -282,7 +282,7 @@
   "w": "barter",
   "pos": "n.",
   "zh": "物物交换",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p202",
   "page": 6
@@ -363,7 +363,7 @@
   "w": "derived demand",
   "pos": "phr.",
   "zh": "派生需求",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p204",
   "page": 8
@@ -390,7 +390,7 @@
   "w": "substitute",
   "pos": "n.",
   "zh": "替代品",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p204",
   "page": 8
@@ -408,7 +408,7 @@
   "w": "complement",
   "pos": "n.",
   "zh": "互补品",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p205",
   "page": 9
@@ -489,7 +489,7 @@
   "w": "price elasticity of supply",
   "pos": "phr.",
   "zh": "供给价格弹性",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p206",
   "page": 10
@@ -498,7 +498,7 @@
   "w": "perfectly inelastic",
   "pos": "phr.",
   "zh": "完全无弹性的",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p206",
   "page": 10
@@ -516,7 +516,7 @@
   "w": "perfectly elastic",
   "pos": "phr.",
   "zh": "完全弹性的",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p207",
   "page": 11
@@ -534,7 +534,7 @@
   "w": "disequilibrium",
   "pos": "n.",
   "zh": "非均衡，失衡",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p207",
   "page": 11
@@ -561,7 +561,7 @@
   "w": "primary sector",
   "pos": "phr.",
   "zh": "第一产业",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p207",
   "page": 11
@@ -570,7 +570,7 @@
   "w": "secondary sector",
   "pos": "phr.",
   "zh": "第二产业",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p208",
   "page": 12
@@ -579,7 +579,7 @@
   "w": "tertiary sector",
   "pos": "phr.",
   "zh": "第三产业",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p208",
   "page": 12
@@ -597,7 +597,7 @@
   "w": "fixed cost",
   "pos": "phr.",
   "zh": "固定成本",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p208",
   "page": 12
@@ -606,7 +606,7 @@
   "w": "variable cost",
   "pos": "phr.",
   "zh": "可变成本",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p208",
   "page": 12
@@ -642,7 +642,7 @@
   "w": "average revenue",
   "pos": "phr.",
   "zh": "平均收益",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p209",
   "page": 13
@@ -660,7 +660,7 @@
   "w": "diseconomies of scale",
   "pos": "phr.",
   "zh": "规模不经济",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p209",
   "page": 13
@@ -732,7 +732,7 @@
   "w": "barriers to entry",
   "pos": "phr.",
   "zh": "进入壁垒",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p210",
   "page": 14
@@ -822,7 +822,7 @@
   "w": "regulation",
   "pos": "n.",
   "zh": "管制，监管",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p212",
   "page": 16
@@ -831,7 +831,7 @@
   "w": "tax",
   "pos": "n.",
   "zh": "税",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p213",
   "page": 17
@@ -876,7 +876,7 @@
   "w": "direct tax",
   "pos": "phr.",
   "zh": "直接税",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p213",
   "page": 17
@@ -957,7 +957,7 @@
   "w": "proportional tax",
   "pos": "phr.",
   "zh": "比例税",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p215",
   "page": 19
@@ -966,7 +966,7 @@
   "w": "progressive tax",
   "pos": "phr.",
   "zh": "累进税",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p215",
   "page": 19
@@ -975,7 +975,7 @@
   "w": "regressive tax",
   "pos": "phr.",
   "zh": "累退税",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p215",
   "page": 19
@@ -1011,7 +1011,7 @@
   "w": "nationalisation",
   "pos": "n.",
   "zh": "国有化",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p216",
   "page": 20
@@ -1020,7 +1020,7 @@
   "w": "privatisation",
   "pos": "n.",
   "zh": "私有化",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p216",
   "page": 20
@@ -1038,7 +1038,7 @@
   "w": "partnership",
   "pos": "n.",
   "zh": "合伙企业",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p216",
   "page": 20
@@ -1074,7 +1074,7 @@
   "w": "merger",
   "pos": "n.",
   "zh": "合并，兼并",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p217",
   "page": 21
@@ -1092,7 +1092,7 @@
   "w": "acquisition",
   "pos": "n.",
   "zh": "收购",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p217",
   "page": 21
@@ -1263,7 +1263,7 @@
   "w": "externality",
   "pos": "n.",
   "zh": "外部性",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p221",
   "page": 25
@@ -1299,7 +1299,7 @@
   "w": "social benefit",
   "pos": "phr.",
   "zh": "社会收益",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p222",
   "page": 26
@@ -1308,7 +1308,7 @@
   "w": "social cost",
   "pos": "phr.",
   "zh": "社会成本",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p222",
   "page": 26
@@ -1317,7 +1317,7 @@
   "w": "private benefit",
   "pos": "phr.",
   "zh": "私人收益",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p222",
   "page": 26
@@ -1326,7 +1326,7 @@
   "w": "private cost",
   "pos": "phr.",
   "zh": "私人成本",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p222",
   "page": 26
@@ -1335,7 +1335,7 @@
   "w": "external benefit",
   "pos": "phr.",
   "zh": "外部收益",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p222",
   "page": 26
@@ -1344,7 +1344,7 @@
   "w": "external cost",
   "pos": "phr.",
   "zh": "外部成本",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p223",
   "page": 27
@@ -1398,7 +1398,7 @@
   "w": "saving",
   "pos": "n.",
   "zh": "储蓄",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p224",
   "page": 28
@@ -1407,7 +1407,7 @@
   "w": "utility",
   "pos": "n.",
   "zh": "效用",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p224",
   "page": 28
@@ -1416,7 +1416,7 @@
   "w": "disposable income",
   "pos": "phr.",
   "zh": "可支配收入",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p224",
   "page": 28
@@ -1434,7 +1434,7 @@
   "w": "central bank",
   "pos": "phr.",
   "zh": "中央银行",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p224",
   "page": 28
@@ -1461,7 +1461,7 @@
   "w": "economic development",
   "pos": "phr.",
   "zh": "经济发展",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p225",
   "page": 29
@@ -1542,7 +1542,7 @@
   "w": "nominal GDP",
   "pos": "phr.",
   "zh": "名义国内生产总值",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p226",
   "page": 30
@@ -1587,7 +1587,7 @@
   "w": "human development index",
   "pos": "phr.",
   "zh": "人类发展指数",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p227",
   "page": 31
@@ -1632,7 +1632,7 @@
   "w": "dependency ratio",
   "pos": "phr.",
   "zh": "抚养比",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p228",
   "page": 32
@@ -1641,7 +1641,7 @@
   "w": "birth rate",
   "pos": "phr.",
   "zh": "出生率",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p228",
   "page": 32
@@ -1650,7 +1650,7 @@
   "w": "death rate",
   "pos": "phr.",
   "zh": "死亡率",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p229",
   "page": 33
@@ -1677,7 +1677,7 @@
   "w": "life expectancy",
   "pos": "phr.",
   "zh": "预期寿命",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p229",
   "page": 33
@@ -1686,7 +1686,7 @@
   "w": "optimum population",
   "pos": "phr.",
   "zh": "适度人口",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p229",
   "page": 33
@@ -1695,7 +1695,7 @@
   "w": "migration",
   "pos": "n.",
   "zh": "人口迁移",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p229",
   "page": 33
@@ -1704,7 +1704,7 @@
   "w": "emigration",
   "pos": "n.",
   "zh": "移出（移民）",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p229",
   "page": 33
@@ -1713,7 +1713,7 @@
   "w": "immigration",
   "pos": "n.",
   "zh": "移入（移民）",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p230",
   "page": 34
@@ -1767,7 +1767,7 @@
   "w": "frictional unemployment",
   "pos": "phr.",
   "zh": "摩擦性失业",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p230",
   "page": 34
@@ -1776,7 +1776,7 @@
   "w": "structural unemployment",
   "pos": "phr.",
   "zh": "结构性失业",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p231",
   "page": 35
@@ -1785,7 +1785,7 @@
   "w": "seasonal unemployment",
   "pos": "phr.",
   "zh": "季节性失业",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p231",
   "page": 35
@@ -1794,7 +1794,7 @@
   "w": "cyclical unemployment",
   "pos": "phr.",
   "zh": "周期性失业",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p231",
   "page": 35
@@ -1821,7 +1821,7 @@
   "w": "trade union",
   "pos": "phr.",
   "zh": "工会",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p231",
   "page": 35
@@ -1857,7 +1857,7 @@
   "w": "collective bargaining",
   "pos": "phr.",
   "zh": "集体谈判",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p232",
   "page": 36
@@ -1866,7 +1866,7 @@
   "w": "labour force",
   "pos": "phr.",
   "zh": "劳动力（总量）",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p232",
   "page": 36
@@ -1884,7 +1884,7 @@
   "w": "foreign direct investment",
   "pos": "phr.",
   "zh": "外国直接投资",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p233",
   "page": 37
@@ -1911,7 +1911,7 @@
   "w": "equity",
   "pos": "n.",
   "zh": "公平（收入分配）",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p233",
   "page": 37
@@ -1920,7 +1920,7 @@
   "w": "wealth",
   "pos": "n.",
   "zh": "财富",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p233",
   "page": 37
@@ -1983,7 +1983,7 @@
   "w": "budget",
   "pos": "n.",
   "zh": "（政府）预算",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p234",
   "page": 38
@@ -2019,7 +2019,7 @@
   "w": "budget deficit",
   "pos": "phr.",
   "zh": "预算赤字",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p235",
   "page": 39
@@ -2028,7 +2028,7 @@
   "w": "national debt",
   "pos": "phr.",
   "zh": "国债，政府债务",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p235",
   "page": 39
@@ -2064,7 +2064,7 @@
   "w": "cost-push inflation",
   "pos": "phr.",
   "zh": "成本推动型通胀",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p236",
   "page": 40
@@ -2073,7 +2073,7 @@
   "w": "demand-pull inflation",
   "pos": "phr.",
   "zh": "需求拉动型通胀",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p236",
   "page": 40
@@ -2082,7 +2082,7 @@
   "w": "deflation",
   "pos": "n.",
   "zh": "通货紧缩",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p236",
   "page": 40
@@ -2163,7 +2163,7 @@
   "w": "trade deficit",
   "pos": "phr.",
   "zh": "贸易逆差",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p237",
   "page": 41
@@ -2172,7 +2172,7 @@
   "w": "balance of trade",
   "pos": "phr.",
   "zh": "贸易差额",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p238",
   "page": 42
@@ -2253,7 +2253,7 @@
   "w": "floating exchange rate",
   "pos": "phr.",
   "zh": "浮动汇率",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p239",
   "page": 43
@@ -2334,7 +2334,7 @@
   "w": "absolute advantage",
   "pos": "phr.",
   "zh": "绝对优势",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p241",
   "page": 45
@@ -2343,7 +2343,7 @@
   "w": "comparative advantage",
   "pos": "phr.",
   "zh": "比较优势",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p241",
   "page": 45
@@ -2424,7 +2424,7 @@
   "w": "protectionism",
   "pos": "n.",
   "zh": "贸易保护主义",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p243",
   "page": 47
@@ -2442,7 +2442,7 @@
   "w": "quota",
   "pos": "n.",
   "zh": "配额",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p243",
   "page": 47
@@ -2451,7 +2451,7 @@
   "w": "embargo",
   "pos": "n.",
   "zh": "禁运",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p243",
   "page": 47
@@ -2460,7 +2460,7 @@
   "w": "infant industry",
   "pos": "phr.",
   "zh": "幼稚产业",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p243",
   "page": 47
@@ -2469,7 +2469,7 @@
   "w": "dumping",
   "pos": "n.",
   "zh": "倾销",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p243",
   "page": 47
@@ -2478,7 +2478,7 @@
   "w": "multinational company",
   "pos": "phr.",
   "zh": "跨国公司",
-  "cls": "S",
+  "cls": "R",
   "tier": 1,
   "topic": "p243",
   "page": 47
