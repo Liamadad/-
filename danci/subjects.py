@@ -130,6 +130,10 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
             if e['cls'] == 'S':
                 t['cls'] = 'S'
             t['tier'] = min(t['tier'], e['tier'])
+    # the teacher's economics list decides 默写 / 认识 for its own words
+    for e in subj['econ_class']:
+        k = e['w'] if e['w'].isupper() else e['w'].lower()
+        terms[k]['cls'] = e['cls']
 
     def term_entry(k):
         t = terms[k]
