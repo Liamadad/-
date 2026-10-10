@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>方案 01 · 一叠清单</title>
+<style>
+:root {
+  --toast-b: 92px;
+  --bg: #EEF1F5; --card: #FFFFFF; --ink: #1B2430; --muted: #66707D; --line: #DFE4EA;
+  --red: #E5484D; --red-d: #B8333A; --red-t: #FDECEC;
+  --blue: #3A6FF0; --blue-d: #2648B8; --blue-t: #E8EEFE;
+  --ink-d: #000000; --ink-t: #E4E8EE;
+  --r: 16px; --shadow: 0 1px 2px rgba(27,36,48,.06), 0 8px 22px rgba(27,36,48,.07);
+  --font: system-ui, -apple-system, "Roboto", "Noto Sans SC", "Noto Sans CJK SC", "PingFang SC", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { background: var(--bg); }
+body { font: 15px/1.45 var(--font); color: var(--ink); background: var(--bg); -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
+[x-cloak] { display: none !important; }
+
+.app { --acc: var(--ink); --acc-d: var(--ink-d); --acc-t: var(--ink-t); max-width: 480px; margin: 0 auto; min-height: 100vh; }
+.app[data-tab="s"] { --acc: var(--red); --acc-d: var(--red-d); --acc-t: var(--red-t); }
+.app[data-tab="r"] { --acc: var(--blue); --acc-d: var(--blue-d); --acc-t: var(--blue-t); }
+
+/* 顶部：日期一行 + 三个标签 */
+.top { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 6px 12px 10px; }
+.date { display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; height: 52px; }
+.date b { display: block; text-align: center; font-size: 18px; font-weight: 700; letter-spacing: .01em; }
+.date small { display: block; text-align: center; font-size: 12px; color: var(--muted); }
+.arrow { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: var(--card); box-shadow: var(--shadow); transition: transform .12s; }
+.arrow:active { transform: scale(.94); }
+.arrow svg { width: 20px; height: 20px; }
+
+.seg { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--card); border-radius: 16px; padding: 4px; box-shadow: var(--shadow); margin-top: 6px; }
+.seg .thumb { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc((100% - 8px) / 3); border-radius: 12px; background: var(--acc-t);
+  transform: translateX(calc(var(--k) * 100%)); transition: transform .32s cubic-bezier(.3,1.25,.5,1), background-color .25s; }
+.seg button { position: relative; height: 48px; border-radius: 12px; font-size: 15px; color: var(--muted); font-weight: 600; }
+.seg button span { font-variant-numeric: tabular-nums; margin-left: 4px; font-weight: 700; }
+.seg button[aria-selected="true"] { color: var(--acc); }
+
+/* 词卡 */
+.list { list-style: none; padding: 4px 12px 132px; display: grid; gap: 10px; }
+.list.slide { animation: slide .34s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes slide { from { opacity: 0; transform: translateX(calc(var(--dir) * 28px)); } }
+.first .w { animation: rise .42s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(min(var(--i), 8) * 45ms + 120ms); }
+@keyframes rise { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+.w { --t: var(--blue); --tt: var(--blue-t); display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: center;
+  background: var(--card); border-radius: var(--r); padding: 12px 14px 12px 10px; box-shadow: var(--shadow); min-height: 76px; }
+.w.s { --t: var(--red); --tt: var(--red-t); }
+.say { width: 48px; height: 48px; border-radius: 50%; background: var(--tt); color: var(--t); display: grid; place-items: center; transition: transform .12s; position: relative; }
+.say svg { width: 22px; height: 22px; }
+.say:active { transform: scale(.92); }
+.say.ping::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--t); animation: ping .6s ease-out forwards; }
+@keyframes ping { to { transform: scale(1.5); opacity: 0; } }
+.line1 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 8px; min-height: 28px; }
+.en { font-size: 21px; font-weight: 700; letter-spacing: -.01em; line-height: 1.25; }
+.ph { font-size: 13px; color: var(--muted); }
+.line2 { display: flex; align-items: center; gap: 8px; margin-top: 2px; min-height: 24px; }
+.zh { font-size: 15px; color: #2E3A48; }
+.chip { flex: none; font-size: 11px; line-height: 18px; padding: 0 7px; border-radius: 9px; background: #F0F2F5; color: var(--muted); font-weight: 600; }
+
+/* 遮住后的样子：斜纹条，点一下露出 */
+.hide { position: relative; display: inline-flex; align-items: center; justify-content: center; height: 24px; min-width: 120px; border-radius: 8px;
+  background: repeating-linear-gradient(135deg, var(--tt) 0 7px, transparent 7px 13px), #F6F7F9; color: var(--t); font-size: 12px; font-weight: 600; }
+.reveal { animation: reveal .28s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes reveal { from { opacity: 0; transform: translateY(6px); filter: blur(3px); } }
+
+/* 拇指区：底部两个厚按钮 */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; padding: 14px 12px calc(14px + env(safe-area-inset-bottom));
+  background: linear-gradient(to bottom, rgba(238,241,245,0), var(--bg) 34%); }
+.bar .in { max-width: 456px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 10px; }
+.btn { height: 58px; border-radius: 16px; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--card); box-shadow: 0 4px 0 #CBD2DB, 0 10px 22px rgba(27,36,48,.10); transition: transform .08s, box-shadow .08s; }
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #CBD2DB, 0 4px 10px rgba(27,36,48,.08); }
+.btn.main { background: var(--acc); color: #fff; box-shadow: 0 4px 0 var(--acc-d), 0 10px 22px rgba(27,36,48,.14); }
+.btn.main:active { box-shadow: 0 1px 0 var(--acc-d), 0 4px 10px rgba(27,36,48,.10); }
+.btn svg { width: 20px; height: 20px; }
+
+.toast { position: fixed; left: 50%; bottom: calc(var(--toast-b) + env(safe-area-inset-bottom)); z-index: 20; pointer-events: none; white-space: nowrap;
+  background: rgba(27,36,48,.92); color: #fff; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px; animation: toast 1.7s ease both; }
+@keyframes toast { 0% { opacity: 0; transform: translate(-50%, 8px); } 12%, 78% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; transform: translate(-50%, 0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+<script src="data.js"></script>
+<script defer src="vendor/alpine.min.js"></script>
+</head>
+<body>
+<main class="app" x-data="app()" x-init="init()" :data-tab="tab" :class="{ first }">
+  <header class="top">
+    <div class="date">
+      <button class="arrow" aria-label="前一天"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div><b x-text="D.date"></b><small x-text="D.sub"></small></div>
+      <button class="arrow" aria-label="后一天"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <nav class="seg" role="tablist" :style="'--k:' + tabs.indexOf(tab)">
+      <i class="thumb"></i>
+      <template x-for="t in tabs" :key="t">
+        <button role="tab" :aria-selected="tab === t" @click="go(t)"><span style="margin:0" x-text="names[t]"></span><span x-text="rows(t).length"></span></button>
+      </template>
+    </nav>
+  </header>
+
+  <template x-for="k in [tab + shuffles]" :key="k">
+    <ul class="list" :class="{ slide: !first }" :style="'--dir:' + dir">
+      <template x-for="(e, i) in rows(tab)" :key="e[0]">
+        <li class="w" :class="{ s: isS(e) }" :style="'--i:' + i" @click="open[e[0]] = !open[e[0]]">
+          <button class="say" :class="{ ping: pinged === e[0] }" :aria-label="'播放 ' + e[0] + ' 的发音'" @click.stop="say(e[0])">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+          <div>
+            <div class="line1">
+              <template x-if="!(covered && isS(e) && !open[e[0]])"><span class="line1" :class="{ reveal: open[e[0]] }"><span class="en" x-text="e[0]"></span><span class="ph" x-text="'/' + e[1] + '/'"></span></span></template>
+              <template x-if="covered && isS(e) && !open[e[0]]"><span class="hide" aria-label="英文已遮住"></span></template>
+            </div>
+            <div class="line2">
+              <template x-if="!(covered && !isS(e) && !open[e[0]])"><span class="zh" :class="{ reveal: open[e[0]] }" x-text="e[2]"></span></template>
+              <template x-if="covered && !isS(e) && !open[e[0]]"><span class="hide" aria-label="中文已遮住"></span></template>
+              <span class="chip" x-show="e[3]" x-text="e[3]"></span>
+            </div>
+          </div>
+        </li>
+      </template>
+    </ul>
+  </template>
+
+  <div class="bar"><div class="in">
+    <button class="btn" @click="shuffle()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>打乱顺序</button>
+    <button class="btn main" @click="covered = !covered; open = {}; if (covered) toastN++" x-text="covered ? '全部露出' : '遮住'"></button>
+  </div></div>
+  <template x-for="n in (toastN ? [toastN] : [])" :key="n"><div class="toast" role="status">点一下词卡看答案</div></template>
+</main>
+<script>
+function app() {
+  const q = new URLSearchParams(location.search);
+  return {
+    D: window.DAY, tabs: ['v', 's', 'r'], names: { v: '复习', s: '默写', r: '认识' },
+    tab: q.get('tab') || 's', covered: false, open: {}, first: true, dir: 1, shuffles: 0, toastN: 0, pinged: null, order: {},
+    init() {
+      const st = q.get('state');
+      if (q.has('state')) this.first = false;
+      if (st === 'covered' || st === 'revealed') this.covered = true;
+      if (st === 'revealed') { const r = this.rows(this.tab); this.open[r[1][0]] = true; this.open[r[3][0]] = true; }
+      setTimeout(() => (this.first = false), 900);
+    },
+    src(t) { return t === 'v' ? this.D.V : t === 's' ? this.D.S : this.D.R; },
+    rows(t) { return this.order[t] || this.src(t); },
+    isS(e) { return this.tab === 's' || (this.tab === 'v' && e[4] === 'S'); },
+    go(t) { if (t === this.tab) return; this.dir = this.tabs.indexOf(t) > this.tabs.indexOf(this.tab) ? 1 : -1; this.first = false; this.tab = t; this.open = {}; },
+    shuffle() { const a = [...this.src(this.tab)]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } this.order[this.tab] = a; this.first = false; this.dir = 0; this.shuffles++; },
+    say(w) { this.pinged = null; requestAnimationFrame(() => (this.pinged = w)); }
+  };
+}
+</script>
+</body>
+</html>

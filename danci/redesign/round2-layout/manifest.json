@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "每日单词本",
+  "brief": "同一天（10月13日 周二）的复习 30 / 默写 10 / 认识 20，都用“单词卡”风格。比较三种排版：妈妈单手拿安卓手机考、弟弟写本子时，哪种最顺手。每个都能点：切标签、遮住、点词看答案、打乱。",
+  "round": "02 版式方案",
+  "candidates": [
+    {
+      "id": "now", "name": "现在的网站", "baseline": true,
+      "concept": "现在线上的样子，放在这里对照。",
+      "typography": "Georgia 英文 · 系统黑体中文",
+      "palette": ["#F5F6F8", "#1B2430", "#C8372D", "#1F5FBF"],
+      "traits": ["单列表格", "遮住/打乱在列表上方", "说明文字一段"],
+      "kind": "image", "source": "baseline.png"
+    },
+    {
+      "id": "list", "name": "一叠清单",
+      "concept": "每个词一张横卡，从上往下排；遮住和打乱是底部两个厚按钮，拇指一按就到。",
+      "typography": "系统黑体（安卓 Roboto + 思源黑体）· 英文 21 粗 · 中文 15",
+      "palette": ["#EEF1F5", "#1B2430", "#E5484D", "#3A6FF0"],
+      "traits": ["一屏看到 7 个词", "喇叭圆按钮在左边，红是默写、蓝是认识", "遮住后是斜纹条，点一下露出", "底部两个厚按钮"],
+      "kind": "html", "source": "a-list.html", "interactive": true
+    },
+    {
+      "id": "grid", "name": "翻卡墙",
+      "concept": "一周日历条选日子，词是两列方卡；遮住后每张卡只剩题目一面，点一下整张翻过来看答案。",
+      "typography": "系统黑体 · 英文 20 粗 · 日期数字 18 粗",
+      "palette": ["#EEF1F5", "#1B2430", "#E5484D", "#3A6FF0"],
+      "traits": ["顶部一周 7 天，周六周测、周日补考一眼看到", "两列方卡，一屏 8 张", "翻卡动画", "底部浮动按钮"],
+      "kind": "html", "source": "b-grid.html", "interactive": true
+    },
+    {
+      "id": "deck", "name": "一张一张考",
+      "concept": "像拿着一叠单词卡考：一次只看一个大词，拇指按“下一个”，喇叭在右手边；卡堆越考越薄。",
+      "typography": "系统黑体 · 英文 40 特粗 · 中文 22",
+      "palette": ["#EEF1F5", "#1B2430", "#E5484D", "#3A6FF0"],
+      "traits": ["三叠卡代替标签", "一次一个大词，字最大", "下一个 / 喇叭在拇指区", "“全部”弹出整张清单"],
+      "kind": "html", "source": "c-deck.html", "interactive": true
+    }
+  ]
+}
