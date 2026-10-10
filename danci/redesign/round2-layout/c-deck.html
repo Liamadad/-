@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>方案 03 · 一张一张考</title>
+<style>
+:root {
+  --toast-b: 150px;
+  --bg: #EEF1F5; --card: #FFFFFF; --ink: #1B2430; --muted: #66707D; --line: #DFE4EA;
+  --red: #E5484D; --red-d: #B8333A; --red-t: #FDECEC;
+  --blue: #3A6FF0; --blue-d: #2648B8; --blue-t: #E8EEFE;
+  --ink-t: #E4E8EE;
+  --r: 20px; --shadow: 0 1px 2px rgba(27,36,48,.06), 0 10px 26px rgba(27,36,48,.09);
+  --font: system-ui, -apple-system, "Roboto", "Noto Sans SC", "Noto Sans CJK SC", "PingFang SC", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { background: var(--bg); }
+body { font: 15px/1.45 var(--font); color: var(--ink); background: var(--bg); -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
+
+.app { --acc: var(--ink); --acc-d: #000; --acc-t: var(--ink-t); max-width: 480px; margin: 0 auto; height: 100vh; height: 100dvh; display: flex; flex-direction: column; padding: 6px 14px calc(12px + env(safe-area-inset-bottom)); }
+.app[data-tab="s"] { --acc: var(--red); --acc-d: var(--red-d); --acc-t: var(--red-t); }
+.app[data-tab="r"] { --acc: var(--blue); --acc-d: var(--blue-d); --acc-t: var(--blue-t); }
+
+/* 顶部一行：日期 + 前后一天 */
+.date { display: flex; align-items: center; height: 48px; gap: 4px; }
+.date b { font-size: 18px; font-weight: 700; flex: 1; }
+.date b small { font-size: 12px; color: var(--muted); font-weight: 500; margin-left: 8px; }
+.date button { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; }
+.date button:active { background: rgba(27,36,48,.06); }
+.date svg { width: 20px; height: 20px; }
+
+/* 三叠卡：选哪一叠 */
+.piles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 4px; }
+.pile { --c: var(--ink); --ct: var(--ink-t); position: relative; height: 62px; text-align: left; padding: 9px 12px; border-radius: 14px; background: var(--card);
+  box-shadow: 3px 3px 0 -1px var(--card), 3px 3px 0 0 var(--line), 6px 6px 0 -1px var(--card), 6px 6px 0 0 var(--line);
+  transition: transform .25s cubic-bezier(.3,1.4,.5,1), box-shadow .25s; }
+.pile.s { --c: var(--red); --ct: var(--red-t); }
+.pile.r { --c: var(--blue); --ct: var(--blue-t); }
+.pile em { display: block; font-style: normal; font-size: 13px; color: var(--muted); font-weight: 600; }
+.pile b { font-size: 22px; line-height: 1.1; font-weight: 800; color: var(--c); font-variant-numeric: tabular-nums; }
+.pile[aria-selected="true"] { background: var(--c); transform: translateY(-3px); box-shadow: 3px 3px 0 -1px var(--ct), 3px 3px 0 0 var(--c), 6px 6px 0 -1px var(--ct), 6px 6px 0 0 var(--c), 0 10px 20px rgba(27,36,48,.12); }
+.pile[aria-selected="true"] em, .pile[aria-selected="true"] b { color: #fff; }
+
+/* 主卡和后面的卡堆 */
+.stage { position: relative; flex: 1; margin: 22px 10px 34px 0; min-height: 300px; max-height: 460px; }
+.spacer { flex: 1; max-height: 40px; }
+.under { position: absolute; left: 0; right: 0; top: 0; bottom: 0; border-radius: var(--r); background: var(--card); box-shadow: var(--shadow); transition: transform .35s cubic-bezier(.3,1.2,.5,1), opacity .35s; }
+.card { position: absolute; inset: 0; perspective: 1200px; }
+.card.enter { animation: up .42s cubic-bezier(.25,1.2,.45,1) both; }
+@keyframes up { from { transform: translate(6px, 12px) scale(.97); opacity: .6; } }
+.card.back-in { animation: back .38s cubic-bezier(.25,1.1,.45,1) both; }
+@keyframes back { from { transform: translateX(-60%) rotate(-6deg); opacity: 0; } }
+.first .card { animation: drop .55s cubic-bezier(.2,1.3,.4,1) both .1s; }
+@keyframes drop { from { transform: translateY(-40px) scale(1.04); opacity: 0; } }
+.flip { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .5s cubic-bezier(.3,1.3,.45,1); }
+.card.turned .flip { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: var(--r); background: var(--card); box-shadow: var(--shadow); padding: 16px 18px 20px; display: flex; flex-direction: column; }
+.face.back { transform: rotateY(180deg); }
+.meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.meta b { color: var(--ink); font-size: 15px; }
+.chip { font-size: 12px; line-height: 22px; padding: 0 9px; border-radius: 11px; background: var(--tt); color: var(--t); font-weight: 700; }
+.card { --t: var(--blue); --tt: var(--blue-t); }
+.card.s { --t: var(--red); --tt: var(--red-t); }
+.body { flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 6px; }
+.en { font-size: 40px; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; overflow-wrap: anywhere; }
+.ph { font-size: 16px; color: var(--muted); }
+.zh { font-size: 22px; font-weight: 600; color: #2E3A48; }
+.rule { height: 0; border-top: 2px dashed var(--line); margin: 14px 24px 8px; }
+.hint { font-size: 13px; color: var(--t); font-weight: 600; }
+.face.back { background: var(--tt); }
+.hide { display: inline-block; height: 40px; width: 200px; border-radius: 12px; border-radius: 7px; vertical-align: middle;
+  background: repeating-linear-gradient(135deg, var(--tt) 0 7px, transparent 7px 13px), #F6F7F9; }
+.tag-ans { align-self: center; font-size: 12px; color: var(--t); font-weight: 700; letter-spacing: .1em; }
+
+/* 拇指区 */
+.thumb { margin-top: auto; display: grid; grid-template-columns: 64px 1fr 64px; gap: 12px; align-items: center; }
+.round { width: 64px; height: 64px; border-radius: 50%; background: var(--card); box-shadow: 0 3px 0 #CBD2DB; display: grid; place-items: center; transition: transform .08s, box-shadow .08s; }
+.round:active { transform: translateY(2px); box-shadow: 0 1px 0 #CBD2DB; }
+.round svg { width: 26px; height: 26px; }
+.round.say { color: var(--acc); }
+.round.say.ping { animation: pulse .5s; }
+@keyframes pulse { 40% { box-shadow: 0 3px 0 #CBD2DB, 0 0 0 10px var(--acc-t); } }
+.next { height: 64px; border-radius: 20px; background: var(--acc); color: #fff; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px;
+  box-shadow: 0 4px 0 var(--acc-d), 0 10px 22px rgba(27,36,48,.14); transition: transform .08s, box-shadow .08s; }
+.next:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--acc-d); }
+.next svg { width: 22px; height: 22px; }
+.tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+.tool { height: 44px; border-radius: 12px; font-size: 14px; font-weight: 600; color: var(--muted); display: flex; align-items: center; justify-content: center; gap: 6px; }
+.tool:active { background: rgba(27,36,48,.06); }
+.tool svg { width: 18px; height: 18px; }
+.tool.on { color: var(--acc); background: var(--acc-t); }
+
+/* 全部列表：底部抽屉 */
+.scrim { position: fixed; inset: 0; background: rgba(27,36,48,.35); z-index: 8; animation: fade .2s both; }
+@keyframes fade { from { opacity: 0; } }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9; max-width: 480px; margin: 0 auto; max-height: 78vh; overflow: auto; background: var(--bg); border-radius: 22px 22px 0 0; padding: 8px 14px calc(16px + env(safe-area-inset-bottom)); animation: sheet .32s cubic-bezier(.25,1.05,.45,1) both; }
+@keyframes sheet { from { transform: translateY(100%); } }
+.grab { width: 40px; height: 5px; border-radius: 3px; background: #C9D0D9; margin: 4px auto 10px; }
+.sheet h3 { font-size: 16px; margin: 0 4px 8px; }
+.li { display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; align-items: center; background: var(--card); border-radius: 12px; padding: 10px 12px; margin-bottom: 6px; text-align: left; width: 100%; }
+.li i { font-style: normal; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.li b { font-size: 16px; } .li span { font-size: 14px; color: #2E3A48; }
+.li.cur { outline: 2px solid var(--acc); }
+
+.toast { position: fixed; left: 50%; bottom: calc(var(--toast-b) + env(safe-area-inset-bottom)); z-index: 20; pointer-events: none; white-space: nowrap;
+  background: rgba(27,36,48,.92); color: #fff; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px; animation: toast 1.7s ease both; }
+@keyframes toast { 0% { opacity: 0; transform: translate(-50%, 8px); } 12%, 78% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; transform: translate(-50%, 0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+<script src="data.js"></script>
+<script defer src="vendor/alpine.min.js"></script>
+</head>
+<body>
+<main class="app" x-data="app()" x-init="init()" :data-tab="tab" :class="{ first }">
+  <header class="date">
+    <b x-text="D.date"></b>
+    <button aria-label="前一天"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button aria-label="后一天"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </header>
+
+  <nav class="piles" role="tablist">
+    <template x-for="t in tabs" :key="t">
+      <button class="pile" :class="t" role="tab" :aria-selected="tab === t" @click="go(t)"><em x-text="names[t]"></em><b x-text="src(t).length"></b></button>
+    </template>
+  </nav>
+
+  <section class="stage">
+    <!-- 后面的卡堆：剩得越少越薄 -->
+    <template x-for="n in [3, 2, 1]" :key="n">
+      <div class="under" :style="'transform:translate(' + n * 5 + 'px,' + n * 7 + 'px);opacity:' + (left() >= n ? 1 : 0)"></div>
+    </template>
+    <template x-for="k in [tab + ':' + idx + ':' + shuffles]" :key="k">
+      <div class="card" :class="{ s: isS(cur()), turned: covered && open, enter: !first && moved > 0, 'back-in': !first && moved < 0 }" @click="covered && (open = !open)">
+        <div class="flip">
+          <div class="face">
+            <div class="meta"><span><b x-text="idx + 1"></b> / <span x-text="rows().length"></span></span><span class="chip" x-text="cur()[3] || (isS(cur()) ? '默写' : '认识')"></span></div>
+            <div class="body">
+              <template x-if="!(covered && isS(cur()))"><div><div class="en" x-text="cur()[0]"></div><div class="ph" x-text="'/' + cur()[1] + '/'"></div></div></template>
+              <template x-if="covered && isS(cur())"><div><span class="hide" aria-label="英文已遮住"></span><div class="zh" style="margin-top:14px" x-text="cur()[2]"></div></div></template>
+              <template x-if="!covered"><div><div class="rule"></div><div class="zh" x-text="cur()[2]"></div></div></template>
+              <template x-if="covered && !isS(cur())"><div><div class="rule"></div><span class="hide" aria-label="中文已遮住"></span></div></template>
+            </div>
+          </div>
+          <div class="face back">
+            
+            <div class="body">
+              <div class="en" x-text="cur()[0]"></div><div class="ph" x-text="'/' + cur()[1] + '/'"></div>
+              <div class="rule"></div><div class="zh" x-text="cur()[2]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </section>
+
+  <div class="thumb">
+    <button class="round" aria-label="上一个" @click="step(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="next" @click="step(1)"><span x-text="idx + 1 < rows().length ? '下一个' : '这叠考完了'"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button class="round say" :class="{ ping }" aria-label="播放发音" @click="ping = false; requestAnimationFrame(() => ping = true)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="tools">
+    <button class="tool" @click="shuffle()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>打乱</button>
+    <button class="tool" :class="{ on: covered }" @click="covered = !covered; open = false; if (covered) toastN++"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><path d="M4 4l16 16"/></svg><span x-text="covered ? '遮住中' : '遮住'"></span></button>
+    <button class="tool" @click="list = true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg>全部</button>
+  </div>
+
+  <template x-if="list">
+    <div>
+      <div class="scrim" @click="list = false"></div>
+      <div class="sheet" role="dialog" aria-label="这叠的全部单词">
+        <div class="grab"></div>
+        <h3 x-text="names[tab] + ' · ' + rows().length + ' 个'"></h3>
+        <template x-for="(e, i) in rows()" :key="e[0]">
+          <button class="li" :class="{ cur: i === idx }" @click="idx = i; open = false; moved = 1; list = false"><i x-text="i + 1"></i><b x-text="e[0]"></b><span x-text="e[2]"></span></button>
+        </template>
+      </div>
+    </div>
+  </template>
+  <template x-for="n in (toastN ? [toastN] : [])" :key="n"><div class="toast" role="status">点卡片看答案</div></template>
+</main>
+<script>
+function app() {
+  const q = new URLSearchParams(location.search);
+  return {
+    D: window.DAY, tabs: ['v', 's', 'r'], names: { v: '复习', s: '默写', r: '认识' },
+    tab: q.get('tab') || 's', idx: 2, covered: false, open: false, first: true, moved: 0, shuffles: 0, toastN: 0, order: {}, list: false, ping: false,
+    init() {
+      const st = q.get('state');
+      if (q.has('state')) this.first = false;
+      if (st === 'covered' || st === 'revealed') this.covered = true;
+      if (st === 'revealed') this.open = true;
+      if (st === 'list') this.list = true;
+      setTimeout(() => (this.first = false), 900);
+    },
+    src(t) { return t === 'v' ? this.D.V : t === 's' ? this.D.S : this.D.R; },
+    rows() { return this.order[this.tab] || this.src(this.tab); },
+    cur() { return this.rows()[this.idx]; },
+    left() { return this.rows().length - this.idx - 1; },
+    isS(e) { return this.tab === 's' || (this.tab === 'v' && e[4] === 'S'); },
+    go(t) { if (t === this.tab) return; this.first = false; this.tab = t; this.idx = 0; this.open = false; this.moved = 1; },
+    step(d) { const n = this.idx + d; if (n < 0 || n >= this.rows().length) return; this.first = false; this.moved = d; this.idx = n; this.open = false; },
+    shuffle() { const a = [...this.src(this.tab)]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } this.order[this.tab] = a; this.idx = 0; this.open = false; this.first = false; this.moved = 1; this.shuffles++; }
+  };
+}
+</script>
+</body>
+</html>

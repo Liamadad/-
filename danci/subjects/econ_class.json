@@ -1,0 +1,2486 @@
+[
+ {
+  "w": "microeconomics",
+  "pos": "n.",
+  "zh": "微观经济学",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p197",
+  "page": 1
+ },
+ {
+  "w": "resource",
+  "pos": "n.",
+  "zh": "资源",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p197",
+  "page": 1
+ },
+ {
+  "w": "wants",
+  "pos": "n.",
+  "zh": "欲望",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p197",
+  "page": 1
+ },
+ {
+  "w": "factors of production",
+  "pos": "phr.",
+  "zh": "生产要素",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p197",
+  "page": 1
+ },
+ {
+  "w": "scarcity",
+  "pos": "n.",
+  "zh": "稀缺性",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p198",
+  "page": 2
+ },
+ {
+  "w": "ceteris paribus",
+  "pos": "phr.",
+  "zh": "其他条件不变",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p198",
+  "page": 2
+ },
+ {
+  "w": "land",
+  "pos": "n.",
+  "zh": "土地（自然资源）",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p198",
+  "page": 2
+ },
+ {
+  "w": "labour",
+  "pos": "n.",
+  "zh": "劳动，劳动力",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p198",
+  "page": 2
+ },
+ {
+  "w": "capital",
+  "pos": "n.",
+  "zh": "资本",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p198",
+  "page": 2
+ },
+ {
+  "w": "enterprise",
+  "pos": "n.",
+  "zh": "企业家才能；企业",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p198",
+  "page": 2
+ },
+ {
+  "w": "entrepreneur",
+  "pos": "n.",
+  "zh": "企业家",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p199",
+  "page": 3
+ },
+ {
+  "w": "factor mobility",
+  "pos": "phr.",
+  "zh": "要素流动性",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p199",
+  "page": 3
+ },
+ {
+  "w": "production",
+  "pos": "n.",
+  "zh": "生产",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p199",
+  "page": 3
+ },
+ {
+  "w": "consumption",
+  "pos": "n.",
+  "zh": "消费",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p199",
+  "page": 3
+ },
+ {
+  "w": "private goods",
+  "pos": "phr.",
+  "zh": "私人物品",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p199",
+  "page": 3
+ },
+ {
+  "w": "economic goods",
+  "pos": "phr.",
+  "zh": "经济物品",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p199",
+  "page": 3
+ },
+ {
+  "w": "public good",
+  "pos": "phr.",
+  "zh": "公共物品",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p200",
+  "page": 4
+ },
+ {
+  "w": "free goods",
+  "pos": "phr.",
+  "zh": "自由物品，免费品",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p200",
+  "page": 4
+ },
+ {
+  "w": "merit good",
+  "pos": "phr.",
+  "zh": "优效品（有益品）",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p200",
+  "page": 4
+ },
+ {
+  "w": "demerit good",
+  "pos": "phr.",
+  "zh": "劣效品（有害品）",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p200",
+  "page": 4
+ },
+ {
+  "w": "short run",
+  "pos": "phr.",
+  "zh": "短期",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p200",
+  "page": 4
+ },
+ {
+  "w": "long run",
+  "pos": "phr.",
+  "zh": "长期",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p200",
+  "page": 4
+ },
+ {
+  "w": "opportunity cost",
+  "pos": "phr.",
+  "zh": "机会成本",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p201",
+  "page": 5
+ },
+ {
+  "w": "normative statement",
+  "pos": "phr.",
+  "zh": "规范性陈述（含价值判断）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p201",
+  "page": 5
+ },
+ {
+  "w": "positive statement",
+  "pos": "phr.",
+  "zh": "实证性陈述（可检验）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p201",
+  "page": 5
+ },
+ {
+  "w": "specialisation",
+  "pos": "n.",
+  "zh": "专业化，专门化",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p201",
+  "page": 5
+ },
+ {
+  "w": "division of labour",
+  "pos": "phr.",
+  "zh": "劳动分工",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p201",
+  "page": 5
+ },
+ {
+  "w": "market economy",
+  "pos": "phr.",
+  "zh": "市场经济",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p201",
+  "page": 5
+ },
+ {
+  "w": "mixed economy",
+  "pos": "phr.",
+  "zh": "混合经济",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p202",
+  "page": 6
+ },
+ {
+  "w": "planned economy",
+  "pos": "phr.",
+  "zh": "计划经济",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p202",
+  "page": 6
+ },
+ {
+  "w": "command economy",
+  "pos": "phr.",
+  "zh": "指令经济，计划经济",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p202",
+  "page": 6
+ },
+ {
+  "w": "barter",
+  "pos": "n.",
+  "zh": "物物交换",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p202",
+  "page": 6
+ },
+ {
+  "w": "market system",
+  "pos": "phr.",
+  "zh": "市场体系",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p202",
+  "page": 6
+ },
+ {
+  "w": "market mechanism",
+  "pos": "phr.",
+  "zh": "市场机制",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p202",
+  "page": 6
+ },
+ {
+  "w": "production possibility curve",
+  "pos": "phr.",
+  "zh": "生产可能性曲线",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p203",
+  "page": 7
+ },
+ {
+  "w": "price mechanism",
+  "pos": "phr.",
+  "zh": "价格机制",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p203",
+  "page": 7
+ },
+ {
+  "w": "demand",
+  "pos": "n.",
+  "zh": "需求",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p203",
+  "page": 7
+ },
+ {
+  "w": "demand curve",
+  "pos": "phr.",
+  "zh": "需求曲线",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p203",
+  "page": 7
+ },
+ {
+  "w": "market",
+  "pos": "n.",
+  "zh": "市场",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p204",
+  "page": 8
+ },
+ {
+  "w": "law of demand",
+  "pos": "phr.",
+  "zh": "需求定律",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p204",
+  "page": 8
+ },
+ {
+  "w": "derived demand",
+  "pos": "phr.",
+  "zh": "派生需求",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p204",
+  "page": 8
+ },
+ {
+  "w": "normal goods",
+  "pos": "phr.",
+  "zh": "正常品",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p204",
+  "page": 8
+ },
+ {
+  "w": "inferior goods",
+  "pos": "phr.",
+  "zh": "劣等品",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p204",
+  "page": 8
+ },
+ {
+  "w": "substitute",
+  "pos": "n.",
+  "zh": "替代品",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p204",
+  "page": 8
+ },
+ {
+  "w": "supply",
+  "pos": "n.",
+  "zh": "供给",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p204",
+  "page": 8
+ },
+ {
+  "w": "complement",
+  "pos": "n.",
+  "zh": "互补品",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p205",
+  "page": 9
+ },
+ {
+  "w": "supply curve",
+  "pos": "phr.",
+  "zh": "供给曲线",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p205",
+  "page": 9
+ },
+ {
+  "w": "law of supply",
+  "pos": "phr.",
+  "zh": "供给定律",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p205",
+  "page": 9
+ },
+ {
+  "w": "elasticity",
+  "pos": "n.",
+  "zh": "弹性",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p205",
+  "page": 9
+ },
+ {
+  "w": "elastic",
+  "pos": "adj.",
+  "zh": "富有弹性的",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p205",
+  "page": 9
+ },
+ {
+  "w": "inelastic",
+  "pos": "adj.",
+  "zh": "缺乏弹性的",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p205",
+  "page": 9
+ },
+ {
+  "w": "price elasticity of demand",
+  "pos": "phr.",
+  "zh": "需求价格弹性",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p206",
+  "page": 10
+ },
+ {
+  "w": "income elasticity of demand",
+  "pos": "phr.",
+  "zh": "需求收入弹性（YED）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p206",
+  "page": 10
+ },
+ {
+  "w": "cross elasticity of demand",
+  "pos": "phr.",
+  "zh": "需求交叉弹性（XED）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p206",
+  "page": 10
+ },
+ {
+  "w": "price elasticity of supply",
+  "pos": "phr.",
+  "zh": "供给价格弹性",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p206",
+  "page": 10
+ },
+ {
+  "w": "perfectly inelastic",
+  "pos": "phr.",
+  "zh": "完全无弹性的",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p206",
+  "page": 10
+ },
+ {
+  "w": "equilibrium",
+  "pos": "n.",
+  "zh": "均衡",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p206",
+  "page": 10
+ },
+ {
+  "w": "perfectly elastic",
+  "pos": "phr.",
+  "zh": "完全弹性的",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p207",
+  "page": 11
+ },
+ {
+  "w": "unitary elasticity",
+  "pos": "phr.",
+  "zh": "单位弹性",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p207",
+  "page": 11
+ },
+ {
+  "w": "disequilibrium",
+  "pos": "n.",
+  "zh": "非均衡，失衡",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p207",
+  "page": 11
+ },
+ {
+  "w": "consumer surplus",
+  "pos": "phr.",
+  "zh": "消费者剩余",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p207",
+  "page": 11
+ },
+ {
+  "w": "producer surplus",
+  "pos": "phr.",
+  "zh": "生产者剩余",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p207",
+  "page": 11
+ },
+ {
+  "w": "primary sector",
+  "pos": "phr.",
+  "zh": "第一产业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p207",
+  "page": 11
+ },
+ {
+  "w": "secondary sector",
+  "pos": "phr.",
+  "zh": "第二产业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p208",
+  "page": 12
+ },
+ {
+  "w": "tertiary sector",
+  "pos": "phr.",
+  "zh": "第三产业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p208",
+  "page": 12
+ },
+ {
+  "w": "quaternary sector",
+  "pos": "phr.",
+  "zh": "第四产业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p208",
+  "page": 12
+ },
+ {
+  "w": "fixed cost",
+  "pos": "phr.",
+  "zh": "固定成本",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p208",
+  "page": 12
+ },
+ {
+  "w": "variable cost",
+  "pos": "phr.",
+  "zh": "可变成本",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p208",
+  "page": 12
+ },
+ {
+  "w": "marginal cost",
+  "pos": "phr.",
+  "zh": "边际成本",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p208",
+  "page": 12
+ },
+ {
+  "w": "average cost",
+  "pos": "phr.",
+  "zh": "平均成本",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p208",
+  "page": 12
+ },
+ {
+  "w": "average product",
+  "pos": "phr.",
+  "zh": "平均产量",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p209",
+  "page": 13
+ },
+ {
+  "w": "average revenue",
+  "pos": "phr.",
+  "zh": "平均收益",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p209",
+  "page": 13
+ },
+ {
+  "w": "economies of scale",
+  "pos": "phr.",
+  "zh": "规模经济",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p209",
+  "page": 13
+ },
+ {
+  "w": "diseconomies of scale",
+  "pos": "phr.",
+  "zh": "规模不经济",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p209",
+  "page": 13
+ },
+ {
+  "w": "external economies of scale",
+  "pos": "phr.",
+  "zh": "外部规模经济",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p209",
+  "page": 13
+ },
+ {
+  "w": "profit",
+  "pos": "n.",
+  "zh": "利润",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p209",
+  "page": 13
+ },
+ {
+  "w": "internal economies of scale",
+  "pos": "phr.",
+  "zh": "内部规模经济",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p210",
+  "page": 14
+ },
+ {
+  "w": "normal profit",
+  "pos": "phr.",
+  "zh": "正常利润",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p210",
+  "page": 14
+ },
+ {
+  "w": "abnormal profit",
+  "pos": "phr.",
+  "zh": "超额利润",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p210",
+  "page": 14
+ },
+ {
+  "w": "super-normal profit",
+  "pos": "phr.",
+  "zh": "超常利润",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p210",
+  "page": 14
+ },
+ {
+  "w": "market structure",
+  "pos": "phr.",
+  "zh": "市场结构",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p210",
+  "page": 14
+ },
+ {
+  "w": "barriers to entry",
+  "pos": "phr.",
+  "zh": "进入壁垒",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p210",
+  "page": 14
+ },
+ {
+  "w": "perfect competition",
+  "pos": "phr.",
+  "zh": "完全竞争",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p211",
+  "page": 15
+ },
+ {
+  "w": "monopoly",
+  "pos": "n.",
+  "zh": "垄断；垄断企业",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p211",
+  "page": 15
+ },
+ {
+  "w": "natural monopoly",
+  "pos": "phr.",
+  "zh": "自然垄断",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p211",
+  "page": 15
+ },
+ {
+  "w": "monopolistic competition",
+  "pos": "phr.",
+  "zh": "垄断竞争",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p211",
+  "page": 15
+ },
+ {
+  "w": "monopsony",
+  "pos": "n.",
+  "zh": "买方垄断",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p211",
+  "page": 15
+ },
+ {
+  "w": "oligopoly",
+  "pos": "n.",
+  "zh": "寡头垄断",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p212",
+  "page": 16
+ },
+ {
+  "w": "imperfect competition",
+  "pos": "phr.",
+  "zh": "不完全竞争",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p212",
+  "page": 16
+ },
+ {
+  "w": "market concentration ratio",
+  "pos": "phr.",
+  "zh": "市场集中度",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p212",
+  "page": 16
+ },
+ {
+  "w": "market failure",
+  "pos": "phr.",
+  "zh": "市场失灵",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p212",
+  "page": 16
+ },
+ {
+  "w": "regulation",
+  "pos": "n.",
+  "zh": "管制，监管",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p212",
+  "page": 16
+ },
+ {
+  "w": "tax",
+  "pos": "n.",
+  "zh": "税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p213",
+  "page": 17
+ },
+ {
+  "w": "tax burden",
+  "pos": "phr.",
+  "zh": "税收负担",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p213",
+  "page": 17
+ },
+ {
+  "w": "tax incidence",
+  "pos": "phr.",
+  "zh": "税收归宿",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p213",
+  "page": 17
+ },
+ {
+  "w": "tax evasion",
+  "pos": "phr.",
+  "zh": "逃税（违法）",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p213",
+  "page": 17
+ },
+ {
+  "w": "tax avoidance",
+  "pos": "phr.",
+  "zh": "避税（合法）",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p213",
+  "page": 17
+ },
+ {
+  "w": "direct tax",
+  "pos": "phr.",
+  "zh": "直接税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p213",
+  "page": 17
+ },
+ {
+  "w": "indirect tax",
+  "pos": "phr.",
+  "zh": "间接税",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p213",
+  "page": 17
+ },
+ {
+  "w": "specific tax",
+  "pos": "phr.",
+  "zh": "从量税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p214",
+  "page": 18
+ },
+ {
+  "w": "ad valorem tax",
+  "pos": "phr.",
+  "zh": "从价税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p214",
+  "page": 18
+ },
+ {
+  "w": "capital gains tax",
+  "pos": "phr.",
+  "zh": "资本利得税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p214",
+  "page": 18
+ },
+ {
+  "w": "wealth tax",
+  "pos": "phr.",
+  "zh": "财富税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p214",
+  "page": 18
+ },
+ {
+  "w": "corporation tax",
+  "pos": "phr.",
+  "zh": "公司税",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p214",
+  "page": 18
+ },
+ {
+  "w": "payroll tax",
+  "pos": "phr.",
+  "zh": "工资税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p214",
+  "page": 18
+ },
+ {
+  "w": "excise duty",
+  "pos": "phr.",
+  "zh": "消费税（货物税）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p215",
+  "page": 19
+ },
+ {
+  "w": "proportional tax",
+  "pos": "phr.",
+  "zh": "比例税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p215",
+  "page": 19
+ },
+ {
+  "w": "progressive tax",
+  "pos": "phr.",
+  "zh": "累进税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p215",
+  "page": 19
+ },
+ {
+  "w": "regressive tax",
+  "pos": "phr.",
+  "zh": "累退税",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p215",
+  "page": 19
+ },
+ {
+  "w": "marginal tax",
+  "pos": "phr.",
+  "zh": "边际税（率）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p215",
+  "page": 19
+ },
+ {
+  "w": "subsidy",
+  "pos": "n.",
+  "zh": "补贴",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p215",
+  "page": 19
+ },
+ {
+  "w": "transfer payment",
+  "pos": "phr.",
+  "zh": "转移支付",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p215",
+  "page": 19
+ },
+ {
+  "w": "nationalisation",
+  "pos": "n.",
+  "zh": "国有化",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p216",
+  "page": 20
+ },
+ {
+  "w": "privatisation",
+  "pos": "n.",
+  "zh": "私有化",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p216",
+  "page": 20
+ },
+ {
+  "w": "sole trader",
+  "pos": "phr.",
+  "zh": "个体经营者，独资企业",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p216",
+  "page": 20
+ },
+ {
+  "w": "partnership",
+  "pos": "n.",
+  "zh": "合伙企业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p216",
+  "page": 20
+ },
+ {
+  "w": "private limited company",
+  "pos": "phr.",
+  "zh": "私人有限公司",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p216",
+  "page": 20
+ },
+ {
+  "w": "public limited company",
+  "pos": "phr.",
+  "zh": "股份有限公司（可上市）",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p217",
+  "page": 21
+ },
+ {
+  "w": "public corporation",
+  "pos": "phr.",
+  "zh": "公营企业",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p217",
+  "page": 21
+ },
+ {
+  "w": "merger",
+  "pos": "n.",
+  "zh": "合并，兼并",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p217",
+  "page": 21
+ },
+ {
+  "w": "takeover",
+  "pos": "n.",
+  "zh": "收购，接管",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p217",
+  "page": 21
+ },
+ {
+  "w": "acquisition",
+  "pos": "n.",
+  "zh": "收购",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p217",
+  "page": 21
+ },
+ {
+  "w": "integration",
+  "pos": "n.",
+  "zh": "（企业）合并，一体化",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p218",
+  "page": 22
+ },
+ {
+  "w": "horizontal integration",
+  "pos": "phr.",
+  "zh": "横向合并",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p218",
+  "page": 22
+ },
+ {
+  "w": "vertical integration",
+  "pos": "phr.",
+  "zh": "纵向合并",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p218",
+  "page": 22
+ },
+ {
+  "w": "conglomerate integration",
+  "pos": "phr.",
+  "zh": "混合合并",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p218",
+  "page": 22
+ },
+ {
+  "w": "lateral integration",
+  "pos": "phr.",
+  "zh": "侧向合并",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p218",
+  "page": 22
+ },
+ {
+  "w": "diversification",
+  "pos": "n.",
+  "zh": "多元化经营",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p218",
+  "page": 22
+ },
+ {
+  "w": "non-price competition",
+  "pos": "phr.",
+  "zh": "非价格竞争",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p219",
+  "page": 23
+ },
+ {
+  "w": "price discrimination",
+  "pos": "phr.",
+  "zh": "价格歧视",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p219",
+  "page": 23
+ },
+ {
+  "w": "price skimming",
+  "pos": "phr.",
+  "zh": "撇脂定价",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p219",
+  "page": 23
+ },
+ {
+  "w": "penetration pricing",
+  "pos": "phr.",
+  "zh": "渗透定价",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p219",
+  "page": 23
+ },
+ {
+  "w": "predatory pricing",
+  "pos": "phr.",
+  "zh": "掠夺性定价",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p219",
+  "page": 23
+ },
+ {
+  "w": "price leadership",
+  "pos": "phr.",
+  "zh": "价格领导",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p220",
+  "page": 24
+ },
+ {
+  "w": "limit pricing",
+  "pos": "phr.",
+  "zh": "限制性定价",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p220",
+  "page": 24
+ },
+ {
+  "w": "cartel",
+  "pos": "n.",
+  "zh": "卡特尔（企业联盟）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p220",
+  "page": 24
+ },
+ {
+  "w": "productive efficiency",
+  "pos": "phr.",
+  "zh": "生产效率",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p220",
+  "page": 24
+ },
+ {
+  "w": "allocative efficiency",
+  "pos": "phr.",
+  "zh": "配置效率",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p220",
+  "page": 24
+ },
+ {
+  "w": "X-inefficiency",
+  "pos": "n.",
+  "zh": "X 低效率",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p220",
+  "page": 24
+ },
+ {
+  "w": "optimum resource allocation",
+  "pos": "phr.",
+  "zh": "资源最优配置",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p221",
+  "page": 25
+ },
+ {
+  "w": "externality",
+  "pos": "n.",
+  "zh": "外部性",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p221",
+  "page": 25
+ },
+ {
+  "w": "negative externality",
+  "pos": "phr.",
+  "zh": "负外部性",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p221",
+  "page": 25
+ },
+ {
+  "w": "positive externality",
+  "pos": "phr.",
+  "zh": "正外部性",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p221",
+  "page": 25
+ },
+ {
+  "w": "spillover effects",
+  "pos": "phr.",
+  "zh": "溢出效应",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p221",
+  "page": 25
+ },
+ {
+  "w": "social benefit",
+  "pos": "phr.",
+  "zh": "社会收益",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p222",
+  "page": 26
+ },
+ {
+  "w": "social cost",
+  "pos": "phr.",
+  "zh": "社会成本",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p222",
+  "page": 26
+ },
+ {
+  "w": "private benefit",
+  "pos": "phr.",
+  "zh": "私人收益",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p222",
+  "page": 26
+ },
+ {
+  "w": "private cost",
+  "pos": "phr.",
+  "zh": "私人成本",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p222",
+  "page": 26
+ },
+ {
+  "w": "external benefit",
+  "pos": "phr.",
+  "zh": "外部收益",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p222",
+  "page": 26
+ },
+ {
+  "w": "external cost",
+  "pos": "phr.",
+  "zh": "外部成本",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p223",
+  "page": 27
+ },
+ {
+  "w": "welfare loss",
+  "pos": "phr.",
+  "zh": "福利损失",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p223",
+  "page": 27
+ },
+ {
+  "w": "deadweight loss",
+  "pos": "phr.",
+  "zh": "无谓损失",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p223",
+  "page": 27
+ },
+ {
+  "w": "crowding out effect",
+  "pos": "phr.",
+  "zh": "挤出效应",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p223",
+  "page": 27
+ },
+ {
+  "w": "interest rate",
+  "pos": "phr.",
+  "zh": "利率",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p223",
+  "page": 27
+ },
+ {
+  "w": "money supply",
+  "pos": "phr.",
+  "zh": "货币供应量",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p224",
+  "page": 28
+ },
+ {
+  "w": "saving",
+  "pos": "n.",
+  "zh": "储蓄",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p224",
+  "page": 28
+ },
+ {
+  "w": "utility",
+  "pos": "n.",
+  "zh": "效用",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p224",
+  "page": 28
+ },
+ {
+  "w": "disposable income",
+  "pos": "phr.",
+  "zh": "可支配收入",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p224",
+  "page": 28
+ },
+ {
+  "w": "investment",
+  "pos": "n.",
+  "zh": "投资",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p224",
+  "page": 28
+ },
+ {
+  "w": "central bank",
+  "pos": "phr.",
+  "zh": "中央银行",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p224",
+  "page": 28
+ },
+ {
+  "w": "economic growth",
+  "pos": "phr.",
+  "zh": "经济增长",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p225",
+  "page": 29
+ },
+ {
+  "w": "recession",
+  "pos": "n.",
+  "zh": "经济衰退",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p225",
+  "page": 29
+ },
+ {
+  "w": "economic development",
+  "pos": "phr.",
+  "zh": "经济发展",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p225",
+  "page": 29
+ },
+ {
+  "w": "sustainable development",
+  "pos": "phr.",
+  "zh": "可持续发展",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p225",
+  "page": 29
+ },
+ {
+  "w": "trade cycle",
+  "pos": "phr.",
+  "zh": "经济周期",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p225",
+  "page": 29
+ },
+ {
+  "w": "money values",
+  "pos": "phr.",
+  "zh": "货币价值（未扣除通胀）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p225",
+  "page": 29
+ },
+ {
+  "w": "nominal values",
+  "pos": "phr.",
+  "zh": "名义值",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p226",
+  "page": 30
+ },
+ {
+  "w": "real values",
+  "pos": "phr.",
+  "zh": "实际值（扣除通胀）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p226",
+  "page": 30
+ },
+ {
+  "w": "national income",
+  "pos": "phr.",
+  "zh": "国民收入",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p226",
+  "page": 30
+ },
+ {
+  "w": "gross domestic product",
+  "pos": "phr.",
+  "zh": "国内生产总值",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p226",
+  "page": 30
+ },
+ {
+  "w": "gross national product",
+  "pos": "phr.",
+  "zh": "国民生产总值（GNP）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p226",
+  "page": 30
+ },
+ {
+  "w": "nominal GDP",
+  "pos": "phr.",
+  "zh": "名义国内生产总值",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p226",
+  "page": 30
+ },
+ {
+  "w": "money GDP",
+  "pos": "phr.",
+  "zh": "名义 GDP",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p227",
+  "page": 31
+ },
+ {
+  "w": "real GDP",
+  "pos": "phr.",
+  "zh": "实际国内生产总值",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p227",
+  "page": 31
+ },
+ {
+  "w": "shadow economy",
+  "pos": "phr.",
+  "zh": "地下经济",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p227",
+  "page": 31
+ },
+ {
+  "w": "purchasing power parity",
+  "pos": "phr.",
+  "zh": "购买力平价（PPP）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p227",
+  "page": 31
+ },
+ {
+  "w": "human development index",
+  "pos": "phr.",
+  "zh": "人类发展指数",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p227",
+  "page": 31
+ },
+ {
+  "w": "human poverty index",
+  "pos": "phr.",
+  "zh": "人类贫困指数（HPI）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p228",
+  "page": 32
+ },
+ {
+  "w": "developed economies",
+  "pos": "phr.",
+  "zh": "发达经济体",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p228",
+  "page": 32
+ },
+ {
+  "w": "developing economies",
+  "pos": "phr.",
+  "zh": "发展中经济体",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p228",
+  "page": 32
+ },
+ {
+  "w": "Malthusian theory",
+  "pos": "phr.",
+  "zh": "马尔萨斯人口论",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p228",
+  "page": 32
+ },
+ {
+  "w": "dependency ratio",
+  "pos": "phr.",
+  "zh": "抚养比",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p228",
+  "page": 32
+ },
+ {
+  "w": "birth rate",
+  "pos": "phr.",
+  "zh": "出生率",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p228",
+  "page": 32
+ },
+ {
+  "w": "death rate",
+  "pos": "phr.",
+  "zh": "死亡率",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p229",
+  "page": 33
+ },
+ {
+  "w": "infant mortality rate",
+  "pos": "phr.",
+  "zh": "婴儿死亡率",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p229",
+  "page": 33
+ },
+ {
+  "w": "fertility rate",
+  "pos": "phr.",
+  "zh": "生育率",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p229",
+  "page": 33
+ },
+ {
+  "w": "life expectancy",
+  "pos": "phr.",
+  "zh": "预期寿命",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p229",
+  "page": 33
+ },
+ {
+  "w": "optimum population",
+  "pos": "phr.",
+  "zh": "适度人口",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p229",
+  "page": 33
+ },
+ {
+  "w": "migration",
+  "pos": "n.",
+  "zh": "人口迁移",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p229",
+  "page": 33
+ },
+ {
+  "w": "emigration",
+  "pos": "n.",
+  "zh": "移出（移民）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p229",
+  "page": 33
+ },
+ {
+  "w": "immigration",
+  "pos": "n.",
+  "zh": "移入（移民）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p230",
+  "page": 34
+ },
+ {
+  "w": "urbanisation",
+  "pos": "n.",
+  "zh": "城市化",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p230",
+  "page": 34
+ },
+ {
+  "w": "labour productivity",
+  "pos": "phr.",
+  "zh": "劳动生产率",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p230",
+  "page": 34
+ },
+ {
+  "w": "unemployment",
+  "pos": "n.",
+  "zh": "失业",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p230",
+  "page": 34
+ },
+ {
+  "w": "full employment",
+  "pos": "phr.",
+  "zh": "充分就业",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p230",
+  "page": 34
+ },
+ {
+  "w": "natural rate of unemployment",
+  "pos": "phr.",
+  "zh": "自然失业率",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p230",
+  "page": 34
+ },
+ {
+  "w": "frictional unemployment",
+  "pos": "phr.",
+  "zh": "摩擦性失业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p230",
+  "page": 34
+ },
+ {
+  "w": "structural unemployment",
+  "pos": "phr.",
+  "zh": "结构性失业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p231",
+  "page": 35
+ },
+ {
+  "w": "seasonal unemployment",
+  "pos": "phr.",
+  "zh": "季节性失业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p231",
+  "page": 35
+ },
+ {
+  "w": "cyclical unemployment",
+  "pos": "phr.",
+  "zh": "周期性失业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p231",
+  "page": 35
+ },
+ {
+  "w": "technological unemployment",
+  "pos": "phr.",
+  "zh": "技术性失业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p231",
+  "page": 35
+ },
+ {
+  "w": "mobility of labour",
+  "pos": "phr.",
+  "zh": "劳动力流动性",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p231",
+  "page": 35
+ },
+ {
+  "w": "trade union",
+  "pos": "phr.",
+  "zh": "工会",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p231",
+  "page": 35
+ },
+ {
+  "w": "industrial unions",
+  "pos": "phr.",
+  "zh": "产业工会",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p232",
+  "page": 36
+ },
+ {
+  "w": "craft unions",
+  "pos": "phr.",
+  "zh": "行业工会",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p232",
+  "page": 36
+ },
+ {
+  "w": "professional association",
+  "pos": "phr.",
+  "zh": "专业协会（非体力劳动者工会）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p232",
+  "page": 36
+ },
+ {
+  "w": "collective bargaining",
+  "pos": "phr.",
+  "zh": "集体谈判",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p232",
+  "page": 36
+ },
+ {
+  "w": "labour force",
+  "pos": "phr.",
+  "zh": "劳动力（总量）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p232",
+  "page": 36
+ },
+ {
+  "w": "liquidity",
+  "pos": "n.",
+  "zh": "流动性（变现能力）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p232",
+  "page": 36
+ },
+ {
+  "w": "foreign direct investment",
+  "pos": "phr.",
+  "zh": "外国直接投资",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p233",
+  "page": 37
+ },
+ {
+  "w": "property rights",
+  "pos": "phr.",
+  "zh": "产权",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p233",
+  "page": 37
+ },
+ {
+  "w": "distribution of income",
+  "pos": "phr.",
+  "zh": "收入分配",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p233",
+  "page": 37
+ },
+ {
+  "w": "equity",
+  "pos": "n.",
+  "zh": "公平（收入分配）",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p233",
+  "page": 37
+ },
+ {
+  "w": "wealth",
+  "pos": "n.",
+  "zh": "财富",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p233",
+  "page": 37
+ },
+ {
+  "w": "government failure",
+  "pos": "phr.",
+  "zh": "政府失灵",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p233",
+  "page": 37
+ },
+ {
+  "w": "macroeconomics",
+  "pos": "n.",
+  "zh": "宏观经济学",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p234",
+  "page": 38
+ },
+ {
+  "w": "aggregate demand",
+  "pos": "phr.",
+  "zh": "总需求",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p234",
+  "page": 38
+ },
+ {
+  "w": "aggregate supply",
+  "pos": "phr.",
+  "zh": "总供给",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p234",
+  "page": 38
+ },
+ {
+  "w": "fiscal policy",
+  "pos": "phr.",
+  "zh": "财政政策",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p234",
+  "page": 38
+ },
+ {
+  "w": "supply-side policy",
+  "pos": "phr.",
+  "zh": "供给侧政策",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p234",
+  "page": 38
+ },
+ {
+  "w": "budget",
+  "pos": "n.",
+  "zh": "（政府）预算",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p234",
+  "page": 38
+ },
+ {
+  "w": "monetary policy",
+  "pos": "phr.",
+  "zh": "货币政策",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p235",
+  "page": 39
+ },
+ {
+  "w": "balanced budget",
+  "pos": "phr.",
+  "zh": "预算平衡",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p235",
+  "page": 39
+ },
+ {
+  "w": "budget surplus",
+  "pos": "phr.",
+  "zh": "预算盈余",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p235",
+  "page": 39
+ },
+ {
+  "w": "budget deficit",
+  "pos": "phr.",
+  "zh": "预算赤字",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p235",
+  "page": 39
+ },
+ {
+  "w": "national debt",
+  "pos": "phr.",
+  "zh": "国债，政府债务",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p235",
+  "page": 39
+ },
+ {
+  "w": "inflation",
+  "pos": "n.",
+  "zh": "通货膨胀",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p235",
+  "page": 39
+ },
+ {
+  "w": "creeping inflation",
+  "pos": "phr.",
+  "zh": "温和通胀",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p235",
+  "page": 39
+ },
+ {
+  "w": "hyperinflation",
+  "pos": "n.",
+  "zh": "恶性通货膨胀",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p236",
+  "page": 40
+ },
+ {
+  "w": "cost-push inflation",
+  "pos": "phr.",
+  "zh": "成本推动型通胀",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p236",
+  "page": 40
+ },
+ {
+  "w": "demand-pull inflation",
+  "pos": "phr.",
+  "zh": "需求拉动型通胀",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p236",
+  "page": 40
+ },
+ {
+  "w": "deflation",
+  "pos": "n.",
+  "zh": "通货紧缩",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p236",
+  "page": 40
+ },
+ {
+  "w": "disinflation",
+  "pos": "n.",
+  "zh": "通胀放缓",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p236",
+  "page": 40
+ },
+ {
+  "w": "consumer prices index",
+  "pos": "phr.",
+  "zh": "消费者价格指数",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p236",
+  "page": 40
+ },
+ {
+  "w": "retail price index",
+  "pos": "phr.",
+  "zh": "零售物价指数",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p236",
+  "page": 40
+ },
+ {
+  "w": "menu costs",
+  "pos": "phr.",
+  "zh": "菜单成本",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p237",
+  "page": 41
+ },
+ {
+  "w": "shoe leather costs",
+  "pos": "phr.",
+  "zh": "皮鞋成本",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p237",
+  "page": 41
+ },
+ {
+  "w": "export",
+  "pos": "n.",
+  "zh": "出口（品）",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p237",
+  "page": 41
+ },
+ {
+  "w": "import",
+  "pos": "n.",
+  "zh": "进口（品）",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p237",
+  "page": 41
+ },
+ {
+  "w": "net exports",
+  "pos": "phr.",
+  "zh": "净出口",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p237",
+  "page": 41
+ },
+ {
+  "w": "trade deficit",
+  "pos": "phr.",
+  "zh": "贸易逆差",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p237",
+  "page": 41
+ },
+ {
+  "w": "balance of trade",
+  "pos": "phr.",
+  "zh": "贸易差额",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p238",
+  "page": 42
+ },
+ {
+  "w": "trade surplus",
+  "pos": "phr.",
+  "zh": "贸易顺差",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p238",
+  "page": 42
+ },
+ {
+  "w": "balance of payments",
+  "pos": "phr.",
+  "zh": "国际收支",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p238",
+  "page": 42
+ },
+ {
+  "w": "current account",
+  "pos": "phr.",
+  "zh": "经常账户",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p238",
+  "page": 42
+ },
+ {
+  "w": "capital account",
+  "pos": "phr.",
+  "zh": "资本账户",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p238",
+  "page": 42
+ },
+ {
+  "w": "financial account",
+  "pos": "phr.",
+  "zh": "金融账户",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p238",
+  "page": 42
+ },
+ {
+  "w": "net errors and omissions",
+  "pos": "phr.",
+  "zh": "净误差与遗漏",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p239",
+  "page": 43
+ },
+ {
+  "w": "current transfers",
+  "pos": "phr.",
+  "zh": "经常转移",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p239",
+  "page": 43
+ },
+ {
+  "w": "exchange rate",
+  "pos": "phr.",
+  "zh": "汇率",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p239",
+  "page": 43
+ },
+ {
+  "w": "floating exchange rate",
+  "pos": "phr.",
+  "zh": "浮动汇率",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p239",
+  "page": 43
+ },
+ {
+  "w": "fixed exchange rate",
+  "pos": "phr.",
+  "zh": "固定汇率",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p239",
+  "page": 43
+ },
+ {
+  "w": "pegged exchange rate",
+  "pos": "phr.",
+  "zh": "钉住汇率",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p239",
+  "page": 43
+ },
+ {
+  "w": "managed float",
+  "pos": "phr.",
+  "zh": "有管理的浮动汇率",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p240",
+  "page": 44
+ },
+ {
+  "w": "hot money flows",
+  "pos": "phr.",
+  "zh": "热钱流动",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p240",
+  "page": 44
+ },
+ {
+  "w": "depreciation",
+  "pos": "n.",
+  "zh": "（货币）贬值",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p240",
+  "page": 44
+ },
+ {
+  "w": "appreciation",
+  "pos": "n.",
+  "zh": "（货币）升值",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p240",
+  "page": 44
+ },
+ {
+  "w": "devaluation",
+  "pos": "n.",
+  "zh": "（官方）货币贬值",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p240",
+  "page": 44
+ },
+ {
+  "w": "revaluation",
+  "pos": "n.",
+  "zh": "（官方）货币升值",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p241",
+  "page": 45
+ },
+ {
+  "w": "absolute advantage",
+  "pos": "phr.",
+  "zh": "绝对优势",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p241",
+  "page": 45
+ },
+ {
+  "w": "comparative advantage",
+  "pos": "phr.",
+  "zh": "比较优势",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p241",
+  "page": 45
+ },
+ {
+  "w": "globalisation",
+  "pos": "n.",
+  "zh": "全球化",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p241",
+  "page": 45
+ },
+ {
+  "w": "open economy",
+  "pos": "phr.",
+  "zh": "开放经济",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p241",
+  "page": 45
+ },
+ {
+  "w": "free trade",
+  "pos": "phr.",
+  "zh": "自由贸易",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p242",
+  "page": 46
+ },
+ {
+  "w": "closed economy",
+  "pos": "phr.",
+  "zh": "封闭经济",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p242",
+  "page": 46
+ },
+ {
+  "w": "trade bloc",
+  "pos": "phr.",
+  "zh": "贸易集团",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p242",
+  "page": 46
+ },
+ {
+  "w": "free trade area",
+  "pos": "phr.",
+  "zh": "自由贸易区",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p242",
+  "page": 46
+ },
+ {
+  "w": "customs union",
+  "pos": "phr.",
+  "zh": "关税同盟",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p242",
+  "page": 46
+ },
+ {
+  "w": "economic union",
+  "pos": "phr.",
+  "zh": "经济联盟",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p242",
+  "page": 46
+ },
+ {
+  "w": "protectionism",
+  "pos": "n.",
+  "zh": "贸易保护主义",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p243",
+  "page": 47
+ },
+ {
+  "w": "tariff",
+  "pos": "n.",
+  "zh": "关税",
+  "cls": "S",
+  "tier": 1,
+  "topic": "p243",
+  "page": 47
+ },
+ {
+  "w": "quota",
+  "pos": "n.",
+  "zh": "配额",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p243",
+  "page": 47
+ },
+ {
+  "w": "embargo",
+  "pos": "n.",
+  "zh": "禁运",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p243",
+  "page": 47
+ },
+ {
+  "w": "infant industry",
+  "pos": "phr.",
+  "zh": "幼稚产业",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p243",
+  "page": 47
+ },
+ {
+  "w": "dumping",
+  "pos": "n.",
+  "zh": "倾销",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p243",
+  "page": 47
+ },
+ {
+  "w": "multinational company",
+  "pos": "phr.",
+  "zh": "跨国公司",
+  "cls": "R",
+  "tier": 1,
+  "topic": "p243",
+  "page": 47
+ }
+]

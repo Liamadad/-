@@ -1,0 +1,7 @@
+out/
+dl/
+shots/
+__pycache__/
+.DS_Store
+redesign/site2/
+redesign/out/

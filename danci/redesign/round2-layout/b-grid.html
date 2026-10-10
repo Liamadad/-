@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>方案 02 · 翻卡墙</title>
+<style>
+:root {
+  --toast-b: 96px;
+  --bg: #EEF1F5; --card: #FFFFFF; --ink: #1B2430; --muted: #66707D; --line: #DFE4EA;
+  --red: #E5484D; --red-d: #B8333A; --red-t: #FDECEC;
+  --blue: #3A6FF0; --blue-d: #2648B8; --blue-t: #E8EEFE;
+  --ink-t: #E4E8EE;
+  --r: 16px; --shadow: 0 1px 2px rgba(27,36,48,.06), 0 8px 22px rgba(27,36,48,.07);
+  --font: system-ui, -apple-system, "Roboto", "Noto Sans SC", "Noto Sans CJK SC", "PingFang SC", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { background: var(--bg); }
+body { font: 15px/1.45 var(--font); color: var(--ink); background: var(--bg); -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
+
+.app { --acc: var(--ink); --acc-d: #000; --acc-t: var(--ink-t); max-width: 480px; margin: 0 auto; min-height: 100vh; }
+.app[data-tab="s"] { --acc: var(--red); --acc-d: var(--red-d); --acc-t: var(--red-t); }
+.app[data-tab="r"] { --acc: var(--blue); --acc-d: var(--blue-d); --acc-t: var(--blue-t); }
+
+/* 顶部：一周日历条 */
+.top { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 8px 12px 0; }
+.wk { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.wk b { font-size: 17px; font-weight: 700; }
+.wk b small { font-size: 13px; color: var(--muted); font-weight: 500; margin-left: 6px; }
+.wk .nav { display: flex; gap: 6px; }
+.wk .nav button { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; }
+.wk .nav button:active { background: rgba(27,36,48,.06); }
+.wk svg { width: 20px; height: 20px; }
+.days { position: relative; display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 2px; }
+.days .pick { position: absolute; top: 0; bottom: 0; left: 0; width: calc((100% - 24px) / 7); border-radius: 14px; background: var(--card); box-shadow: var(--shadow);
+  transform: translateX(calc(var(--k) * (100% + 4px))); transition: transform .32s cubic-bezier(.3,1.25,.5,1); }
+.day { position: relative; height: 64px; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; color: var(--muted); }
+.day i { font-style: normal; font-size: 12px; }
+.day b { font-size: 18px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.day em { font-style: normal; font-size: 10px; line-height: 12px; color: var(--muted); }
+.day.today b::after { content: ""; display: block; width: 5px; height: 5px; margin: 1px auto 0; border-radius: 50%; background: var(--red); }
+.tabs { position: relative; display: flex; gap: 22px; padding: 14px 4px 0; border-bottom: 1px solid var(--line); }
+.tabs button { height: 44px; font-size: 16px; font-weight: 600; color: var(--muted); }
+.tabs button span { font-variant-numeric: tabular-nums; margin-left: 4px; }
+.tabs button[aria-selected="true"] { color: var(--acc); }
+.tabs .bar { position: absolute; bottom: -1px; height: 3px; border-radius: 3px; background: var(--acc); left: var(--x); width: var(--w); transition: left .3s cubic-bezier(.3,1.2,.5,1), width .3s, background-color .2s; }
+
+/* 卡片墙 */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px 12px 120px; }
+.grid.slide { animation: slide .34s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes slide { from { opacity: 0; transform: translateX(calc(var(--dir) * 28px)); } }
+.first .fc { animation: deal .45s cubic-bezier(.2,.9,.25,1.15) both; animation-delay: calc(min(var(--i), 10) * 40ms + 100ms); }
+@keyframes deal { from { opacity: 0; transform: translateY(18px) rotate(calc(var(--tilt) * 1deg)) scale(.94); } }
+.fc { --t: var(--blue); --tt: var(--blue-t); perspective: 900px; height: 138px; }
+.fc.s { --t: var(--red); --tt: var(--red-t); }
+.flip { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .5s cubic-bezier(.3,1.35,.45,1); }
+.fc.turned .flip { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: var(--r); background: var(--card); box-shadow: var(--shadow);
+  padding: 10px 10px 12px 12px; display: flex; flex-direction: column; overflow: hidden; }
+.face::before { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 4px; border-radius: 0 4px 4px 0; background: var(--t); }
+.face.back { transform: rotateY(180deg); background: var(--tt); }
+.face.back::before { display: none; }
+.row1 { display: flex; justify-content: space-between; align-items: flex-start; min-height: 30px; }
+.chip { font-size: 11px; line-height: 18px; padding: 0 7px; border-radius: 9px; background: #F0F2F5; color: var(--muted); font-weight: 600; margin-top: 4px; }
+.say { width: 44px; height: 44px; margin: -6px -6px 0 0; border-radius: 50%; color: var(--t); display: grid; place-items: center; position: relative; }
+.say i { width: 34px; height: 34px; border-radius: 50%; background: var(--tt); display: grid; place-items: center; transition: transform .12s; }
+.say:active i { transform: scale(.9); }
+.say svg { width: 18px; height: 18px; }
+.mid { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.en { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; overflow-wrap: anywhere; }
+.ph { font-size: 12px; color: var(--muted); }
+.zh { font-size: 14px; color: #2E3A48; line-height: 1.35; }
+.zh.big { font-size: 17px; font-weight: 600; }
+.hide { display: inline-block; height: 22px; width: 116px; border-radius: 7px; vertical-align: middle;
+  background: repeating-linear-gradient(135deg, var(--tt) 0 7px, transparent 7px 13px), #F6F7F9; }
+.q { font-size: 11px; color: var(--t); font-weight: 600; }
+
+/* 底部浮动按钮 */
+.dock { position: fixed; left: 0; right: 0; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 6; display: flex; justify-content: center; pointer-events: none; }
+.dock .in { pointer-events: auto; display: flex; gap: 6px; padding: 6px; border-radius: 22px; background: rgba(255,255,255,.92); box-shadow: 0 10px 30px rgba(27,36,48,.18); backdrop-filter: blur(10px); }
+.btn { height: 52px; padding: 0 22px; border-radius: 16px; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; background: #F0F2F5; transition: transform .08s; }
+.btn:active { transform: scale(.96); }
+.btn.main { background: var(--acc); color: #fff; min-width: 148px; justify-content: center; box-shadow: 0 3px 0 var(--acc-d); }
+.btn svg { width: 19px; height: 19px; }
+
+.toast { position: fixed; left: 50%; bottom: calc(var(--toast-b) + env(safe-area-inset-bottom)); z-index: 20; pointer-events: none; white-space: nowrap;
+  background: rgba(27,36,48,.92); color: #fff; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px; animation: toast 1.7s ease both; }
+@keyframes toast { 0% { opacity: 0; transform: translate(-50%, 8px); } 12%, 78% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; transform: translate(-50%, 0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+<script src="data.js"></script>
+<script defer src="vendor/alpine.min.js"></script>
+</head>
+<body>
+<main class="app" x-data="app()" x-init="init()" :data-tab="tab" :class="{ first }">
+  <header class="top">
+    <div class="wk">
+      <b>10月<small>第 1 周 · 打基础</small></b>
+      <div class="nav">
+        <button aria-label="上一周"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button aria-label="下一周"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="days" :style="'--k:' + sel">
+      <i class="pick"></i>
+      <template x-for="(d, i) in D.week" :key="d.n">
+        <button class="day" :class="{ today: d.today }" @click="sel = i" :aria-label="'10月' + d.n + '日'">
+          <i x-text="d.d"></i><b x-text="d.n"></b><em x-text="d.k === 'test' ? '周测' : d.k === 'rest' ? '补考' : ''"></em>
+        </button>
+      </template>
+    </div>
+    <nav class="tabs" role="tablist" x-ref="tabs" :style="ind">
+      <template x-for="t in tabs" :key="t">
+        <button role="tab" :data-t="t" :aria-selected="tab === t" @click="go(t)"><span style="margin:0" x-text="names[t]"></span><span x-text="src(t).length"></span></button>
+      </template>
+      <i class="bar"></i>
+    </nav>
+  </header>
+
+  <template x-for="k in [tab + shuffles]" :key="k">
+    <section class="grid" :class="{ slide: !first }" :style="'--dir:' + dir">
+      <template x-for="(e, i) in rows(tab)" :key="e[0]">
+        <div class="fc" :class="{ s: isS(e), turned: covered && open[e[0]] }" :style="'--i:' + i + ';--tilt:' + (i % 2 ? 3 : -3)" @click="covered && (open[e[0]] = !open[e[0]])">
+          <div class="flip">
+            <!-- 正面：没遮住时英文和中文都在；遮住时只留题目一面 -->
+            <div class="face">
+              <div class="row1">
+                <span class="chip" x-text="e[3] || (isS(e) ? '默写' : '认识')"></span>
+                <button class="say" :aria-label="'播放 ' + e[0] + ' 的发音'" @click.stop><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i></button>
+              </div>
+              <div class="mid">
+                <template x-if="!(covered && isS(e))"><div><div class="en" x-text="e[0]"></div><div class="ph" x-text="'/' + e[1] + '/'"></div></div></template>
+                <template x-if="covered && isS(e)"><div><span class="hide" aria-label="英文已遮住"></span><div class="zh big" style="margin-top:8px" x-text="e[2]"></div></div></template>
+                <template x-if="!covered"><div class="zh" style="margin-top:4px" x-text="e[2]"></div></template>
+                <template x-if="covered && !isS(e)"><span class="hide" style="margin-top:8px" aria-label="中文已遮住"></span></template>
+              </div>
+            </div>
+            <!-- 背面：答案 -->
+            <div class="face back">
+              <div class="row1"></div>
+              <div class="mid">
+                <template x-if="isS(e)"><div><div class="en" x-text="e[0]"></div><div class="ph" x-text="'/' + e[1] + '/'"></div></div></template>
+                <template x-if="!isS(e)"><div><div class="en" style="font-size:15px;color:var(--muted)" x-text="e[0]"></div><div class="zh big" x-text="e[2]"></div></div></template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </section>
+  </template>
+
+  <div class="dock"><div class="in">
+    <button class="btn" @click="shuffle()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>打乱</button>
+    <button class="btn main" @click="covered = !covered; open = {}; if (covered) toastN++" x-text="covered ? '翻回正面' : '遮住，开始考'"></button>
+  </div></div>
+  <template x-for="n in (toastN ? [toastN] : [])" :key="n"><div class="toast" role="status">点卡片翻面看答案</div></template>
+</main>
+<script>
+function app() {
+  const q = new URLSearchParams(location.search);
+  return {
+    D: window.DAY, tabs: ['v', 's', 'r'], names: { v: '复习', s: '默写', r: '认识' },
+    tab: q.get('tab') || 's', sel: 1, covered: false, open: {}, first: true, dir: 1, shuffles: 0, toastN: 0, order: {}, ind: '',
+    init() {
+      const st = q.get('state');
+      if (q.has('state')) this.first = false;
+      if (st === 'covered' || st === 'revealed') this.covered = true;
+      if (st === 'revealed') { const r = this.rows(this.tab); this.open[r[0][0]] = true; this.open[r[3][0]] = true; }
+      this.$nextTick(() => this.place());
+      setTimeout(() => (this.first = false), 1000);
+    },
+    place() { const b = this.$refs.tabs.querySelector('[data-t="' + this.tab + '"]'); if (b) this.ind = '--x:' + b.offsetLeft + 'px;--w:' + b.offsetWidth + 'px'; },
+    src(t) { return t === 'v' ? this.D.V : t === 's' ? this.D.S : this.D.R; },
+    rows(t) { return this.order[t] || this.src(t); },
+    isS(e) { return this.tab === 's' || (this.tab === 'v' && e[4] === 'S'); },
+    go(t) { if (t === this.tab) return; this.dir = this.tabs.indexOf(t) > this.tabs.indexOf(this.tab) ? 1 : -1; this.first = false; this.tab = t; this.open = {}; this.$nextTick(() => this.place()); },
+    shuffle() { const a = [...this.src(this.tab)]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } this.order[this.tab] = a; this.first = false; this.dir = 0; this.shuffles++; }
+  };
+}
+</script>
+</body>
+</html>
