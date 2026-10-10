@@ -7,14 +7,17 @@ R = recognise (认识); tier 1 = in almost every paper, 2 = regular topic term, 
 import json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SOURCES = [('command', '指令词'), ('econ', '经济'), ('physics', '物理'), ('math', '数学')]
+# econ_class: the economics word list the teacher assigns (10 pages a week), in the book's page order; it comes first
+SOURCES = [('econ_class', '经济'), ('command', '指令词'), ('econ', '经济'), ('physics', '物理'), ('math', '数学')]
 # phonetics ECDICT lacks (inflected forms, units), in its notation
 MANUAL_PH = {'pascal': "'pæskәl", 'minimise': "'minimaiz", 'conserved': "kәn'sә:vd", 'responsiveness': "ri'spɒnsivnis",
              'diverging': "dai'vә:dʒiŋ", 'derived': "di'raivd", 'alternating': "'ɒ:ltәneitiŋ", 'purchasing': "'pә:tʃәsiŋ",
              'interquartile': ".intә'kwɒ:tail", 'competitiveness': "kәm'petitivnis", 'supplied': "sә'plaid",
              'inversely': "in'vә:sli", 'sightedness': "'saitidnis", 'emitting': "i'mitiŋ", 'recurring': "ri'kә:riŋ",
              'grouped': "gru:pt", 'curved': "kә:vd", 'expected': "ik'spektid", 'simplest': "'simplist",
-             'emerging': "i'mә:dʒiŋ", 'nearest': "'niәrist", 'interior': "in'tiәriә", 'co': "kәu"}
+             'emerging': "i'mә:dʒiŋ", 'nearest': "'niәrist", 'interior': "in'tiәriә", 'co': "kәu",
+             'takeover': "'teik.әuvә", 'allocative': "'ælәkeitiv", 'ceteris': "'ketәris", 'paribus': "'pærәbәs",
+             'crowding': "'kraudiŋ", 'managed': "'mænidʒd", 'gdp': "dʒi: di: 'pi:"}
 POS_SHOW = {'n.': 'n.', 'v.': 'v.', 'adj.': 'adj.', 'adv.': 'adv.', 'phr.': ''}
 
 
@@ -25,7 +28,7 @@ def load():
         for e in rows:
             e['src'], e['tag'] = key, tag
             # minor terms only need recognising; keeps the spelling load on what exams make students write
-            if e['tier'] == 3 and key != 'command':
+            if e['tier'] == 3 and key not in ('command', 'econ_class'):
                 e['cls'] = 'R'
         out[key] = rows
     return out
@@ -48,6 +51,8 @@ def phonetic(w, ec):
         return ''                      # acronyms are read letter by letter
     out = []
     for p in [p for p in re.split(r'[ \-–]+', w) if p]:
+        if p.isupper() and p.lower() not in MANUAL_PH:
+            return ''
         cands = [p, p.lower(), p.capitalize()]
         for a, b in (('isation', 'ization'), ('ise', 'ize'), ('ised', 'ized'), ('yse', 'yze'), ('our', 'or'), ('tre', 'ter'), ('ogue', 'og')):
             if a in p:
@@ -144,8 +149,9 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
                 seen.add(k); out.append(k)
         return out
 
-    # --- spelling: command words and core subject terms first, academic words woven in
-    s_order = spread(pick('command', 'S', {1, 2, 3}), pick('econ', 'S', {1}), pick('physics', 'S', {1}),
+    # --- spelling: the teacher's economics words first (in page order), then command words and core subject terms
+    s_order = pick('econ_class', 'S', {1, 2, 3})
+    s_order += spread(pick('command', 'S', {1, 2, 3}), pick('econ', 'S', {1}), pick('physics', 'S', {1}),
                      pick('math', 'S', {1}), list(awl_sublists[0]))
     s_order += spread(pick('econ', 'S', {2}), pick('physics', 'S', {2}), pick('math', 'S', {2}),
                       [w for sub in awl_sublists[1:4] for w in sub])
@@ -163,7 +169,7 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
     ielts = [e[0] for e in rec[n_ngsl:]]
     r_subj = lambda tier: spread(*[pick(src, 'R', {tier}) for src in ('econ', 'physics', 'math')])
     r1, r2, r3 = r_subj(1), r_subj(2), r_subj(3)
-    r_order = spread(r1, ngsl[:500]) + spread(r2, ngsl[500:])
+    r_order = pick('econ_class', 'R', {1, 2, 3}) + spread(r1, ngsl[:500]) + spread(r2, ngsl[500:])
     seen = set(used)
     head = [k for k in r_order if not (k in seen or seen.add(k))]
     r3 = [k for k in r3 if k not in seen]
