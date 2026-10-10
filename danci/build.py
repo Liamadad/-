@@ -2,6 +2,7 @@ import sys, re, json
 sys.path.insert(0, '.')
 from load import ngsl_rank, ecdict
 from awl import SUBLISTS
+import subjects
 
 POS_MAP = {'a.': 'adj.', 'ad.': 'adv.', 'vt.': 'v.', 'vi.': 'v.', 's.': 'adj.'}
 POS_RE = re.compile(r'^(n|v|vt|vi|a|adj|ad|adv|prep|conj|pron|num|int|art|aux|abbr|s)\.\s*')
@@ -78,9 +79,6 @@ def main():
     missing_awl = [w for w in awl if entry(w) is None]
     print('AWL missing in dict:', missing_awl)
 
-    # --- spelling phase 1: AWL headwords
-    spell = [entry(w) for w in awl]
-    spell = [e for e in spell if e]
     SPELL_TOTAL = 44 * 5 * 10 + 6 * 5 * 5 + 9 * 5 * 5
 
     # --- recognition list: NGSL rank 501+ (not AWL), then IELTS words by frequency
@@ -121,13 +119,19 @@ def main():
     cands.sort()
     n_ielts_pool = len(cands)
     for key, w in cands:
-        if len(rec) >= REC_TOTAL:
+        if len(rec) >= REC_TOTAL + 1500:   # headroom: the subject merge moves some words out
             break
         e = entry(w)
         if not e:
             continue
         rec.append(e); rused.add(w)
-    print('rec total', len(rec), 'from NGSL', n_ngsl_rec, 'ielts pool', n_ielts_pool)
+    print('rec pool', len(rec), 'from NGSL', n_ngsl_rec, 'ielts pool', n_ielts_pool)
+
+    # --- subject words (IGCSE Economics, Physics, Maths, exam command words) merged in by importance;
+    # spelling phase 1 = command words + subject terms + AWL, see subjects.py
+    spell, rec = subjects.build(SUBLISTS, entry, rec, n_ngsl_rec, entry, ec, REC_TOTAL)
+    n_phase1 = len(spell)
+    print('rec total', len(rec), 'spell phase 1', n_phase1)
 
     # --- spelling phase 2: words already met in the recognition list, in that order (5+ letters)
     used = {e[0] for e in spell}
@@ -136,10 +140,10 @@ def main():
         w = e[0]
         if len(spell) >= SPELL_TOTAL:
             break
-        if len(w) < 5 or w in used or '-' in w:
+        if len(w) < 5 or w in used or not is_word(w) or '-' in w:
             continue
         spell.append(list(e)); used.add(w); rec_pos[w] = i
-    print('spell total', len(spell), 'awl', len(awl), 'phase2 last rec index', max(rec_pos.values()))
+    print('spell total', len(spell), 'phase 1', n_phase1, 'phase2 last rec index', max(rec_pos.values()))
     overlap = {e[0] for e in spell} & {e[0] for e in rec}
     print('spell/rec overlap', len(overlap))
     json.dump({'S': spell, 'R': rec}, open('words.json', 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
