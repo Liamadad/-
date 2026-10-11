@@ -2,6 +2,7 @@ import json, os
 os.makedirs('out', exist_ok=True); os.makedirs('site', exist_ok=True)
 data = open('words.json', encoding='utf-8').read()
 app = open('app.html', encoding='utf-8').read().replace('/*__DATA__*/null', data)
+app = app.replace('/*__TUTOR__*/[]', open('tutor.json', encoding='utf-8').read().strip())   # 外教课 word lists
 open('out/danci.html', 'w', encoding='utf-8').write(app)
 head = ('<!doctype html>\n<html lang="zh-CN">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
         '<meta name="theme-color" content="#EEF1F5" media="(prefers-color-scheme: light)">\n<meta name="theme-color" content="#11151B" media="(prefers-color-scheme: dark)">\n'

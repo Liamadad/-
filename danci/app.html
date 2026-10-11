@@ -7,6 +7,7 @@
   --blue: #3A6FF0; --blue-d: #2648B8; --blue-t: #E8EEFE;
   --ink-d: #000000; --ink-t: #E4E8EE; --press: #CBD2DB;
   --tape-r: #F4C2C4; --tape-r-e: #DE8F93; --tape-b: #C5D4FA; --tape-b-e: #91ABEE;
+  --grn: #0B7A57; --grn-d: #07583E; --grn-t: #E1F4EC; --tape-g: #BDE6D6; --tape-g-e: #84CBAF;
   --shadow: 0 1px 2px rgba(27,36,48,.06), 0 8px 22px rgba(27,36,48,.08);
   --font: system-ui, -apple-system, "Roboto", "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   color-scheme: light;
@@ -15,14 +16,14 @@
   :root:not([data-theme="light"]) {
     --bg: #11151B; --card: #1B212A; --ink: #E8ECF2; --muted: #9AA4B2; --line: #2B333E; --soft: #232A34;
     --red: #FF6B6F; --red-d: #B2383D; --red-t: #3A1F24; --blue: #7DA2FF; --blue-d: #4467C4; --blue-t: #1C2842;
-    --ink-d: #8D96A3; --ink-t: #2A323D; --press: #0B0E12; --tape-r: #5C2B31; --tape-r-e: #3B1A1E; --tape-b: #2C3F6A; --tape-b-e: #1B2847; --tape-r: #5C2B31; --tape-r-e: #3B1A1E; --tape-b: #2C3F6A; --tape-b-e: #1B2847; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 22px rgba(0,0,0,.25);
+    --ink-d: #8D96A3; --ink-t: #2A323D; --press: #0B0E12; --tape-r: #5C2B31; --tape-r-e: #3B1A1E; --tape-b: #2C3F6A; --tape-b-e: #1B2847; --grn: #4CC79A; --grn-d: #2B8A66; --grn-t: #173A2E; --tape-g: #24503F; --tape-g-e: #163327; --tape-r: #5C2B31; --tape-r-e: #3B1A1E; --tape-b: #2C3F6A; --tape-b-e: #1B2847; --grn: #4CC79A; --grn-d: #2B8A66; --grn-t: #173A2E; --tape-g: #24503F; --tape-g-e: #163327; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 22px rgba(0,0,0,.25);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #11151B; --card: #1B212A; --ink: #E8ECF2; --muted: #9AA4B2; --line: #2B333E; --soft: #232A34;
   --red: #FF6B6F; --red-d: #B2383D; --red-t: #3A1F24; --blue: #7DA2FF; --blue-d: #4467C4; --blue-t: #1C2842;
-  --ink-d: #8D96A3; --ink-t: #2A323D; --press: #0B0E12; --tape-r: #5C2B31; --tape-r-e: #3B1A1E; --tape-b: #2C3F6A; --tape-b-e: #1B2847; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 22px rgba(0,0,0,.25);
+  --ink-d: #8D96A3; --ink-t: #2A323D; --press: #0B0E12; --tape-r: #5C2B31; --tape-r-e: #3B1A1E; --tape-b: #2C3F6A; --tape-b-e: #1B2847; --grn: #4CC79A; --grn-d: #2B8A66; --grn-t: #173A2E; --tape-g: #24503F; --tape-g-e: #163327; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 22px rgba(0,0,0,.25);
   color-scheme: dark;
 }
 * { box-sizing: border-box; margin: 0; }
@@ -37,6 +38,7 @@ svg { display: block; }
 .app { --acc: var(--ink); --acc-d: var(--ink-d); --acc-t: var(--ink-t); max-width: 520px; margin: 0 auto; padding: 0 14px; }
 .app[data-k="s"] { --acc: var(--red); --acc-d: var(--red-d); --acc-t: var(--red-t); }
 .app[data-k="r"] { --acc: var(--blue); --acc-d: var(--blue-d); --acc-t: var(--blue-t); }
+.app[data-k="o"] { --acc: var(--grn); --acc-d: var(--grn-d); --acc-t: var(--grn-t); }
 
 /* 顶部一行：日期、回到今天、前后一天、说明 */
 .top { position: sticky; top: 0; z-index: 10; background: var(--bg); display: flex; align-items: center; gap: 2px; padding: calc(6px + env(safe-area-inset-top)) 0 6px; }
@@ -57,6 +59,7 @@ svg { display: block; }
   transition: transform .28s cubic-bezier(.3,1.45,.5,1), background-color .2s; }
 .pile.s { --c: var(--red); --ct: var(--red-t); }
 .pile.r { --c: var(--blue); --ct: var(--blue-t); }
+.pile.o { --c: var(--grn); --ct: var(--grn-t); }
 .pile em { display: block; font-style: normal; font-size: 13px; line-height: 18px; color: var(--muted); font-weight: 650; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pile b { display: block; font-size: 23px; line-height: 1.15; font-weight: 800; color: var(--c); font-variant-numeric: tabular-nums; }
 .pile[aria-selected="true"] { background: var(--c); transform: translateY(-3px);
@@ -84,6 +87,7 @@ svg { display: block; }
 .list { list-style: none; padding: 0 0 128px; display: grid; gap: 8px; }
 .w { --t: var(--blue); --tt: var(--blue-t); --tp: var(--tape-b); --tpe: var(--tape-b-e); display: grid; grid-template-columns: 22px 46px minmax(0, 1fr); gap: 8px; align-items: center; background: var(--card); border-radius: 16px; padding: 10px 14px 10px 8px; box-shadow: var(--shadow); min-height: 70px; }
 .w.s { --t: var(--red); --tt: var(--red-t); --tp: var(--tape-r); --tpe: var(--tape-r-e); }
+.w.o { --t: var(--grn); --tt: var(--grn-t); --tp: var(--tape-g); --tpe: var(--tape-g-e); }
 .no { font-size: 14px; color: var(--ink); opacity: .72; text-align: right; font-variant-numeric: tabular-nums; font-weight: 650; }
 .say { width: 46px; height: 46px; border-radius: 50%; background: var(--tt); color: var(--t); display: grid; place-items: center; position: relative; transition: transform .12s; }
 .say svg { width: 21px; height: 21px; }
@@ -116,6 +120,7 @@ svg { display: block; }
 .under { position: absolute; inset: 0; border-radius: 22px; background: var(--card); box-shadow: var(--shadow); transition: transform .35s cubic-bezier(.3,1.2,.5,1), opacity .3s; }
 .card { --t: var(--blue); --tt: var(--blue-t); --tp: var(--tape-b); --tpe: var(--tape-b-e); position: absolute; inset: 0; perspective: 1200px; cursor: pointer; touch-action: pan-y; }
 .card.s { --t: var(--red); --tt: var(--red-t); --tp: var(--tape-r); --tpe: var(--tape-r-e); }
+.card.o { --t: var(--grn); --tt: var(--grn-t); --tp: var(--tape-g); --tpe: var(--tape-g-e); }
 .card.in-next { animation: up .46s cubic-bezier(.25,1.35,.45,1) both; }
 @keyframes up { from { transform: translate(10px, 16px) scale(.95); } }
 .card.out-next { z-index: 3; pointer-events: none; animation: outl .34s cubic-bezier(.45,0,.85,.45) forwards; }
@@ -260,6 +265,8 @@ svg { display: block; }
 
 <script>
 const W = /*__DATA__*/null;
+// 外教课: the words the writing / speaking teacher marks after each class as hard to read aloud, [{ date, title, words: [{ w, ph, zh }] }]
+const TUTOR = /*__TUTOR__*/[];
 const START = Date.UTC(2026, 9, 12);          // 2026-10-12, Monday
 const DAY = 86400000;
 const OFFSETS = [1, 2, 4, 7, 15, 30];          // review after N study days
@@ -340,6 +347,7 @@ const hashSeed = str => { let h = 2166136261; for (const c of str) { h ^= c.char
 // ECDICT writes phonetics in an older notation; show them the way school dictionaries do
 function ipa(p) {
   if (!p) return '';
+  if (p[0] === '§') return p.slice(1);           // already written in IPA (外教课, American)
   let s = p.replace(/[әə]/g, 'ə').replace(/є/g, 'e').replace(/:/g, 'ː').replace(/'/g, 'ˈ').replace(/(^|[\s])[.,]/g, '$1ˌ').replace(/\.(?=\S)/g, 'ˌ');
   const D = [['ei', 'eɪ'], ['ai', 'aɪ'], ['ɔi', 'ɔɪ'], ['au', 'aʊ'], ['əu', 'əʊ'], ['iə', 'ɪə'], ['uə', 'ʊə'], ['eə', 'eə']];
   D.forEach(([a, b], i) => { s = s.split(a).join('\u0001' + i + '\u0002'); });
@@ -357,6 +365,20 @@ const zhList = z => z.split('；').map((g, i, a) => `<span class="g">${zhHTML(g)
 
 // views: id -> { label, k: 's' | 'r' | 'v', its?, groups?, random? }; items are { e: [word, phonetic, meaning], spell }
 const items = (arr, spell) => arr.map(e => ({ e, spell }));
+function tutorItems(date) {
+  const day = utc(date), seen = new Set(), out = [];
+  const reps = TUTOR.filter(r => { const [y, m, d] = r.date.split('-').map(Number); return Date.UTC(y, m - 1, d) <= day; }).slice(-2).reverse();
+  for (const r of reps) for (const x of r.words) if (!seen.has(x.w)) { seen.add(x.w); out.push({ e: [x.w, '§' + x.ph, x.zh], spell: false, oral: true }); }
+  return out;
+}
+function addOral(views, test, date) {
+  const o = tutorItems(date);
+  if (!o.length) return test;
+  views.oral = { label: '外教课', k: 'o', its: o };
+  test = test || { s: { pool: [], n: 0, pass: 0 }, r: { pool: [], n: 0, pass: 0 } };
+  test.o = o;
+  return test;
+}
 function buildViews(it, date) {
   const views = {}; let rules = null, test = null;
   if (it.kind === 'study') {
@@ -390,6 +412,7 @@ function buildViews(it, date) {
     } else {
       rules = { title: '冲刺期', rows: [['新词', '这几周不学新词。'], ['每天', '把复习做完，再过一遍本子上的错词。妈妈不用每天查。'], ['周六', '从学过的所有词里做总复习检查。']] };
     }
+    test = addOral(views, test, date);
     return { views, rules, test };
   }
   const sat = it.kind === 'sat';
@@ -417,13 +440,14 @@ function buildViews(it, date) {
     rows.push(['补考', '周六没过关才需要。按「周日补考」重新随机抽一组，标准和周六一样。']);
     rules = { title: '周日：复习和补考', rows };
   }
+  test = addOral(views, test, date);
   return { views, rules, test };
 }
 
 function row(it, i, n, mixed) {
   const e = it.e, ph = ipa(e[1]);
-  return `<li class="w${it.spell ? ' s' : ''}" data-i="${i}" style="--i:${n}"><span class="no">${i + 1}</span>`
-    + `<button class="say" type="button" data-say="${esc(e[0])}" aria-label="播放 ${esc(e[0])} 的发音">${SPEAKER}</button>`
+  return `<li class="w${it.spell ? ' s' : ''}${it.oral ? ' o' : ''}" data-i="${i}" style="--i:${n}"><span class="no">${i + 1}</span>`
+    + `<button class="say" type="button" data-say="${esc(e[0])}"${it.oral ? ' data-us="1"' : ''} aria-label="播放 ${esc(e[0])} 的发音">${SPEAKER}</button>`
     + `<div><div class="l1">${mixed && it.spell ? '<span class="tag">写</span>' : ''}<span class="en">${esc(e[0])}</span>${ph ? `<span class="ph">/${esc(ph)}/</span>` : ''}</div><div class="zh">${zhList(e[2])}</div></div></li>`;
 }
 const SPEAKER = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
@@ -462,7 +486,7 @@ function playing(el, on) {
   playingEl = on ? el : null;
   if (el) el.classList.toggle('playing', !!on);
 }
-function speak(word, el) {
+function speak(word, el, us) {
   if (player) { try { player.pause(); } catch (err) {} player = null; }
   playing(el, true);
   const stop = () => playing(el, false);
@@ -470,7 +494,7 @@ function speak(word, el) {
   let fell = false;
   const fallback = () => { if (!fell) { fell = true; deviceSpeak(word); clearTimeout(speak.t); speak.t = setTimeout(stop, 1500); } };
   try {
-    const a = new Audio('https://dict.youdao.com/dictvoice?type=1&audio=' + encodeURIComponent(word));
+    const a = new Audio('https://dict.youdao.com/dictvoice?type=' + (us ? 2 : 1) + '&audio=' + encodeURIComponent(word));   // 1 British, 2 American
     player = a;
     a.addEventListener('error', fallback, { once: true });
     a.addEventListener('ended', stop, { once: true });
@@ -565,7 +589,7 @@ function render() {
 
 function checkButton() {
   const ck = checkSets();
-  return ck ? `<div class="in"><button class="btn ink" type="button" id="check"><span class="t">${I.check}${ck.title}</span><small>默写 ${ck.s.n} 个 · 认识 ${ck.r.n} 个${ck.v ? ` · 复习抽 ${ck.v.ns + ck.v.nr} 个` : ''}${ck.s.n < ck.s.pool.length ? '，每次随机抽' : ''}</small></button></div>` : '';
+  return ck ? `<div class="in"><button class="btn ink" type="button" id="check"><span class="t">${I.check}${ck.title}</span><small>${ck.s.n ? `默写 ${ck.s.n} 个 · 认识 ${ck.r.n} 个` : '外教课'}${ck.v ? ` · 复习抽 ${ck.v.ns + ck.v.nr} 个` : ''}${ck.o ? ` · 朗读 ${ck.o.length} 个` : ''}${ck.s.n < ck.s.pool.length ? '，每次随机抽' : ''}</small></button></div>` : '';
 }
 function rulesHTML(r) {
   return r ? `<section class="rules"><h3>${r.title}</h3><dl>${r.rows.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl></section>` : '';
@@ -596,7 +620,7 @@ function renderCard() {
       ? `<div class="big-hatch" aria-label="英文已遮住"></div><div class="rule2"></div><div class="big-zh">${zhLines(e[2])}</div>`
       : `${bigWord(e)}<div class="rule2"></div><div class="big-hatch" aria-label="中文已遮住"></div>`;
     const cls = S.dir > 0 ? ' in-next' : S.dir < 0 ? ' in-prev' : '';
-    card = `<div class="card${x.spell ? ' s' : ''}${S.turned ? ' turned' : ''}${cls}" id="card" role="button" tabindex="0" aria-label="翻面看答案"><div class="flip">`
+    card = `<div class="card${x.spell ? ' s' : ''}${x.oral ? ' o' : ''}${S.turned ? ' turned' : ''}${cls}" id="card" role="button" tabindex="0" aria-label="翻面看答案"><div class="flip">`
       + `<div class="face"><div class="meta"><span><b>${S.idx + 1}</b> / ${n}${x.g ? ` · ${x.g}` : ''}</span>${k}</div><div class="body">${q}</div></div>`
       + `<div class="face back" aria-hidden="${!S.turned}"><div class="meta"><span><b>${S.idx + 1}</b> / ${n}</span>${k}</div><div class="body">${bigWord(e)}<div class="rule2"></div><div class="big-zh">${zhLines(e[2])}</div></div></div>`
       + `</div></div>`;
@@ -620,7 +644,7 @@ function renderCard() {
 let C = null;   // { title, s, r, passS, passR, phase: 'S' | 'SA' | 'R' | 'end', i, wrong: [i...], know: [true/false...], turned, retry }
 function checkSets() {
   const { it, test } = V;
-  if (!test || !test.s.pool.length && !test.r.pool.length) return null;
+  if (!test || !test.s.pool.length && !test.r.pool.length && !(test.o && test.o.length)) return null;
   const title = it.kind === 'study' ? '开始检查' : it.kind === 'sun' ? '周日补考' : it.phase === SPRINT ? '总复习检查' : test.r.n === 50 ? '周测和月考' : '开始周测';
   return { title, ...test };
 }
@@ -634,8 +658,9 @@ function startCheck() {
     const vr = shuffled(v.r, seed ^ 0x165667b1).slice(0, v.nr).map(x => ({ e: x.e, spell: false, rv: true }));
     s = shuffled([...s, ...vs], seed ^ 0x9e3779b9); r = shuffled([...r, ...vr], seed ^ 0x85ebca6b);
   }
-  C = { title: ck.title, s, r, passS: ns ? [ns, ck.s.pass] : null, passR: nr ? [nr, ck.r.pass] : null, passV: v ? [v.ns + v.nr, v.pass] : null,
-        phase: s.length ? 'S' : 'R', i: 0, wrong: [], know: [], turned: false, day: ymd(S.cur) };
+  const o = shuffled(ck.o || [], seed ^ 0x2545f491);   // 外教课: read aloud
+  C = { title: ck.title, s, r, o, passS: ns ? [ns, ck.s.pass] : null, passR: nr ? [nr, ck.r.pass] : null, passV: v ? [v.ns + v.nr, v.pass] : null,
+        phase: s.length ? 'S' : r.length ? 'R' : 'O', i: 0, wrong: [], know: [], knowO: [], turned: false, day: ymd(S.cur) };
   S.first = false; render(); window.scrollTo(0, 0);
   if (C.phase === 'S') sayCheck();
 }
@@ -647,29 +672,31 @@ function restoreCheck() {
     if (x && x.day === ymd(S.cur) && Date.now() - x.at < 6 * 3600e3) C = x;
   } catch (err) {}
 }
-function sayCheck() { const list = C.phase === 'S' ? C.s : C.r, x = list[C.i]; const b = $('bigsay'); if (x) speak(x.e[0], b); }
+const ckList = () => C.phase === 'S' || C.phase === 'SA' ? C.s : C.phase === 'R' ? C.r : (C.o || []);
+function sayCheck() { const x = ckList()[C.i]; const b = $('bigsay'); if (x) speak(x.e[0], b, C.phase === 'O'); }
 const passText = (got, all, pass) => pass ? (got >= pass[1] ? '过关' : `没过，要对 ${pass[1]} 个`) : (got === all ? '全对了' : '');
 
 function renderCheck() {
   $('app').classList.add('checking');
-  const app = $('app'), n = C.phase === 'S' || C.phase === 'SA' ? C.s.length : C.r.length;
-  app.dataset.k = C.phase === 'S' || C.phase === 'SA' ? 's' : C.phase === 'R' ? 'r' : 'v';
-  const st = (key, label) => {
-    const order = ['S', 'R', 'end'], at = order.indexOf(C.phase === 'SA' ? 'S' : C.phase), me = order.indexOf(key);
-    return `<span class="${me === at ? 'on' : me < at ? 'ok' : ''}">${label}</span>`;
-  };
-  const steps = [C.s.length ? st('S', '① 听写默写') : '', C.r.length ? st('R', '② 认识') : '', st('end', '③ 结果')].filter(Boolean).join('<i></i>');
+  const app = $('app'), n = ckList().length;
+  app.dataset.k = C.phase === 'S' || C.phase === 'SA' ? 's' : C.phase === 'R' ? 'r' : C.phase === 'O' ? 'o' : 'v';
+  const order = ['S', 'R', 'O', 'end'], at = order.indexOf(C.phase === 'SA' ? 'S' : C.phase);
+  const present = [['S', '听写', C.s.length], ['R', '认识', C.r.length], ['O', '朗读', (C.o || []).length], ['end', '结果', 1]].filter(x => x[2]);
+  const steps = present.map(([key, label], k) => { const me = order.indexOf(key);
+    return `<span class="${me === at ? 'on' : me < at ? 'ok' : ''}">${'①②③④'[k]} ${label}</span>`; }).join('<i></i>');
   $('piles').innerHTML = `<div class="ck-head"><div class="steps">${steps}</div><button class="helpbtn" type="button" id="ckExit">退出</button></div>`;
   $('mode').innerHTML = '';
-  if (C.phase === 'S' || C.phase === 'R') {
-    const list = C.phase === 'S' ? C.s : C.r, x = list[C.i], e = x.e, spell = C.phase === 'S';
+  if (C.phase === 'S' || C.phase === 'R' || C.phase === 'O') {
+    const list = ckList(), x = list[C.i], e = x.e, spell = C.phase === 'S', oral = C.phase === 'O';
     const left = n - C.i - 1, gap = 1.5 + 4.5 * Math.max(left, 0) / Math.max(n - 1, 1);
     const unders = [3, 2, 1].map(m => `<div class="under" style="transform:translate(${(m * gap).toFixed(1)}px,${(m * gap * 1.4).toFixed(1)}px);opacity:${left >= m ? 1 : 0}"></div>`).join('');
+    // 朗读: only the word, no phonetic; the back shows how to say it and what it means
     const q = spell ? `<div class="big-hatch" aria-label="英文已遮住"></div><div class="rule2"></div><div class="big-zh">${zhLines(e[2])}</div>`
+            : oral ? bigWord([e[0], '', ''])
                     : `${bigWord(e)}<div class="rule2"></div><div class="big-hatch" aria-label="中文已遮住"></div>`;
     const cls = S.dir > 0 ? ' in-next' : S.dir < 0 ? ' in-prev' : '';
     $('main').innerHTML = `<div class="ck-bar"><b>第 ${C.i + 1} 个</b><span>共 ${n} 个${C.i && !spell ? ' · <button class="link" type="button" id="ckBack">上一个</button>' : ''}</span></div>`
-      + `<section class="deck"><div class="stage" id="stage">${unders}<div class="card${spell ? ' s' : ''}${C.turned ? ' turned' : ''}${cls}" id="card" role="button" tabindex="0" aria-label="翻面看答案"><div class="flip">`
+      + `<section class="deck"><div class="stage" id="stage">${unders}<div class="card${spell ? ' s' : ''}${oral ? ' o' : ''}${C.turned ? ' turned' : ''}${cls}" id="card" role="button" tabindex="0" aria-label="翻面看答案"><div class="flip">`
       + `<div class="face"><div class="meta"><span><b>${C.i + 1}</b> / ${n}</span><span class="subj">${subjOf(e[2])}${x.rv ? '<i class="sj rvt">复习</i>' : ''}</span></div><div class="body">${q}</div></div>`
       + `<div class="face back" aria-hidden="${!C.turned}"><div class="meta"><span><b>${C.i + 1}</b> / ${n}</span><span class="subj">${subjOf(e[2])}</span></div><div class="body">${bigWord(e)}<div class="rule2"></div><div class="big-zh">${zhLines(e[2])}</div></div></div>`
       + `</div></div></div></section>`;
@@ -688,13 +715,14 @@ function renderCheck() {
         + `<div><div class="l1"><span class="en">${esc(x.e[0])}</span>${x.rv ? '<i class="sj rvt">复习</i>' : ''}</div><div class="zh">${zhList(x.e[2])}</div></div><span class="mk">${C.wrong.includes(i) ? '✗' : '✓'}</span></li>`).join('')}</ol>`;
     $('dock').innerHTML = `<div class="in"><button class="btn has-cap" type="button" id="ckToR">${C.r.length ? `下一步：认识 ${C.r.length} 个` : '看结果'}${I.next}<span class="cap" style="color:inherit;opacity:.8">默写对 ${gNew} / ${nNew}${C.passS ? ' · ' + passText(gNew, nNew, C.passS) : ''}</span></button></div>`;
   } else {
-    const sw = C.wrong.map(i => C.s[i]), rw = C.r.filter((_, i) => C.know[i] === false);
+    const sw = C.wrong.map(i => C.s[i]), rw = C.r.filter((_, i) => C.know[i] === false), ow = (C.o || []).filter((_, i) => C.knowO[i] === false);
+    const no = (C.o || []).length, go = no - ow.length;
     const ns = C.s.filter(x => !x.rv).length, nr = C.r.filter(x => !x.rv).length, gs = ns - sw.filter(x => !x.rv).length, gr = nr - rw.filter(x => !x.rv).length;
     const nv = C.s.length + C.r.length - ns - nr, gv = nv - sw.filter(x => x.rv).length - rw.filter(x => x.rv).length;
     const box = (label, got, all, pass) => all ? `<div class="r ${pass ? (got >= pass[1] ? 'pass' : 'fail') : ''}"><b>${label}</b><span class="n">${got}<small> / ${all}</small></span><p>${passText(got, all, pass) || ' '}</p></div>` : '';
     const fail = V.rules && V.rules.rows.find(r => r[0] === '没过' || r[0] === '补考');
-    const wrongs = [...sw, ...rw];
-    $('main').innerHTML = `<div class="res">${box('默写', gs, ns, C.passS)}${box('认识', gr, nr, C.passR)}${box('复习抽查', gv, nv, C.passV)}</div>`
+    const wrongs = [...sw, ...rw, ...ow];
+    $('main').innerHTML = `<div class="res">${box('默写', gs, ns, C.passS)}${box('认识', gr, nr, C.passR)}${box('复习抽查', gv, nv, C.passV)}${box('朗读（外教课）', go, no, null)}</div>`
       + (wrongs.length ? `<div class="wrongs"><h3>错的 ${wrongs.length} 个</h3><ol class="list">${wrongs.map((x, i) => row(x, i, i)).join('')}</ol></div>` : '')
       + (fail && wrongs.length ? `<section class="rules"><dl><dt>${fail[0]}</dt><dd>${fail[1]}</dd></dl></section>` : '');
     $('dock').innerHTML = wrongs.length
@@ -703,9 +731,11 @@ function renderCheck() {
   }
 }
 function checkStep(d) {
-  const list = C.phase === 'S' ? C.s : C.r, old = $('card');
+  const list = ckList(), old = $('card');
   if (C.i + d < 0) return;
-  if (C.i + d >= list.length) { C.phase = C.phase === 'S' ? 'SA' : 'end'; C.i = 0; C.turned = false; render(); window.scrollTo(0, 0); return; }
+  if (C.i + d >= list.length) {
+    C.phase = C.phase === 'S' ? 'SA' : C.phase === 'R' && (C.o || []).length ? 'O' : 'end'; C.i = 0; C.turned = false; S.dir = 1; render(); S.dir = 0; window.scrollTo(0, 0); return;
+  }
   C.i += d; C.turned = false; S.dir = d; render(); S.dir = 0;
   if (old && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     old.removeAttribute('id'); old.classList.remove('in-next', 'in-prev'); old.classList.add(d > 0 ? 'out-next' : 'out-prev');
@@ -724,12 +754,13 @@ function checkClick(t) {
     case 'ckNext': checkStep(1); return true;
     case 'ckBack': case 'ckBack2':
       if (C.phase === 'R' && C.i > 0) C.know[C.i - 1] = undefined;
+      if (C.phase === 'O' && C.i > 0) C.knowO[C.i - 1] = undefined;
       checkStep(-1); return true;
-    case 'ckYes': case 'ckNo': C.know[C.i] = t.id === 'ckYes'; checkStep(1); return true;
-    case 'ckToR': C.phase = C.r.length ? 'R' : 'end'; C.i = 0; C.turned = false; S.dir = 1; render(); S.dir = 0; window.scrollTo(0, 0); return true;
+    case 'ckYes': case 'ckNo': (C.phase === 'O' ? C.knowO : C.know)[C.i] = t.id === 'ckYes'; checkStep(1); return true;
+    case 'ckToR': C.phase = C.r.length ? 'R' : (C.o || []).length ? 'O' : 'end'; C.i = 0; C.turned = false; S.dir = 1; render(); S.dir = 0; window.scrollTo(0, 0); return true;
     case 'ckRetry': {
-      const s2 = C.wrong.map(i => C.s[i]), r2 = C.r.filter((_, i) => C.know[i] === false);
-      C = { ...C, s: s2, r: r2, passS: null, passR: null, passV: null, phase: s2.length ? 'S' : 'R', i: 0, wrong: [], know: [], turned: false, retry: true };
+      const s2 = C.wrong.map(i => C.s[i]), r2 = C.r.filter((_, i) => C.know[i] === false), o2 = (C.o || []).filter((_, i) => C.knowO[i] === false);
+      C = { ...C, s: s2, r: r2, o: o2, passS: null, passR: null, passV: null, phase: s2.length ? 'S' : r2.length ? 'R' : 'O', i: 0, wrong: [], know: [], knowO: [], turned: false, retry: true };
       S.dir = 1; render(); S.dir = 0; window.scrollTo(0, 0); if (C.phase === 'S') sayCheck(); return true;
     }
     case 'ckDone': endCheck(); return true;
@@ -765,6 +796,7 @@ function helpSheet() {
     <li><b>弟弟背：</b>先用「清单」把今天的词看一遍，点喇叭听发音；再换「卡片」一张一张自测，点卡片翻面看答案。</li>
     <li><b>检查：</b>按底下的「开始检查」，妈妈考或弟弟自己考都行。先听写默写词：每翻一张会自动读一遍，弟弟在本子上写编号和单词；写完对答案，点一下写错的那几行。再考认识词：弟弟说意思，妈妈按「会」或「不会」。最后看结果，没过可以只重考错的。</li>
     <li><b>周六、周日：</b>同一个位置的按钮，会自动换成周测、月考或补考的词。</li>
+    <li><b>外教课：</b>外教每次课后点名不会读的词放在「外教课」那叠，用美式发音。点喇叭听一遍，自己读一遍。检查时最后一步「朗读」：屏幕只显示英文，弟弟读出来，妈妈按「会」或「不会」，拿不准就点喇叭对一下。</li>
     <li><b>复习：</b>弟弟自己用「卡片」过一遍。每天检查时会从复习词里随机抽 10 个，和新词混在一起考。</li>
     <li><b>漏学了：</b>用左右箭头翻回那天补上，最晚周日补完。</li>
     <li><b>发音：</b>需要联网。点了没声音，换用手机自带的浏览器打开。</li></ol>${rulesHTML(V && V.rules)}
@@ -777,7 +809,7 @@ function helpSheet() {
 document.addEventListener('click', e => {
   const t = e.target.closest('button, .w, .card');
   if (!t) return;
-  if (t.matches('.say')) { speak(t.dataset.say, t); ping(t); return; }
+  if (t.matches('.say')) { speak(t.dataset.say, t, t.dataset.us === '1'); ping(t); return; }
   if (C && (t.closest('#app') || t.closest('#layer')) && t.id !== 'help' && checkClick(t)) return;
   if (t.matches('.pile')) {
     if (t.dataset.tab === S.tab) return;
@@ -797,7 +829,7 @@ document.addEventListener('click', e => {
     case 'check': startCheck(); return;
     case 'fwd': step(1); return;
     case 'back': step(-1); return;
-    case 'bigsay': { const x = V.its[S.idx]; if (x) { speak(x.e[0], t); ping(t); } return; }
+    case 'bigsay': { const x = V.its[S.idx]; if (x) { speak(x.e[0], t, !!x.oral); ping(t); } return; }
     case 'again': S.seeds[viewKey()] = newSeed(); S.idx = 0; S.turned = false; S.dir = 1; render(); S.dir = 0; window.scrollTo(0, 0); return;
     case 'tolist': S.view = 'list'; S.idx = 0; render(); window.scrollTo(0, 0); return;
     case 'help': helpSheet(); return;
@@ -826,7 +858,7 @@ document.addEventListener('pointerdown', e => { if (e.target.closest('#card')) {
 document.addEventListener('pointerup', e => {
   if (sx == null) return;
   const dx = e.clientX - sx, dy = e.clientY - sy; sx = null;
-  if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && !(C && C.phase === 'R')) { e.preventDefault(); if (C) checkStep(dx < 0 ? 1 : -1); else step(dx < 0 ? 1 : -1); suppress = true; setTimeout(() => (suppress = false), 50); }
+  if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && !(C && (C.phase === 'R' || C.phase === 'O'))) { e.preventDefault(); if (C) checkStep(dx < 0 ? 1 : -1); else step(dx < 0 ? 1 : -1); suppress = true; setTimeout(() => (suppress = false), 50); }
 });
 let suppress = false;
 document.addEventListener('click', e => { if (suppress && e.target.closest('#card')) { e.stopImmediatePropagation(); } }, true);
