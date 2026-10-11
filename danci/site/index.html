@@ -16,7 +16,7 @@
 /* 单词卡：灰蓝底上浮白卡，厚按钮。两种看法：清单（总览、妈妈听写）和卡片（一张一张自测）。 */
 :root {
   --bg: #EEF1F5; --card: #FFFFFF; --ink: #1B2430; --muted: #5C6672; --line: #DFE4EA; --soft: #F3F5F8;
-  --red: #E5484D; --red-d: #B8333A; --red-t: #FDECEC;
+  --red: #CA3035; --red-d: #9A2328; --red-t: #FDECEC;
   --blue: #3A6FF0; --blue-d: #2648B8; --blue-t: #E8EEFE;
   --ink-d: #000000; --ink-t: #E4E8EE; --press: #CBD2DB;
   --tape-r: #F4C2C4; --tape-r-e: #DE8F93; --tape-b: #C5D4FA; --tape-b-e: #91ABEE;
@@ -428,9 +428,11 @@ const TUTOR_DAYS = (() => {
 function tutorItems(date) {
   return (TUTOR_DAYS[utc(date)] || []).map(x => ({ e: [x.w, '§' + x.ph, x.zh], spell: false, oral: true }));
 }
-function addOral(views, test, date) {
+function addOral(views, test, date, rules) {
   const o = tutorItems(date);
   if (!o.length) return test;
+  // 外教课只要会念：读对就算会，只计数（放在「没过」那一行前面）
+  if (rules) rules.rows.splice(Math.max(rules.rows.length - 1, 0), 0, ['外教课', `今天 ${o.length} 个，会念就好：屏幕上只显示英文，弟弟读对就按「会」。只计数，读错的多练几遍。`]);
   views.oral = { label: '外教课', k: 'o', its: o };
   test = test || { s: { pool: [], n: 0, pass: 0 }, r: { pool: [], n: 0, pass: 0 } };
   test.o = o;
@@ -465,11 +467,11 @@ function buildViews(it, date) {
         ['默写', `${s.length} 个全部听写，对 ${Math.ceil(s.length * 0.8)} 个过关。`],
         ['认识', `${r.length} 个全部查，对 ${Math.ceil(r.length * 0.9)} 个过关。`],
         ['复习', '随机抽 10 个（3 个默写 + 7 个认识），对 8 个过关。'],
-        ['没过', '当晚重看错的词，只重考错的那几个，不罚。']] };
+        ['没过', '每天的词当天必须过关。没过就重新准备一下，按「重新考一遍」再考，直到过关。']] };
     } else {
       rules = { title: '冲刺期', rows: [['新词', '这几周不学新词。'], ['每天', '把复习做完，再过一遍本子上的错词。妈妈不用每天查。'], ['周六', '从学过的所有词里做总复习检查。']] };
     }
-    test = addOral(views, test, date);
+    test = addOral(views, test, date, rules);
     return { views, rules, test };
   }
   const sat = it.kind === 'sat';
@@ -491,13 +493,13 @@ function buildViews(it, date) {
     rows.push(['认识', monthly ? '月考：从学过的所有认识词里随机抽 50 个，对 38 个过关。' : `从这周的 ${ww.r.length} 个认识词里随机抽 30 个，对 26 个过关。`]);
   }
   if (sat) {
-    rows.push(['没过', '周日补考一次；补考还没过，下周一到周五不玩游戏，周末照常。']);
+    rows.push(['没过', '周日补考。周日还没过，接下来的周一到周五不能玩游戏，周末照常。']);
     rules = { title: sprint || monthly ? '今天是总复习检查' : '妈妈周测', rows };
   } else {
-    rows.push(['补考', '周六没过关才需要。按「周日补考」重新随机抽一组，标准和周六一样。']);
+    rows.push(['补考', '周六没过才需要。按「周日补考」重新随机抽一组，标准和周六一样。还没过，接下来的周一到周五不能玩游戏，周末照常。']);
     rules = { title: '周日：复习和补考', rows };
   }
-  test = addOral(views, test, date);
+  test = addOral(views, test, date, rules);
   return { views, rules, test };
 }
 
@@ -777,13 +779,21 @@ function renderCheck() {
     const ns = C.s.filter(x => !x.rv).length, nr = C.r.filter(x => !x.rv).length, gs = ns - sw.filter(x => !x.rv).length, gr = nr - rw.filter(x => !x.rv).length;
     const nv = C.s.length + C.r.length - ns - nr, gv = nv - sw.filter(x => x.rv).length - rw.filter(x => x.rv).length;
     const box = (label, got, all, pass) => all ? `<div class="r ${pass ? (got >= pass[1] ? 'pass' : 'fail') : ''}"><b>${label}</b><span class="n">${got}<small> / ${all}</small></span><p>${passText(got, all, pass) || ' '}</p></div>` : '';
-    const fail = V.rules && V.rules.rows.find(r => r[0] === '没过' || r[0] === '补考');
     const wrongs = [...sw, ...rw, ...ow];
+    const failed = [[gs, ns, C.passS], [gr, nr, C.passR], [gv, nv, C.passV]].some(([g, n, p]) => p && n && g < p[1]);
+    const kind = V.it.kind;
+    // 每天：当天必须过，没过整套重新考；周六没过：周日补考；周日没过：下周一到周五不能玩游戏
+    const NOTE = { study: '今天必须过关。重新准备一下，再按「重新考一遍」。',
+                   sat: '明天（周日）补考。周日还没过，接下来的周一到周五不能玩游戏。',
+                   sun: '补考没过：接下来的周一到周五不能玩游戏，周末照常。' };
+    const note = failed && NOTE[kind] ? `<section class="rules"><dl><dt>没过</dt><dd>${NOTE[kind]}</dd></dl></section>` : '';
     $('main').innerHTML = `<div class="res">${box('默写', gs, ns, C.passS)}${box('认识', gr, nr, C.passR)}${box('复习抽查', gv, nv, C.passV)}${box('朗读（外教课）', go, no, null)}</div>`
       + (wrongs.length ? `<div class="wrongs"><h3>错的 ${wrongs.length} 个</h3><ol class="list">${wrongs.map((x, i) => row(x, i, i)).join('')}</ol></div>` : '')
-      + (fail && wrongs.length ? `<section class="rules"><dl><dt>${fail[0]}</dt><dd>${fail[1]}</dd></dl></section>` : '');
-    $('dock').innerHTML = wrongs.length
-      ? `<div class="in ck-dock2"><button class="btn" type="button" id="ckRetry">只重考错的 ${wrongs.length} 个</button><button class="btn no" type="button" id="ckDone">完成</button></div>`
+      + note;
+    $('dock').innerHTML = failed && kind === 'study'
+      ? `<div class="in ck-dock2"><button class="btn" type="button" id="ckAgain">${I.shuffle}重新考一遍</button><button class="btn no" type="button" id="ckDone">完成</button></div>`
+      : wrongs.length
+      ? `<div class="in ck-dock2"><button class="btn" type="button" id="ckRetry">${failed ? '先练错的' : '只重考错的'} ${wrongs.length} 个</button><button class="btn no" type="button" id="ckDone">完成</button></div>`
       : `<div class="in"><button class="btn" type="button" id="ckDone">完成</button></div>`;
   }
 }
@@ -821,6 +831,7 @@ function checkClick(t) {
       S.dir = 1; render(); S.dir = 0; window.scrollTo(0, 0); if (C.phase === 'S') sayCheck(); return true;
     }
     case 'ckDone': endCheck(); return true;
+    case 'ckAgain': startCheck(); return true;
     case 'bigsay': sayCheck(); ping(t); return true;
   }
   if (t.matches('#card')) { C.turned = !C.turned; t.classList.toggle('turned', C.turned); saveCheck(); return true; }
@@ -851,12 +862,20 @@ function step(d) {
 function helpSheet() {
   $('layer').innerHTML = `<div class="scrim" id="scrim"></div><div class="sheet" role="dialog" aria-modal="true" aria-label="怎么用"><div class="grab"></div><h2>怎么用</h2><ol>
     <li><b>弟弟背：</b>先用「清单」把今天的词看一遍，点喇叭听发音；再换「卡片」一张一张自测，点卡片翻面看答案。</li>
-    <li><b>检查：</b>按底下的「开始检查」，妈妈考或弟弟自己考都行。先听写默写词：每翻一张会自动读一遍，弟弟在本子上写编号和单词；写完对答案，点一下写错的那几行。再考认识词：弟弟说意思，妈妈按「会」或「不会」。最后看结果，没过可以只重考错的。</li>
+    <li><b>检查：</b>按底下的「开始检查」，妈妈考或弟弟自己考都行。先听写默写词：每翻一张会自动读一遍，弟弟在本子上写编号和单词；写完对答案，点一下写错的那几行。再考认识词：弟弟说意思，妈妈按「会」或「不会」。最后看结果。</li>
     <li><b>周六、周日：</b>同一个位置的按钮，会自动换成周测、月考或补考的词。</li>
     <li><b>外教课：</b>外教每次课后点名不会读的词，每天学 5 个，放在「外教课」那叠，用美式发音。点喇叭听一遍，自己读一遍。检查时最后一步「朗读」：屏幕只显示英文，弟弟读出来，妈妈按「会」或「不会」，拿不准就点喇叭对一下。</li>
     <li><b>复习：</b>弟弟自己用「卡片」过一遍。每天检查时会从复习词里随机抽 10 个，和新词混在一起考。</li>
     <li><b>漏学了：</b>用左右箭头翻回那天补上，最晚周日补完。</li>
-    <li><b>发音：</b>需要联网。点了没声音，换用手机自带的浏览器打开。</li></ol>${rulesHTML(V && V.rules)}
+    <li><b>发音：</b>需要联网。点了没声音，换用手机自带的浏览器打开。</li></ol>
+    <section class="rules"><h3>过关规则</h3><dl>
+      <dt>每天</dt><dd>默写 10 个对 8 个，认识 20 个对 18 个，复习抽查 10 个对 8 个。当天必须过关：没过就重新准备，再考一遍，直到过关。</dd>
+      <dt>周六</dt><dd>周测：默写 10 个对 8 个，认识 30 个对 26 个。每月最后一个周六，认识改为从学过的所有词里抽 50 个，对 38 个。</dd>
+      <dt>没过</dt><dd>周六没过，周日补考；周日还没过，接下来的周一到周五不能玩游戏，周末照常。</dd>
+      <dt>外教课</dt><dd>会念就好：每天 5 个，屏幕上只显示英文，读对就算会。只计数，不算过关，读错的多练几遍。</dd>
+      <dt>减半</dt><dd>2027 年 8 月 16 日到 9 月 26 日，以及 11 月以后，每天新词减半（5 默写 + 10 认识），标准按比例（5 对 4，10 对 9）。</dd>
+      <dt>冲刺</dt><dd>2027 年 9 月 27 日到 10 月 31 日不学新词，只复习，周六做总复习检查。</dd>
+    </dl></section>
     <button class="btn plain close" type="button" id="closeHelp">知道了</button></div>`;
   const close = () => { $('layer').innerHTML = ''; $('help').focus(); };
   $('scrim').onclick = close; $('closeHelp').onclick = close; $('closeHelp').focus();
