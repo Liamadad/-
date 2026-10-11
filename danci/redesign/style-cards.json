@@ -1,0 +1,67 @@
+{
+  "project": "每日单词本",
+  "lang": "zh",
+  "round": "风格卡片",
+  "brief": "香港 IGCSE 学生每天背单词、妈妈晚上检查用的手机网页：同一份内容，比较配色、字体、控件和版式气质。红色永远代表默写，蓝色永远代表认识。",
+  "content": {
+    "title": "equilibrium",
+    "body": "/ˌiːkwɪˈlɪbriəm/　n. 平衡；均衡（经济）",
+    "number": "30",
+    "number_label": "10月13日 周二 · 今天要复习的词",
+    "primary": "遮住",
+    "secondary": "打乱顺序",
+    "tags": ["默写 10", "认识 20"],
+    "input_label": "日期",
+    "input_value": "10月13日 周二"
+  },
+  "cards": [
+    {
+      "id": "notebook", "name": "默写本",
+      "concept": "就是他桌上那本默写本：米白横线纸、深蓝墨水字，妈妈用红笔批默写，蓝笔标认识。",
+      "traits": ["横线纸底", "衬线英文像手抄", "红笔默写 · 蓝笔认识", "细线方角，排得紧"],
+      "colors": {"bg": "#F4F1E8", "surface": "#FBFAF5", "text": "#1F2A44", "muted": "#6E6A5E", "accent": "#C8372D", "accent_text": "#FFFFFF", "line": "#D9D3C3", "warn": "#2457A6"},
+      "fonts": {"display": "Georgia, \"Songti SC\", serif", "body": "\"PingFang SC\", sans-serif", "number": "Georgia, serif"},
+      "display_weight": 400, "number_weight": 400, "radius": 3, "border": "hairline", "shadow": "none", "density": "compact", "layout": "editorial", "texture": "paper"
+    },
+    {
+      "id": "dictionary", "name": "词典页",
+      "concept": "像牛津学习词典的一页：粗黑体词头、灰色音标、词性用小色块标出，白纸黑字，一眼扫完一列。",
+      "traits": ["纯白底", "粗黑体单词", "灰音标", "红蓝只做小标记"],
+      "colors": {"bg": "#FFFFFF", "surface": "#F5F6F8", "text": "#111418", "muted": "#5F6670", "accent": "#D0342C", "accent_text": "#FFFFFF", "line": "#E3E6EA", "warn": "#1F5FBF"},
+      "fonts": {"display": "\"Helvetica Neue\", \"PingFang SC\", sans-serif", "body": "\"PingFang SC\", sans-serif", "number": "\"Helvetica Neue\", sans-serif"},
+      "display_weight": 700, "number_weight": 500, "radius": 4, "border": "hairline", "shadow": "none", "density": "regular", "layout": "queue-detail"
+    },
+    {
+      "id": "flashcard", "name": "单词卡",
+      "concept": "一叠白色单词卡摊在桌上：每个词一张卡，大圆角、厚按钮，按下去有手感，最像一个 App。",
+      "traits": ["灰蓝底上浮白卡", "大圆角", "厚实按钮", "留白多"],
+      "colors": {"bg": "#EEF1F5", "surface": "#FFFFFF", "text": "#1B2430", "muted": "#66707D", "accent": "#E5484D", "accent_text": "#FFFFFF", "line": "#DFE4EA", "warn": "#3A6FF0"},
+      "fonts": {"display": "\"Avenir Next\", \"PingFang SC\", sans-serif", "body": "\"PingFang SC\", sans-serif", "number": "\"Avenir Next\", sans-serif"},
+      "display_weight": 700, "number_weight": 600, "radius": 16, "border": "none", "shadow": "soft", "density": "airy", "layout": "topbar-cards"
+    },
+    {
+      "id": "lamp", "name": "台灯夜读",
+      "concept": "晚上在台灯下复习：深暖灰底不刺眼，英文单词像书里印的一样大，红蓝都调暗一档。",
+      "traits": ["深暖灰底", "大号书本衬线", "灯光下的红和蓝", "一次只看一个词"],
+      "colors": {"bg": "#1C1B1A", "surface": "#272523", "text": "#EEE8DF", "muted": "#A29A8E", "accent": "#FF6F61", "accent_text": "#1C1B1A", "line": "#3A3633", "warn": "#86A9FF"},
+      "fonts": {"display": "\"Iowan Old Style\", Georgia, \"Songti SC\", serif", "body": "\"PingFang SC\", sans-serif", "number": "\"Iowan Old Style\", Georgia, serif"},
+      "display_weight": 500, "number_weight": 400, "radius": 10, "border": "none", "shadow": "none", "density": "regular", "layout": "hero-center"
+    },
+    {
+      "id": "exam", "name": "剑桥考卷",
+      "concept": "像 IGCSE 考卷：黑白、粗体编号、方框答题格，每天的单词像一道道题，妈妈检查就像监考。",
+      "traits": ["黑白为主", "Arial 粗体编号", "实线方框", "最紧凑"],
+      "colors": {"bg": "#FFFFFF", "surface": "#FFFFFF", "text": "#000000", "muted": "#555555", "accent": "#C8102E", "accent_text": "#FFFFFF", "line": "#000000", "warn": "#0B57D0"},
+      "fonts": {"display": "Arial, \"PingFang SC\", sans-serif", "body": "Arial, \"PingFang SC\", sans-serif", "number": "Arial, sans-serif"},
+      "display_weight": 700, "number_weight": 700, "radius": 0, "border": "solid", "shadow": "none", "density": "compact", "layout": "sidebar-table"
+    },
+    {
+      "id": "mtr", "name": "港铁线路",
+      "concept": "借港铁线路图：荃湾线的红是默写，港岛线的蓝是认识，每天是一站，64 周是一条线。",
+      "traits": ["红线蓝线", "圆头胶囊标签", "站点式进度", "香港人一看就懂"],
+      "colors": {"bg": "#FFFFFF", "surface": "#F3F4F4", "text": "#231F20", "muted": "#6D6E71", "accent": "#E2231A", "accent_text": "#FFFFFF", "line": "#D1D3D4", "warn": "#0075C2"},
+      "fonts": {"display": "\"Helvetica Neue\", \"PingFang HK\", sans-serif", "body": "\"PingFang HK\", sans-serif", "number": "\"Helvetica Neue\", sans-serif"},
+      "display_weight": 700, "number_weight": 700, "radius": 28, "border": "none", "shadow": "none", "density": "regular", "layout": "hero-split"
+    }
+  ]
+}

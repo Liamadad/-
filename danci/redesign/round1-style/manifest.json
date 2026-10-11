@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "每日单词本",
+  "brief": "香港 IGCSE 学生每天背单词、妈妈晚上检查用的手机网页：同一份内容，比较配色、字体、控件和版式气质。红色永远代表默写，蓝色永远代表认识。",
+  "round": "风格卡片",
+  "candidates": [
+    {
+      "id": "notebook",
+      "name": "默写本",
+      "concept": "就是他桌上那本默写本：米白横线纸、深蓝墨水字，妈妈用红笔批默写，蓝笔标认识。",
+      "typography": "标题 Georgia · 正文 PingFang SC · 数字 Georgia",
+      "palette": [
+        "#F4F1E8",
+        "#1F2A44",
+        "#C8372D",
+        "#2457A6"
+      ],
+      "traits": [
+        "横线纸底",
+        "衬线英文像手抄",
+        "红笔默写 · 蓝笔认识",
+        "细线方角，排得紧"
+      ],
+      "kind": "html",
+      "source": "card-notebook.html"
+    },
+    {
+      "id": "dictionary",
+      "name": "词典页",
+      "concept": "像牛津学习词典的一页：粗黑体词头、灰色音标、词性用小色块标出，白纸黑字，一眼扫完一列。",
+      "typography": "标题 Helvetica Neue · 正文 PingFang SC · 数字 Helvetica Neue",
+      "palette": [
+        "#FFFFFF",
+        "#111418",
+        "#D0342C",
+        "#1F5FBF"
+      ],
+      "traits": [
+        "纯白底",
+        "粗黑体单词",
+        "灰音标",
+        "红蓝只做小标记"
+      ],
+      "kind": "html",
+      "source": "card-dictionary.html"
+    },
+    {
+      "id": "flashcard",
+      "name": "单词卡",
+      "concept": "一叠白色单词卡摊在桌上：每个词一张卡，大圆角、厚按钮，按下去有手感，最像一个 App。",
+      "typography": "标题 Avenir Next · 正文 PingFang SC · 数字 Avenir Next",
+      "palette": [
+        "#EEF1F5",
+        "#1B2430",
+        "#E5484D",
+        "#3A6FF0"
+      ],
+      "traits": [
+        "灰蓝底上浮白卡",
+        "大圆角",
+        "厚实按钮",
+        "留白多"
+      ],
+      "kind": "html",
+      "source": "card-flashcard.html"
+    },
+    {
+      "id": "lamp",
+      "name": "台灯夜读",
+      "concept": "晚上在台灯下复习：深暖灰底不刺眼，英文单词像书里印的一样大，红蓝都调暗一档。",
+      "typography": "标题 Iowan Old Style · 正文 PingFang SC · 数字 Iowan Old Style",
+      "palette": [
+        "#1C1B1A",
+        "#EEE8DF",
+        "#FF6F61",
+        "#86A9FF"
+      ],
+      "traits": [
+        "深暖灰底",
+        "大号书本衬线",
+        "灯光下的红和蓝",
+        "一次只看一个词"
+      ],
+      "kind": "html",
+      "source": "card-lamp.html"
+    },
+    {
+      "id": "exam",
+      "name": "剑桥考卷",
+      "concept": "像 IGCSE 考卷：黑白、粗体编号、方框答题格，每天的单词像一道道题，妈妈检查就像监考。",
+      "typography": "标题 Arial · 正文 Arial · 数字 Arial",
+      "palette": [
+        "#FFFFFF",
+        "#000000",
+        "#C8102E",
+        "#0B57D0"
+      ],
+      "traits": [
+        "黑白为主",
+        "Arial 粗体编号",
+        "实线方框",
+        "最紧凑"
+      ],
+      "kind": "html",
+      "source": "card-exam.html"
+    },
+    {
+      "id": "mtr",
+      "name": "港铁线路",
+      "concept": "借港铁线路图：荃湾线的红是默写，港岛线的蓝是认识，每天是一站，64 周是一条线。",
+      "typography": "标题 Helvetica Neue · 正文 PingFang HK · 数字 Helvetica Neue",
+      "palette": [
+        "#FFFFFF",
+        "#231F20",
+        "#E2231A",
+        "#0075C2"
+      ],
+      "traits": [
+        "红线蓝线",
+        "圆头胶囊标签",
+        "站点式进度",
+        "香港人一看就懂"
+      ],
+      "kind": "html",
+      "source": "card-mtr.html"
+    }
+  ]
+}
