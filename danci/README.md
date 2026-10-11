@@ -1,9 +1,8 @@
 # 每日单词本
 
-一个手机网页，每天列出要默写、要认识和要复习的英文单词，从 2026 年 10 月 12 日到 2027 年底。另附一页给家长看的计划图。
+一个手机网页，每天列出要默写、要认识和要复习的英文单词，从 2026 年 10 月 12 日到 2027 年底。过关规则写在网页右上角的「说明」里（2026-10-11 起不再单独做计划图）。
 
 - `site/index.html`：每日单词本，独立文件，不依赖任何外部字体或脚本，放到任何静态网站空间都能打开。
-- `site/plan.html`：计划图。
 - `DEPLOY_PROMPT.md`：发布到 GitHub Pages 的操作说明，可以直接交给有电脑操作能力的助手执行。
 
 ## 计划
@@ -52,7 +51,7 @@ curl -L -o dl/ecdict.csv https://raw.githubusercontent.com/skywind3000/ECDICT/ma
 pip download ngsl==1.41 --no-deps --no-binary :all: -d dl/ngslpkg && tar -xzf dl/ngslpkg/ngsl-1.41.tar.gz -C dl/ngslpkg
 
 python3 build.py      # 生成 words.json
-python3 assemble.py   # 把 words.json 嵌进 app.html，输出 site/（网页、计划图、图标和离线文件，共 8 个，要一起上传）以及 out/ 下的片段版
+python3 assemble.py   # 把 words.json 嵌进 app.html，输出 site/（网页、图标和离线文件，共 7 个，要一起上传）以及 out/ 下的片段版
 ```
 
 修改日程改 `app.html` 里的 `START` 和 `PLAN`；修改每天词量还要同步改 `build.py` 里的 `SPELL_TOTAL` 和 `REC_TOTAL`。

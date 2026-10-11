@@ -7,7 +7,7 @@
 给一个在香港读 IGCSE、准备升 IB 的高中生做的单词计划。妈妈负责检查，家人在微信上沟通。产出两个手机网页：
 
 - `site/index.html`：每日单词本。弟弟每天用，妈妈检查时也用。
-- `site/plan.html`：一页计划图，给妈妈看规则。
+- 计划图（plan.html）2026-10-11 按用户要求删掉了，过关规则改写在单词本的「说明」里。
 
 两个网页必须在香港和内地都能打开，所以不加载任何外部字体、脚本或 CDN，词库全部内置，只用手机系统字体。claude.ai 的预览链接在香港和内地很可能打不开，不能当正式链接给家人。
 
@@ -42,22 +42,21 @@
 | 文件 | 作用 |
 |---|---|
 | `app.html` | 单词本源码（片段，不含 `<html>` 外壳），数据位置是 `/*__DATA__*/null` |
-| `plan.html` | 计划图源码（片段） |
 | `words.json` | 词表数据：`S` 是默写，`R` 是认识，每项 `[单词, 音标, 中文]` |
 | `build.py` / `load.py` / `awl.py` | 生成 `words.json`，源数据放在 `dl/`，或用环境变量 `DANCI_DL` 指定 |
 | `assemble.py` | 把数据嵌进页面，输出 `site/`（完整网页）和 `out/`（claude.ai 预览用的片段） |
 | `tests/` | `test.js` 测日程逻辑；`ftest.js`、`ftest2.js`、`shot3.js` 是 Playwright 页面测试 |
 | `DEPLOY_PROMPT.md` | 发布到 GitHub Pages 的步骤，可以直接交给 Codex 用 computer use 执行 |
 
-改日程：`app.html` 里的 `START` 和 `PLAN`，以及 `plan.html` 里写的日期，还有 `build.py` 里的 `SPELL_TOTAL` 和 `REC_TOTAL`。改完运行 `python3 assemble.py` 和 `node tests/test.js`。
+改日程：`app.html` 里的 `START` 和 `PLAN`，以及 `app.html`「说明」里写的阶段日期，还有 `build.py` 里的 `SPELL_TOTAL` 和 `REC_TOTAL`。改完运行 `python3 assemble.py` 和 `node tests/test.js`。
 
 ## 还没做完的事
 
-1. **上线**：已完成（2026-10-10）。网址是 https://liamadad.github.io/danci/ 和 https://liamadad.github.io/danci/plan.html，仓库 Liamadad/danci 的 main 分支。更新时运行 `python3 assemble.py`，把 `site/` 里的 8 个文件一起上传。
+1. **上线**：已完成（2026-10-10）。网址是 https://liamadad.github.io/danci/，仓库 Liamadad/danci 的 main 分支。更新时运行 `python3 assemble.py`，把 `site/` 里的 7 个文件一起上传。
 2. **真机测试发音**：在妈妈和弟弟的手机上各点几个喇叭。如果没声音，先换手机自带的浏览器试；还不行的话，排查有道音频在那台手机上能不能播放。
 3. **两周后看难度**：如果前两周的认识词太简单，就把认识词的起点往后挪，改 `build.py` 里的 `ngsl_sorted[500:]`，重新生成。改之前要考虑已经学过的天数怎么衔接。
-4. **考试日期确定后**：挪动冲刺期（`PLAN` 里的周次），并同步更新 `plan.html` 的阶段日期。
-5. **计划图给妈妈**：可以发网址，也可以截长图发微信。
+4. **考试日期确定后**：挪动冲刺期（`PLAN` 里的周次），并同步更新「说明」里的阶段日期。
+5. ~~计划图给妈妈~~：已取消，规则在「说明」里。
 
 ## claude.ai 预览链接（只有账号主人能看）
 

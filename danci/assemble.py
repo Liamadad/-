@@ -12,10 +12,6 @@ doc = head + app[:title_end] + '\n</head>\n<body>\n' + app[title_end:] + '\n</bo
 open('site/index.html', 'w', encoding='utf-8').write(doc)
 print(len(app), len(doc))
 
-plan = open('plan.html', encoding='utf-8').read()
-open('out/plan.html', 'w', encoding='utf-8').write(plan)
-t = plan.index('</title>') + len('</title>')
-open('site/plan.html', 'w', encoding='utf-8').write(head + plan[:t] + '\n</head>\n<body>\n' + plan[t:] + '\n</body>\n</html>\n')
 
 # 「添加到主屏幕」: icon, app manifest and the offline worker go next to the pages
 import shutil
