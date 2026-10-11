@@ -407,11 +407,26 @@ const zhList = z => z.split('；').map((g, i, a) => `<span class="g">${zhHTML(g)
 
 // views: id -> { label, k: 's' | 'r' | 'v', its?, groups?, random? }; items are { e: [word, phonetic, meaning], spell }
 const items = (arr, spell) => arr.map(e => ({ e, spell }));
+// 外教课 words are learnt 5 a day (weekends too), in report order, from the report day or the plan's first day
+const TUTOR_PER_DAY = 5;
+const TUTOR_DAYS = (() => {
+  const queue = [], seen = new Set(), days = {};
+  for (const r of TUTOR) {
+    const [y, m, d] = r.date.split('-').map(Number), from = Math.max(Date.UTC(y, m - 1, d), START);
+    for (const x of r.words) if (!seen.has(x.w.toLowerCase())) { seen.add(x.w.toLowerCase()); queue.push({ from, x }); }
+  }
+  let day = queue.length ? queue[0].from : 0, i = 0;
+  while (i < queue.length) {
+    const today = [];
+    while (i < queue.length && queue[i].from <= day && today.length < TUTOR_PER_DAY) today.push(queue[i++].x);
+    if (today.length) days[day] = today;
+    else if (i < queue.length) day = Math.max(day, queue[i].from) - DAY;   // nothing released yet: jump ahead
+    day += DAY;
+  }
+  return days;
+})();
 function tutorItems(date) {
-  const day = utc(date), seen = new Set(), out = [];
-  const reps = TUTOR.filter(r => { const [y, m, d] = r.date.split('-').map(Number); return Date.UTC(y, m - 1, d) <= day; }).slice(-2).reverse();
-  for (const r of reps) for (const x of r.words) if (!seen.has(x.w)) { seen.add(x.w); out.push({ e: [x.w, '§' + x.ph, x.zh], spell: false, oral: true }); }
-  return out;
+  return (TUTOR_DAYS[utc(date)] || []).map(x => ({ e: [x.w, '§' + x.ph, x.zh], spell: false, oral: true }));
 }
 function addOral(views, test, date) {
   const o = tutorItems(date);
@@ -838,7 +853,7 @@ function helpSheet() {
     <li><b>弟弟背：</b>先用「清单」把今天的词看一遍，点喇叭听发音；再换「卡片」一张一张自测，点卡片翻面看答案。</li>
     <li><b>检查：</b>按底下的「开始检查」，妈妈考或弟弟自己考都行。先听写默写词：每翻一张会自动读一遍，弟弟在本子上写编号和单词；写完对答案，点一下写错的那几行。再考认识词：弟弟说意思，妈妈按「会」或「不会」。最后看结果，没过可以只重考错的。</li>
     <li><b>周六、周日：</b>同一个位置的按钮，会自动换成周测、月考或补考的词。</li>
-    <li><b>外教课：</b>外教每次课后点名不会读的词放在「外教课」那叠，用美式发音。点喇叭听一遍，自己读一遍。检查时最后一步「朗读」：屏幕只显示英文，弟弟读出来，妈妈按「会」或「不会」，拿不准就点喇叭对一下。</li>
+    <li><b>外教课：</b>外教每次课后点名不会读的词，每天学 5 个，放在「外教课」那叠，用美式发音。点喇叭听一遍，自己读一遍。检查时最后一步「朗读」：屏幕只显示英文，弟弟读出来，妈妈按「会」或「不会」，拿不准就点喇叭对一下。</li>
     <li><b>复习：</b>弟弟自己用「卡片」过一遍。每天检查时会从复习词里随机抽 10 个，和新词混在一起考。</li>
     <li><b>漏学了：</b>用左右箭头翻回那天补上，最晚周日补完。</li>
     <li><b>发音：</b>需要联网。点了没声音，换用手机自带的浏览器打开。</li></ol>${rulesHTML(V && V.rules)}
