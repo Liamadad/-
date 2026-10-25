@@ -156,23 +156,22 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
                 seen.add(k); out.append(k)
         return out
 
-    # --- from 10-26, before the midterm: the days already studied keep their words; after them physics comes
-    # first, chapter by chapter, economics waits, and general English only fills the rest of each day
+    # --- from 10-26, before the midterm: the days already studied keep their words; after them every physics word
+    # comes first, chapter by chapter, with the exam command words; economics, maths and general English wait
     learned = json.load(open(os.path.join(HERE, 'subjects', 'learned.json'), encoding='utf-8'))
     tags = lambda k: {p[2] for p in terms[k]['parts']} if k in terms else set()
     sect = {}
     for i, e in enumerate(subj['physics']):            # the file is in syllabus order
         sect.setdefault(e['w'] if e['w'].isupper() else e['w'].lower(), i)
 
-    def midterm(order, done, n_phys, n_other, n_general=0):
-        """done, then n_phys physics terms a day with n_other command/maths terms and n_general general words, then the rest in order."""
+    def midterm(order, done, n_phys, n_cmd=0):
+        """done, then n_phys physics terms a day with n_cmd exam command words, then the rest in order."""
         done_set = set(done)
         rest = [k for k in dict.fromkeys(order) if k not in done_set]
         phys = sorted((k for k in rest if '物理' in tags(k)), key=sect.get)
         days = len(phys) / n_phys
-        other = [k for k in rest if tags(k) and not tags(k) & {'物理', '经济'}]
-        general = [k for k in rest if not tags(k)]
-        block = spread(phys, other[:round(days * n_other)], general[:round(days * n_general)])
+        cmd = [k for k in rest if '指令词' in tags(k) and not tags(k) & {'物理', '经济'}]
+        block = spread(phys, cmd[:round(days * n_cmd)])
         return list(dict.fromkeys(done + block + rest))
 
     # --- spelling: the teacher's economics words first (in page order), then command words and core subject terms
@@ -182,7 +181,7 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
     s_order += spread(pick('econ', 'S', {2}), pick('physics', 'S', {2}), pick('math', 'S', {2}),
                       [w for sub in awl_sublists[1:4] for w in sub])
     s_order += [w for sub in awl_sublists[4:] for w in sub]
-    s_order = midterm(s_order, learned['S'], 8, 2)
+    s_order = midterm(s_order, learned['S'], 9, 1)
     spell, used = [], set()
     for k in s_order:
         if k in used:
@@ -205,5 +204,5 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
     for k in spread(r3, tail_pool):
         if k not in seen:
             seen.add(k); head.append(k)
-    recs = [final(k) for k in midterm(head, learned['R'], 15, 3, 2)][:rec_total]
+    recs = [final(k) for k in midterm(head, learned['R'], 20)][:rec_total]
     return spell, recs
