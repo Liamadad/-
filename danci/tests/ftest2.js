@@ -1,0 +1,24 @@
+const { chromium } = require('playwright');
+(async () => {
+  const browser = await chromium.launch();
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
+  const page = await ctx.newPage();
+  const errs = []; page.on('pageerror', e => errs.push(e.message));
+  await page.clock.setFixedTime(new Date('2027-03-10T10:00:00'));
+  await page.goto('file://' + process.cwd() + '/site/index.html');
+  const masked = sel => page.$$eval(sel, els => els.filter(e => getComputedStyle(e).color === 'rgba(0, 0, 0, 0)').length);
+  await page.click('#shuffle');
+  const before = await page.$$eval('#main .panel .w .en', e => e.map(x => x.textContent));
+  await page.click('#cover');
+  const after = await page.$$eval('#main .panel .w .en', e => e.map(x => x.textContent));
+  console.log('review: order kept', before.join() === after.join());
+  console.log('review covered: spell en', await masked('.w.s .en'), '/', await page.$$eval('.w.s', e => e.length), ' rec zh', await masked('.w:not(.s) .zh'), '/', await page.$$eval('.w:not(.s)', e => e.length), ' spell zh masked', await masked('.w.s .zh'), ' rec en masked', await masked('.w:not(.s) .en'));
+  await page.click('.w.s >> nth=0'); console.log('tap reveals one', await masked('.w.s .en'));
+  await page.click('[data-tab="rec"]');
+  console.log('rec tab covered zh', await masked('.w .zh'), 'tags shown', await page.$$eval('.w .tag', e => e.length));
+  await page.screenshot({ path: 'shots/g_review_cover.png' });
+  await page.click('[data-tab="review"]');
+  await page.screenshot({ path: 'shots/g_review_cover2.png' });
+  console.log('errors', errs);
+  await browser.close();
+})();

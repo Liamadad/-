@@ -1,0 +1,2778 @@
+[
+  {
+    "w": "natural number",
+    "pos": "phr.",
+    "zh": "自然数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "integer",
+    "pos": "n.",
+    "zh": "整数",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "prime",
+    "pos": "adj.",
+    "zh": "质数的，素数的",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "prime factor",
+    "pos": "phr.",
+    "zh": "质因数",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "square number",
+    "pos": "phr.",
+    "zh": "平方数",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "cube number",
+    "pos": "phr.",
+    "zh": "立方数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "factor",
+    "pos": "n.",
+    "zh": "因数，因子",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "multiple",
+    "pos": "n.",
+    "zh": "倍数",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "common factor",
+    "pos": "phr.",
+    "zh": "公因数，公因式",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "common multiple",
+    "pos": "phr.",
+    "zh": "公倍数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "highest common factor",
+    "pos": "phr.",
+    "zh": "最大公因数",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "lowest common multiple",
+    "pos": "phr.",
+    "zh": "最小公倍数",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "rational",
+    "pos": "adj.",
+    "zh": "有理（数）的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "irrational",
+    "pos": "adj.",
+    "zh": "无理（数）的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "reciprocal",
+    "pos": "n.",
+    "zh": "倒数，反比例（函数）的",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "product",
+    "pos": "n.",
+    "zh": "积，乘积",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "positive",
+    "pos": "adj.",
+    "zh": "正的，正数的",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "negative",
+    "pos": "adj.",
+    "zh": "负的，负数的",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.1 Types of number"
+  },
+  {
+    "w": "set",
+    "pos": "n.",
+    "zh": "集合",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.2 Sets"
+  },
+  {
+    "w": "element",
+    "pos": "n.",
+    "zh": "元素",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.2 Sets"
+  },
+  {
+    "w": "subset",
+    "pos": "n.",
+    "zh": "子集",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.2 Sets"
+  },
+  {
+    "w": "complement",
+    "pos": "n.",
+    "zh": "补集",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.2 Sets"
+  },
+  {
+    "w": "empty set",
+    "pos": "phr.",
+    "zh": "空集",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.2 Sets"
+  },
+  {
+    "w": "universal set",
+    "pos": "phr.",
+    "zh": "全集",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.2 Sets"
+  },
+  {
+    "w": "union",
+    "pos": "n.",
+    "zh": "并集",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.2 Sets"
+  },
+  {
+    "w": "intersection",
+    "pos": "n.",
+    "zh": "交集，交点",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.2 Sets"
+  },
+  {
+    "w": "venn diagram",
+    "pos": "phr.",
+    "zh": "韦恩图",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.2 Sets"
+  },
+  {
+    "w": "power",
+    "pos": "n.",
+    "zh": "幂，乘方",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.3 Powers and roots"
+  },
+  {
+    "w": "root",
+    "pos": "n.",
+    "zh": "根，方根",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.3 Powers and roots"
+  },
+  {
+    "w": "square",
+    "pos": "n.",
+    "zh": "平方，正方形",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E1.3 Powers and roots"
+  },
+  {
+    "w": "square root",
+    "pos": "phr.",
+    "zh": "平方根",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.3 Powers and roots"
+  },
+  {
+    "w": "cube",
+    "pos": "n.",
+    "zh": "立方，正方体",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E1.3 Powers and roots"
+  },
+  {
+    "w": "cube root",
+    "pos": "phr.",
+    "zh": "立方根",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.3 Powers and roots"
+  },
+  {
+    "w": "fraction",
+    "pos": "n.",
+    "zh": "分数",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "numerator",
+    "pos": "n.",
+    "zh": "分子",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "denominator",
+    "pos": "n.",
+    "zh": "分母",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "proper fraction",
+    "pos": "phr.",
+    "zh": "真分数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "improper fraction",
+    "pos": "phr.",
+    "zh": "假分数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "mixed number",
+    "pos": "phr.",
+    "zh": "带分数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "decimal",
+    "pos": "n.",
+    "zh": "小数",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "percentage",
+    "pos": "n.",
+    "zh": "百分数，百分比",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "equivalent",
+    "pos": "adj.",
+    "zh": "等价的，等值的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "recurring decimal",
+    "pos": "phr.",
+    "zh": "循环小数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "simplest form",
+    "pos": "phr.",
+    "zh": "最简形式",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.4 Fractions, decimals and percentages"
+  },
+  {
+    "w": "ascending order",
+    "pos": "phr.",
+    "zh": "升序（从小到大）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.5 Ordering"
+  },
+  {
+    "w": "descending order",
+    "pos": "phr.",
+    "zh": "降序（从大到小）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.5 Ordering"
+  },
+  {
+    "w": "sum",
+    "pos": "n.",
+    "zh": "和",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.6 The four operations"
+  },
+  {
+    "w": "difference",
+    "pos": "n.",
+    "zh": "差",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.6 The four operations"
+  },
+  {
+    "w": "bracket",
+    "pos": "n.",
+    "zh": "括号",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.6 The four operations"
+  },
+  {
+    "w": "order of operations",
+    "pos": "phr.",
+    "zh": "运算顺序",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.6 The four operations"
+  },
+  {
+    "w": "indices",
+    "pos": "n.",
+    "zh": "指数（index复数）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.7 Indices I"
+  },
+  {
+    "w": "standard form",
+    "pos": "phr.",
+    "zh": "科学记数法",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.8 Standard form"
+  },
+  {
+    "w": "estimate",
+    "pos": "v.",
+    "zh": "估计，估算",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.9 Estimation"
+  },
+  {
+    "w": "round",
+    "pos": "v.",
+    "zh": "四舍五入，取近似值",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.9 Estimation"
+  },
+  {
+    "w": "decimal place",
+    "pos": "phr.",
+    "zh": "小数位",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.9 Estimation"
+  },
+  {
+    "w": "significant figure",
+    "pos": "phr.",
+    "zh": "有效数字",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.9 Estimation"
+  },
+  {
+    "w": "degree of accuracy",
+    "pos": "phr.",
+    "zh": "精确度",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.9 Estimation"
+  },
+  {
+    "w": "correct to",
+    "pos": "phr.",
+    "zh": "精确到",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.9 Estimation"
+  },
+  {
+    "w": "to the nearest",
+    "pos": "phr.",
+    "zh": "精确到最接近的…",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.9 Estimation"
+  },
+  {
+    "w": "upper bound",
+    "pos": "phr.",
+    "zh": "上界",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.10 Limits of accuracy"
+  },
+  {
+    "w": "lower bound",
+    "pos": "phr.",
+    "zh": "下界",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.10 Limits of accuracy"
+  },
+  {
+    "w": "ratio",
+    "pos": "n.",
+    "zh": "比，比率",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.11 Ratio and proportion"
+  },
+  {
+    "w": "proportion",
+    "pos": "n.",
+    "zh": "比例",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E1.11 Ratio and proportion"
+  },
+  {
+    "w": "proportional",
+    "pos": "adj.",
+    "zh": "成比例的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.11 Ratio and proportion"
+  },
+  {
+    "w": "scale",
+    "pos": "n.",
+    "zh": "比例尺，刻度",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.11 Ratio and proportion"
+  },
+  {
+    "w": "rate",
+    "pos": "n.",
+    "zh": "率，速率",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.12 Rates"
+  },
+  {
+    "w": "exchange rate",
+    "pos": "phr.",
+    "zh": "汇率",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.12 Rates"
+  },
+  {
+    "w": "average speed",
+    "pos": "phr.",
+    "zh": "平均速度",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.12 Rates"
+  },
+  {
+    "w": "density",
+    "pos": "n.",
+    "zh": "密度",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.12 Rates"
+  },
+  {
+    "w": "percentage increase",
+    "pos": "phr.",
+    "zh": "百分比增长",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "interest",
+    "pos": "n.",
+    "zh": "利息",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "simple interest",
+    "pos": "phr.",
+    "zh": "单利",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "compound interest",
+    "pos": "phr.",
+    "zh": "复利",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "per annum",
+    "pos": "phr.",
+    "zh": "每年",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "multiplier",
+    "pos": "n.",
+    "zh": "乘数（变化倍数）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "reverse percentage",
+    "pos": "phr.",
+    "zh": "逆百分比（求原值）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "discount",
+    "pos": "n.",
+    "zh": "折扣",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "profit",
+    "pos": "n.",
+    "zh": "利润",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "loss",
+    "pos": "n.",
+    "zh": "亏损",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "cost price",
+    "pos": "phr.",
+    "zh": "成本价",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E1.13 Percentages"
+  },
+  {
+    "w": "exponential",
+    "pos": "adj.",
+    "zh": "指数的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.17 Exponential growth and decay"
+  },
+  {
+    "w": "exponential growth",
+    "pos": "phr.",
+    "zh": "指数增长",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.17 Exponential growth and decay"
+  },
+  {
+    "w": "exponential decay",
+    "pos": "phr.",
+    "zh": "指数衰减",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.17 Exponential growth and decay"
+  },
+  {
+    "w": "depreciation",
+    "pos": "n.",
+    "zh": "折旧，贬值",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E1.17 Exponential growth and decay"
+  },
+  {
+    "w": "surd",
+    "pos": "n.",
+    "zh": "根式（无理根式）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.18 Surds"
+  },
+  {
+    "w": "rationalise",
+    "pos": "v.",
+    "zh": "有理化",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E1.18 Surds"
+  },
+  {
+    "w": "algebraic",
+    "pos": "adj.",
+    "zh": "代数的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "variable",
+    "pos": "n.",
+    "zh": "变量",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "unknown",
+    "pos": "n.",
+    "zh": "未知数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "substitute",
+    "pos": "v.",
+    "zh": "代入",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "expression",
+    "pos": "n.",
+    "zh": "表达式，代数式",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "formula",
+    "pos": "n.",
+    "zh": "公式",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "term",
+    "pos": "n.",
+    "zh": "项",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "coefficient",
+    "pos": "n.",
+    "zh": "系数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "constant",
+    "pos": "n.",
+    "zh": "常数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "evaluate",
+    "pos": "v.",
+    "zh": "求值",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "in terms of",
+    "pos": "phr.",
+    "zh": "用…表示",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.1 Introduction to algebra"
+  },
+  {
+    "w": "simplify",
+    "pos": "v.",
+    "zh": "化简",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.2 Algebraic manipulation"
+  },
+  {
+    "w": "like terms",
+    "pos": "phr.",
+    "zh": "同类项",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.2 Algebraic manipulation"
+  },
+  {
+    "w": "expand",
+    "pos": "v.",
+    "zh": "展开（去括号）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.2 Algebraic manipulation"
+  },
+  {
+    "w": "factorise",
+    "pos": "v.",
+    "zh": "因式分解",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.2 Algebraic manipulation"
+  },
+  {
+    "w": "factorisation",
+    "pos": "n.",
+    "zh": "因式分解",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.2 Algebraic manipulation"
+  },
+  {
+    "w": "complete the square",
+    "pos": "phr.",
+    "zh": "配方",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.2 Algebraic manipulation"
+  },
+  {
+    "w": "quadratic",
+    "pos": "adj.",
+    "zh": "二次的",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.2 Algebraic manipulation"
+  },
+  {
+    "w": "linear",
+    "pos": "adj.",
+    "zh": "线性的，一次的",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.2 Algebraic manipulation"
+  },
+  {
+    "w": "algebraic fraction",
+    "pos": "phr.",
+    "zh": "分式",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.3 Algebraic fractions"
+  },
+  {
+    "w": "common denominator",
+    "pos": "phr.",
+    "zh": "公分母",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.3 Algebraic fractions"
+  },
+  {
+    "w": "cancel",
+    "pos": "v.",
+    "zh": "约分，消去",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.3 Algebraic fractions"
+  },
+  {
+    "w": "equation",
+    "pos": "n.",
+    "zh": "方程",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "solve",
+    "pos": "v.",
+    "zh": "解（方程）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "solution",
+    "pos": "n.",
+    "zh": "解",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "linear equation",
+    "pos": "phr.",
+    "zh": "一次方程",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "simultaneous equations",
+    "pos": "phr.",
+    "zh": "联立方程（方程组）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "quadratic equation",
+    "pos": "phr.",
+    "zh": "二次方程",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "quadratic formula",
+    "pos": "phr.",
+    "zh": "求根公式",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "change the subject",
+    "pos": "phr.",
+    "zh": "变换公式的主项",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "rearrange",
+    "pos": "v.",
+    "zh": "（公式）变形，移项",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "consecutive",
+    "pos": "adj.",
+    "zh": "连续的（相邻的）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "hence",
+    "pos": "adv.",
+    "zh": "由此（利用上一问）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.5 Equations"
+  },
+  {
+    "w": "inequality",
+    "pos": "n.",
+    "zh": "不等式",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.6 Inequalities"
+  },
+  {
+    "w": "number line",
+    "pos": "phr.",
+    "zh": "数轴",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.6 Inequalities"
+  },
+  {
+    "w": "region",
+    "pos": "n.",
+    "zh": "区域",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.6 Inequalities"
+  },
+  {
+    "w": "shade",
+    "pos": "v.",
+    "zh": "涂阴影",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.6 Inequalities"
+  },
+  {
+    "w": "satisfy",
+    "pos": "v.",
+    "zh": "满足（条件、方程）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.6 Inequalities"
+  },
+  {
+    "w": "broken line",
+    "pos": "phr.",
+    "zh": "虚线",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E2.6 Inequalities"
+  },
+  {
+    "w": "sequence",
+    "pos": "n.",
+    "zh": "数列",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.7 Sequences"
+  },
+  {
+    "w": "nth term",
+    "pos": "phr.",
+    "zh": "第n项（通项）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.7 Sequences"
+  },
+  {
+    "w": "term-to-term rule",
+    "pos": "phr.",
+    "zh": "项间递推规律",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.7 Sequences"
+  },
+  {
+    "w": "common difference",
+    "pos": "phr.",
+    "zh": "公差",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E2.7 Sequences"
+  },
+  {
+    "w": "direct proportion",
+    "pos": "phr.",
+    "zh": "正比例",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.8 Proportion"
+  },
+  {
+    "w": "inverse proportion",
+    "pos": "phr.",
+    "zh": "反比例",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.8 Proportion"
+  },
+  {
+    "w": "constant of proportionality",
+    "pos": "phr.",
+    "zh": "比例常数",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E2.8 Proportion"
+  },
+  {
+    "w": "distance-time graph",
+    "pos": "phr.",
+    "zh": "距离-时间图",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.9 Graphs in practical situations"
+  },
+  {
+    "w": "speed-time graph",
+    "pos": "phr.",
+    "zh": "速度-时间图",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.9 Graphs in practical situations"
+  },
+  {
+    "w": "acceleration",
+    "pos": "n.",
+    "zh": "加速度",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.9 Graphs in practical situations"
+  },
+  {
+    "w": "deceleration",
+    "pos": "n.",
+    "zh": "减速度",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.9 Graphs in practical situations"
+  },
+  {
+    "w": "rate of change",
+    "pos": "phr.",
+    "zh": "变化率",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.9 Graphs in practical situations"
+  },
+  {
+    "w": "table of values",
+    "pos": "phr.",
+    "zh": "数值表（取值表）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.10 Graphs of functions"
+  },
+  {
+    "w": "curve",
+    "pos": "n.",
+    "zh": "曲线",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E2.10 Graphs of functions"
+  },
+  {
+    "w": "intersect",
+    "pos": "v.",
+    "zh": "相交",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.10 Graphs of functions"
+  },
+  {
+    "w": "cubic",
+    "pos": "adj.",
+    "zh": "三次的，立方的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.11 Sketching curves"
+  },
+  {
+    "w": "turning point",
+    "pos": "phr.",
+    "zh": "转折点（极值点）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.11 Sketching curves"
+  },
+  {
+    "w": "asymptote",
+    "pos": "n.",
+    "zh": "渐近线",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E2.11 Sketching curves"
+  },
+  {
+    "w": "parabola",
+    "pos": "n.",
+    "zh": "抛物线",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E2.11 Sketching curves"
+  },
+  {
+    "w": "differentiate",
+    "pos": "v.",
+    "zh": "求导",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.12 Differentiation"
+  },
+  {
+    "w": "differentiation",
+    "pos": "n.",
+    "zh": "微分，求导",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E2.12 Differentiation"
+  },
+  {
+    "w": "derivative",
+    "pos": "n.",
+    "zh": "导数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.12 Differentiation"
+  },
+  {
+    "w": "stationary point",
+    "pos": "phr.",
+    "zh": "驻点",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.12 Differentiation"
+  },
+  {
+    "w": "second derivative",
+    "pos": "phr.",
+    "zh": "二阶导数",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E2.12 Differentiation"
+  },
+  {
+    "w": "maximum",
+    "pos": "n.",
+    "zh": "最大值，极大值",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E2.12 Differentiation"
+  },
+  {
+    "w": "minimum",
+    "pos": "n.",
+    "zh": "最小值，极小值",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E2.12 Differentiation"
+  },
+  {
+    "w": "function",
+    "pos": "n.",
+    "zh": "函数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.13 Functions"
+  },
+  {
+    "w": "domain",
+    "pos": "n.",
+    "zh": "定义域",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E2.13 Functions"
+  },
+  {
+    "w": "inverse function",
+    "pos": "phr.",
+    "zh": "反函数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.13 Functions"
+  },
+  {
+    "w": "composite function",
+    "pos": "phr.",
+    "zh": "复合函数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E2.13 Functions"
+  },
+  {
+    "w": "coordinates",
+    "pos": "n.",
+    "zh": "坐标",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E3.1 Coordinates"
+  },
+  {
+    "w": "origin",
+    "pos": "n.",
+    "zh": "原点",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E3.1 Coordinates"
+  },
+  {
+    "w": "axis",
+    "pos": "n.",
+    "zh": "坐标轴（复数axes）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E3.1 Coordinates"
+  },
+  {
+    "w": "gradient",
+    "pos": "n.",
+    "zh": "斜率，梯度",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E3.3 Gradient of linear graphs"
+  },
+  {
+    "w": "midpoint",
+    "pos": "n.",
+    "zh": "中点，组中值",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E3.4 Length and midpoint"
+  },
+  {
+    "w": "line segment",
+    "pos": "phr.",
+    "zh": "线段",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E3.4 Length and midpoint"
+  },
+  {
+    "w": "y-intercept",
+    "pos": "n.",
+    "zh": "y轴截距",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E3.5 Equations of linear graphs"
+  },
+  {
+    "w": "vertex",
+    "pos": "n.",
+    "zh": "顶点",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "vertices",
+    "pos": "n.",
+    "zh": "顶点（vertex复数）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "plane",
+    "pos": "n.",
+    "zh": "平面",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "parallel",
+    "pos": "adj.",
+    "zh": "平行的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "perpendicular",
+    "pos": "adj.",
+    "zh": "垂直的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "perpendicular bisector",
+    "pos": "phr.",
+    "zh": "垂直平分线",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "right angle",
+    "pos": "phr.",
+    "zh": "直角",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "acute",
+    "pos": "adj.",
+    "zh": "锐角的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "obtuse",
+    "pos": "adj.",
+    "zh": "钝角的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "reflex",
+    "pos": "adj.",
+    "zh": "优角的（大于180°）",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "interior angle",
+    "pos": "phr.",
+    "zh": "内角",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "exterior angle",
+    "pos": "phr.",
+    "zh": "外角",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "congruent",
+    "pos": "adj.",
+    "zh": "全等的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "quadrilateral",
+    "pos": "n.",
+    "zh": "四边形",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "polygon",
+    "pos": "n.",
+    "zh": "多边形",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "regular",
+    "pos": "adj.",
+    "zh": "正（多边形）的",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "equilateral",
+    "pos": "adj.",
+    "zh": "等边的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "isosceles",
+    "pos": "adj.",
+    "zh": "等腰的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "scalene",
+    "pos": "adj.",
+    "zh": "不等边的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "right-angled",
+    "pos": "adj.",
+    "zh": "直角的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "kite",
+    "pos": "n.",
+    "zh": "筝形",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "rhombus",
+    "pos": "n.",
+    "zh": "菱形",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "parallelogram",
+    "pos": "n.",
+    "zh": "平行四边形",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "trapezium",
+    "pos": "n.",
+    "zh": "梯形",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "pentagon",
+    "pos": "n.",
+    "zh": "五边形",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "hexagon",
+    "pos": "n.",
+    "zh": "六边形",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "octagon",
+    "pos": "n.",
+    "zh": "八边形",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "decagon",
+    "pos": "n.",
+    "zh": "十边形",
+    "cls": "S",
+    "tier": 3,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "diagonal",
+    "pos": "n.",
+    "zh": "对角线",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "net",
+    "pos": "n.",
+    "zh": "展开图",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "solid",
+    "pos": "n.",
+    "zh": "立体图形",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "cuboid",
+    "pos": "n.",
+    "zh": "长方体",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "prism",
+    "pos": "n.",
+    "zh": "棱柱",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "cylinder",
+    "pos": "n.",
+    "zh": "圆柱",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "pyramid",
+    "pos": "n.",
+    "zh": "棱锥",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "cone",
+    "pos": "n.",
+    "zh": "圆锥",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "sphere",
+    "pos": "n.",
+    "zh": "球，球体",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "hemisphere",
+    "pos": "n.",
+    "zh": "半球",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "frustum",
+    "pos": "n.",
+    "zh": "台体（圆台、棱台）",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "face",
+    "pos": "n.",
+    "zh": "面",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "edge",
+    "pos": "n.",
+    "zh": "棱，边",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "centre",
+    "pos": "n.",
+    "zh": "圆心，中心",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "radius",
+    "pos": "n.",
+    "zh": "半径（复数radii）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "diameter",
+    "pos": "n.",
+    "zh": "直径",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "circumference",
+    "pos": "n.",
+    "zh": "圆周，圆周长",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "semicircle",
+    "pos": "n.",
+    "zh": "半圆",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "chord",
+    "pos": "n.",
+    "zh": "弦",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "tangent",
+    "pos": "n.",
+    "zh": "切线，正切",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "arc",
+    "pos": "n.",
+    "zh": "弧",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "major",
+    "pos": "adj.",
+    "zh": "优（弧、扇形、弓形）的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "minor",
+    "pos": "adj.",
+    "zh": "劣（弧、扇形、弓形）的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "sector",
+    "pos": "n.",
+    "zh": "扇形",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "segment",
+    "pos": "n.",
+    "zh": "弓形，线段",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.1 Geometrical terms"
+  },
+  {
+    "w": "compasses",
+    "pos": "n.",
+    "zh": "圆规",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.2 Geometrical constructions"
+  },
+  {
+    "w": "protractor",
+    "pos": "n.",
+    "zh": "量角器",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.2 Geometrical constructions"
+  },
+  {
+    "w": "bisect",
+    "pos": "v.",
+    "zh": "平分",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E4.2 Geometrical constructions"
+  },
+  {
+    "w": "bearing",
+    "pos": "n.",
+    "zh": "方位角",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.3 Scale drawings"
+  },
+  {
+    "w": "scale drawing",
+    "pos": "phr.",
+    "zh": "比例图",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.3 Scale drawings"
+  },
+  {
+    "w": "not to scale",
+    "pos": "phr.",
+    "zh": "（图）未按比例绘制",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E4.3 Scale drawings"
+  },
+  {
+    "w": "due",
+    "pos": "adv.",
+    "zh": "正（东/南/西/北）",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E4.3 Scale drawings"
+  },
+  {
+    "w": "similar",
+    "pos": "adj.",
+    "zh": "相似的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.4 Similarity"
+  },
+  {
+    "w": "symmetry",
+    "pos": "n.",
+    "zh": "对称（性）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.5 Symmetry"
+  },
+  {
+    "w": "line of symmetry",
+    "pos": "phr.",
+    "zh": "对称轴",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E4.5 Symmetry"
+  },
+  {
+    "w": "rotational symmetry",
+    "pos": "phr.",
+    "zh": "旋转对称",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.5 Symmetry"
+  },
+  {
+    "w": "order",
+    "pos": "n.",
+    "zh": "顺序，（旋转对称）阶数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.5 Symmetry"
+  },
+  {
+    "w": "plane of symmetry",
+    "pos": "phr.",
+    "zh": "对称面",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.5 Symmetry"
+  },
+  {
+    "w": "vertically opposite",
+    "pos": "phr.",
+    "zh": "对顶的（对顶角）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.6 Angles"
+  },
+  {
+    "w": "corresponding",
+    "pos": "adj.",
+    "zh": "同位的，对应的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.6 Angles"
+  },
+  {
+    "w": "alternate",
+    "pos": "adj.",
+    "zh": "内错的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.6 Angles"
+  },
+  {
+    "w": "co-interior",
+    "pos": "adj.",
+    "zh": "同旁内的",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.6 Angles"
+  },
+  {
+    "w": "supplementary",
+    "pos": "adj.",
+    "zh": "互补的",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.6 Angles"
+  },
+  {
+    "w": "angle sum",
+    "pos": "phr.",
+    "zh": "内角和",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.6 Angles"
+  },
+  {
+    "w": "theorem",
+    "pos": "n.",
+    "zh": "定理",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E4.7 Circle theorems I"
+  },
+  {
+    "w": "cyclic quadrilateral",
+    "pos": "phr.",
+    "zh": "圆内接四边形",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E4.7 Circle theorems I"
+  },
+  {
+    "w": "alternate segment theorem",
+    "pos": "phr.",
+    "zh": "弦切角定理",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E4.7 Circle theorems I"
+  },
+  {
+    "w": "subtend",
+    "pos": "v.",
+    "zh": "（弧、弦）所对",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E4.7 Circle theorems I"
+  },
+  {
+    "w": "inscribed",
+    "pos": "adj.",
+    "zh": "内接的",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E4.7 Circle theorems I"
+  },
+  {
+    "w": "equidistant",
+    "pos": "adj.",
+    "zh": "等距的",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E4.8 Circle theorems II"
+  },
+  {
+    "w": "mass",
+    "pos": "n.",
+    "zh": "质量",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E5.1 Units of measure"
+  },
+  {
+    "w": "capacity",
+    "pos": "n.",
+    "zh": "容量，容积",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E5.1 Units of measure"
+  },
+  {
+    "w": "volume",
+    "pos": "n.",
+    "zh": "体积，容积",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E5.1 Units of measure"
+  },
+  {
+    "w": "area",
+    "pos": "n.",
+    "zh": "面积",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E5.1 Units of measure"
+  },
+  {
+    "w": "litre",
+    "pos": "n.",
+    "zh": "升",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E5.1 Units of measure"
+  },
+  {
+    "w": "perimeter",
+    "pos": "n.",
+    "zh": "周长",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E5.2 Area and perimeter"
+  },
+  {
+    "w": "base",
+    "pos": "n.",
+    "zh": "底，底边，底面",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E5.2 Area and perimeter"
+  },
+  {
+    "w": "perpendicular height",
+    "pos": "phr.",
+    "zh": "垂直高度",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E5.2 Area and perimeter"
+  },
+  {
+    "w": "pi",
+    "pos": "n.",
+    "zh": "圆周率（π）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E5.3 Circles, arcs and sectors"
+  },
+  {
+    "w": "arc length",
+    "pos": "phr.",
+    "zh": "弧长",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E5.3 Circles, arcs and sectors"
+  },
+  {
+    "w": "surface area",
+    "pos": "phr.",
+    "zh": "表面积",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E5.4 Surface area and volume"
+  },
+  {
+    "w": "curved surface area",
+    "pos": "phr.",
+    "zh": "曲面面积（侧面积）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E5.4 Surface area and volume"
+  },
+  {
+    "w": "cross-section",
+    "pos": "n.",
+    "zh": "横截面",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E5.4 Surface area and volume"
+  },
+  {
+    "w": "uniform",
+    "pos": "adj.",
+    "zh": "均匀的，处处相同的",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E5.4 Surface area and volume"
+  },
+  {
+    "w": "slant height",
+    "pos": "phr.",
+    "zh": "斜高",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E5.4 Surface area and volume"
+  },
+  {
+    "w": "cylindrical",
+    "pos": "adj.",
+    "zh": "圆柱形的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E5.4 Surface area and volume"
+  },
+  {
+    "w": "compound shape",
+    "pos": "phr.",
+    "zh": "组合图形",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E5.5 Compound shapes and parts of shapes"
+  },
+  {
+    "w": "pythagoras theorem",
+    "pos": "phr.",
+    "zh": "勾股定理",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E6.1 Pythagoras' theorem"
+  },
+  {
+    "w": "hypotenuse",
+    "pos": "n.",
+    "zh": "斜边",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E6.1 Pythagoras' theorem"
+  },
+  {
+    "w": "trigonometry",
+    "pos": "n.",
+    "zh": "三角学",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E6.2 Right-angled triangles"
+  },
+  {
+    "w": "sine",
+    "pos": "n.",
+    "zh": "正弦",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E6.2 Right-angled triangles"
+  },
+  {
+    "w": "cosine",
+    "pos": "n.",
+    "zh": "余弦",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E6.2 Right-angled triangles"
+  },
+  {
+    "w": "opposite",
+    "pos": "n.",
+    "zh": "对边",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E6.2 Right-angled triangles"
+  },
+  {
+    "w": "adjacent",
+    "pos": "adj.",
+    "zh": "相邻的，邻边",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E6.2 Right-angled triangles"
+  },
+  {
+    "w": "angle of elevation",
+    "pos": "phr.",
+    "zh": "仰角",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E6.2 Right-angled triangles"
+  },
+  {
+    "w": "angle of depression",
+    "pos": "phr.",
+    "zh": "俯角",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E6.2 Right-angled triangles"
+  },
+  {
+    "w": "exact value",
+    "pos": "phr.",
+    "zh": "精确值",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E6.3 Exact trigonometric values"
+  },
+  {
+    "w": "trigonometric",
+    "pos": "adj.",
+    "zh": "三角（函数）的",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E6.4 Trigonometric functions"
+  },
+  {
+    "w": "sine rule",
+    "pos": "phr.",
+    "zh": "正弦定理",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E6.5 Non-right-angled triangles"
+  },
+  {
+    "w": "cosine rule",
+    "pos": "phr.",
+    "zh": "余弦定理",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E6.5 Non-right-angled triangles"
+  },
+  {
+    "w": "ambiguous case",
+    "pos": "phr.",
+    "zh": "（正弦定理）两解情况",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E6.5 Non-right-angled triangles"
+  },
+  {
+    "w": "included angle",
+    "pos": "phr.",
+    "zh": "夹角",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E6.5 Non-right-angled triangles"
+  },
+  {
+    "w": "transformation",
+    "pos": "n.",
+    "zh": "变换",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "reflection",
+    "pos": "n.",
+    "zh": "反射（轴对称变换）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "rotation",
+    "pos": "n.",
+    "zh": "旋转",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "enlargement",
+    "pos": "n.",
+    "zh": "位似变换（放大）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "translation",
+    "pos": "n.",
+    "zh": "平移",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "reflect",
+    "pos": "v.",
+    "zh": "作轴对称（反射）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "rotate",
+    "pos": "v.",
+    "zh": "旋转",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "enlarge",
+    "pos": "v.",
+    "zh": "放大（作位似）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "translate",
+    "pos": "v.",
+    "zh": "平移",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "scale factor",
+    "pos": "phr.",
+    "zh": "比例因子，相似比",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "clockwise",
+    "pos": "adv.",
+    "zh": "顺时针",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "anticlockwise",
+    "pos": "adv.",
+    "zh": "逆时针",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "image",
+    "pos": "n.",
+    "zh": "像（变换后图形）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.1 Transformations"
+  },
+  {
+    "w": "vector",
+    "pos": "n.",
+    "zh": "向量",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E7.2 Vectors in two dimensions"
+  },
+  {
+    "w": "column vector",
+    "pos": "phr.",
+    "zh": "列向量",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.2 Vectors in two dimensions"
+  },
+  {
+    "w": "scalar",
+    "pos": "n.",
+    "zh": "标量，数量",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.2 Vectors in two dimensions"
+  },
+  {
+    "w": "magnitude",
+    "pos": "n.",
+    "zh": "大小，（向量的）模",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.3 Magnitude of a vector"
+  },
+  {
+    "w": "position vector",
+    "pos": "phr.",
+    "zh": "位置向量",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.4 Vector geometry"
+  },
+  {
+    "w": "directed line segment",
+    "pos": "phr.",
+    "zh": "有向线段",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E7.4 Vector geometry"
+  },
+  {
+    "w": "collinear",
+    "pos": "adj.",
+    "zh": "共线的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E7.4 Vector geometry"
+  },
+  {
+    "w": "coplanar",
+    "pos": "adj.",
+    "zh": "共面的",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E7.4 Vector geometry"
+  },
+  {
+    "w": "probability",
+    "pos": "n.",
+    "zh": "概率",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E8.1 Introduction to probability"
+  },
+  {
+    "w": "event",
+    "pos": "n.",
+    "zh": "事件",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.1 Introduction to probability"
+  },
+  {
+    "w": "outcome",
+    "pos": "n.",
+    "zh": "结果",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.1 Introduction to probability"
+  },
+  {
+    "w": "mutually exclusive",
+    "pos": "phr.",
+    "zh": "互斥的",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E8.1 Introduction to probability"
+  },
+  {
+    "w": "relative frequency",
+    "pos": "phr.",
+    "zh": "相对频率",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.2 Relative and expected frequencies"
+  },
+  {
+    "w": "expected frequency",
+    "pos": "phr.",
+    "zh": "期望频数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.2 Relative and expected frequencies"
+  },
+  {
+    "w": "fair",
+    "pos": "adj.",
+    "zh": "公平的（无偏的）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.2 Relative and expected frequencies"
+  },
+  {
+    "w": "biased",
+    "pos": "adj.",
+    "zh": "有偏的（不公平的）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.2 Relative and expected frequencies"
+  },
+  {
+    "w": "random",
+    "pos": "adj.",
+    "zh": "随机的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.2 Relative and expected frequencies"
+  },
+  {
+    "w": "dice",
+    "pos": "n.",
+    "zh": "骰子",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.2 Relative and expected frequencies"
+  },
+  {
+    "w": "sample space",
+    "pos": "phr.",
+    "zh": "样本空间",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.3 Probability of combined events"
+  },
+  {
+    "w": "tree diagram",
+    "pos": "phr.",
+    "zh": "树状图",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E8.3 Probability of combined events"
+  },
+  {
+    "w": "replacement",
+    "pos": "n.",
+    "zh": "（抽样）放回",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.3 Probability of combined events"
+  },
+  {
+    "w": "independent",
+    "pos": "adj.",
+    "zh": "独立的",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E8.3 Probability of combined events"
+  },
+  {
+    "w": "conditional probability",
+    "pos": "phr.",
+    "zh": "条件概率",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.4 Conditional probability"
+  },
+  {
+    "w": "given that",
+    "pos": "phr.",
+    "zh": "已知…的条件下",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E8.4 Conditional probability"
+  },
+  {
+    "w": "tally",
+    "pos": "n.",
+    "zh": "划记（计数符号）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.1 Classifying statistical data"
+  },
+  {
+    "w": "two-way table",
+    "pos": "phr.",
+    "zh": "双向表（列联表）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.1 Classifying statistical data"
+  },
+  {
+    "w": "frequency",
+    "pos": "n.",
+    "zh": "频数",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E9.1 Classifying statistical data"
+  },
+  {
+    "w": "discrete",
+    "pos": "adj.",
+    "zh": "离散的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.1 Classifying statistical data"
+  },
+  {
+    "w": "continuous",
+    "pos": "adj.",
+    "zh": "连续的",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.1 Classifying statistical data"
+  },
+  {
+    "w": "grouped data",
+    "pos": "phr.",
+    "zh": "分组数据",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.1 Classifying statistical data"
+  },
+  {
+    "w": "class interval",
+    "pos": "phr.",
+    "zh": "组（分组区间）",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.1 Classifying statistical data"
+  },
+  {
+    "w": "average",
+    "pos": "n.",
+    "zh": "平均数（集中趋势）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E9.2 Interpreting statistical data"
+  },
+  {
+    "w": "spread",
+    "pos": "n.",
+    "zh": "离散程度",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E9.2 Interpreting statistical data"
+  },
+  {
+    "w": "distribution",
+    "pos": "n.",
+    "zh": "分布",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.2 Interpreting statistical data"
+  },
+  {
+    "w": "consistent",
+    "pos": "adj.",
+    "zh": "稳定的（波动小）",
+    "cls": "S",
+    "tier": 3,
+    "topic": "E9.2 Interpreting statistical data"
+  },
+  {
+    "w": "outlier",
+    "pos": "n.",
+    "zh": "异常值（离群值）",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E9.2 Interpreting statistical data"
+  },
+  {
+    "w": "mean",
+    "pos": "n.",
+    "zh": "平均数",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E9.3 Averages and measures of spread"
+  },
+  {
+    "w": "median",
+    "pos": "n.",
+    "zh": "中位数",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E9.3 Averages and measures of spread"
+  },
+  {
+    "w": "mode",
+    "pos": "n.",
+    "zh": "众数",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E9.3 Averages and measures of spread"
+  },
+  {
+    "w": "range",
+    "pos": "n.",
+    "zh": "极差，值域",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E9.3 Averages and measures of spread"
+  },
+  {
+    "w": "quartile",
+    "pos": "n.",
+    "zh": "四分位数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.3 Averages and measures of spread"
+  },
+  {
+    "w": "lower quartile",
+    "pos": "phr.",
+    "zh": "下四分位数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.3 Averages and measures of spread"
+  },
+  {
+    "w": "upper quartile",
+    "pos": "phr.",
+    "zh": "上四分位数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.3 Averages and measures of spread"
+  },
+  {
+    "w": "interquartile range",
+    "pos": "phr.",
+    "zh": "四分位距",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E9.3 Averages and measures of spread"
+  },
+  {
+    "w": "modal class",
+    "pos": "phr.",
+    "zh": "众数组",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.3 Averages and measures of spread"
+  },
+  {
+    "w": "bar chart",
+    "pos": "phr.",
+    "zh": "条形图",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.4 Statistical charts and diagrams"
+  },
+  {
+    "w": "pie chart",
+    "pos": "phr.",
+    "zh": "扇形图（饼图）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E9.4 Statistical charts and diagrams"
+  },
+  {
+    "w": "pictogram",
+    "pos": "n.",
+    "zh": "象形统计图",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.4 Statistical charts and diagrams"
+  },
+  {
+    "w": "stem-and-leaf diagram",
+    "pos": "phr.",
+    "zh": "茎叶图",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.4 Statistical charts and diagrams"
+  },
+  {
+    "w": "key",
+    "pos": "n.",
+    "zh": "图例，说明",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.4 Statistical charts and diagrams"
+  },
+  {
+    "w": "composite bar chart",
+    "pos": "phr.",
+    "zh": "堆积条形图",
+    "cls": "R",
+    "tier": 3,
+    "topic": "E9.4 Statistical charts and diagrams"
+  },
+  {
+    "w": "scatter diagram",
+    "pos": "phr.",
+    "zh": "散点图",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.5 Scatter diagrams"
+  },
+  {
+    "w": "correlation",
+    "pos": "n.",
+    "zh": "相关（性）",
+    "cls": "S",
+    "tier": 1,
+    "topic": "E9.5 Scatter diagrams"
+  },
+  {
+    "w": "positive correlation",
+    "pos": "phr.",
+    "zh": "正相关",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E9.5 Scatter diagrams"
+  },
+  {
+    "w": "negative correlation",
+    "pos": "phr.",
+    "zh": "负相关",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E9.5 Scatter diagrams"
+  },
+  {
+    "w": "no correlation",
+    "pos": "phr.",
+    "zh": "不相关（零相关）",
+    "cls": "S",
+    "tier": 2,
+    "topic": "E9.5 Scatter diagrams"
+  },
+  {
+    "w": "best fit",
+    "pos": "phr.",
+    "zh": "最佳拟合（线）",
+    "cls": "R",
+    "tier": 1,
+    "topic": "E9.5 Scatter diagrams"
+  },
+  {
+    "w": "cumulative frequency",
+    "pos": "phr.",
+    "zh": "累积频数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.6 Cumulative frequency diagrams"
+  },
+  {
+    "w": "percentile",
+    "pos": "n.",
+    "zh": "百分位数",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.6 Cumulative frequency diagrams"
+  },
+  {
+    "w": "histogram",
+    "pos": "n.",
+    "zh": "直方图",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.7 Histograms"
+  },
+  {
+    "w": "frequency density",
+    "pos": "phr.",
+    "zh": "频数密度",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.7 Histograms"
+  },
+  {
+    "w": "class width",
+    "pos": "phr.",
+    "zh": "组距",
+    "cls": "R",
+    "tier": 2,
+    "topic": "E9.7 Histograms"
+  }
+]
