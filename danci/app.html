@@ -4,7 +4,7 @@
 :root {
   --bg: #EEF1F5; --card: #FFFFFF; --ink: #1B2430; --muted: #5C6672; --line: #DFE4EA; --soft: #F3F5F8;
   --red: #CA3035; --red-d: #9A2328; --red-t: #FDECEC;
-  --blue: #3A6FF0; --blue-d: #2648B8; --blue-t: #E8EEFE;
+  --blue: #2F62E0; --blue-d: #2648B8; --blue-t: #E8EEFE;
   --ink-d: #000000; --ink-t: #E4E8EE; --press: #CBD2DB;
   --tape-r: #F4C2C4; --tape-r-e: #DE8F93; --tape-b: #C5D4FA; --tape-b-e: #91ABEE;
   --grn: #0B7A57; --grn-d: #07583E; --grn-t: #E1F4EC; --tape-g: #BDE6D6; --tape-g-e: #84CBAF;
@@ -28,8 +28,8 @@
 }
 * { box-sizing: border-box; margin: 0; }
 [hidden] { display: none !important; }
-html { -webkit-text-size-adjust: 100%; background: var(--bg); }
-body { font: 15px/1.45 var(--font); color: var(--ink); background: var(--bg); -webkit-tap-highlight-color: transparent; }
+html { -webkit-text-size-adjust: 100%; background: var(--bg); overflow-x: hidden; overflow-x: clip; }
+body { font: 15px/1.45 var(--font); color: var(--ink); background: var(--bg); -webkit-tap-highlight-color: transparent; overflow-x: hidden; overflow-x: clip; }
 button { font: inherit; color: inherit; border: 0; background: none; padding: 0; cursor: pointer; touch-action: manipulation; }
 button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -43,14 +43,17 @@ svg { display: block; }
 /* 顶部一行：日期、回到今天、前后一天、说明 */
 .top { position: sticky; top: 0; z-index: 10; background: var(--bg); display: flex; align-items: center; gap: 2px; padding: calc(6px + env(safe-area-inset-top)) 0 6px; }
 .when { flex: 1; min-width: 0; }
-.when b { display: block; font-size: 19px; font-weight: 750; line-height: 1.25; }
+.when b { display: block; font-size: 19px; font-weight: 750; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .when small { display: block; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; flex: none; }
 .icon:active { background: var(--ink-t); }
 .icon svg { width: 21px; height: 21px; }
 .helpbtn { height: 44px; padding: 0 10px; margin-left: 2px; border-radius: 12px; font-size: 15px; font-weight: 700; color: var(--ink); flex: none; }
 .helpbtn:active { background: var(--ink-t); }
-.pill { height: 32px; padding: 0 12px; margin-right: 4px; border-radius: 16px; background: var(--card); box-shadow: var(--shadow); font-size: 13px; font-weight: 700; color: var(--ink); flex: none; }
+.pill { position: relative; height: 32px; padding: 0 12px; margin-right: 4px; border-radius: 16px; background: var(--card); box-shadow: var(--shadow); font-size: 13px; font-weight: 700; color: var(--ink); flex: none; }
+.pill::after, .ck-bar .link::after { content: ''; position: absolute; inset: -6px -4px; }
+.pill:active { background: var(--ink-t); box-shadow: none; }
+@media (max-width: 374px) { .when b { font-size: 16px; } .pill { padding: 0 8px; } }
 
 /* 三叠卡 = 三个标签 */
 .piles { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; padding: 4px 6px 0 0; }
@@ -166,8 +169,8 @@ svg { display: block; }
 .btn svg { width: 20px; height: 20px; }
 .btn .cap { position: absolute; left: 0; right: 0; bottom: 7px; font-size: 12px; font-weight: 650; color: var(--muted); }
 .btn.has-cap { position: relative; padding-bottom: 14px; height: 62px; }
-:root[data-theme="dark"] .btn:not(.plain) { color: var(--bg); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn:not(.plain) { color: var(--bg); } }
+:root[data-theme="dark"] .btn:not(.plain):not(.no) { color: var(--bg); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn:not(.plain):not(.no) { color: var(--bg); } }
 .thumb { display: grid; grid-template-columns: 64px 1fr 64px; gap: 12px; align-items: center; }
 .round { width: 64px; height: 64px; border-radius: 50%; background: var(--card); box-shadow: 0 3px 0 var(--press), 0 8px 18px rgba(27,36,48,.08); display: grid; place-items: center; position: relative; transition: transform .08s, box-shadow .08s; }
 .round:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--press); }
@@ -192,13 +195,15 @@ svg { display: block; }
 .ck-bar { display: flex; align-items: baseline; justify-content: space-between; margin: 14px 2px 10px; }
 .ck-bar b { font-size: 20px; }
 .ck-bar span { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.ck-bar .link { height: 32px; }
+.ck-bar .link { position: relative; height: 32px; }
+.ck-bar .link:active { color: var(--ink); }
 .w.ck { grid-template-columns: 22px minmax(0, 1fr) 40px; cursor: pointer; padding-left: 10px; }
 .mk { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--soft); color: var(--muted); font-weight: 800; font-size: 16px; transition: transform .2s cubic-bezier(.3,1.5,.5,1), background-color .15s; }
 .w.ck.wrong { background: var(--red-t); }
 .w.ck.wrong .mk { background: var(--red); color: #fff; transform: rotate(-8deg) scale(1.08); }
 .w.ck.wrong .en { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
 .thumb3 { display: grid; grid-template-columns: 64px 1fr 1fr; gap: 10px; align-items: center; }
+.thumb3 .btn.was { outline: 3px solid var(--ink); outline-offset: 3px; }
 .btn.no { background: var(--card); color: var(--ink); box-shadow: 0 4px 0 var(--press), 0 10px 22px rgba(27,36,48,.08); }
 .btn.no:active { box-shadow: 0 1px 0 var(--press); }
 .res { display: grid; gap: 10px; margin-top: 14px; }
@@ -208,6 +213,8 @@ svg { display: block; }
 .res .r p { grid-column: 1 / -1; font-size: 14px; color: var(--muted); }
 .res .r.pass p { color: var(--ink); font-weight: 700; }
 .res .r.fail p { color: var(--red); font-weight: 700; }
+.res .r.fail { background: var(--red-t); box-shadow: inset 0 0 0 2px var(--red); }
+.res .r.fail .n { color: var(--red); }
 .wrongs h3 { font-size: 15px; margin: 18px 2px 8px; }
 .ck-dock2 { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
 .ck-dock2 .btn.no { width: auto; padding: 0 22px; }
@@ -452,7 +459,7 @@ function buildViews(it, date) {
   }
   if (sat) {
     rows.push(['没过', '周日补考。周日还没过，接下来的周一到周五不能玩游戏，周末照常。']);
-    rules = { title: sprint || monthly ? '今天是总复习检查' : '妈妈周测', rows };
+    rules = { title: sprint ? '总复习检查' : monthly ? '周测和月考' : '妈妈周测', rows };
   } else {
     rows.push(['补考', '周六没过才需要。按「周日补考」重新随机抽一组，标准和周六一样。还没过，接下来的周一到周五不能玩游戏，周末照常。']);
     rules = { title: '周日：复习和补考', rows };
@@ -622,7 +629,7 @@ function render() {
     const g = $('goStart'); if (g) g.onclick = () => { S.cur = fromUTC(START); S.tab = null; S.idx = 0; S.dir = 1; render(); };
     save(); return;
   }
-  $('sub').textContent = it.kind === 'study' ? `第 ${it.week} 周 · 第 ${it.d} 天` : `第 ${it.week} 周 · ${it.kind === 'sat' ? '妈妈周测' : '复习和补考'}`;
+  $('sub').textContent = it.kind === 'study' ? `第 ${it.week} 周 · 第 ${it.d} 天` : `第 ${it.week} 周 · ${it.kind === 'sat' ? (V.rules && V.rules.title) || '妈妈周测' : '复习和补考'}`;
   if (C) { renderCheck(); saveCheck(); save(); return; }
   app.classList.remove('checking');
   const v = V.v;
@@ -740,6 +747,7 @@ function renderCheck() {
   $('mode').innerHTML = '';
   if (C.phase === 'S' || C.phase === 'R' || C.phase === 'O') {
     const list = ckList(), x = list[C.i], e = x.e, spell = C.phase === 'S', oral = C.phase === 'O';
+    const was = (oral ? C.knowO : C.know)[C.i];       // answered before and come back to with 上一个
     const left = n - C.i - 1, gap = 1.5 + 4.5 * Math.max(left, 0) / Math.max(n - 1, 1);
     const unders = [3, 2, 1].map(m => `<div class="under" style="transform:translate(${(m * gap).toFixed(1)}px,${(m * gap * 1.4).toFixed(1)}px);opacity:${left >= m ? 1 : 0}"></div>`).join('');
     // 朗读: only the word, no phonetic; the back shows how to say it and what it means
@@ -757,7 +765,7 @@ function renderCheck() {
         + `<button class="btn" type="button" id="ckNext">${C.i < n - 1 ? '下一个' : '写完了，对答案'}${I.next}</button>`
         + `<button class="round big-say" type="button" id="bigsay" aria-label="再放一遍">${SPEAKER}</button></div>`
       : `<div class="in thumb3"><button class="round big-say" type="button" id="bigsay" aria-label="播放发音">${SPEAKER}</button>`
-        + `<button class="btn no" type="button" id="ckNo">${I.no}不会</button><button class="btn" type="button" id="ckYes">${I.yes}会</button></div>`;
+        + `<button class="btn no${was === false ? ' was' : ''}" type="button" id="ckNo">${I.no}不会</button><button class="btn${was === true ? ' was' : ''}" type="button" id="ckYes">${I.yes}会</button></div>`;
   } else if (C.phase === 'SA') {
     const got = n - C.wrong.length, nNew = C.s.filter(x => !x.rv).length, gNew = nNew - C.wrong.filter(i => !C.s[i].rv).length;
     const tally = nNew < n ? `新词对 ${gNew} / ${nNew}${C.passS ? ' · ' + passText(gNew, nNew, C.passS) : ''} · 复习对 ${got - gNew} / ${n - nNew}`
@@ -765,7 +773,7 @@ function renderCheck() {
     $('main').innerHTML = `<div class="ck-bar"><b>对答案</b><span>${tally}</span></div>`
       + `<ol class="list">${C.s.map((x, i) => `<li class="w s ck${C.wrong.includes(i) ? ' wrong' : ''}" data-ck="${i}" role="button" aria-pressed="${C.wrong.includes(i)}"><span class="no">${i + 1}</span>`
         + `<div><div class="l1"><span class="en">${esc(x.e[0])}</span>${x.rv ? '<i class="sj rvt">复习</i>' : ''}</div><div class="zh">${zhList(x.e[2])}</div></div><span class="mk">${C.wrong.includes(i) ? '✗' : '✓'}</span></li>`).join('')}</ol>`;
-    $('dock').innerHTML = `<div class="in"><button class="btn has-cap" type="button" id="ckToR">${C.r.length ? `下一步：认识 ${C.r.length} 个` : '看结果'}${I.next}<span class="cap" style="color:inherit;opacity:.8">默写对 ${gNew} / ${nNew}${C.passS ? ' · ' + passText(gNew, nNew, C.passS) : ''}</span></button></div>`;
+    $('dock').innerHTML = `<div class="in"><button class="btn has-cap" type="button" id="ckToR">${C.r.length ? `下一步：认识 ${C.r.length} 个` : '看结果'}${I.next}<span class="cap" style="color:inherit">默写对 ${gNew} / ${nNew}${C.passS ? ' · ' + passText(gNew, nNew, C.passS) : ''}</span></button></div>`;
   } else {
     const sw = C.wrong.map(i => C.s[i]), rw = C.r.filter((_, i) => C.know[i] === false), ow = (C.o || []).filter((_, i) => C.knowO[i] === false);
     const no = (C.o || []).length, go = no - ow.length;
@@ -781,8 +789,8 @@ function renderCheck() {
                    sun: '补考没过：接下来的周一到周五不能玩游戏，周末照常。' };
     const note = failed && NOTE[kind] ? `<section class="rules"><dl><dt>没过</dt><dd>${NOTE[kind]}</dd></dl></section>` : '';
     $('main').innerHTML = `<div class="res">${box('默写', gs, ns, C.passS)}${box('认识', gr, nr, C.passR)}${box('复习抽查', gv, nv, C.passV)}${box('朗读（外教课）', go, no, null)}</div>`
-      + (wrongs.length ? `<div class="wrongs"><h3>错的 ${wrongs.length} 个</h3><ol class="list">${wrongs.map((x, i) => row(x, i, i)).join('')}</ol></div>` : '')
-      + note;
+      + note
+      + (wrongs.length ? `<div class="wrongs"><h3>错的 ${wrongs.length} 个</h3><ol class="list">${wrongs.map((x, i) => row(x, i, i)).join('')}</ol></div>` : '');
     $('dock').innerHTML = failed && kind === 'study'
       ? `<div class="in ck-dock2"><button class="btn" type="button" id="ckAgain">${I.shuffle}重新考一遍</button><button class="btn no" type="button" id="ckDone">完成</button></div>`
       : wrongs.length
@@ -812,10 +820,7 @@ function checkClick(t) {
       setTimeout(() => { if ($('ckExit')) { $('ckExit').textContent = '退出'; $('ckExit').classList.remove('exit-arm'); } }, 2500);
       return true;
     case 'ckNext': checkStep(1); return true;
-    case 'ckBack': case 'ckBack2':
-      if (C.phase === 'R' && C.i > 0) C.know[C.i - 1] = undefined;
-      if (C.phase === 'O' && C.i > 0) C.knowO[C.i - 1] = undefined;
-      checkStep(-1); return true;
+    case 'ckBack': case 'ckBack2': checkStep(-1); return true;
     case 'ckYes': case 'ckNo': (C.phase === 'O' ? C.knowO : C.know)[C.i] = t.id === 'ckYes'; checkStep(1); return true;
     case 'ckToR': C.phase = C.r.length ? 'R' : (C.o || []).length ? 'O' : 'end'; C.i = 0; C.turned = false; S.dir = 1; render(); S.dir = 0; window.scrollTo(0, 0); return true;
     case 'ckRetry': {
@@ -871,7 +876,7 @@ function helpSheet() {
     </dl></section>
     <button class="btn plain close" type="button" id="closeHelp">知道了</button></div>`;
   const close = () => { $('layer').innerHTML = ''; $('help').focus(); };
-  $('scrim').onclick = close; $('closeHelp').onclick = close; $('closeHelp').focus();
+  $('scrim').onclick = close; $('closeHelp').onclick = close; $('closeHelp').focus({ preventScroll: true }); $('layer').querySelector('.sheet').scrollTop = 0;
 }
 
 // ---- events
