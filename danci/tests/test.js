@@ -9,6 +9,10 @@ const assert = (c, m) => { if (!c) { console.error('FAIL', m); process.exitCode 
 let s = 0, r = 0, dayOfRec = {};
 const inRec = new Set(W.R.map(e => e[0]));
 assert(new Set(W.S.map(e => e[0])).size === W.S.length && inRec.size === W.R.length, 'no duplicate words');
+// days already studied keep their words when the order changes (subjects/learned.json)
+const frozen = JSON.parse(fs.readFileSync('subjects/learned.json', 'utf8'));
+const key = w => /[A-Z]/.test(w) && w === w.toUpperCase() ? w : w.toLowerCase();
+assert(['S', 'R'].every(k => frozen[k].every((w, i) => key(W[k][i][0]) === w)), 'learned days unchanged');
 for (let d = 1; d <= WEEKS * 5; d++) {
   const w = dayWords(d); if (!w) continue;
   assert(w.s[0] === s && w.r[0] === r, 'contiguous ' + d);
