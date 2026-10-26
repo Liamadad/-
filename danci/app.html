@@ -362,7 +362,7 @@ function ipa(p) {
   return s.replace(/\u0001(\d)\u0002/g, (_, i) => D[+i][1]);
 }
 // meanings carry the subject in brackets: （经济）（物理）（数学）（指令词）, shown as small tags
-const SUBJ = /（((?:经济|物理|数学|指令词)(?:、(?:经济|物理|数学|指令词))*)）/g;
+const SUBJ = /（((?:经济|物理|数学|计算机|指令词)(?:、(?:经济|物理|数学|计算机|指令词))*)）/g;
 const zhHTML = z => esc(z).replace(SUBJ, (_, t) => `<i class="sj">${t.replace('指令词', '考试指令')}</i>`);
 // on a card each part of speech gets its own line, so a meaning never breaks in the middle
 const zhLines = z => z.split('；').slice(0, 3).map(g => `<div>${esc(g.replace(SUBJ, ''))}</div>`).join('');

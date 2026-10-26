@@ -1,4 +1,4 @@
-"""Subject vocabulary: Cambridge IGCSE Economics (0455), Physics (0625), Mathematics (0580)
+"""Subject vocabulary: Cambridge IGCSE Economics (0455), Physics (0625), Mathematics (0580), Computer Science (0478)
 and the exam command words, merged into the general word lists by importance.
 
 Each file in subjects/ is a list of {w, pos, zh, cls, tier, topic}: cls S = must spell (默写),
@@ -8,7 +8,7 @@ import json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 # econ_class: the economics word list the teacher assigns (10 pages a week), in the book's page order; it comes first
-SOURCES = [('econ_class', '经济'), ('command', '指令词'), ('econ', '经济'), ('physics', '物理'), ('math', '数学')]
+SOURCES = [('econ_class', '经济'), ('command', '指令词'), ('econ', '经济'), ('physics', '物理'), ('math', '数学'), ('cs', '计算机')]
 # phonetics ECDICT lacks (inflected forms, units), in its notation
 MANUAL_PH = {'pascal': "'pæskәl", 'minimise': "'minimaiz", 'conserved': "kәn'sә:vd", 'responsiveness': "ri'spɒnsivnis",
              'diverging': "dai'vә:dʒiŋ", 'derived': "di'raivd", 'alternating': "'ɒ:ltәneitiŋ", 'purchasing': "'pә:tʃәsiŋ",
@@ -17,7 +17,15 @@ MANUAL_PH = {'pascal': "'pæskәl", 'minimise': "'minimaiz", 'conserved': "kәn'
              'grouped': "gru:pt", 'curved': "kә:vd", 'expected': "ik'spektid", 'simplest': "'simplist",
              'emerging': "i'mә:dʒiŋ", 'nearest': "'niәrist", 'interior': "in'tiәriә", 'co': "kәu",
              'takeover': "'teik.әuvә", 'allocative': "'ælәkeitiv", 'ceteris': "'ketәris", 'paribus': "'pærәbәs",
-             'crowding': "'kraudiŋ", 'managed': "'mænidʒd", 'gdp': "dʒi: di: 'pi:"}
+             'crowding': "'kraudiŋ", 'managed': "'mænidʒd", 'gdp': "dʒi: di: 'pi:",
+             # computer science words ECDICT lacks; acronyms inside phrases are read as letters
+             "two's": "tu:z", 'unicode': "'ju:nikәud", 'checksum': "'tʃeksʌm", 'malware': "'mælwєә", 'firewall': "'faiәwɒ:l",
+             'pseudocode': "'sju:dәukәud", 'boolean': "'bu:liәn", 'metadata': "'metәdeitә", 'mebibyte': "'mebibait",
+             'gibibyte': "'ɡibibait", 'tebibyte': "'tebibait", 'timeout': "'taimaut", 'plaintext': "'pleintekst",
+             'von': "vɒn", 'neumann': "'nɔimәn", 'inkjet': "'iŋkdʒet", 'hypertext': "'haipәtekst", 'blockchain': "'blɒktʃein",
+             'cryptocurrency': "'kriptәu.kʌrәnsi", 'spyware': "'spaiwєә", 'adware': "'ædwєә", 'ransomware': "'rænsәmwєә",
+             'pharming': "'fɑ:miŋ", 'automated': "'ɔ:tәmeitid", 'structured': "'strʌktʃәd", 'totalling': "'tәutәliŋ",
+             'mac': "mæk", 'ip': "ai 'pi:", 'qr': "kju: 'ɑ:", '3d': "θri: 'di:"}
 POS_SHOW = {'n.': 'n.', 'v.': 'v.', 'adj.': 'adj.', 'adv.': 'adv.', 'phr.': ''}
 
 
@@ -157,31 +165,40 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
         return out
 
     # --- from 10-26, before the midterm: the days already studied keep their words; after them every physics word
-    # comes first, chapter by chapter, with the exam command words; economics, maths and general English wait
+    # comes first, chapter by chapter, with a share of computer science (from its chapter 1) and the exam command words;
+    # economics, maths and general English wait
     learned = json.load(open(os.path.join(HERE, 'subjects', 'learned.json'), encoding='utf-8'))
     tags = lambda k: {p[2] for p in terms[k]['parts']} if k in terms else set()
-    sect = {}
-    for i, e in enumerate(subj['physics']):            # the file is in syllabus order
-        sect.setdefault(e['w'] if e['w'].isupper() else e['w'].lower(), i)
+    key = lambda e: e['w'] if e['w'].isupper() else e['w'].lower()
+    # physics in the coursebook's order: its chapters 1–5 (the midterm revision covers units 1–5) hold syllabus 1.1–1.6
+    # and 1.8; energy, 1.7, is chapters 6–8
+    book = lambda e: float(e['topic'].split()[0].replace('1.7', '1.85'))
+    sect, cs_at = {}, {}
+    for i, e in enumerate(sorted(subj['physics'], key=book)):
+        sect.setdefault(key(e), i)
+    for i, e in enumerate(subj['cs']):                 # the file is in the coursebook's order
+        cs_at.setdefault(key(e), i)
 
-    def midterm(order, done, n_phys, n_cmd=0):
-        """done, then n_phys physics terms a day with n_cmd exam command words, then the rest in order."""
+    def midterm(order, done, n_phys, n_cs=0, n_cmd=0):
+        """done, then a block of n_phys physics terms a day with n_cs computer science terms and n_cmd exam command words,
+        then the rest in order."""
         done_set = set(done)
         rest = [k for k in dict.fromkeys(order) if k not in done_set]
         phys = sorted((k for k in rest if '物理' in tags(k)), key=sect.get)
         days = len(phys) / n_phys
-        cmd = [k for k in rest if '指令词' in tags(k) and not tags(k) & {'物理', '经济'}]
-        block = spread(phys, cmd[:round(days * n_cmd)])
+        cs = sorted((k for k in rest if '计算机' in tags(k) and '物理' not in tags(k)), key=cs_at.get)
+        cmd = [k for k in rest if '指令词' in tags(k) and not tags(k) & {'物理', '经济', '计算机'}]
+        block = spread(phys, cs[:round(days * n_cs)], cmd[:round(days * n_cmd)])
         return list(dict.fromkeys(done + block + rest))
 
     # --- spelling: the teacher's economics words first (in page order), then command words and core subject terms
     s_order = pick('econ_class', 'S', {1, 2, 3})
     s_order += spread(pick('command', 'S', {1, 2, 3}), pick('econ', 'S', {1}), pick('physics', 'S', {1}),
-                     pick('math', 'S', {1}), list(awl_sublists[0]))
-    s_order += spread(pick('econ', 'S', {2}), pick('physics', 'S', {2}), pick('math', 'S', {2}),
+                     pick('math', 'S', {1}), pick('cs', 'S', {1}), list(awl_sublists[0]))
+    s_order += spread(pick('econ', 'S', {2}), pick('physics', 'S', {2}), pick('math', 'S', {2}), pick('cs', 'S', {2}),
                       [w for sub in awl_sublists[1:4] for w in sub])
     s_order += [w for sub in awl_sublists[4:] for w in sub]
-    s_order = midterm(s_order, learned['S'], 9, 1)
+    s_order = midterm(s_order, learned['S'], 7, 2, 1)
     spell, used = [], set()
     for k in s_order:
         if k in used:
@@ -193,7 +210,7 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
     # --- recognition: subject terms spread through the general words of the same importance
     ngsl = [e[0] for e in rec[:n_ngsl]]
     ielts = [e[0] for e in rec[n_ngsl:]]
-    r_subj = lambda tier: spread(*[pick(src, 'R', {tier}) for src in ('econ', 'physics', 'math')])
+    r_subj = lambda tier: spread(*[pick(src, 'R', {tier}) for src in ('econ', 'physics', 'math', 'cs')])
     r1, r2, r3 = r_subj(1), r_subj(2), r_subj(3)
     r_order = pick('econ_class', 'R', {1, 2, 3}) + spread(r1, ngsl[:500]) + spread(r2, ngsl[500:])
     seen = set(used)
@@ -204,5 +221,5 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
     for k in spread(r3, tail_pool):
         if k not in seen:
             seen.add(k); head.append(k)
-    recs = [final(k) for k in midterm(head, learned['R'], 20)][:rec_total]
+    recs = [final(k) for k in midterm(head, learned['R'], 15, 5)][:rec_total]
     return spell, recs
