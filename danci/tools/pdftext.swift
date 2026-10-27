@@ -11,7 +11,7 @@ for i in 0..<doc.pageCount {
     let page = doc.page(at: i)!
     var text = page.string ?? ""
     let box = page.bounds(for: .mediaBox)
-    let scale: CGFloat = 2
+    let scale: CGFloat = 3
     let img = NSImage(size: NSSize(width: box.width * scale, height: box.height * scale))
     img.lockFocus()
     NSColor.white.set(); NSRect(origin: .zero, size: img.size).fill()
@@ -25,7 +25,7 @@ for i in 0..<doc.pageCount {
     if text.trimmingCharacters(in: .whitespacesAndNewlines).count < 40 {
         let req = VNRecognizeTextRequest()
         req.recognitionLevel = .accurate
-        req.recognitionLanguages = ["en-US"]
+        req.recognitionLanguages = ["zh-Hans", "en-US"]   // family materials are English with Chinese
         try! VNImageRequestHandler(cgImage: rep.cgImage!, options: [:]).perform([req])
         text = "[OCR]\n" + (req.results ?? []).compactMap { $0.topCandidates(1).first?.string }.joined(separator: "\n")
     }

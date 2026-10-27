@@ -8,7 +8,9 @@ import json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 # econ_class: the economics word list the teacher assigns (10 pages a week), in the book's page order; it comes first
-SOURCES = [('econ_class', '经济'), ('command', '指令词'), ('econ', '经济'), ('physics', '物理'), ('math', '数学'), ('cs', '计算机')]
+# physics_vocab: the physics vocabulary book the school sent (10-27), in its own order; it only adds the words no earlier list has.
+# Its words beyond the IGCSE syllabus (level 'beyond', A-Level / IB) are tier 3: IGCSE comes first (Felix, 10-27)
+SOURCES = [('econ_class', '经济'), ('command', '指令词'), ('econ', '经济'), ('physics', '物理'), ('physics_vocab', '物理'), ('math', '数学'), ('cs', '计算机')]
 # phonetics ECDICT lacks (inflected forms, units), in its notation
 MANUAL_PH = {'pascal': "'pæskәl", 'minimise': "'minimaiz", 'conserved': "kәn'sә:vd", 'responsiveness': "ri'spɒnsivnis",
              'diverging': "dai'vә:dʒiŋ", 'derived': "di'raivd", 'alternating': "'ɒ:ltәneitiŋ", 'purchasing': "'pә:tʃәsiŋ",
@@ -136,6 +138,8 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
     for key, _ in SOURCES:
         for e in subj[key]:
             k = e['w'] if e['w'].isupper() else e['w'].lower()
+            if key == 'physics_vocab' and k in terms:
+                continue                              # keep the meaning and class the syllabus lists gave it
             t = terms.setdefault(k, {'w': e['w'], 'parts': [], 'cls': 'R', 'tier': 3})
             t['parts'].append((POS_SHOW.get(e['pos'], e['pos']), e['zh'], e['tag']))
             if e['cls'] == 'S':
@@ -178,17 +182,50 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
         sect.setdefault(key(e), i)
     for i, e in enumerate(subj['cs']):                 # the file is in the coursebook's order
         cs_at.setdefault(key(e), i)
+    # the school's physics vocabulary book comes first: its units 1–3 (mechanics, rotation, fluids) together with the rest
+    # of coursebook chapters 1–5, then its other units in its order, then the coursebook words it does not have.
+    # Its A-Level / IB words stay out of this block: tier 3 puts them near the end of the plan
+    beyond = {key(e) for e in subj['physics_vocab'] if e['level'] == 'beyond'}
+    vocab_at, topic_of = {}, {}
+    for i, e in enumerate(subj['physics_vocab']):
+        vocab_at.setdefault(key(e), (int(e['topic'][1:].split()[0]), i))
+    for e in subj['physics']:
+        topic_of.setdefault(key(e), e['topic'].split()[0])
+    MIDTERM_CH = {'1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.8'}
 
-    def midterm(order, done, n_phys, n_cs=0, n_cmd=0):
+    def physics_order(ks):
+        unit = lambda k: vocab_at[k][0] if k in vocab_at else None
+        first = spread(sorted((k for k in ks if k in vocab_at and unit(k) <= 3), key=vocab_at.get),
+                       sorted((k for k in ks if k not in vocab_at and topic_of.get(k) in MIDTERM_CH), key=sect.get))
+        then = sorted((k for k in ks if k in vocab_at and unit(k) > 3), key=vocab_at.get)
+        last = sorted((k for k in ks if k not in vocab_at and topic_of.get(k) not in MIDTERM_CH), key=sect.get)
+        return first + then + last
+
+    # after the midterm physics 认识 drops to 10 a day so maths and English come back sooner (10-27, Felix). The midterm date
+    # is not known yet: study day 26 is 2026-11-16, the estimate; move it to the day after the real midterm once known
+    AFTER_MIDTERM_DAY = 26
+
+    def midterm(order, done, n_phys, n_cs=0, n_cmd=0, later=None):
         """done, then a block of n_phys physics terms a day with n_cs computer science terms and n_cmd exam command words,
-        then the rest in order."""
+        then the rest in order. later=(per_day, n_phys, n_cs): from AFTER_MIDTERM_DAY on, the block has that many physics
+        and computer science terms a day and fills the rest of each day from the usual order."""
         done_set = set(done)
         rest = [k for k in dict.fromkeys(order) if k not in done_set]
-        phys = sorted((k for k in rest if '物理' in tags(k)), key=sect.get)
-        days = len(phys) / n_phys
+        phys = physics_order([k for k in rest if '物理' in tags(k) and k not in beyond])
         cs = sorted((k for k in rest if '计算机' in tags(k) and '物理' not in tags(k)), key=cs_at.get)
         cmd = [k for k in rest if '指令词' in tags(k) and not tags(k) & {'物理', '经济', '计算机'}]
-        block = spread(phys, cs[:round(days * n_cs)], cmd[:round(days * n_cmd)])
+        if later:
+            per_day, n_phys2, n_cs2 = later
+            days1 = AFTER_MIDTERM_DAY - 1 - len(done) // per_day
+            p1, c1 = phys[:days1 * n_phys], cs[:days1 * n_cs]
+            p2, c2 = phys[len(p1):], cs[len(c1):]
+            days2 = len(p2) / n_phys2
+            others = [k for k in rest if k not in set(phys) | set(cs)]
+            c2 = c2[:round(days2 * n_cs2)]
+            block = spread(p1, c1) + spread(p2, c2, others[:round(days2 * per_day) - len(p2) - len(c2)])
+        else:
+            days = len(phys) / n_phys
+            block = spread(phys, cs[:round(days * n_cs)], cmd[:round(days * n_cmd)])
         return list(dict.fromkeys(done + block + rest))
 
     # --- spelling: the teacher's economics words first (in page order), then command words and core subject terms
@@ -210,16 +247,18 @@ def build(awl_sublists, spell_entry, rec, n_ngsl, entry, ec, rec_total):
     # --- recognition: subject terms spread through the general words of the same importance
     ngsl = [e[0] for e in rec[:n_ngsl]]
     ielts = [e[0] for e in rec[n_ngsl:]]
-    r_subj = lambda tier: spread(*[pick(src, 'R', {tier}) for src in ('econ', 'physics', 'math', 'cs')])
+    r_subj = lambda tier: spread(*[pick(src, 'R', {tier}) for src in ('econ', 'physics', 'physics_vocab', 'math', 'cs')])
     r1, r2, r3 = r_subj(1), r_subj(2), r_subj(3)
     r_order = pick('econ_class', 'R', {1, 2, 3}) + spread(r1, ngsl[:500]) + spread(r2, ngsl[500:])
     seen = set(used)
     head = [k for k in r_order if not (k in seen or seen.add(k))]
-    r3 = [k for k in r3 if k not in seen]
-    room = rec_total - len(head) - len(r3)
-    tail_pool = [k for k in ielts if k not in seen and k not in set(r3)][:max(room, 0)]
-    for k in spread(r3, tail_pool):
+    r3 = [k for k in dict.fromkeys(r3) if k not in seen]   # a term can come from two lists
+    later = [k for k in r3 if k in beyond]            # A-Level / IB physics: the very end, after the IGCSE exam
+    r3 = [k for k in r3 if k not in beyond]
+    room = rec_total - len(head) - len(r3) - len(later)
+    tail_pool = [k for k in ielts if k not in seen and k not in set(r3) | set(later)][:max(room, 0)]
+    for k in spread(r3, tail_pool) + later:
         if k not in seen:
             seen.add(k); head.append(k)
-    recs = [final(k) for k in midterm(head, learned['R'], 15, 5)][:rec_total]
+    recs = [final(k) for k in midterm(head, learned['R'], 15, 5, later=(20, 10, 5))][:rec_total]
     return spell, recs
